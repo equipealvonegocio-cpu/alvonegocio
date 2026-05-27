@@ -20,9 +20,15 @@
   ════════════════════════════════════════ */
   const FLUXO = {
 
-    /* ── INÍCIO ── */
+    /* ── INÍCIO — pede o nome primeiro ── */
     inicio: {
-      mensagem: `Olá 😊\nSeja muito bem-vindo(a) à Equipe *Alvo Negócio* em parceria com a *Jan Rosê*.\n\nEu sou *Aurora*, assistente virtual da equipe 💜\n\nNosso projeto ajuda pessoas a desenvolver renda através de produtos de beleza, bem-estar, vendas e construção de equipe.\n\nMe conta 😊\nO que mais despertou seu interesse hoje?`,
+      mensagem: `Olá! Que bom te ver por aqui 😊\n\nMeu nome é *Aurora* e faço parte da Equipe *Alvo Negócio*.\n\nAntes de tudo... como posso te chamar? 💜`,
+      input: { tipo: 'text', placeholder: 'Digite seu nome...', proximo: 'boas_vindas', variavel: 'nome' }
+    },
+
+    /* ── BOAS-VINDAS COM O NOME ── */
+    boas_vindas: {
+      mensagem: `Que nome lindo, *{nome}*! 😊\n\nSeja muito bem-vindo(a) à Equipe *Alvo Negócio* em parceria com a *Jan Rosê* 💜\n\nAqui ajudamos pessoas a desenvolver renda através de produtos de beleza, bem-estar e construção de equipe — tudo com *suporte real* do início ao fim.\n\nMe conta, *{nome}*... O que mais despertou seu interesse hoje?`,
       opcoes: [
         { texto: '1️⃣  Renda extra',               proximo: 'renda_extra' },
         { texto: '2️⃣  Produtos',                   proximo: 'produtos' },
@@ -35,7 +41,7 @@
 
     /* ── RENDA EXTRA ── */
     renda_extra: {
-      mensagem: `Muitas pessoas começam exatamente buscando uma renda extra 😊\n\nA proposta do projeto é ajudar pessoas comuns a criarem uma nova fonte de renda através:\n\n✔ das vendas\n✔ da recompra de clientes\n✔ do crescimento da equipe\n✔ e do desenvolvimento pessoal e profissional.\n\nE você pode começar no *seu ritmo* 💜`,
+      mensagem: `Faz todo sentido, *{nome}*! 😊\n\nMuitas pessoas começam exatamente buscando uma renda extra — e constroem muito mais com o tempo.\n\nA proposta é ajudar pessoas comuns a criarem uma nova fonte de renda através:\n\n✔ das vendas\n✔ da recompra de clientes\n✔ do crescimento da equipe\n✔ e do desenvolvimento pessoal e profissional.\n\nE o melhor: você começa no *seu ritmo*, sem pressão 💜`,
       opcoes: [
         { texto: '🙋 Quero saber como funciona',   proximo: 'como_funciona' },
         { texto: '❓ Tenho uma dúvida',             proximo: 'duvidas_menu' },
@@ -235,7 +241,7 @@
 
     /* ── CONVITE PARA REUNIÃO / APRESENTAÇÃO ── */
     convite_reuniao: {
-      mensagem: `Gostaria de participar da nossa *apresentação online* para entender melhor o projeto? 😊\n\nÉ rápido, sem compromisso e você vai sair com uma visão muito mais clara de tudo.\n\nPosso te conectar com a equipe agora pelo WhatsApp para agendar? 🚀`,
+      mensagem: `*{nome}*, o que acha de participar da nossa *apresentação online*? 😊\n\nÉ rápido, sem compromisso e você vai sair com uma visão muito mais clara de tudo.\n\nPosso te conectar com a equipe agora pelo WhatsApp? 🚀`,
       opcoes: [
         { texto: '✅ Sim! Me conecta com a equipe',        proximo: 'captura_nome' },
         { texto: '💬 Prefiro entender mais antes',         proximo: 'como_funciona' },
@@ -245,17 +251,17 @@
 
     /* ── CAPTURA ── */
     captura_nome: {
-      mensagem: `Ótimo! 😊\n\nPara nossa equipe te atender com *atenção e cuidado*, preciso só do seu *primeiro nome*.\n\nComo posso te chamar?`,
-      input: { tipo: 'text', placeholder: 'Digite seu nome...', proximo: 'captura_whats', variavel: 'nome' }
+      mensagem: `Perfeito, *{nome}*! 😊\n\nMe passa seu *WhatsApp com DDD* para nossa equipe entrar em contato com você:`,
+      input: { tipo: 'tel', placeholder: '(11) 99999-9999', proximo: 'finalizar', variavel: 'whats' }
     },
 
     captura_whats: {
-      mensagem: `Prazer, *{nome}*! 💜\n\nAgora me passa seu *WhatsApp com DDD* para nossa equipe entrar em contato:`,
+      mensagem: `Anotado! 💜\n\nMe passa seu *WhatsApp com DDD* para nossa equipe entrar em contato:`,
       input: { tipo: 'tel', placeholder: '(11) 99999-9999', proximo: 'finalizar', variavel: 'whats' }
     },
 
     finalizar: {
-      mensagem: `*{nome}*, tudo certo! ✅\n\nVou te conectar agora com a Equipe Alvo Negócio pelo WhatsApp 💜\n\nTalvez esse seja o começo de uma *nova fase da sua vida* 🌟\n\nNos vemos lá! 🚀`,
+      mensagem: `*{nome}*, que alegria! ✅\n\nVou te conectar agora com a equipe pelo WhatsApp 💜\n\nTalvez esse seja o começo de uma *nova fase da sua vida* 🌟\n\nNos vemos lá, te espero! 🚀`,
       acao: 'abrir_whatsapp'
     },
 
