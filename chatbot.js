@@ -22,30 +22,30 @@
 
     /* ── INÍCIO — pede o nome primeiro ── */
     inicio: {
-      mensagem: `Olá 😊\n\nQue bom te ver por aqui!\n\nMeu nome é *Lia*, sou a assistente virtual da Equipe *Alvo Negócio* 💜✨\n\nEstou aqui para te ajudar, tirar dúvidas`,
+      mensagem: `Olá 😊\n\nQue bom te ver por aqui!\n\nMeu nome é *Lia*, sou a assistente virtual da Equipe *Alvo Negócio* 💜✨\n\nEstou aqui para te ajudar, tirar dúvidas\n\nAntes de tudo… como posso te chamar?`,
       input: { tipo: 'text', placeholder: 'Digite seu nome...', proximo: 'boas_vindas', variavel: 'nome' }
     },
 
     /* ── BOAS-VINDAS COM O NOME ── */
     boas_vindas: {
-      mensagem: `Que nome lindo, *{nome}*! 😊\n\nSeja muito bem-vindo(a) à Equipe *Alvo Negócio* em parceria com a *Jan Rosê* 💜\n\nAqui ajudamos pessoas a desenvolver renda através de produtos de beleza, bem-estar e construção de equipe — tudo com *suporte real* do início ao fim.\n\nMe conta, *{nome}*... O que mais despertou seu interesse hoje?`,
+      mensagem: `Que prazer te conhecer, *{nome}*! 😊\n\nFico feliz que você veio conversar comigo.\n\nSei que às vezes a gente chega com dúvidas, inseguranças ou sem saber exatamente o que esperar — e tudo bem. Estou aqui para te ajudar com calma, sem pressa 💜\n\nMe conta... o que te trouxe até aqui hoje?`,
       opcoes: [
-        { texto: '1️⃣  Renda extra',               proximo: 'renda_extra' },
-        { texto: '2️⃣  Produtos',                   proximo: 'produtos' },
-        { texto: '3️⃣  Vendas',                     proximo: 'vendas' },
-        { texto: '4️⃣  Construção de equipe',       proximo: 'equipe' },
-        { texto: '5️⃣  Desenvolvimento pessoal',    proximo: 'desenvolvimento' },
-        { texto: '6️⃣  Conhecer o projeto',         proximo: 'projeto' },
+        { texto: '💰 Quero uma renda extra',              proximo: 'renda_extra' },
+        { texto: '🛍️ Quero conhecer os produtos',         proximo: 'produtos' },
+        { texto: '📱 Quero aprender a vender',            proximo: 'vendas' },
+        { texto: '👥 Quero montar uma equipe',            proximo: 'equipe' },
+        { texto: '🌱 Quero crescer pessoalmente',         proximo: 'desenvolvimento' },
+        { texto: '🔍 Só quero entender o projeto',        proximo: 'projeto' },
       ]
     },
 
     /* ── RENDA EXTRA ── */
     renda_extra: {
-      mensagem: `Faz todo sentido, *{nome}*! 😊\n\nMuitas pessoas começam exatamente buscando uma renda extra — e constroem muito mais com o tempo.\n\nA proposta é ajudar pessoas comuns a criarem uma nova fonte de renda através:\n\n✔ das vendas\n✔ da recompra de clientes\n✔ do crescimento da equipe\n✔ e do desenvolvimento pessoal e profissional.\n\nE o melhor: você começa no *seu ritmo*, sem pressão 💜`,
+      mensagem: `Faz muito sentido, *{nome}* 😊\n\nMuita gente chega aqui buscando exatamente isso — uma forma de complementar a renda, trabalhar no próprio horário e sem depender de ninguém.\n\nA boa notícia é que aqui você começa *no seu ritmo*.\nSem pressão. Sem obrigações.\n\nVocê decide como quer crescer 💜\n\nQuer que eu te explique como funciona?`,
       opcoes: [
-        { texto: '🙋 Quero saber como funciona',   proximo: 'como_funciona' },
-        { texto: '❓ Tenho uma dúvida',             proximo: 'duvidas_menu' },
-        { texto: '📅 Quero participar de uma apresentação', proximo: 'convite_reuniao' },
+        { texto: '✅ Sim, quero entender melhor',       proximo: 'como_funciona' },
+        { texto: '❓ Tenho uma dúvida antes',           proximo: 'duvidas_menu' },
+        { texto: '😟 Já tentei coisas assim antes',     proximo: 'gatilho_experiencia_ruim' },
       ]
     },
 
@@ -161,17 +161,17 @@
 
     /* ── COMO FUNCIONA ── */
     como_funciona: {
-      mensagem: `Deixa eu te explicar de forma simples 😊\n\nExistem *2 caminhos* que se complementam:\n\n*1️⃣ Vendas diretas*\nVocê vende os produtos e o lucro vai direto para você. Sem intermediários.\n\n*2️⃣ Construção de equipe*\nVocê indica pessoas, elas vendem, e você ganha bônus sobre o crescimento da rede.\n\nE a Equipe Alvo Negócio está com você desde o *primeiro passo* 💜\n\nAlguma dúvida ainda?`,
+      mensagem: `Vou te explicar de forma bem simples 😊\n\nExistem *dois caminhos* que você pode combinar:\n\n*1️⃣ Vender os produtos*\nVocê vende e o lucro vai direto pra você. Simples assim.\n\n*2️⃣ Indicar pessoas*\nVocê indica alguém, essa pessoa também vende, e você recebe bônus pelo crescimento da rede.\n\nE a melhor parte: a Equipe *Alvo Negócio* está do seu lado desde o primeiro dia 💜\n\nTem alguma dúvida sobre isso?`,
       opcoes: [
-        { texto: '✅ Não, já entendi! Quero começar',   proximo: 'convite_reuniao' },
-        { texto: '❓ Ainda tenho dúvidas',              proximo: 'duvidas_menu' },
-        { texto: '🔒 Preciso ter experiência?',        proximo: 'duvida_experiencia' },
+        { texto: '✅ Entendi! Quero dar o próximo passo',      proximo: 'convite_reuniao' },
+        { texto: '❓ Ainda tenho dúvidas',                    proximo: 'duvidas_menu' },
+        { texto: '🔒 Preciso ter experiência?',               proximo: 'duvida_experiencia' },
       ]
     },
 
     /* ── DÚVIDAS ── */
     duvidas_menu: {
-      mensagem: `Pode perguntar! 😊\nQual das dúvidas abaixo é a sua?`,
+      mensagem: `Claro, pode perguntar à vontade 😊\n\nNão existe pergunta errada aqui.\nQual dessas está passando pela sua cabeça?`,
       opcoes: [
         { texto: '🔒 Preciso ter experiência?',             proximo: 'duvida_experiencia' },
         { texto: '📦 Precisa ter estoque?',                 proximo: 'duvida_estoque' },
@@ -179,13 +179,14 @@
         { texto: '📚 Tem treinamento e suporte?',           proximo: 'duvida_suporte' },
         { texto: '📱 Posso trabalhar pelo celular?',        proximo: 'duvida_celular' },
         { texto: '😟 Já tive experiência ruim antes',       proximo: 'gatilho_experiencia_ruim' },
+        { texto: '😰 Estou inseguro(a) sobre isso',         proximo: 'gatilho_inseguro' },
       ]
     },
 
     duvida_experiencia: {
       mensagem: `Não 😊\nA maioria das pessoas começa *sem experiência*.\n\nVocê recebe suporte, orientação e treinamento da equipe desde o primeiro dia.\n\nVendas é habilidade — e *habilidade pode ser aprendida* com o tempo e com prática 💜`,
       opcoes: [
-        { texto: '✅ Que ótimo! Quero começar',       proximo: 'convite_reuniao' },
+        { texto: '✅ Boa! Quero dar o próximo passo',  proximo: 'convite_reuniao' },
         { texto: '❓ Tenho outra dúvida',             proximo: 'duvidas_menu' },
       ]
     },
@@ -201,7 +202,7 @@
     duvida_ganho: {
       mensagem: `Existem várias possibilidades 😊\n\n✔ lucro nas vendas\n✔ recompra de clientes\n✔ bônus de crescimento\n✔ desenvolvimento de equipe\n✔ campanhas e incentivos\n\nCombinando as fontes, os resultados crescem com o tempo e com dedicação 🚀`,
       opcoes: [
-        { texto: '✅ Entendi! Quero saber os próximos passos', proximo: 'convite_reuniao' },
+        { texto: '✅ Entendi! Quero dar o próximo passo',      proximo: 'convite_reuniao' },
         { texto: '❓ Tenho outra dúvida',                     proximo: 'duvidas_menu' },
       ]
     },
@@ -209,7 +210,7 @@
     duvida_suporte: {
       mensagem: `Sim 😊\n\nA equipe trabalha com:\n✔ vendas\n✔ atendimento\n✔ marketing digital\n✔ liderança\n✔ desenvolvimento pessoal\n✔ estratégias online\n\nVocê *não fica sozinho(a)*. A Equipe Alvo Negócio oferece suporte, treinamentos, direcionamento e acompanhamento 💜`,
       opcoes: [
-        { texto: '✅ Esse suporte faz diferença! Quero começar', proximo: 'convite_reuniao' },
+        { texto: '✅ Esse suporte faz diferença! Quero dar o próximo passo', proximo: 'convite_reuniao' },
         { texto: '❓ Tenho outra dúvida',                       proximo: 'duvidas_menu' },
       ]
     },
@@ -224,24 +225,24 @@
 
     /* ── GATILHOS EMOCIONAIS ── */
     gatilho_inseguro: {
-      mensagem: `Entendo perfeitamente 😊\n\nMuitas pessoas começaram com *medo ou dúvidas*.\n\nO importante é que você não precisa começar perfeito(a).\nVocê cresce *no processo*, com o suporte da equipe ao lado 💜`,
+      mensagem: `É normal sentir isso 😊\n\nA maioria das pessoas chega aqui com esse mesmo sentimento.\n\nInsegurança não significa incapacidade.\nSignifica que você está pensando com cuidado — e isso é muito bom.\n\nVocê não precisa ter certeza de nada agora.\nPode só conversar, tirar dúvidas e ir no seu tempo 💜\n\nEstou aqui sem pressa.`,
       opcoes: [
-        { texto: '💜 Isso me ajudou! Quero saber mais',  proximo: 'convite_reuniao' },
+        { texto: '💜 Isso me ajudou! Quero dar o próximo passo', proximo: 'convite_reuniao' },
         { texto: '❓ Ainda tenho dúvidas',               proximo: 'duvidas_menu' },
       ]
     },
 
     gatilho_experiencia_ruim: {
-      mensagem: `Entendo 😊\n\nPor isso nosso foco é *suporte real, desenvolvimento e acompanhamento*.\n\nAqui você não começa e fica no escuro. A equipe está com você desde o primeiro contato até o seu crescimento.\n\nCada pessoa tem um ritmo — e nós respeitamos o seu 💜`,
+      mensagem: `Entendo você 😊\n\nE é muito importante falar sobre isso.\n\nTer passado por algo que não funcionou deixa uma marca — e faz toda a diferença ser honesto(a) sobre isso.\n\nAqui a gente não pressiona ninguém.\nNão tem promessa de riqueza rápida.\nO que existe é suporte real, acompanhamento e crescimento gradual 💜\n\nVocê pode fazer perguntas, tirar dúvidas e tomar sua decisão com calma.`,
       opcoes: [
-        { texto: '💜 Isso faz diferença! Quero conhecer melhor', proximo: 'como_funciona' },
-        { texto: '📅 Quero participar de uma apresentação',       proximo: 'convite_reuniao' },
+        { texto: '💜 Quero conhecer melhor',              proximo: 'como_funciona' },
+        { texto: '✅ Quero dar o próximo passo',              proximo: 'convite_reuniao' },
       ]
     },
 
     /* ── CONVITE PARA REUNIÃO / APRESENTAÇÃO ── */
     convite_reuniao: {
-      mensagem: `*{nome}*, o que acha de participar da nossa *apresentação online*? 😊\n\nÉ rápido, sem compromisso e você vai sair com uma visão muito mais clara de tudo.\n\nPosso te conectar com a equipe agora pelo WhatsApp? 🚀`,
+      mensagem: `*{nome}*, o próximo passo é simples 😊\n\nNossa equipe entra em contato com você pelo WhatsApp — uma conversa tranquila, sem pressão, sem compromisso.\n\nVocê conhece melhor, tira as últimas dúvidas e decide com calma 💜\n\nSó precisamos do seu número para te conectar:`,
       opcoes: [
         { texto: '✅ Sim! Me conecta com a equipe',        proximo: 'captura_nome' },
         { texto: '💬 Prefiro entender mais antes',         proximo: 'como_funciona' },
@@ -251,7 +252,7 @@
 
     /* ── CAPTURA ── */
     captura_nome: {
-      mensagem: `Perfeito, *{nome}*! 😊\n\nMe passa seu *WhatsApp com DDD* para nossa equipe entrar em contato com você:`,
+      mensagem: `Ótimo, *{nome}*! 😊\n\nMe passa seu *WhatsApp com DDD*:`,
       input: { tipo: 'tel', placeholder: '(11) 99999-9999', proximo: 'finalizar', variavel: 'whats' }
     },
 
@@ -261,7 +262,7 @@
     },
 
     finalizar: {
-      mensagem: `*{nome}*, que alegria! ✅\n\nVou te conectar agora com a equipe pelo WhatsApp 💜\n\nTalvez esse seja o começo de uma *nova fase da sua vida* 🌟\n\nNos vemos lá, te espero! 🚀`,
+      mensagem: `Fico muito feliz, *{nome}*! 💜\n\nVou te conectar agora com nossa equipe pelo WhatsApp.\n\nChega lá com calma, sem pressa.\nEles vão te receber bem 😊\n\nFoi um prazer conversar com você. Até lá! 🌟`,
       acao: 'abrir_whatsapp'
     },
 
