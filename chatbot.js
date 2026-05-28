@@ -22,7 +22,7 @@
 
     /* ── INÍCIO — pede o nome primeiro ── */
     inicio: {
-      mensagem: `Olá 😊\n\nQue bom te ver por aqui!\n\nMeu nome é *Lia*, sou a assistente virtual da Equipe *Alvo Negócio* 💜✨\n\nEstou aqui para te ajudar, tirar dúvidas e te mostrar como funciona nosso projeto de renda extra e empreendedorismo 😊\n\nAntes de tudo… como posso te chamar?`,
+      mensagem: `Olá 😊\n\nQue bom te ver por aqui!\n\nMeu nome é *Lia*, sou a assistente virtual da Equipe *Alvo Negócio* 💜✨\n\nEstou aqui para te ajudar, tirar dúvidas`,
       input: { tipo: 'text', placeholder: 'Digite seu nome...', proximo: 'boas_vindas', variavel: 'nome' }
     },
 
