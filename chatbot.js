@@ -1,5 +1,5 @@
-/* ═══════════════════════════════════════════════════════
-   AURORA — Assistente Virtual Humanizada
+﻿/* ═══════════════════════════════════════════════════════
+   Lia — Assistente Virtual Humanizada
    Equipe Alvo Negócio + Jan Rosê | v2.0
    Adicione no final do <body>: <script src="chatbot.js"></script>
 ═══════════════════════════════════════════════════════ */
@@ -9,20 +9,20 @@
   /* ── CONFIGURAÇÃO ── */
   const CONFIG = {
     whatsapp: '5511915033743',
-    atendente: 'Aurora',
+    atendente: 'Lia',
     empresa: 'Alvo Negócio',
     tempo_digitando: 1100,
     cor_principal: '#00FF38',
   };
 
   /* ════════════════════════════════════════
-     FLUXO DE CONVERSA — AURORA
+     FLUXO DE CONVERSA — Lia
   ════════════════════════════════════════ */
   const FLUXO = {
 
     /* ── INÍCIO — pede o nome primeiro ── */
     inicio: {
-      mensagem: `Olá! Que bom te ver por aqui 😊\n\nMeu nome é *Aurora* e faço parte da Equipe *Alvo Negócio*.\n\nAntes de tudo... como posso te chamar? 💜`,
+      mensagem: `Olá 😊\n\nQue bom te ver por aqui!\n\nMeu nome é *Lia*, sou a assistente virtual da Equipe *Alvo Negócio* 💜✨\n\nEstou aqui para te ajudar, tirar dúvidas e te mostrar como funciona nosso projeto de renda extra e empreendedorismo 😊\n\nAntes de tudo… como posso te chamar?`,
       input: { tipo: 'text', placeholder: 'Digite seu nome...', proximo: 'boas_vindas', variavel: 'nome' }
     },
 
@@ -484,7 +484,7 @@
      HTML DO CHAT
   ════════════════════════════════════════ */
   const htmlChat = `
-    <div id="an-chat-bubble" onclick="anChat.toggle()" title="Fale com a Aurora">
+    <div id="an-chat-bubble" onclick="anChat.toggle()" title="Fale com a Lia">
       <div id="an-chat-notif">1</div>
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.832-1.438A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.942 7.942 0 01-4.073-1.116l-.291-.174-3.012.896.896-3.012-.174-.291A7.942 7.942 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8zm4.406-5.844c-.241-.12-1.427-.704-1.648-.784-.221-.08-.382-.12-.543.12-.16.24-.623.784-.763.944-.14.16-.281.18-.522.06-.241-.12-1.018-.375-1.939-1.198-.716-.64-1.2-1.428-1.341-1.668-.14-.24-.015-.37.105-.49.108-.108.241-.281.362-.421.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.543-1.308-.743-1.788-.195-.468-.395-.405-.543-.413-.14-.007-.3-.009-.462-.009-.16 0-.421.06-.642.3-.22.24-.843.824-.843 2.01 0 1.185.863 2.33.984 2.49.12.16 1.7 2.597 4.12 3.64.576.248 1.025.397 1.374.507.577.184 1.103.158 1.518.096.463-.069 1.427-.584 1.628-1.146.2-.562.2-1.044.14-1.145-.06-.1-.221-.16-.462-.28z"/>
@@ -494,7 +494,7 @@
       <div id="an-chat-header">
         <div id="an-chat-avatar">A</div>
         <div id="an-chat-info">
-          <div id="an-chat-nome">Aurora · Alvo Negócio</div>
+          <div id="an-chat-nome">Lia · Alvo Negócio</div>
           <div id="an-chat-status">● Online agora</div>
         </div>
         <button id="an-chat-fechar" onclick="anChat.toggle()">✕</button>
@@ -630,7 +630,7 @@
       const nome = this.dados.nome || 'Visitante';
       const msg  = encodeURIComponent(
         `Olá! Me chamo *${nome}* e entrei em contato pelo site da Alvo Negócio.\n` +
-        `Conversei com a Aurora e quero saber mais sobre a oportunidade 💜`
+        `Conversei com a Lia e quero saber mais sobre a oportunidade 💜`
       );
       window.open(`https://wa.me/${CONFIG.whatsapp}?text=${msg}`, '_blank');
     }
@@ -642,9 +642,9 @@
   });
 
   // Abre automaticamente após 10 segundos na primeira visita
-  if (!sessionStorage.getItem('aurora_visto')) {
+  if (!sessionStorage.getItem('Lia_visto')) {
     setTimeout(() => {
-      sessionStorage.setItem('aurora_visto', '1');
+      sessionStorage.setItem('Lia_visto', '1');
       if (!anChat.aberto) anChat.toggle();
     }, 10000);
   }
