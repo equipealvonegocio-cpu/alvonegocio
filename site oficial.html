@@ -58,7 +58,7 @@ body {
 .hero {
   min-height: auto;
   padding: 0px 24px 16px;
-  margin-top: -460px;
+  margin-top: -660px;
   position: relative;
   overflow: hidden;
   background: var(--preto);
@@ -1325,29 +1325,41 @@ footer {
 <!-- HERO -->
 <section class="hero">
   <div class="hero-glow"></div>
-  <h1 class="hero-titulo">
-    Produtos de <span class="verde">Beleza e Saúde</span><br>que Transformam Vidas
-  </h1>
-  <p class="hero-sub">
-    Seja consumidor, revendedor ou parceiro de negócio.
-    Conectamos você aos melhores produtos da Jan Rosê com suporte completo e lucro real.
-  </p>
-  <div class="hero-btns">
-    <a href="#captura" class="btn-primary">Quero ser parceiro</a>
-    <a href="#oportunidade" class="btn-ghost">Ver oportunidade</a>
-  </div>
 
-  <div class="hero-convite">
-    <div class="hero-convite-avatares">
-      <img src="https://randomuser.me/api/portraits/women/62.jpg" alt="Parceira">
-      <img src="https://randomuser.me/api/portraits/men/43.jpg" alt="Parceiro">
-      <img src="https://randomuser.me/api/portraits/women/83.jpg" alt="Parceira">
-      <img src="https://randomuser.me/api/portraits/men/51.jpg" alt="Parceiro">
-      <img src="https://randomuser.me/api/portraits/women/92.jpg" alt="Parceira">
+  <div style="display:flex; align-items:center; justify-content:center; gap:40px; flex-wrap:wrap; z-index:2; position:relative; width:100%; max-width:960px;">
+
+    <!-- TEXTO -->
+    <div style="flex:1; min-width:280px; text-align:center;">
+      <h1 class="hero-titulo">
+        Produtos de <span class="verde">Beleza e Saúde</span><br>que Transformam Vidas
+      </h1>
+      <p class="hero-sub">
+        Seja consumidor, revendedor ou parceiro de negócio.
+        Conectamos você aos melhores produtos da Jan Rosê com suporte completo e lucro real.
+      </p>
+      <div class="hero-btns">
+        <a href="#captura" class="btn-primary">Quero ser parceiro</a>
+        <a href="#oportunidade" class="btn-ghost">Ver oportunidade</a>
+      </div>
+      <div class="hero-convite" style="justify-content:center;">
+        <div class="hero-convite-avatares">
+          <img src="https://randomuser.me/api/portraits/women/62.jpg" alt="Parceira">
+          <img src="https://randomuser.me/api/portraits/men/43.jpg" alt="Parceiro">
+          <img src="https://randomuser.me/api/portraits/women/83.jpg" alt="Parceira">
+          <img src="https://randomuser.me/api/portraits/men/51.jpg" alt="Parceiro">
+          <img src="https://randomuser.me/api/portraits/women/92.jpg" alt="Parceira">
+        </div>
+        <div class="hero-convite-txt">
+          <strong>+847 parceiros ativos</strong> já estão ganhando.<br>Você é o próximo?
+        </div>
+      </div>
     </div>
-    <div class="hero-convite-txt">
-      <strong>+847 parceiros ativos</strong> já estão ganhando.<br>Você é o próximo?
+
+    <!-- FOTO DA MOÇA -->
+    <div style="flex-shrink:0;">
+      <img src="1234.png" alt="Junte-se a nós" style="width:320px; height:auto; display:block; filter:drop-shadow(0 8px 32px rgba(0,0,0,0.6));">
     </div>
+
   </div>
 
 </section>
