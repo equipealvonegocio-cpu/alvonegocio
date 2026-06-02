@@ -683,13 +683,34 @@
         `${linkParaMembro}`
       );
 
+      // ── MENSAGEM PARA O NOVO DISTRIBUIDOR ──
+      // Abre o WhatsApp DELE com o link de cadastro (mensagem para si mesmo)
+      const msgDistribuidor = encodeURIComponent(
+        `🌟 *Olá, ${nome}! Bem-vindo(a) à Equipe Alvo Negócio!* 💜\n\n` +
+        `Aqui estão seus próximos passos:\n\n` +
+        `*1️⃣ Acesse seu link de cadastro:*\n` +
+        `👉 ${membro.link}\n\n` +
+        `*2️⃣ Após o cadastro, acesse:*\n` +
+        `👉 https://janrose.digital\n\n` +
+        `*3️⃣ No Escritório Virtual, escolha seu plano:*\n` +
+        `💼 R$ 197 — Kit inicial\n` +
+        `💎 R$ 297 — Kit completo\n\n` +
+        `Seu responsável é *${membro.nome}* — ele(a) vai entrar em contato para te ajudar 💜\n\n` +
+        `Seja bem-vindo(a) à família! 🚀`
+      );
+
       // Avança a fila automaticamente
       avancarFila();
 
-      // Abre WhatsApp DA LIA para ela receber a notificação
+      // 1º - Abre WhatsApp DO DISTRIBUIDOR com o link de cadastro dele
+      setTimeout(() => {
+        window.open(`https://wa.me/55${whats.replace(/\D/g,'')}?text=${msgDistribuidor}`, '_blank');
+      }, 1000);
+
+      // 2º - Abre WhatsApp DA LIA com a notificação + link para notificar o membro
       setTimeout(() => {
         window.open(`https://wa.me/${CONFIG.whatsapp}?text=${msgLia}`, '_blank');
-      }, 1500);
+      }, 3000);
     }
   };
 
