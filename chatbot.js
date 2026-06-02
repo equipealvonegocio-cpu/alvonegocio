@@ -16,6 +16,25 @@
   };
 
   /* ════════════════════════════════════════
+     FILA ROTATIVA DE DISTRIBUIDORES
+     Substitua os dados fictícios pelos reais
+  ════════════════════════════════════════ */
+  const FILA = [
+    { nome: 'Ismael Moraes', whats: '5511988189638', link: 'https://janrose.digital/consultor/ismaelmoraes' },
+  ];
+
+  function getFilaPos() {
+    return parseInt(localStorage.getItem('an_fila_pos') || '0');
+  }
+  function getMembroAtual() {
+    return FILA[getFilaPos() % FILA.length];
+  }
+  function avancarFila() {
+    const pos = getFilaPos();
+    localStorage.setItem('an_fila_pos', (pos + 1) % FILA.length);
+  }
+
+  /* ════════════════════════════════════════
      FLUXO DE CONVERSA — Lia
   ════════════════════════════════════════ */
   const FLUXO = {
@@ -262,7 +281,7 @@
     },
 
     finalizar: {
-      mensagem: `Fico muito feliz, *{nome}*! 💜\n\nVou te conectar agora com nossa equipe pelo WhatsApp.\n\nChega lá com calma, sem pressa.\nEles vão te receber bem 😊\n\nFoi um prazer conversar com você. Até lá! 🌟`,
+      mensagem: `Fico muito feliz, *{nome}*! 💜\n\nVocê foi direcionado(a) para *{membro_nome}*, que será o seu ponto de apoio nessa jornada 🌟\n\nAgora siga os passos:\n\n*1️⃣ Acesse seu link de cadastro:*\n{membro_link}\n\n*2️⃣ Após o cadastro, acesse:*\nhttps://janrose.digital\n\n*3️⃣ No Escritório Virtual, escolha seu plano:*\n💼 R$ 197 — Kit inicial\n💎 R$ 297 — Kit completo\n\nFoi um prazer conversar com você! Até lá 😊`,
       acao: 'abrir_whatsapp'
     },
 
@@ -547,9 +566,14 @@
       this.mostrarDigitando(() => {
         // Substituir variáveis {nome}, {whats}, etc.
         let msg = no.mensagem || '';
+        // Injeta dados do usuário
         Object.keys(this.dados).forEach(k => {
           msg = msg.replace(new RegExp(`\\{${k}\\}`, 'g'), this.dados[k]);
         });
+        // Injeta dados do membro da fila
+        const _membro = getMembroAtual();
+        msg = msg.replace(/\{membro_nome\}/g, _membro.nome);
+        msg = msg.replace(/\{membro_link\}/g, _membro.link);
 
         this.addMensagem(msg, 'bot');
 
@@ -628,12 +652,32 @@
     },
 
     abrirWhatsApp() {
-      const nome = this.dados.nome || 'Visitante';
-      const msg  = encodeURIComponent(
-        `Olá! Me chamo *${nome}* e entrei em contato pelo site da Alvo Negócio.\n` +
-        `Conversei com a Lia e quero saber mais sobre a oportunidade 💜`
+      const membro = getMembroAtual();
+      const nome   = this.dados.nome  || 'Visitante';
+      const whats  = this.dados.whats || '';
+
+      // ── MENSAGEM DE PARABÉNS para o MEMBRO DA EQUIPE ──
+      // Essa mensagem é enviada do CELULAR do novo distribuidor para o membro
+      const msgMembro = encodeURIComponent(
+        `🎉 *PARABÉNS, ${membro.nome}!*\n\n` +
+        `Você acaba de receber mais um novo distribuidor na sua equipe! 🚀\n\n` +
+        `━━━━━━━━━━━━━━━━━━━\n` +
+        `👤 *Nome:* ${nome}\n` +
+        `📱 *WhatsApp:* ${whats}\n` +
+        `━━━━━━━━━━━━━━━━━━━\n\n` +
+        `Esta pessoa foi direcionada para você pela Lia — assistente da Equipe Alvo Negócio 💜\n\n` +
+        `Entre em contato, dê as boas-vindas e envie seu link de cadastro:\n` +
+        `👉 ${membro.link}\n\n` +
+        `Continue crescendo! Sua equipe agradece 🌟`
       );
-      window.open(`https://wa.me/${CONFIG.whatsapp}?text=${msg}`, '_blank');
+
+      // Avança a fila automaticamente
+      avancarFila();
+
+      // Abre WhatsApp do membro para enviar os parabéns
+      setTimeout(() => {
+        window.open(`https://wa.me/${membro.whats}?text=${msgMembro}`, '_blank');
+      }, 1500);
     }
   };
 
