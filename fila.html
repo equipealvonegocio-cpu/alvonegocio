@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fila de Distribuição — Alvo Negócio</title>
+<title>Fila Alvo Negócio — Lia</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
@@ -12,253 +12,226 @@ body {
   color: #F0F0F0;
   min-height: 100vh;
   padding: 20px;
-  max-width: 600px;
+  max-width: 560px;
   margin: 0 auto;
 }
-.topo { text-align: center; padding: 20px 0 28px; }
-.topo img { height: 48px; margin-bottom: 12px; display: block; margin: 0 auto 10px; }
-h1 { font-size: 20px; font-weight: 900; color: #00D84A; }
-.sub { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 4px; }
+.topo { text-align: center; padding: 16px 0 24px; }
+.topo img { height: 44px; display: block; margin: 0 auto 10px; }
+h1 { font-size: 18px; font-weight: 900; color: #00D84A; }
+.sub { font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 4px; }
 
-/* CARD PRÓXIMO */
-.card-vez {
-  background: linear-gradient(135deg, #0f1a0f, #0a150a);
-  border: 2px solid #00D84A;
-  border-radius: 18px;
-  padding: 24px;
-  margin-bottom: 16px;
-  box-shadow: 0 0 40px rgba(0,216,74,0.12);
-  text-align: center;
+.card {
+  background: #111;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 14px;
 }
-.vez-label { font-size: 10px; color: #00D84A; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
-.vez-emoji { font-size: 36px; margin-bottom: 8px; }
-.vez-nome { font-size: 22px; font-weight: 900; margin-bottom: 4px; }
-.vez-pos { font-size: 12px; color: rgba(255,255,255,0.35); margin-bottom: 16px; }
-.vez-link {
+.card.destaque {
+  border-color: #00D84A;
+  box-shadow: 0 0 32px rgba(0,216,74,0.1);
+  background: linear-gradient(135deg, #0f1a0f, #0a120a);
+}
+.label { font-size: 10px; font-weight: 700; color: #00D84A; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+.nome-grande { font-size: 20px; font-weight: 900; margin-bottom: 4px; }
+.info-pequena { font-size: 12px; color: rgba(255,255,255,0.35); margin-bottom: 12px; }
+.link-box {
   background: #0a0a0a;
   border: 1px solid rgba(0,216,74,0.2);
-  border-radius: 10px;
-  padding: 10px 14px;
+  border-radius: 8px;
+  padding: 10px 12px;
   font-size: 12px;
   color: #00D84A;
   word-break: break-all;
-  margin-bottom: 16px;
-  text-align: left;
+  margin-bottom: 14px;
 }
 
-/* CONTADORES */
-.contadores {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-bottom: 16px;
+/* INPUTS novo distribuidor */
+.grupo { margin-bottom: 12px; }
+.grupo label { display: block; font-size: 11px; color: rgba(255,255,255,0.4); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.grupo input {
+  width: 100%;
+  background: #1a1a1a;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 11px 14px;
+  font-size: 14px;
+  color: #fff;
+  font-family: inherit;
+  outline: none;
 }
-.cnt {
-  background: #111;
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 12px;
-  padding: 14px 10px;
-  text-align: center;
-}
-.cnt-val { font-size: 24px; font-weight: 900; color: #00D84A; }
-.cnt-lab { font-size: 10px; color: rgba(255,255,255,0.35); margin-top: 2px; }
+.grupo input:focus { border-color: #00D84A; }
 
 /* BOTÕES */
 .btn {
-  display: block;
-  width: 100%;
-  padding: 14px;
-  border-radius: 12px;
-  font-size: 15px;
-  font-weight: 700;
-  cursor: pointer;
-  border: none;
-  font-family: inherit;
-  transition: all 0.2s;
-  margin-bottom: 10px;
-  text-align: center;
+  display: block; width: 100%;
+  padding: 14px; border-radius: 12px;
+  font-size: 14px; font-weight: 700;
+  cursor: pointer; border: none;
+  font-family: inherit; transition: all 0.2s;
+  margin-bottom: 10px; text-align: center;
+  text-decoration: none;
 }
-.btn-copiar { background: #1a1a1a; color: #fff; border: 1px solid rgba(255,255,255,0.1); }
-.btn-copiar:hover { background: #222; }
-.btn-avancar { background: linear-gradient(135deg, #00D84A, #00BCD4); color: #000; font-size: 16px; }
-.btn-avancar:hover { opacity: 0.9; transform: translateY(-1px); }
-.copiado { text-align: center; color: #00D84A; font-size: 13px; font-weight: 600; margin-bottom: 8px; display: none; }
+.btn-whats {
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: #fff; font-size: 15px;
+}
+.btn-whats:hover { opacity: 0.9; transform: translateY(-1px); }
+.btn-avancar {
+  background: linear-gradient(135deg, #00D84A, #00BCD4);
+  color: #000;
+}
+.btn-avancar:hover { opacity: 0.9; }
+.btn-sec {
+  background: #1a1a1a; color: #fff;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.btn-reset {
+  background: transparent; color: rgba(255,255,255,0.25);
+  border: 1px solid rgba(255,255,255,0.08);
+  font-size: 12px; padding: 10px;
+  margin-top: 4px;
+}
+
+/* CONTADORES */
+.cnts { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 14px; }
+.cnt { background: #111; border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 14px 10px; text-align: center; }
+.cnt-v { font-size: 22px; font-weight: 900; color: #00D84A; }
+.cnt-l { font-size: 10px; color: rgba(255,255,255,0.3); margin-top: 2px; }
 
 /* FILA */
-.card-fila {
-  background: #111;
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 16px;
-  padding: 20px;
-  margin-bottom: 16px;
-}
-.card-fila h3 { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 14px; }
-.membro {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-}
+.membro { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
 .membro:last-child { border-bottom: none; }
-.m-num {
-  width: 26px; height: 26px; border-radius: 50%;
-  background: #1a1a1a;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.3);
-  flex-shrink: 0;
-}
-.m-num.ativo { background: #00D84A; color: #000; }
-.m-nome { font-size: 13px; font-weight: 600; flex: 1; }
-.m-badge {
-  font-size: 9px; font-weight: 700;
-  background: rgba(0,216,74,0.15);
-  color: #00D84A;
-  border: 1px solid rgba(0,216,74,0.3);
-  padding: 3px 8px; border-radius: 20px;
-}
+.m-n { width: 26px; height: 26px; border-radius: 50%; background: #1a1a1a; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.3); flex-shrink: 0; }
+.m-n.ativo { background: #00D84A; color: #000; }
+.m-info { flex: 1; }
+.m-nome { font-size: 13px; font-weight: 600; }
+.m-fone { font-size: 11px; color: rgba(255,255,255,0.25); }
+.badge { font-size: 9px; font-weight: 700; background: rgba(0,216,74,0.15); color: #00D84A; border: 1px solid rgba(0,216,74,0.3); padding: 3px 8px; border-radius: 20px; }
 
-/* RESET */
-.btn-reset {
-  display: block; width: 100%;
-  padding: 10px; border-radius: 10px;
-  font-size: 12px; font-weight: 600;
-  cursor: pointer; border: 1px solid rgba(255,255,255,0.08);
-  background: transparent; color: rgba(255,255,255,0.3);
-  font-family: inherit; transition: all 0.2s;
-}
-.btn-reset:hover { color: #fff; border-color: rgba(255,255,255,0.2); }
-
-/* MENSAGEM */
-.card-msg {
-  background: #111;
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 16px;
-  padding: 20px;
-  margin-bottom: 16px;
-}
-.card-msg h3 { font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
-.msg-preview {
-  background: #0a0a0a;
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 10px;
-  padding: 14px;
-  font-size: 12px;
-  line-height: 1.8;
-  color: #ccc;
-  white-space: pre-wrap;
-  max-height: 220px;
-  overflow-y: auto;
-}
+.aviso { text-align: center; font-size: 12px; color: #00D84A; font-weight: 600; margin-bottom: 8px; display: none; }
+.divisor { height: 1px; background: rgba(255,255,255,0.06); margin: 16px 0; }
 </style>
 </head>
 <body>
 
 <div class="topo">
   <img src="Logo%20Alvo%20negocio.png" alt="Alvo Negócio">
-  <h1>🔄 Fila de Distribuição</h1>
-  <p class="sub">Sistema automático — Equipe Alvo Negócio</p>
+  <h1>🤖 Fila da Lia</h1>
+  <p class="sub">Abra no celular da Lia para enviar as notificações</p>
 </div>
 
-<div class="contadores">
-  <div class="cnt">
-    <div class="cnt-val" id="cnt-total">0</div>
-    <div class="cnt-lab">Total enviados</div>
+<!-- CONTADORES -->
+<div class="cnts">
+  <div class="cnt"><div class="cnt-v" id="cnt-total">0</div><div class="cnt-l">Total enviados</div></div>
+  <div class="cnt"><div class="cnt-v" id="cnt-pos">1</div><div class="cnt-l">Vez na fila</div></div>
+  <div class="cnt"><div class="cnt-v" id="cnt-membros">9</div><div class="cnt-l">Na equipe</div></div>
+</div>
+
+<!-- PRÓXIMO DA FILA -->
+<div class="card destaque">
+  <div class="label">⭐ Próximo a receber cadastro</div>
+  <div class="nome-grande" id="vez-nome">—</div>
+  <div class="info-pequena" id="vez-pos">—</div>
+  <div class="link-box" id="vez-link">—</div>
+</div>
+
+<!-- DADOS DO NOVO DISTRIBUIDOR -->
+<div class="card">
+  <div class="label">👤 Dados do novo distribuidor</div>
+  <div class="grupo">
+    <label>Nome completo</label>
+    <input type="text" id="nd-nome" placeholder="Ex: Maria da Silva">
   </div>
-  <div class="cnt">
-    <div class="cnt-val" id="cnt-pos">1</div>
-    <div class="cnt-lab">Vez na fila</div>
-  </div>
-  <div class="cnt">
-    <div class="cnt-val">9</div>
-    <div class="cnt-lab">Na equipe</div>
+  <div class="grupo">
+    <label>WhatsApp com DDD</label>
+    <input type="tel" id="nd-fone" placeholder="Ex: 11999887766">
   </div>
 </div>
 
-<div class="card-vez">
-  <div class="vez-label">⭐ Próximo a receber</div>
-  <div class="vez-emoji">👤</div>
-  <div class="vez-nome" id="vez-nome">—</div>
-  <div class="vez-pos" id="vez-pos">—</div>
-  <div class="vez-link" id="vez-link">—</div>
+<!-- AÇÕES -->
+<div class="aviso" id="aviso">✅ Notificação enviada!</div>
+
+<button class="btn btn-whats" onclick="notificarWhatsApp()">
+  📲 Notificar membro pelo WhatsApp da Lia
+</button>
+
+<button class="btn btn-avancar" onclick="avancar()">
+  ✅ Avançar fila → próxima pessoa
+</button>
+
+<button class="btn btn-sec" onclick="copiarMsg()">
+  📋 Só copiar a mensagem
+</button>
+
+<!-- FILA COMPLETA -->
+<div class="card">
+  <div class="label">👥 Ordem da fila</div>
+  <div id="lista-fila"></div>
+  <div class="divisor"></div>
+  <button class="btn btn-reset" onclick="resetar()">🔄 Reiniciar fila do zero</button>
 </div>
-
-<div class="copiado" id="copiado">✅ Mensagem copiada!</div>
-<button class="btn btn-copiar" onclick="copiar()">📋 Copiar mensagem de parabéns</button>
-<button class="btn btn-avancar" onclick="avancar()">✅ Enviado — Avançar para o próximo →</button>
-
-<div class="card-msg">
-  <h3>📩 Mensagem que será enviada ao membro</h3>
-  <div class="msg-preview" id="msg-preview">—</div>
-</div>
-
-<div class="card-fila">
-  <h3>👥 Ordem da fila</h3>
-  <div id="lista"></div>
-</div>
-
-<button class="btn-reset" onclick="resetar()">🔄 Reiniciar fila do zero</button>
 
 <script>
+/* ══════════════════════════════════════
+   LISTA DA EQUIPE
+   Substitua pelos dados reais quando tiver
+══════════════════════════════════════ */
 const FILA = [
-  { nome: 'Viviane dos Santos Souza',    whats: '5511911110001', link: 'https://janrose.digital/viviane' },
-  { nome: 'Laura Lima Souza',            whats: '5511911110002', link: 'https://janrose.digital/laura' },
-  { nome: 'Regiane Soares de Freitas',   whats: '5511911110003', link: 'https://janrose.digital/regiane' },
-  { nome: 'Munike',                      whats: '5511911110004', link: 'https://janrose.digital/munike' },
-  { nome: 'Jonathan Araújo Oliveira',    whats: '5511911110005', link: 'https://janrose.digital/jonathan' },
-  { nome: 'Valéria Emina',               whats: '5511911110006', link: 'https://janrose.digital/valeria' },
-  { nome: 'José Marcos dos Santos Jr',   whats: '5511911110007', link: 'https://janrose.digital/josemarcos' },
-  { nome: 'Douglas Leandro de Oliveira', whats: '5511911110008', link: 'https://janrose.digital/douglas' },
-  { nome: 'Marília de Assis Debs',       whats: '5511911110009', link: 'https://janrose.digital/marilia' },
+  { nome: 'Ismael Moraes', whats: '5511988189638', link: 'https://janrose.digital/consultor/ismaelmoraes' },
 ];
+/* ══════════════════════════════════════ */
 
-function pos() { return parseInt(localStorage.getItem('an_fila_pos') || '0'); }
-function total() { return parseInt(localStorage.getItem('an_fila_total') || '0'); }
-function membro() { return FILA[pos() % FILA.length]; }
+function getPosicao() { return parseInt(localStorage.getItem('an_fila_pos') || '0'); }
+function getTotal()   { return parseInt(localStorage.getItem('an_fila_total') || '0'); }
+function getMembro()  { return FILA[getPosicao() % FILA.length]; }
 
-function getMensagem(m) {
-  return `🎉 PARABÉNS, ${m.nome}!\n\nVocê acaba de receber mais um novo distribuidor na sua equipe! 🚀\n\n━━━━━━━━━━━━━━━━━━━\n👤 Nome: [será preenchido automaticamente]\n📱 WhatsApp: [será preenchido automaticamente]\n━━━━━━━━━━━━━━━━━━━\n\nEsta pessoa foi direcionada para você pela Lia 💜\n\nEntre em contato e envie seu link de cadastro:\n👉 ${m.link}\n\nContinue crescendo! Sua equipe agradece 🌟`;
+function getMensagem(membro, ndNome, ndFone) {
+  return `🤖 *Mensagem da Lia — Alvo Negócio*\n\n` +
+    `Olá, *${membro.nome}*! 🎉\n\n` +
+    `A Lia acabou de indicar o seu link de cadastro para um novo distribuidor!\n\n` +
+    `━━━━━━━━━━━━━━━━━\n` +
+    `👤 *Nome:* ${ndNome || 'Novo distribuidor'}\n` +
+    `📱 *WhatsApp:* ${ndFone || 'Não informado'}\n` +
+    `━━━━━━━━━━━━━━━━━\n\n` +
+    `Entre em contato com essa pessoa e envie seu link de cadastro:\n` +
+    `👉 ${membro.link}\n\n` +
+    `Oriente ela a:\n` +
+    `1️⃣ Acessar o link acima e fazer o cadastro\n` +
+    `2️⃣ Entrar em *janrose.digital*\n` +
+    `3️⃣ Escolher o plano: R$197 ou R$297\n\n` +
+    `*Parabéns por mais um cadastro na sua equipe!* 🚀💜`;
 }
 
-function atualizar() {
-  const m = membro();
-  const p = pos();
-  const t = total();
-  document.getElementById('vez-nome').textContent = m.nome;
-  document.getElementById('vez-pos').textContent = `Posição ${p + 1} de ${FILA.length} na fila`;
-  document.getElementById('vez-link').textContent = m.link;
-  document.getElementById('msg-preview').textContent = getMensagem(m);
-  document.getElementById('cnt-total').textContent = t;
-  document.getElementById('cnt-pos').textContent = p + 1;
-
-  const lista = document.getElementById('lista');
-  lista.innerHTML = '';
-  FILA.forEach((mb, i) => {
-    const div = document.createElement('div');
-    div.className = 'membro';
-    div.innerHTML = `
-      <div class="m-num ${i === p ? 'ativo' : ''}">${i + 1}</div>
-      <div class="m-nome">${mb.nome}</div>
-      ${i === p ? '<span class="m-badge">VEZ AGORA</span>' : ''}
-    `;
-    lista.appendChild(div);
-  });
+function notificarWhatsApp() {
+  const membro = getMembro();
+  const ndNome = document.getElementById('nd-nome').value.trim();
+  const ndFone = document.getElementById('nd-fone').value.trim();
+  const msg = encodeURIComponent(getMensagem(membro, ndNome, ndFone));
+  window.open(`https://wa.me/${membro.whats}?text=${msg}`, '_blank');
+  mostrarAviso();
 }
 
-function copiar() {
-  const m = membro();
-  navigator.clipboard.writeText(getMensagem(m)).then(() => {
-    const el = document.getElementById('copiado');
-    el.style.display = 'block';
-    setTimeout(() => el.style.display = 'none', 2500);
-  });
+function copiarMsg() {
+  const membro = getMembro();
+  const ndNome = document.getElementById('nd-nome').value.trim();
+  const ndFone = document.getElementById('nd-fone').value.trim();
+  navigator.clipboard.writeText(getMensagem(membro, ndNome, ndFone)).then(mostrarAviso);
+}
+
+function mostrarAviso() {
+  const el = document.getElementById('aviso');
+  el.style.display = 'block';
+  setTimeout(() => el.style.display = 'none', 2500);
 }
 
 function avancar() {
-  const p = pos();
-  const t = total();
-  localStorage.setItem('an_fila_pos', (p + 1) % FILA.length);
-  localStorage.setItem('an_fila_total', t + 1);
+  const pos = getPosicao();
+  const total = getTotal();
+  localStorage.setItem('an_fila_pos', (pos + 1) % FILA.length);
+  localStorage.setItem('an_fila_total', total + 1);
+  document.getElementById('nd-nome').value = '';
+  document.getElementById('nd-fone').value = '';
   atualizar();
 }
 
@@ -268,6 +241,35 @@ function resetar() {
     localStorage.setItem('an_fila_total', '0');
     atualizar();
   }
+}
+
+function atualizar() {
+  const m = getMembro();
+  const p = getPosicao();
+  const t = getTotal();
+
+  document.getElementById('vez-nome').textContent = m.nome;
+  document.getElementById('vez-pos').textContent = `Posição ${p + 1} de ${FILA.length} na fila`;
+  document.getElementById('vez-link').textContent = m.link;
+  document.getElementById('cnt-total').textContent = t;
+  document.getElementById('cnt-pos').textContent = p + 1;
+  document.getElementById('cnt-membros').textContent = FILA.length;
+
+  const lista = document.getElementById('lista-fila');
+  lista.innerHTML = '';
+  FILA.forEach((mb, i) => {
+    const div = document.createElement('div');
+    div.className = 'membro';
+    div.innerHTML = `
+      <div class="m-n ${i === p ? 'ativo' : ''}">${i + 1}</div>
+      <div class="m-info">
+        <div class="m-nome">${mb.nome}</div>
+        <div class="m-fone">${mb.whats}</div>
+      </div>
+      ${i === p ? '<span class="badge">VEZ AGORA</span>' : ''}
+    `;
+    lista.appendChild(div);
+  });
 }
 
 atualizar();
