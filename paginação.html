@@ -13,21 +13,27 @@
 html { scroll-behavior:smooth; }
 body {
   font-family: 'Inter', 'Segoe UI', sans-serif;
-  background: #050505;
-  color: #fff;
+  background: #FFFFFF;
+  color: #111827;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
 :root {
-  --verde: #00FF38;
-  --verde2: #00cc2e;
-  --s1: #0D0D0D;
-  --s2: #141414;
-  --border: rgba(255,255,255,0.07);
-  --border2: rgba(0,255,56,0.2);
-  --txt2: rgba(255,255,255,0.55);
-  --txt3: rgba(255,255,255,0.3);
+  --verde:        #16A34A;
+  --verde2:       #15803D;
+  --verde-light:  #F0FDF4;
+  --verde-mid:    #DCFCE7;
+  --bg:           #FFFFFF;
+  --bg2:          #F9FAFB;
+  --bg3:          #F3F4F6;
+  --txt1:         #111827;
+  --txt2:         #6B7280;
+  --txt3:         #9CA3AF;
+  --border:       #E5E7EB;
+  --border2:      rgba(22,163,74,0.25);
+  --sombra:       0 4px 24px rgba(0,0,0,0.08);
+  --sombra-v:     0 4px 20px rgba(22,163,74,0.15);
 }
 
 /* ─── HEADER ─── */
@@ -39,9 +45,9 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(5,5,5,0.92);
+  background: rgba(255,255,255,0.96);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid #E5E7EB;
 }
 .h-logo {
   display: flex;
@@ -57,7 +63,7 @@ header {
   display: flex; align-items: center; justify-content: center;
   font-size: 13px; font-weight: 900; color: #000;
 }
-.h-logo-nome { font-size: 14px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+.h-logo-nome { font-size: 14px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #111827; }
 .h-badge {
   font-size: 11px;
   font-weight: 600;
@@ -78,7 +84,7 @@ header {
   padding: 120px 24px 80px;
   position: relative;
   overflow: hidden;
-  background: #050505;
+  background: #F9FAFB;
 }
 .hero-glow {
   position: absolute;
@@ -132,7 +138,7 @@ header {
   font-weight: 900;
   line-height: 1.08;
   letter-spacing: -2px;
-  color: #fff;
+  color: #111827;
   margin-bottom: 24px;
 }
 .hero-titulo .verde { color: var(--verde); }
@@ -164,7 +170,7 @@ header {
 
 /* ─── CARD DE CAPTURA ─── */
 .cap-card {
-  background: var(--s1);
+  background: #F9FAFB;
   border: 1px solid var(--border2);
   border-radius: 16px;
   padding: 40px 36px;
@@ -181,7 +187,7 @@ header {
 .cap-titulo {
   font-size: 20px;
   font-weight: 800;
-  color: #fff;
+  color: #111827;
   margin-bottom: 6px;
   letter-spacing: -0.5px;
 }
@@ -203,12 +209,12 @@ header {
   letter-spacing: 0.5px;
 }
 .cap-form input {
-  background: var(--s2);
+  background: #FFFFFF;
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 13px 16px;
   font-size: 15px;
-  color: #fff;
+  color: #111827;
   font-family: inherit;
   outline: none;
   transition: border-color 0.2s;
@@ -217,7 +223,7 @@ header {
 .cap-form input::placeholder { color: var(--txt3); }
 .btn-cap {
   background: var(--verde);
-  color: #000;
+  color: #fff;
   font-size: 15px;
   font-weight: 800;
   padding: 16px;
@@ -231,7 +237,7 @@ header {
   margin-top: 4px;
   width: 100%;
 }
-.btn-cap:hover { background: #00e034; transform: translateY(-2px); }
+.btn-cap:hover { background: var(--verde2); transform: translateY(-2px); }
 .cap-privacidade {
   font-size: 11px;
   color: var(--txt3);
@@ -260,9 +266,9 @@ header {
 
 /* ─── NÚMEROS ─── */
 .numeros {
-  background: var(--s1);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  background: #F9FAFB;
+  border-top: 1px solid #E5E7EB;
+  border-bottom: 1px solid #E5E7EB;
   padding: 40px 24px;
 }
 .numeros-inner {
@@ -296,7 +302,7 @@ header {
 /* ─── COMO FUNCIONA ─── */
 .como {
   padding: 100px 24px;
-  background: #050505;
+  background: #F9FAFB;
 }
 .sec-container {
   max-width: 960px;
@@ -332,7 +338,7 @@ header {
   gap: 24px;
 }
 .passo {
-  background: var(--s1);
+  background: #F9FAFB;
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 32px 28px;
@@ -354,8 +360,8 @@ header {
 /* ─── GANHOS ─── */
 .ganhos {
   padding: 100px 24px;
-  background: var(--s1);
-  border-top: 1px solid var(--border);
+  background: #F9FAFB;
+  border-top: 1px solid #E5E7EB;
 }
 .ganhos-grid {
   display: grid;
@@ -364,7 +370,7 @@ header {
   margin-top: 48px;
 }
 .ganho-card {
-  background: #050505;
+  background: #F9FAFB;
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 28px;
@@ -393,7 +399,7 @@ header {
 /* ─── DEPOIMENTOS ─── */
 .depos {
   padding: 100px 24px;
-  background: #050505;
+  background: #F9FAFB;
 }
 .depos-grid {
   display: grid;
@@ -402,7 +408,7 @@ header {
   margin-top: 48px;
 }
 .depo-card {
-  background: var(--s1);
+  background: #F9FAFB;
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 28px;
@@ -422,7 +428,7 @@ header {
 .depo-avatar {
   width: 40px; height: 40px;
   border-radius: 50%;
-  background: var(--s2);
+  background: #FFFFFF;
   border: 1px solid var(--border2);
   display: flex; align-items: center; justify-content: center;
   font-size: 14px; font-weight: 900; color: var(--verde);
@@ -433,8 +439,8 @@ header {
 /* ─── CTA FINAL ─── */
 .cta-final {
   padding: 100px 24px;
-  background: var(--s1);
-  border-top: 1px solid var(--border);
+  background: #F9FAFB;
+  border-top: 1px solid #E5E7EB;
   text-align: center;
 }
 .cta-final .sec-titulo { margin: 0 auto 16px; }
@@ -442,7 +448,7 @@ header {
 .btn-cta-final {
   display: inline-block;
   background: var(--verde);
-  color: #000;
+  color: #fff;
   font-size: 16px;
   font-weight: 800;
   padding: 18px 48px;
@@ -452,11 +458,11 @@ header {
   letter-spacing: 0.5px;
   transition: background 0.2s, transform 0.15s;
 }
-.btn-cta-final:hover { background: #00e034; transform: translateY(-2px); }
+.btn-cta-final:hover { background: var(--verde2); transform: translateY(-2px); }
 
 /* ─── FOOTER ─── */
 footer {
-  background: #050505;
+  background: #F9FAFB;
   border-top: 1px solid var(--border);
   padding: 32px 40px;
   text-align: center;
@@ -489,6 +495,80 @@ footer a:hover { color: var(--verde); }
 /* ─── LOGO DIVIDER ─── */
 .logo-div { text-align: center; padding: 36px 0; }
 .logo-div img { height: 90px; }
+
+/* ─── CLEAN OVERRIDES ─── */
+.passo {
+  background: #fff !important;
+  border: 1px solid #E5E7EB !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.passo:hover { border-color: var(--verde) !important; box-shadow: 0 4px 20px rgba(22,163,74,0.12) !important; }
+.passo-num { color: var(--verde) !important; }
+
+.ganho-card {
+  background: #fff !important;
+  border: 1px solid #E5E7EB !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.ganho-card:hover { border-color: var(--verde) !important; }
+.ganho-dest { color: var(--verde) !important; }
+
+.depo-card {
+  background: #fff !important;
+  border: 1px solid #E5E7EB !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+}
+.depo-texto { color: #374151 !important; }
+.depo-nome { color: #111827 !important; }
+.depo-cidade { color: #9CA3AF !important; }
+
+.cap-card {
+  background: #fff !important;
+  border: 1px solid #E5E7EB !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1) !important;
+}
+.cap-card::before { background: linear-gradient(90deg, var(--verde), #34D399) !important; }
+.cap-titulo { color: #111827 !important; }
+.cap-sub { color: #6B7280 !important; }
+.cap-form label { color: #374151 !important; }
+.cap-form input { background: #F9FAFB !important; border: 1px solid #E5E7EB !important; color: #111827 !important; }
+.cap-form input:focus { border-color: var(--verde) !important; box-shadow: 0 0 0 3px rgba(22,163,74,0.1) !important; }
+.btn-cap { background: var(--verde) !important; color: #fff !important; }
+.btn-cap:hover { background: var(--verde2) !important; }
+
+.sec-titulo { color: #111827 !important; }
+.sec-sub { color: #6B7280 !important; }
+.sec-label { color: var(--verde) !important; }
+
+.num-val { color: var(--verde) !important; }
+.num-lab { color: #6B7280 !important; }
+.num-item { border-right-color: #E5E7EB !important; }
+
+.btn-cta-final {
+  background: var(--verde) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 20px rgba(22,163,74,0.3) !important;
+}
+.btn-cta-final:hover { background: var(--verde2) !important; }
+
+.cta-final { background: var(--verde-light) !important; border-top: 1px solid #D1FAE5 !important; }
+
+footer { background: #F9FAFB !important; border-top: 1px solid #E5E7EB !important; }
+footer p, footer a { color: #6B7280 !important; }
+
+.logo-div img { filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1)); }
+
+/* Seção identificação e segurança no tema claro */
+[style*="background:var(--s1)"],
+[style*="background: var(--s1)"] {
+  background: #F9FAFB !important;
+  border-top: 1px solid #E5E7EB !important;
+}
+[style*="background:var(--s2)"],
+[style*="background: var(--s2)"] {
+  background: #FFFFFF !important;
+  border: 1px solid #E5E7EB !important;
+}
 
 /* ─── RESPONSIVO ─── */
 @media(max-width: 860px) {
@@ -567,6 +647,11 @@ footer a:hover { color: var(--verde); }
       </div>
     </div>
 
+    <!-- IMAGEM CONVIDANDO -->
+    <div style="display:flex; justify-content:center; margin:20px 0 0;">
+      <img src="1234.png" alt="Junte-se à equipe" style="max-width:240px; width:100%; filter:drop-shadow(0 8px 24px rgba(0,0,0,0.12));">
+    </div>
+
     <!-- CARD CAPTURA -->
     <div class="cap-card">
       <div class="cap-titulo">Quero conhecer melhor 😊</div>
@@ -584,7 +669,7 @@ footer a:hover { color: var(--verde); }
           </label>
           <label>
             Como prefere começar?
-            <select id="interesse" style="background:var(--s2);border:1px solid var(--border);border-radius:8px;padding:13px 16px;font-size:15px;color:#fff;font-family:inherit;outline:none;cursor:pointer;">
+            <select id="interesse" style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:8px;padding:13px 16px;font-size:15px;color:#111827;font-family:inherit;outline:none;cursor:pointer;">
               <option value="revendedor">Quero revender os produtos</option>
               <option value="parceiro">Quero montar minha equipe</option>
               <option value="ambos">Quero os dois</option>
