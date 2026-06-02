@@ -656,27 +656,39 @@
       const nome   = this.dados.nome  || 'Visitante';
       const whats  = this.dados.whats || '';
 
-      // ── MENSAGEM DE PARABÉNS para o MEMBRO DA EQUIPE ──
-      // Essa mensagem é enviada do CELULAR do novo distribuidor para o membro
-      const msgMembro = encodeURIComponent(
+      // ── MENSAGEM DE PARABÉNS para o MEMBRO (para Lia enviar depois) ──
+      const msgParaMembro =
         `🎉 *PARABÉNS, ${membro.nome}!*\n\n` +
         `Você acaba de receber mais um novo distribuidor na sua equipe! 🚀\n\n` +
         `━━━━━━━━━━━━━━━━━━━\n` +
         `👤 *Nome:* ${nome}\n` +
         `📱 *WhatsApp:* ${whats}\n` +
         `━━━━━━━━━━━━━━━━━━━\n\n` +
-        `Esta pessoa foi direcionada para você pela Lia — assistente da Equipe Alvo Negócio 💜\n\n` +
-        `Entre em contato, dê as boas-vindas e envie seu link de cadastro:\n` +
+        `Entre em contato e envie seu link:\n` +
         `👉 ${membro.link}\n\n` +
-        `Continue crescendo! Sua equipe agradece 🌟`
+        `Continue crescendo! 🌟💜`;
+
+      // ── NOTIFICAÇÃO PARA A LIA ──
+      // A Lia recebe no WhatsApp dela com link de 1 toque para notificar o membro
+      const linkParaMembro = `https://wa.me/${membro.whats}?text=${encodeURIComponent(msgParaMembro)}`;
+
+      const msgLia = encodeURIComponent(
+        `🤖 *NOVO CADASTRO — Alvo Negócio*\n\n` +
+        `━━━━━━━━━━━━━━━━━━━\n` +
+        `👤 *Nome:* ${nome}\n` +
+        `📱 *WhatsApp:* ${whats}\n` +
+        `━━━━━━━━━━━━━━━━━━━\n\n` +
+        `Esta pessoa foi direcionada para *${membro.nome}*\n\n` +
+        `👇 *Toque aqui para notificar ${membro.nome} com 1 clique:*\n` +
+        `${linkParaMembro}`
       );
 
       // Avança a fila automaticamente
       avancarFila();
 
-      // Abre WhatsApp do membro para enviar os parabéns
+      // Abre WhatsApp DA LIA para ela receber a notificação
       setTimeout(() => {
-        window.open(`https://wa.me/${membro.whats}?text=${msgMembro}`, '_blank');
+        window.open(`https://wa.me/${CONFIG.whatsapp}?text=${msgLia}`, '_blank');
       }, 1500);
     }
   };
