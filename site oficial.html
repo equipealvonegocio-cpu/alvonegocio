@@ -7,42 +7,37 @@
 <meta name="description" content="Distribuidora oficial Jan Rosê. Produtos de Beleza, Saúde, Perfumaria e Nutracêuticos. Seja parceiro e construa sua renda com suporte completo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
 <style>
 /* ═══════════════════════════════════════════
    VARIÁVEIS & RESET
 ═══════════════════════════════════════════ */
 :root {
-  --verde:       #52B788;
-  --verde2:      #2D9155;
-  --ouro:        #D4A853;
-  --ouro2:       #F0C96A;
-  --terra:       #A0522D;
-  --preto:       #080808;
-  --s1:          #0F0F0F;
-  --s2:          #161616;
-  --s3:          #222222;
-  --border:      rgba(212,168,83,0.15);
-  --border2:     rgba(82,183,136,0.25);
-  --border-ouro: rgba(212,168,83,0.28);
-  --txt1:        #F0F0F0;
-  --txt2:        rgba(240,240,240,0.65);
-  --txt3:        rgba(240,240,240,0.35);
-  --creme:       #F0F0F0;
+  --avon:        #E91E8C;
+  --avon2:       #C2185B;
+  --avon3:       #F06292;
+  --avon-light:  #FCE4EC;
+  --avon-mid:    #F48FB1;
+  --roxo:        #7B1FA2;
+  --roxo-light:  #F3E5F5;
+  --bg:          #FFFFFF;
+  --bg2:         #FAFAFA;
+  --bg3:         #FFF0F5;
+  --txt1:        #212121;
+  --txt2:        #616161;
+  --txt3:        #9E9E9E;
+  --border:      #F5F5F5;
+  --border2:     rgba(233,30,140,0.2);
+  --sombra:      0 4px 20px rgba(233,30,140,0.12);
+  --verde:       #E91E8C;
 }
 
 *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
 html { scroll-behavior:smooth; }
 body {
   font-family: 'Inter', 'Segoe UI', sans-serif;
-  background:
-    radial-gradient(ellipse 80% 40% at 20% 10%,  rgba(82,183,136,0.07) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 35% at 80% 30%,  rgba(155,89,182,0.07) 0%, transparent 55%),
-    radial-gradient(ellipse 70% 40% at 50% 60%,  rgba(212,168,83,0.05)  0%, transparent 60%),
-    radial-gradient(ellipse 50% 30% at 10% 80%,  rgba(0,188,212,0.06)  0%, transparent 50%),
-    radial-gradient(ellipse 60% 35% at 90% 85%,  rgba(82,183,136,0.06) 0%, transparent 55%),
-    #080808;
-  background-attachment: fixed;
+  background: #FFFFFF;
+  
   color: var(--txt1);
   overflow-x: hidden;
   line-height: 1.6;
@@ -61,7 +56,7 @@ body {
   margin-top: -660px;
   position: relative;
   overflow: hidden;
-  background: var(--preto);
+  background: #FFFFFF;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,7 +77,7 @@ body {
 }
 .hero-ppl-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to bottom, rgba(8,8,8,0.3) 0%, rgba(8,8,8,0.5) 50%, rgba(8,8,8,0.95) 100%);
+  background: linear-gradient(to bottom, rgba(45,26,34,0.55) 0%, rgba(45,26,34,0.55) 50%, rgba(45,26,34,0.55) 100%);
   z-index: 1;
 }
 .hero > *:not(.hero-ppl-bg):not(.hero-ppl-overlay) { position: relative; z-index: 2; }
@@ -195,7 +190,7 @@ body {
 .numeros {
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  background: var(--s1);
+  background: #FAFAFA;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
@@ -239,7 +234,7 @@ section { padding: 90px 24px; }
   margin-bottom: 16px;
   display: block;
 }
-.sec-titulo {
+.sec-titulo { font-family: "Playfair Display", serif;.sec-titulo {
   font-size: clamp(26px, 4vw, 42px);
   font-weight: 900;
   color: var(--txt1);
@@ -259,7 +254,7 @@ section { padding: 90px 24px; }
 /* ═══════════════════════════════════════════
    SOBRE
 ═══════════════════════════════════════════ */
-.sobre { background: var(--s1); border-top: 1px solid var(--border); }
+.sobre { background: #FAFAFA; border-top: 1px solid var(--border); }
 .sobre-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -278,7 +273,7 @@ section { padding: 90px 24px; }
   align-items: flex-start;
   gap: 14px;
   padding: 14px 16px;
-  background: var(--s2);
+  background: #FFFFFF;
   border: 1px solid var(--border);
   border-radius: 8px;
   transition: border-color 0.2s;
@@ -295,7 +290,7 @@ section { padding: 90px 24px; }
 .sobre-li strong { display: block; font-size: 14px; font-weight: 700; color: var(--txt1); }
 .sobre-li span { font-size: 13px; color: var(--txt3); }
 .sobre-panel {
-  background: var(--s2);
+  background: #FFFFFF;
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 40px;
@@ -351,7 +346,7 @@ section { padding: 90px 24px; }
 /* ═══════════════════════════════════════════
    PRODUTOS
 ═══════════════════════════════════════════ */
-.produtos { background: var(--preto); border-top: 1px solid var(--border); }
+.produtos { background: #FFFFFF; border-top: 1px solid var(--border); }
 .prod-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -359,7 +354,7 @@ section { padding: 90px 24px; }
   margin-top: 48px;
 }
 .prod-card {
-  background: var(--s1);
+  background: #FAFAFA;
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 28px 24px;
@@ -382,7 +377,7 @@ section { padding: 90px 24px; }
 .prod-linha {
   width: 40px;
   height: 40px;
-  background: var(--s2);
+  background: #FFFFFF;
   border: 1px solid var(--border2);
   border-radius: 8px;
   display: flex;
@@ -411,7 +406,7 @@ section { padding: 90px 24px; }
   margin-top: 48px;
   border: 1px solid var(--border2);
   border-radius: 12px;
-  background: var(--s1);
+  background: #FAFAFA;
   padding: 32px 40px;
 }
 .prod-destaque-inner {
@@ -443,10 +438,10 @@ section { padding: 90px 24px; }
 /* ═══════════════════════════════════════════
    OPORTUNIDADE
 ═══════════════════════════════════════════ */
-.oportunidade { background: var(--s1); border-top: 1px solid var(--border); }
+.oportunidade { background: #FAFAFA; border-top: 1px solid var(--border); }
 .formas-stack { display: flex; flex-direction: column; gap: 16px; margin-top: 48px; }
 .forma-card {
-  background: var(--s2);
+  background: #FFFFFF;
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 28px 32px;
@@ -579,7 +574,7 @@ section { padding: 90px 24px; }
   justify-content: center;
   margin-top: 40px;
   padding: 24px;
-  background: var(--s2);
+  background: #FFFFFF;
   border: 1px solid var(--border);
   border-radius: 10px;
 }
@@ -627,7 +622,7 @@ section { padding: 90px 24px; }
 }
 @media(max-width:520px){ .combos-grid2 { grid-template-columns: 1fr; } }
 .combo-box {
-  background: var(--s2);
+  background: #FFFFFF;
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 28px 24px;
@@ -698,7 +693,7 @@ section { padding: 90px 24px; }
 /* ═══════════════════════════════════════════
    COMO FUNCIONA
 ═══════════════════════════════════════════ */
-.como { background: var(--preto); border-top: 1px solid var(--border); }
+.como { background: #FFFFFF; border-top: 1px solid var(--border); }
 .passos-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -710,12 +705,12 @@ section { padding: 90px 24px; }
   margin-top: 48px;
 }
 .passo-box {
-  background: var(--s1);
+  background: #FAFAFA;
   padding: 32px 24px;
   position: relative;
   transition: background 0.2s;
 }
-.passo-box:hover { background: var(--s2); }
+.passo-box:hover { background: #FFFFFF; }
 .passo-n {
   font-size: 48px;
   font-weight: 900;
@@ -736,7 +731,7 @@ section { padding: 90px 24px; }
 /* ═══════════════════════════════════════════
    DEPOIMENTOS
 ═══════════════════════════════════════════ */
-.depoimentos { background: var(--s1); border-top: 1px solid var(--border); }
+.depoimentos { background: #FAFAFA; border-top: 1px solid var(--border); }
 .dep-grid2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -744,7 +739,7 @@ section { padding: 90px 24px; }
   margin-top: 48px;
 }
 .dep-box {
-  background: var(--s2);
+  background: #FFFFFF;
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 28px;
@@ -780,7 +775,7 @@ section { padding: 90px 24px; }
 /* ═══════════════════════════════════════════
    FORMULÁRIO
 ═══════════════════════════════════════════ */
-.captura { background: var(--preto); border-top: 1px solid var(--border); }
+.captura { background: #FFFFFF; border-top: 1px solid var(--border); }
 .captura .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -814,7 +809,7 @@ section { padding: 90px 24px; }
 .cap-txt strong { display:block; font-size:14px; font-weight:700; color:var(--txt1); }
 .cap-txt span { font-size:13px; color:var(--txt3); }
 .form-box {
-  background: var(--s1);
+  background: #FAFAFA;
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 36px;
@@ -825,7 +820,7 @@ section { padding: 90px 24px; }
 .fgroup label { display:block; font-size:12px; font-weight:600; color:var(--txt2); margin-bottom:6px; text-transform:uppercase; letter-spacing:0.5px; }
 .fgroup input, .fgroup select {
   width: 100%;
-  background: var(--s2);
+  background: #FFFFFF;
   border: 1px solid var(--border);
   border-radius: 6px;
   padding: 12px 14px;
@@ -879,7 +874,7 @@ section { padding: 90px 24px; }
    FOOTER
 ═══════════════════════════════════════════ */
 footer {
-  background: var(--s1);
+  background: #FAFAFA;
   border-top: 1px solid var(--border);
   padding: 56px 24px 32px;
 }
@@ -985,7 +980,7 @@ footer {
   margin-top: 48px;
 }
 .pessoa-card {
-  background: var(--s2);
+  background: #FFFFFF;
   border: 1px solid var(--border-ouro);
   border-radius: 20px;
   overflow: hidden;
@@ -1138,54 +1133,69 @@ section, .numeros, .depoimentos, .sobre, .produtos,
   opacity: 0.3;
 }
 
-/* ═══ PALETA COLORIDA ═══ */
+/* ═══ PALETA FEMININA ═══ */
 :root {
-  --roxo:    #9B59B6;
-  --rosa:    #E91E8C;
-  --laranja: #FF6B35;
-  --ciano:   #00BCD4;
-  --lilas:   #C39BD3;
+  --roxo:    #E91E8C;
+  --rosa:    #F06292;
+  --laranja: #C9A87C;
+  --ciano:   #E91E8C;
+  --lilas:   #E8C5CF;
 }
+
+/* Override geral para tema feminino claro */
+body { color: #212121 !important; }
+.sec-titulo, h1, h2, h3 { color: #212121 !important; }
+.sec-sub, p { color: #616161 !important; }
+nav, header { background: rgba(255,248,251,0.97) !important; border-bottom: 1px solid #F5F5F5 !important; }
+footer { background: #FDF0F4 !important; border-top: 1px solid #F5F5F5 !important; }
+footer p, footer a { color: #9E9E9E !important; }
+.sobre-panel { background: linear-gradient(145deg, #FDF0F4, #F9F1F4) !important; border-color: #F5F5F5 !important; }
+.janrose-cred { background: rgba(233,30,140,0.08) !important; color: var(--rose) !important; border-color: rgba(233,30,140,0.2) !important; }
+.sobre-panel-slogan { color: #E91E8C !important; border-top-color: #F5F5F5 !important; }
+.nav-nome { color: #212121 !important; }
+.nav-sub { color: #9E9E9E !important; }
+.nav-links a { color: #616161 !important; }
+.nav-links a:hover { color: #E91E8C !important; }
+.btn-nav, .btn-nav-mob { background: linear-gradient(135deg, #E91E8C, #F06292) !important; color: #fff !important; }
+.logo-div { background: transparent !important; }
 
 /* Fundo das seções com gradientes coloridos */
 .numeros, .numeros-inner {
-  background: linear-gradient(135deg, #0D0820 0%, #080F18 50%, #070D08 100%) !important;
+  background: linear-gradient(135deg, #FFF0F5 0%, #FAFAFA 50%, #FCE4EC 100%) !important;
   border-color: rgba(155,89,182,0.3) !important;
 }
-.num-val { color: var(--ouro2) !important; }
+.num-val { color: #E91E8C !important; }
 .num-item { border-color: rgba(155,89,182,0.2) !important; }
 
 .sobre, section.sobre {
-  background: linear-gradient(160deg, #080808 0%, #100815 40%, #080808 100%) !important;
+  background: linear-gradient(160deg, #FFFFFF 0%, #FFF0F5 40%, #FFFFFF 100%) !important;
 }
 .depoimentos, section.depoimentos, .depos {
-  background: linear-gradient(160deg, #080F0C 0%, #080808 60%, #0F0808 100%) !important;
+  background: linear-gradient(160deg, #FAFAFA 0%, #FFFFFF 60%, #FFF0F5 100%) !important;
   border-top-color: rgba(82,183,136,0.3) !important;
 }
 .pessoas, .pessoas-cap {
-  background: linear-gradient(135deg, #100815 0%, #080F0C 50%, #0F0C08 100%) !important;
+  background: linear-gradient(135deg, #FFF0F5 0%, #FAFAFA 50%, #FCE4EC 100%) !important;
   border-top-color: rgba(155,89,182,0.3) !important;
 }
 .captura, section.captura {
-  background: linear-gradient(160deg, #080F0C 0%, #080808 100%) !important;
+  background: linear-gradient(160deg, #FAFAFA 0%, #FFFFFF 100%) !important;
 }
 .como, .cta-final {
-  background: linear-gradient(160deg, #080808 0%, #100820 60%, #080808 100%) !important;
+  background: linear-gradient(160deg, #FFFFFF 0%, #FFF0F5 60%, #FFFFFF 100%) !important;
 }
 .oportunidade, .ganhos {
-  background: linear-gradient(160deg, #0F0C08 0%, #080808 50%, #080F0C 100%) !important;
+  background: linear-gradient(160deg, #FFF0F5 0%, #FFFFFF 50%, #FAFAFA 100%) !important;
 }
 footer {
-  background: linear-gradient(180deg, #0E0820 0%, #080808 100%) !important;
+  background: linear-gradient(180deg, #FFF0F5 0%, #FFFFFF 100%) !important;
   border-top: 1px solid rgba(155,89,182,0.3) !important;
 }
 
 /* Sec-label colorida */
 .sec-label {
-  background: linear-gradient(90deg, var(--verde), var(--ciano));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #E91E8C;
+  background: none;
   font-weight: 800 !important;
   letter-spacing: 2px !important;
 }
@@ -1193,23 +1203,21 @@ footer {
 /* Títulos com gradiente */
 .sec-titulo .verde,
 .hero-titulo .verde {
-  background: linear-gradient(90deg, var(--verde), var(--ciano));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #E91E8C;
+  background: none;
 }
 
 /* Depoimentos — cada card cor diferente */
 .dep-box:nth-child(1), .depo-card:nth-child(1) {
-  border-top: 3px solid var(--verde) !important;
+  border-top: 3px solid #E91E8C !important;
   box-shadow: 0 0 20px rgba(82,183,136,0.08);
 }
 .dep-box:nth-child(2), .depo-card:nth-child(2) {
-  border-top: 3px solid var(--ouro) !important;
+  border-top: 3px solid #C9A87C !important;
   box-shadow: 0 0 20px rgba(212,168,83,0.08);
 }
 .dep-box:nth-child(3), .depo-card:nth-child(3) {
-  border-top: 3px solid var(--roxo) !important;
+  border-top: 3px solid #F06292 !important;
   box-shadow: 0 0 20px rgba(155,89,182,0.08);
 }
 .dep-av img, .depo-avatar img {
@@ -1223,18 +1231,18 @@ footer {
 .pessoa-card:nth-child(3) { border-top: 3px solid var(--roxo); }
 .pessoa-card:nth-child(4) { border-top: 3px solid var(--ciano); }
 .pessoa-ganho {
-  background: linear-gradient(90deg, rgba(212,168,83,0.15), rgba(82,183,136,0.1)) !important;
+  background: linear-gradient(90deg, rgba(233,30,140,0.08), rgba(212,168,124,0.08)) !important;
   border-color: rgba(212,168,83,0.4) !important;
 }
 
 /* Botões vibrantes */
 .btn-primary, .btn-cap, .btn-cta-final, .btn-form {
-  background: linear-gradient(135deg, var(--verde2), var(--ciano)) !important;
+  background: linear-gradient(135deg, #E91E8C, #F06292) !important;
   color: #fff !important;
-  box-shadow: 0 4px 20px rgba(0,188,212,0.25) !important;
+  box-shadow: 0 4px 20px rgba(233,30,140,0.25) !important;
 }
 .btn-primary:hover, .btn-cap:hover, .btn-cta-final:hover, .btn-form:hover {
-  background: linear-gradient(135deg, var(--verde), var(--verde2)) !important;
+  background: linear-gradient(135deg, #C2185B, #E91E8C) !important;
   transform: translateY(-2px) !important;
   box-shadow: 0 8px 28px rgba(0,188,212,0.35) !important;
 }
@@ -1318,6 +1326,110 @@ footer {
   text-align: left !important;
 }
 .captura-texto p { text-align: center !important; }
+
+/* ═══ ESTILO AVON ═══ */
+
+/* Fundo body com círculos decorativos estilo Avon */
+body {
+  background: #FFFFFF !important;
+  background-image:
+    radial-gradient(circle 600px at 90% 10%, rgba(233,30,140,0.05), transparent),
+    radial-gradient(circle 400px at 10% 80%, rgba(123,31,162,0.04), transparent) !important;
+}
+
+/* Botões estilo Avon — vibrantes e arredondados */
+.btn-primary, .btn-cap, .btn-cta-final, .btn-form,
+.btn-nav, .btn-nav-mob {
+  background: linear-gradient(135deg, #E91E8C, #C2185B) !important;
+  color: #fff !important;
+  border-radius: 50px !important;
+  font-size: 14px !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 4px 20px rgba(233,30,140,0.3) !important;
+  border: none !important;
+}
+.btn-primary:hover, .btn-cap:hover, .btn-cta-final:hover {
+  background: linear-gradient(135deg, #C2185B, #AD1457) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 28px rgba(233,30,140,0.4) !important;
+}
+.btn-ghost {
+  border: 2px solid #E91E8C !important;
+  color: #E91E8C !important;
+  border-radius: 50px !important;
+  background: transparent !important;
+}
+.btn-ghost:hover { background: #FCE4EC !important; }
+
+/* Sec-label estilo Avon */
+.sec-label {
+  background: #FCE4EC !important;
+  color: #E91E8C !important;
+  padding: 4px 14px !important;
+  border-radius: 50px !important;
+  -webkit-text-fill-color: #E91E8C !important;
+  font-weight: 700 !important;
+}
+
+/* Títulos com destaque pink */
+.sec-titulo .verde, .hero-titulo .verde,
+.verde { color: #E91E8C !important; -webkit-text-fill-color: #E91E8C !important; }
+
+/* Cards estilo Avon — sombra suave, bordas arredondadas */
+.dep-box, .depo-card, .sobre-panel, .prod-card,
+.forma-card, .passo, .pessoa-card {
+  border-radius: 20px !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07) !important;
+  border: 1px solid #F5F5F5 !important;
+  background: #FFFFFF !important;
+}
+
+/* Números coloridos estilo Avon */
+.num-valor, .num-val { color: #E91E8C !important; }
+
+/* Círculo decorativo no hero estilo Avon */
+.hero-glow {
+  background: radial-gradient(circle, rgba(233,30,140,0.08) 0%, transparent 70%) !important;
+  width: 700px !important; height: 700px !important;
+}
+
+/* Nav estilo Avon — branco limpo */
+nav, header {
+  background: #FFFFFF !important;
+  border-bottom: 2px solid #FCE4EC !important;
+  box-shadow: 0 2px 16px rgba(233,30,140,0.08) !important;
+}
+
+/* Pessoas-ganho badge pink */
+.pessoa-ganho {
+  background: #FCE4EC !important;
+  color: #E91E8C !important;
+  border: none !important;
+  border-radius: 50px !important;
+  font-weight: 700 !important;
+}
+
+/* Depoimentos estrelas douradas */
+.dep-stars { color: #FFB300 !important; }
+
+/* Orbes decorativos das seções — tons Avon */
+.sobre::before { background: radial-gradient(circle, rgba(233,30,140,0.06) 0%, transparent 70%) !important; }
+.produtos::before { background: radial-gradient(circle, rgba(123,31,162,0.05) 0%, transparent 70%) !important; }
+.oportunidade::before { background: radial-gradient(circle, rgba(233,30,140,0.05) 0%, transparent 70%) !important; }
+
+/* Footer rose */
+footer { background: #FFF0F5 !important; border-top: 1px solid #FCE4EC !important; }
+footer p, footer a { color: #9E9E9E !important; }
+
+/* CTA final gradiente Avon */
+.captura {
+  background: linear-gradient(135deg, #E91E8C 0%, #C2185B 50%, #7B1FA2 100%) !important;
+}
+
+/* Linha logo-div */
+.logo-div::before {
+  background: linear-gradient(90deg, transparent, #E91E8C, #F06292, #E91E8C, transparent) !important;
+}
 </style>
 </head>
 <body>
@@ -1326,38 +1438,45 @@ footer {
 <section class="hero">
   <div class="hero-glow"></div>
 
-  <div style="display:flex; align-items:center; justify-content:center; gap:40px; flex-wrap:wrap; z-index:2; position:relative; width:100%; max-width:960px;">
+  <div style="z-index:2; position:relative; width:100%; max-width:980px; text-align:center;">
 
-    <!-- TEXTO -->
-    <div style="flex:1; min-width:280px; text-align:center;">
-      <h1 class="hero-titulo">
-        Produtos de <span class="verde">Beleza e Saúde</span><br>que Transformam Vidas
-      </h1>
-      <p class="hero-sub">
-        Seja consumidor, revendedor ou parceiro de negócio.
-        Conectamos você aos melhores produtos da Jan Rosê com suporte completo e lucro real.
-      </p>
-      <div class="hero-btns">
-        <a href="#captura" class="btn-primary">Quero ser parceiro</a>
-        <a href="#oportunidade" class="btn-ghost">Ver oportunidade</a>
-      </div>
-      <div class="hero-convite" style="justify-content:center;">
-        <div class="hero-convite-avatares">
-          <img src="https://randomuser.me/api/portraits/women/62.jpg" alt="Parceira">
-          <img src="https://randomuser.me/api/portraits/men/43.jpg" alt="Parceiro">
-          <img src="https://randomuser.me/api/portraits/women/83.jpg" alt="Parceira">
-          <img src="https://randomuser.me/api/portraits/men/51.jpg" alt="Parceiro">
-          <img src="https://randomuser.me/api/portraits/women/92.jpg" alt="Parceira">
-        </div>
-        <div class="hero-convite-txt">
-          <strong>+847 parceiros ativos</strong> já estão ganhando.<br>Você é o próximo?
-        </div>
-      </div>
+    <!-- TEXTO CENTRAL -->
+    <h1 class="hero-titulo">
+      Produtos de <span class="verde">Beleza e Saúde</span><br>que Transformam Vidas
+    </h1>
+    <p class="hero-sub" style="margin:0 auto 28px;">
+      Conectamos você aos melhores produtos da Jan Rosê com suporte completo e lucro real.
+    </p>
+    <div class="hero-btns" style="justify-content:center; margin-bottom:36px;">
+      <a href="#captura" class="btn-primary">Quero ser parceiro</a>
+      <a href="#oportunidade" class="btn-ghost">Ver oportunidade</a>
     </div>
 
-    <!-- FOTO DA MOÇA -->
-    <div style="flex-shrink:0;">
-      <img src="1234.png" alt="Junte-se a nós" style="width:320px; height:auto; display:block; filter:drop-shadow(0 8px 32px rgba(0,0,0,0.6));">
+    <!-- FOTOS EM FILEIRA -->
+    <div style="display:flex; align-items:flex-end; justify-content:center; gap:16px; flex-wrap:wrap;">
+
+      <!-- Avatares em coluna à esquerda -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+        <img src="https://randomuser.me/api/portraits/women/62.jpg" alt="" style="width:56px; height:56px; border-radius:50%; object-fit:cover; object-position:top; border:3px solid rgba(255,255,255,0.4); box-shadow:0 4px 16px rgba(0,0,0,0.3);">
+        <img src="https://randomuser.me/api/portraits/men/43.jpg"   alt="" style="width:56px; height:56px; border-radius:50%; object-fit:cover; object-position:top; border:3px solid rgba(255,255,255,0.4); box-shadow:0 4px 16px rgba(0,0,0,0.3);">
+        <img src="https://randomuser.me/api/portraits/women/83.jpg" alt="" style="width:56px; height:56px; border-radius:50%; object-fit:cover; object-position:top; border:3px solid rgba(255,255,255,0.4); box-shadow:0 4px 16px rgba(0,0,0,0.3);">
+      </div>
+
+      <!-- Foto principal central -->
+      <img src="1234.png" alt="Consultora" style="height:220px; width:auto; filter:drop-shadow(0 12px 32px rgba(0,0,0,0.5)); flex-shrink:0;">
+
+      <!-- Avatares em coluna à direita -->
+      <div style="display:flex; flex-direction:column; align-items:center; gap:10px;">
+        <img src="https://randomuser.me/api/portraits/men/51.jpg"   alt="" style="width:56px; height:56px; border-radius:50%; object-fit:cover; object-position:top; border:3px solid rgba(255,255,255,0.4); box-shadow:0 4px 16px rgba(0,0,0,0.3);">
+        <img src="https://randomuser.me/api/portraits/women/92.jpg" alt="" style="width:56px; height:56px; border-radius:50%; object-fit:cover; object-position:top; border:3px solid rgba(255,255,255,0.4); box-shadow:0 4px 16px rgba(0,0,0,0.3);">
+        <img src="https://randomuser.me/api/portraits/men/77.jpg"   alt="" style="width:56px; height:56px; border-radius:50%; object-fit:cover; object-position:top; border:3px solid rgba(255,255,255,0.4); box-shadow:0 4px 16px rgba(0,0,0,0.3);">
+      </div>
+
+    </div>
+
+    <!-- Legenda parceiros -->
+    <div style="margin-top:16px; font-size:13px; color:rgba(255,255,255,0.7);">
+      <strong style="color:#fff;">+847 parceiros ativos</strong> já estão ganhando. Você é o próximo?
     </div>
 
   </div>
