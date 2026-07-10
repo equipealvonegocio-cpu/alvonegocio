@@ -8,6 +8,28 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  (function(){
+    /* ── EMAILJS CONFIG ──
+       1. Acesse emailjs.com e crie uma conta grátis
+       2. Em "Email Services" conecte seu Gmail → copie o Service ID
+       3. Em "Email Templates" crie um template → copie o Template ID
+       4. Em "Account" > API Keys → copie a Public Key
+       Substitua os 3 valores abaixo pelos seus: */
+    const EJS_PUBLIC_KEY   = 'q2rRb--686j3CJCXO';
+    const EJS_SERVICE_ID   = 'service_nzwge6z';
+    const EJS_TEMPLATE_ID  = 'template_r7zcqqt';
+
+    /* Link do catálogo — cole aqui o link do Google Drive do seu PDF:
+       Compartilhe o arquivo → "Qualquer pessoa com o link" → copie o link
+       e transforme:  /file/d/XXXX/view  →  /uc?export=download&id=XXXX  */
+    window.EJS_CATALOGO_LINK = 'https://drive.google.com/uc?export=download&id=1mL-NFbD2vhAsir-xIo9FnRsivNDP4PNv';
+
+    window.EJS_CONFIG = { publicKey: EJS_PUBLIC_KEY, serviceId: EJS_SERVICE_ID, templateId: EJS_TEMPLATE_ID };
+    emailjs.init({ publicKey: EJS_PUBLIC_KEY });
+  })();
+</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -2043,6 +2065,7 @@ function tFaq(btn){
 function enviar(){
   const nome=document.getElementById('fn').value.trim()
   const tel=document.getElementById('ft').value.trim()
+  const email=document.getElementById('fe').value.trim()
   const cidade=document.getElementById('fc').value.trim()
   const inter=document.getElementById('fi').value
   if(!nome||!tel){alert('Por favor, preencha nome e WhatsApp 😊');return}
@@ -2051,6 +2074,23 @@ function enviar(){
   if(cidade)txt+=`\n*Cidade:* ${cidade}`
   txt+=`\n*Interesse:* ${m[inter]||inter}`
   window.open(`https://wa.me/5511915033743?text=${encodeURIComponent(txt)}`,'_blank')
+
+  /* ── E-MAIL DE BOAS-VINDAS AUTOMÁTICO ── */
+  if(email && window.EJS_CONFIG && window.EJS_CONFIG.publicKey !== 'SUA_PUBLIC_KEY_AQUI'){
+    emailjs.send(
+      window.EJS_CONFIG.serviceId,
+      window.EJS_CONFIG.templateId,
+      {
+        to_name:    nome,
+        to_email:   email,
+        whatsapp:   tel,
+        cidade:     cidade || 'não informada',
+        interesse:  m[inter]||inter,
+        catalogo:   window.EJS_CATALOGO_LINK,
+      }
+    ).catch(()=>{})
+  }
+
   setTimeout(()=>{
     document.getElementById('mat-modal').classList.add('on')
     document.body.style.overflow='hidden'
