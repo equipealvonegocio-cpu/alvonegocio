@@ -1933,9 +1933,9 @@ footer .fw-copy{font-size:11px;color:rgba(255,255,255,.3)}
       <button class="btn-form" onclick="enviar()">✉️ Quero que a equipe entre em contato</button>
       <div class="form-seg">🔒 Seus dados ficam só com a gente. Nunca compartilhamos.</div>
       <div class="form-div">ou prefere falar agora?</div>
-      <button class="btn-wf" onclick="window.open('https://wa.me/5511915033743?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Alvo%20Neg%C3%B3cio%20e%20quero%20saber%20mais%20sobre%20a%20oportunidade%20Jan%20Ros%C3%AA%20%F0%9F%8C%B8','_blank')">
+      <a class="btn-wf" href="https://wa.me/5511915033743?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Alvo%20Neg%C3%B3cio%20e%20quero%20saber%20mais%20sobre%20a%20oportunidade%20Jan%20Ros%C3%AA%20%F0%9F%8C%B8" target="_blank" rel="noopener" style="display:block;text-align:center;text-decoration:none">
         💬 Falar pelo WhatsApp agora
-      </button>
+      </a>
     </div>
 
   </div>
@@ -2073,7 +2073,8 @@ function enviar(){
   let txt=`Olá! Vim pela página da Jan Rosê 🌸\n\n*Nome:* ${nome}\n*WhatsApp:* ${tel}`
   if(cidade)txt+=`\n*Cidade:* ${cidade}`
   txt+=`\n*Interesse:* ${m[inter]||inter}`
-  window.open(`https://wa.me/5511915033743?text=${encodeURIComponent(txt)}`,'_blank')
+  const _wurl=`https://wa.me/5511915033743?text=${encodeURIComponent(txt)}`
+  const _wa=document.createElement('a');_wa.href=_wurl;_wa.target='_blank';_wa.rel='noopener';document.body.appendChild(_wa);_wa.click();document.body.removeChild(_wa)
 
   /* ── E-MAIL DE BOAS-VINDAS AUTOMÁTICO ── */
   if(email && window.EJS_CONFIG && window.EJS_CONFIG.publicKey !== 'SUA_PUBLIC_KEY_AQUI'){
