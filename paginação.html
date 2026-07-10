@@ -3,955 +3,2131 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alvo Negócio — Seja Parceiro Jan Rosê</title>
-<meta name="description" content="Construa sua renda com os produtos Jan Rosê. Suporte completo, lucro real e liberdade financeira. Cadastre-se agora.">
+<title>Seja distribuidora Jan Rosê</title>
+<meta name="description" content="Trabalhe com produtos premium, ganhe dinheiro de casa e construa sua renda recorrente. Cadastre-se agora.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
-html { scroll-behavior:smooth; }
-body {
-  font-family: 'Inter', 'Segoe UI', sans-serif;
-  background: #FFFFFF;
-  color: #111827;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a1a;overflow-x:hidden;line-height:1.5;font-size:16px}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+
+:root{
+  --v:  #2A0E72;
+  --vm: #7B2CB9;
+  --vl: #C044B8;
+  --d:  #E0289E;
+  --dl: #FFB8E4;
+  --bg: #FDF5FF;
+  --c2: #3D2060;
+  --c3: #8878AA;
+  --bd: #E8C8F8;
 }
 
-:root {
-  --verde:        #16A34A;
-  --verde2:       #15803D;
-  --verde-light:  #F0FDF4;
-  --verde-mid:    #DCFCE7;
-  --bg:           #FFFFFF;
-  --bg2:          #F9FAFB;
-  --bg3:          #F3F4F6;
-  --txt1:         #111827;
-  --txt2:         #6B7280;
-  --txt3:         #9CA3AF;
-  --border:       #E5E7EB;
-  --border2:      rgba(22,163,74,0.25);
-  --sombra:       0 4px 24px rgba(0,0,0,0.08);
-  --sombra-v:     0 4px 20px rgba(22,163,74,0.15);
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:200;
+  background:#fff;border-bottom:1px solid var(--bd);
+}
+.nw{
+  max-width:1200px;margin:0 auto;padding:0 32px;
+  height:64px;display:flex;align-items:center;justify-content:space-between;
+  gap:32px;
+}
+.n-brand{display:flex;align-items:center;gap:10px}
+.n-brand img{height:34px}
+.n-brand-sep{width:1px;height:28px;background:var(--bd)}
+.n-brand-jan img{height:22px;opacity:.75}
+.n-links{display:flex;align-items:center;gap:2px;list-style:none;flex:1;justify-content:center}
+.n-links a{
+  font-size:13px;font-weight:500;color:var(--c2);
+  padding:8px 14px;border-radius:6px;
+  transition:color .2s,background .2s;white-space:nowrap;
+}
+.n-links a:hover{color:var(--vm);background:#F8F0FF}
+.n-links a.ativo{color:var(--vm);font-weight:700;border-bottom:2px solid var(--vm)}
+.n-cta{
+  background:var(--vm);color:#fff;
+  font-size:15px;font-weight:800;
+  padding:13px 30px;border-radius:50px;
+  white-space:nowrap;transition:all .25s;
+  flex-shrink:0;
+}
+.n-cta:hover{background:var(--v);transform:translateY(-1px)}
+.n-cta-login{background:transparent;border:2px solid var(--vm);color:var(--vm)}
+.n-cta-login:hover{background:var(--vm);color:#fff}
+.n-mob{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-shrink:0}
+.n-mob span,.n-mob span::before,.n-mob span::after{display:block;width:22px;height:2px;background:#333;border-radius:2px;transition:.25s}
+.n-mob span{position:relative}
+.n-mob span::before,.n-mob span::after{content:'';position:absolute;left:0}
+.n-mob span::before{top:-7px}
+.n-mob span::after{top:7px}
+.nav-drawer{display:none;position:fixed;top:64px;left:0;right:0;background:#fff;border-bottom:1px solid var(--bd);padding:16px 24px 24px;z-index:199;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.nav-drawer.on{display:block}
+.nav-drawer a{display:block;padding:13px 0;font-size:15px;font-weight:500;border-bottom:1px solid var(--bd)}
+.nav-drawer a:last-child{border-bottom:none}
+.nav-drawer .n-cta{display:flex;justify-content:center;margin-top:16px;padding:14px}
+
+/* ── HERO ── */
+#hero{
+  display:grid;grid-template-columns:1fr 420px;
+  min-height:calc(100vh - 64px);
+}
+.h-foto{
+  position:relative;overflow:hidden;
+}
+.h-foto img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center top;
+  filter:contrast(1.07) saturate(1.12) brightness(1.02);
+}
+.h-painel{
+  background:linear-gradient(to top,#e42e93 0%,#b01e6e 35%,#7a0e4a 70%,#4a0028 100%);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:56px 44px;position:relative;overflow:hidden;
+}
+/* padrão de pontos como Natura */
+.h-painel::after{
+  content:'';position:absolute;bottom:-40px;right:-40px;
+  width:280px;height:280px;
+  background-image:radial-gradient(circle,rgba(123,44,185,.15) 1.5px,transparent 1.5px);
+  background-size:18px 18px;
+  border-radius:50%;
+  pointer-events:none;
+}
+.h-painel::before{
+  content:'';position:absolute;top:-60px;left:-60px;
+  width:220px;height:220px;
+  background-image:radial-gradient(circle,rgba(224,40,158,.12) 1.5px,transparent 1.5px);
+  background-size:16px 16px;
+  border-radius:50%;
+  pointer-events:none;
+}
+.hp-tag{
+  font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;
+  color:rgba(255,255,255,.7);margin-bottom:20px;
+}
+.hp-titulo{
+  font-size:clamp(30px,3.2vw,42px);font-weight:800;
+  color:#fff;line-height:1.15;margin-bottom:20px;
+}
+.hp-titulo strong{color:#ffb8e4}
+.hp-sub{
+  font-size:15px;color:rgba(255,255,255,.85);
+  line-height:1.85;margin-bottom:36px;
+}
+.hp-sub strong{color:#ffb8e4;font-weight:700}
+.hp-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  background:#fff;color:#e42e93;
+  font-size:17px;font-weight:800;
+  padding:18px 42px;border-radius:50px;
+  border:2px solid #fff;transition:all .25s;
+  width:fit-content;box-shadow:0 6px 24px rgba(0,0,0,.25);
+  letter-spacing:.3px;
+}
+.hp-btn:hover{background:transparent;color:#fff}
+.hp-parceiro{
+  display:flex;align-items:center;gap:8px;
+  margin-top:28px;
+}
+.hp-parceiro span{font-size:11px;color:rgba(255,255,255,.5);font-weight:600;text-transform:uppercase;letter-spacing:1.5px}
+.hp-parceiro img{height:20px;filter:brightness(10);opacity:.6}
+
+/* ── SEÇÕES GERAIS ── */
+.sec{padding:88px 32px}
+.sec-bg{background:var(--bg)}
+.sw{max-width:1200px;margin:0 auto}
+
+.s-tag{
+  display:inline-block;
+  font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--vm);margin-bottom:12px;
+}
+.s-h{
+  font-size:clamp(28px,3.5vw,46px);font-weight:800;
+  color:#1a1a1a;line-height:1.15;margin-bottom:14px;
+}
+.s-h span{color:var(--vm)}
+.s-sub{font-size:16px;color:var(--c2);line-height:1.75;max-width:680px}
+.centro{text-align:center}
+.centro .s-sub{margin:0 auto}
+
+/* botão principal */
+.btn-v{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--vm);color:#fff;
+  font-size:17px;font-weight:800;
+  padding:18px 42px;border-radius:50px;
+  transition:all .25s;font-family:inherit;border:none;cursor:pointer;
+  letter-spacing:.3px;
+}
+.btn-v{background:linear-gradient(135deg,#7B2CB9,#C044B8)}
+.btn-v:hover{background:linear-gradient(135deg,#2A0E72,#7B2CB9);transform:translateY(-2px);box-shadow:0 8px 28px rgba(123,44,185,.5)}
+.btn-out{
+  display:inline-flex;align-items:center;gap:8px;
+  background:transparent;color:var(--vm);
+  font-size:14px;font-weight:700;
+  padding:13px 28px;border-radius:50px;
+  border:2px solid var(--vm);
+  transition:all .25s;font-family:inherit;cursor:pointer;
+}
+.btn-out:hover{background:var(--vm);color:#fff}
+
+/* ── COMO VENDER — 2 formas ── */
+.formas-grid{
+  display:grid;grid-template-columns:1fr 1fr 1fr 1fr;
+  gap:20px;align-items:center;margin:48px 0;
+}
+.forma-txt h3{
+  font-size:clamp(22px,2.5vw,32px);font-weight:800;
+  color:#1a1a1a;line-height:1.2;margin-bottom:14px;
+}
+.forma-txt p{font-size:14px;color:var(--c2);line-height:1.8}
+.forma-foto{
+  border-radius:16px;overflow:hidden;height:280px;
+  box-shadow:0 8px 32px rgba(0,0,0,.1);
+}
+.forma-foto img{width:100%;height:100%;object-fit:cover;filter:contrast(1.07) saturate(1.12)}
+
+/* ── 4 BENEFÍCIOS ÍCONE ── */
+.bens-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:28px;
+  margin-top:48px;
+}
+.ben{text-align:left}
+.ben-ico{
+  width:48px;height:48px;border-radius:10px;
+  background:rgba(123,44,185,.12);
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;margin-bottom:14px;
+  border:1px solid rgba(192,68,184,.25);
+}
+.ben h4{font-size:15px;font-weight:700;margin-bottom:6px}
+.ben p{font-size:13px;color:var(--c2);line-height:1.7}
+
+/* ── 3 PASSOS ── */
+.passos-lucro-banner{
+  display:grid;grid-template-columns:380px 1fr;
+  gap:0;border-radius:20px;overflow:hidden;
+  background:#fff;
+  box-shadow:0 8px 40px rgba(123,44,185,.12);
+  border:1.5px solid var(--bd);
+  margin:44px 0 48px;
+}
+.plb-img{overflow:hidden;display:flex;align-items:center;justify-content:center;background:#faf7ff}
+.plb-img img{width:100%;height:auto;display:block;object-fit:contain}
+.plb-txt{padding:36px 40px;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(135deg,#faf7ff 0%,#fff 100%)}
+.plb-label{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#96165d;margin-bottom:12px}
+.plb-titulo{font-size:clamp(22px,2.8vw,34px);font-weight:900;color:#2A0E72;line-height:1.2;margin-bottom:14px}
+.plb-titulo span{background:linear-gradient(135deg,var(--vm),#96165d);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.plb-desc{font-size:14px;color:var(--c2);line-height:1.75;margin-bottom:24px}
+.plb-desc strong{color:#96165d;font-weight:800}
+.plb-destaque{display:flex;align-items:center;gap:0;background:linear-gradient(135deg,#fdf0f6,#f3eaff);border-radius:14px;padding:16px 20px;border:1.5px solid rgba(123,44,185,.12)}
+.plb-d-item{flex:1;text-align:center;display:flex;flex-direction:column;gap:4px}
+.plb-d-num{font-size:clamp(20px,2.2vw,28px);font-weight:900;color:#96165d;line-height:1}
+.plb-d-leg{font-size:10px;font-weight:700;color:var(--c3);text-transform:uppercase;letter-spacing:.5px;line-height:1.3}
+.plb-d-sep{width:1px;height:40px;background:rgba(123,44,185,.15);flex-shrink:0;margin:0 8px}
+@media(max-width:900px){.passos-lucro-banner{grid-template-columns:1fr}.plb-img{min-height:200px}.plb-txt{padding:24px 24px}}
+@media(max-width:600px){.plb-destaque{flex-direction:column;gap:14px}.plb-d-sep{width:80%;height:1px;margin:0}}
+
+.passos-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+  margin-top:52px;position:relative;
+}
+.passos-grid::before{
+  content:'';position:absolute;top:52px;left:calc(16.66% + 12px);right:calc(16.66% + 12px);
+  height:2px;background:linear-gradient(90deg,var(--vm),var(--d));
+  z-index:0;
+}
+.passo{
+  background:#fff;border-radius:20px;padding:36px 28px 32px;
+  text-align:center;
+  border:2px solid transparent;
+  background:linear-gradient(#fff,#fff) padding-box,
+             linear-gradient(160deg,var(--vm),var(--d)) border-box;
+  box-shadow:0 6px 32px rgba(123,44,185,.08);
+  transition:all .3s;position:relative;z-index:1;
+}
+.passo:hover{box-shadow:0 14px 40px rgba(123,44,185,.18);transform:translateY(-6px)}
+.passo-num{
+  width:52px;height:52px;border-radius:50%;
+  background:linear-gradient(135deg,var(--vm),var(--d));
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 16px;
+  font-size:22px;font-weight:900;color:#fff;
+  box-shadow:0 4px 16px rgba(123,44,185,.35);
+}
+.passo-ico{font-size:38px;margin-bottom:14px}
+.passo h3{font-size:17px;font-weight:800;color:var(--v);margin-bottom:12px}
+.passo p{font-size:13.5px;color:var(--c2);line-height:1.75;text-align:left}
+
+/* ── LUCRATIVIDADE ── */
+#lucro{background:#96165d;padding:0}
+
+/* intro dois caminhos */
+.lucro-intro{
+  background:#96165d;
+  padding:72px 32px 60px;
+}
+.lucro-intro-w{max-width:1200px;margin:0 auto}
+.lucro-intro-top{text-align:center;margin-bottom:44px}
+.lucro-intro-badge{
+  display:inline-block;font-size:13px;font-weight:800;letter-spacing:1px;
+  color:#FFB8E4;margin-bottom:12px;
+}
+.lucro-intro-titulo{
+  font-size:clamp(30px,4vw,52px);font-weight:900;color:#fff;
+  line-height:1.1;margin-bottom:14px;
+}
+.lucro-intro-titulo span{
+  background:linear-gradient(135deg,#F5C518,#FFB8E4);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.lucro-intro-sub{font-size:16px;color:rgba(255,255,255,.65);max-width:620px;margin:0 auto;line-height:1.8}
+
+.lucro-caminhos{
+  display:flex;align-items:stretch;gap:0;
+  max-width:860px;margin:0 auto;
+}
+.lucro-caminho{
+  flex:1;border-radius:20px;padding:36px 32px;text-align:center;
+  position:relative;
+}
+.lc-venda{
+  background:linear-gradient(160deg,rgba(224,40,158,.25),rgba(150,22,93,.3));
+  border:2px solid rgba(224,40,158,.4);
+  margin-right:-1px;border-radius:20px 0 0 20px;
+}
+.lc-rede{
+  background:linear-gradient(160deg,rgba(123,44,185,.25),rgba(42,14,114,.3));
+  border:2px solid rgba(123,44,185,.4);
+  margin-left:-1px;border-radius:0 20px 20px 0;
+}
+.lc-num{
+  font-size:11px;font-weight:900;letter-spacing:2px;color:rgba(255,255,255,.4);
+  text-transform:uppercase;margin-bottom:10px;
+}
+.lc-ico{font-size:40px;margin-bottom:12px}
+.lucro-caminho h3{font-size:20px;font-weight:900;color:#fff;margin-bottom:10px}
+.lucro-caminho p{font-size:14px;color:rgba(255,255,255,.65);line-height:1.7}
+.lucro-caminho strong{color:#FFB8E4}
+.lc-seta{
+  margin-top:20px;font-size:12px;font-weight:700;
+  color:rgba(255,255,255,.35);letter-spacing:.5px;
+}
+.lc-vs{
+  display:flex;align-items:center;justify-content:center;
+  width:52px;flex-shrink:0;
+  font-size:28px;font-weight:900;color:#F5C518;
+  background:rgba(245,197,24,.1);
+  border-top:2px solid rgba(245,197,24,.2);
+  border-bottom:2px solid rgba(245,197,24,.2);
+  z-index:1;
 }
 
-/* ─── HEADER ─── */
-header {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  padding: 18px 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(255,255,255,0.96);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid #E5E7EB;
+/* separadores de fonte */
+.lucro-sep{padding:0 32px}
+.lucro-sep-w{
+  max-width:1200px;margin:0 auto;
+  display:flex;align-items:center;gap:20px;
+  padding:28px 0;
+  border-top:1px solid rgba(255,255,255,.15);
+  border-bottom:1px solid rgba(255,255,255,.15);
 }
-.h-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
+.lucro-sep-venda,.lucro-sep-rede{background:#96165d}
+.lucro-sep-num{
+  width:48px;height:48px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:18px;font-weight:900;color:#1a0845;
+  background:#F5C518;flex-shrink:0;
+  box-shadow:0 4px 16px rgba(245,197,24,.45);
 }
-.h-logo img { height: 34px; }
-.h-logo-mark {
-  width: 34px; height: 34px;
-  background: var(--verde);
-  border-radius: 8px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 13px; font-weight: 900; color: #000;
+.lucro-sep-txt{
+  font-size:clamp(18px,2.2vw,26px);font-weight:900;color:#fff;
+  letter-spacing:.2px;
 }
-.h-logo-nome { font-size: 14px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #111827; }
-.h-badge {
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--verde);
-  border: 1px solid var(--border2);
-  padding: 5px 14px;
-  border-radius: 20px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
+.lucro-sep-txt em{
+  font-style:normal;
+  background:linear-gradient(135deg,#F5C518,#FFB8E4);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
 
-/* ─── HERO ─── */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 120px 24px 80px;
-  position: relative;
-  overflow: hidden;
-  background: #F9FAFB;
+/* banner lucratividade (wrapper após sep) */
+.lucro-banner{
+  max-width:1200px;margin:0 auto;
+  display:flex;align-items:center;gap:20px;
+  margin-bottom:40px;
+  padding:0 0 0 0;
 }
-.hero-glow {
-  position: absolute;
-  top: -10%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 800px;
-  height: 800px;
-  background: radial-gradient(circle, rgba(0,255,56,0.07) 0%, transparent 65%);
-  pointer-events: none;
+.lucro-banner{
+  max-width:1200px;margin:0 auto;
+  display:flex;align-items:center;gap:20px;
+  margin-bottom:40px;
 }
-.hero-grid {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-  background-size: 60px 60px;
-  pointer-events: none;
+.lucro-ico{font-size:40px}
+.lucro-txt h2{font-size:clamp(28px,3.5vw,42px);font-weight:900;color:#fff;margin-bottom:8px}
+.lucro-txt h2 strong{color:var(--dl)}
+.lucro-txt p{font-size:17px;color:rgba(255,255,255,.8);line-height:1.7}
+.niveis{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
 }
-.hero-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 960px;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: 64px;
-  align-items: center;
+.nivel{
+  background:#fff;border-radius:14px;padding:22px 16px;
+  text-align:center;border:1px solid rgba(255,255,255,.15);
 }
-.hero-left {}
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--verde);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 24px;
+.nivel-ico{font-size:28px;margin-bottom:8px}
+.nivel-nome{font-size:14px;font-weight:800;color:#1a1a1a;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--bd)}
+.nivel-val{font-size:24px;font-weight:900;background:linear-gradient(135deg,#7B2CB9,#E0289E);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.nivel-label{font-size:11px;color:var(--c3);margin-top:4px}
+
+/* ── VÍDEOS ── */
+.vid-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:48px}
+.vid-thumb{
+  position:relative;cursor:pointer;
+  border-radius:16px;overflow:hidden;
+  aspect-ratio:16/9;
+  box-shadow:0 4px 20px rgba(0,0,0,.14);
+  background:#1a1a1a;
 }
-.hero-eyebrow::before {
-  content: '';
-  width: 20px; height: 2px;
-  background: var(--verde);
-  border-radius: 2px;
+.vid-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
+.vid-thumb:hover img{transform:scale(1.04)}
+.vid-play{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(0,0,0,.28);transition:background .3s;
 }
-.hero-titulo {
-  font-size: clamp(34px, 5vw, 54px);
-  font-weight: 900;
-  line-height: 1.08;
-  letter-spacing: -2px;
-  color: #111827;
-  margin-bottom: 24px;
+.vid-thumb:hover .vid-play{background:rgba(0,0,0,.15)}
+.vid-play svg{width:62px;height:62px;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));transition:transform .2s}
+.vid-thumb:hover .vid-play svg{transform:scale(1.1)}
+.vid-empty{
+  aspect-ratio:16/9;border-radius:16px;
+  background:linear-gradient(135deg,var(--bg),#f0e6f8);
+  border:2px dashed var(--bd);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:10px;
 }
-.hero-titulo .verde { color: var(--verde); }
-.hero-sub {
-  font-size: 16px;
-  color: var(--txt2);
-  line-height: 1.7;
-  margin-bottom: 36px;
-  max-width: 480px;
+.vid-empty-ico{font-size:40px;opacity:.35}
+.vid-empty-txt{font-size:12px;color:var(--c3);font-weight:600}
+/* modal */
+.vid-modal{
+  display:none;position:fixed;inset:0;z-index:900;
+  background:rgba(0,0,0,.88);
+  align-items:center;justify-content:center;padding:24px;
 }
-.hero-provas {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.vid-modal.on{display:flex}
+.vid-modal-box{position:relative;width:100%;max-width:960px;aspect-ratio:16/9;border-radius:14px;overflow:hidden}
+.vid-modal-box iframe{width:100%;height:100%;border:none;display:block}
+.vid-modal-close{
+  position:absolute;top:-44px;right:0;
+  background:rgba(255,255,255,.12);border:none;color:#fff;
+  font-size:22px;font-weight:700;cursor:pointer;
+  padding:6px 14px;border-radius:8px;font-family:inherit;
+  transition:background .2s;
 }
-.prova-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 14px;
-  color: var(--txt2);
+.vid-modal-close:hover{background:rgba(255,255,255,.25)}
+@media(max-width:768px){.vid-grid{grid-template-columns:1fr}}
+
+/* ── FAQ ── */
+#faq{padding:88px 32px;background:#fff}
+.faq-w{max-width:800px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--bd)}
+.faq-q{
+  width:100%;background:none;border:none;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:22px 0;cursor:pointer;font-family:inherit;text-align:left;
 }
-.prova-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--verde);
-  flex-shrink: 0;
+.faq-q-txt{font-size:16px;font-weight:600;color:#1a1a1a}
+.faq-arr{
+  width:28px;height:28px;border-radius:50%;
+  border:1.5px solid var(--bd);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;color:var(--c3);transition:.25s;
+}
+.faq-item.on .faq-arr{transform:rotate(45deg);background:linear-gradient(135deg,#7B2CB9,#C044B8);color:#fff;border-color:var(--vm)}
+.faq-a{font-size:15px;color:var(--c2);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .25s}
+.faq-item.on .faq-a{max-height:240px;padding-bottom:20px}
+
+/* ── FORMULÁRIO ── */
+#cadastro{
+  padding:80px 32px;
+  background:linear-gradient(135deg,#1a0845 0%,#2A0E72 40%,#7B2CB9 80%,#96165d 100%);
+  position:relative;overflow:hidden;
+}
+#cadastro::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 80% 20%,rgba(224,40,158,.18) 0%,transparent 60%);
+  pointer-events:none;
+}
+.form-container{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.form-left{color:#fff}
+.form-left-badge{display:inline-block;color:rgba(255,255,255,.7);font-size:13px;font-weight:700;margin-bottom:16px;letter-spacing:.5px}
+.form-left h2{font-size:clamp(28px,3.5vw,46px);font-weight:900;line-height:1.15;margin-bottom:18px}
+.form-left h2 span{color:#FFB8E4}
+.form-left p{font-size:16px;color:rgba(255,255,255,.8);line-height:1.75;margin-bottom:36px}
+.form-trust{display:flex;flex-direction:column;gap:14px}
+.form-trust-item{display:flex;align-items:center;gap:12px;font-size:14px;color:rgba(255,255,255,.9);font-weight:600}
+.form-trust-icon{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.form-card{
+  background:#fff;border-radius:24px;
+  padding:40px 36px;
+  box-shadow:0 32px 80px rgba(0,0,0,.28);
+}
+.form-card-title{font-size:20px;font-weight:900;color:var(--v);margin-bottom:4px}
+.form-card-sub{font-size:13px;color:var(--c3);margin-bottom:24px}
+.fg{margin-bottom:14px}
+.fg label{
+  display:block;font-size:11px;font-weight:700;
+  text-transform:uppercase;letter-spacing:1px;
+  color:var(--c2);margin-bottom:6px;
+}
+.fi{
+  width:100%;padding:14px 16px;
+  border:2px solid var(--bd);
+  border-radius:12px;font-size:15px;
+  color:#1a1a1a;font-family:inherit;outline:none;
+  background:#faf7ff;transition:all .22s;
+}
+.fi:focus{border-color:var(--vm);box-shadow:0 0 0 4px rgba(123,44,185,.1);background:#fff}
+.fi::placeholder{color:#bbb}
+select.fi{
+  appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237B2CB9' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn-form{
+  width:100%;padding:17px;margin-top:8px;
+  background:linear-gradient(135deg,#7B2CB9,#E0289E);color:#fff;
+  font-size:16px;font-weight:900;
+  border:none;border-radius:50px;cursor:pointer;
+  font-family:inherit;transition:all .25s;
+  box-shadow:0 6px 24px rgba(123,44,185,.5);
+  letter-spacing:.3px;
+}
+.btn-form:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(123,44,185,.65)}
+.form-seg{
+  font-size:11px;color:var(--c3);
+  text-align:center;margin-top:14px;
+  display:flex;align-items:center;justify-content:center;gap:6px;
+}
+.form-div{
+  display:flex;align-items:center;gap:10px;margin:18px 0;
+  font-size:11px;color:var(--c3);font-weight:600;text-transform:uppercase;letter-spacing:.5px;
+}
+.form-div::before,.form-div::after{content:'';flex:1;height:1px;background:var(--bd)}
+.btn-wf{
+  width:100%;padding:15px;
+  background:#25D366;color:#fff;
+  font-size:15px;font-weight:800;
+  border:none;border-radius:50px;cursor:pointer;
+  font-family:inherit;transition:all .25s;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  box-shadow:0 4px 16px rgba(37,211,102,.35);
+}
+.btn-wf:hover{background:#1ebe5c;transform:translateY(-1px);box-shadow:0 6px 22px rgba(37,211,102,.5)}
+@media(max-width:860px){
+  .form-container{grid-template-columns:1fr;gap:36px}
+  .form-left{text-align:center}
+  .form-trust{align-items:center}
 }
 
-/* ─── CARD DE CAPTURA ─── */
-.cap-card {
-  background: #F9FAFB;
-  border: 1px solid var(--border2);
-  border-radius: 16px;
-  padding: 40px 36px;
-  position: relative;
-  overflow: hidden;
+/* ── DIVISÃO DE LUCROS ── */
+.lucros-titulo{text-align:center;max-width:760px;margin:0 auto 52px}
+.lucros-titulo h2{
+  font-size:clamp(18px,2.2vw,26px);font-weight:900;line-height:1.1;margin-bottom:10px;
+  background:linear-gradient(135deg,#FFB8E4 0%,#fff 50%,#F5C518 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
-.cap-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--verde), var(--verde2));
-}
-.cap-titulo {
-  font-size: 20px;
-  font-weight: 800;
-  color: #111827;
-  margin-bottom: 6px;
-  letter-spacing: -0.5px;
-}
-.cap-sub {
-  font-size: 13px;
-  color: var(--txt2);
-  margin-bottom: 28px;
-  line-height: 1.5;
-}
-.cap-form { display: flex; flex-direction: column; gap: 14px; }
-.cap-form label {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--txt2);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-.cap-form input {
-  background: #FFFFFF;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 13px 16px;
-  font-size: 15px;
-  color: #111827;
-  font-family: inherit;
-  outline: none;
-  transition: border-color 0.2s;
-}
-.cap-form input:focus { border-color: var(--verde2); }
-.cap-form input::placeholder { color: var(--txt3); }
-.btn-cap {
-  background: var(--verde);
-  color: #fff;
-  font-size: 15px;
-  font-weight: 800;
-  padding: 16px;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  transition: background 0.2s, transform 0.15s;
-  margin-top: 4px;
-  width: 100%;
-}
-.btn-cap:hover { background: var(--verde2); transform: translateY(-2px); }
-.cap-privacidade {
-  font-size: 11px;
-  color: var(--txt3);
-  text-align: center;
-  margin-top: 14px;
-  line-height: 1.5;
-}
-.cap-sucesso {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 20px 0;
-  gap: 12px;
-}
-.cap-sucesso-icon {
-  width: 56px; height: 56px;
-  border-radius: 50%;
-  background: rgba(0,255,56,0.1);
-  border: 2px solid var(--verde);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 24px;
-}
-.cap-sucesso h3 { font-size: 20px; font-weight: 800; }
-.cap-sucesso p { font-size: 14px; color: var(--txt2); line-height: 1.6; }
+.lucros-titulo p{font-size:15px;color:rgba(255,255,255,.65);line-height:1.75}
+.lucros-titulo strong{color:#FFB8E4}
 
-/* ─── NÚMEROS ─── */
-.numeros {
-  background: #F9FAFB;
-  border-top: 1px solid #E5E7EB;
-  border-bottom: 1px solid #E5E7EB;
-  padding: 40px 24px;
+.fase-sep{
+  display:flex;align-items:center;gap:16px;
+  max-width:1200px;margin:0 auto 18px;
 }
-.numeros-inner {
-  max-width: 960px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0;
+.fase-sep::before,.fase-sep::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.1)}
+.fase-sep-txt{
+  font-size:10px;font-weight:800;letter-spacing:2.5px;
+  text-transform:uppercase;color:rgba(255,255,255,.42);white-space:nowrap;
 }
-.num-item {
-  text-align: center;
-  padding: 16px 24px;
-  border-right: 1px solid var(--border);
+.nc-row{max-width:1200px;margin:0 auto 32px;display:grid;gap:10px}
+.nc-row.r4{grid-template-columns:repeat(4,1fr)}
+.nc-row.r3{grid-template-columns:repeat(3,1fr)}
+.nc2{
+  position:relative;overflow:hidden;
+  background:#fff;
+  border:1px solid rgba(150,22,93,.12);
+  border-radius:16px;padding:26px 16px 22px;
+  text-align:center;transition:all .3s;
 }
-.num-item:last-child { border-right: none; }
-.num-val {
-  font-size: 32px;
-  font-weight: 900;
-  color: var(--verde);
-  letter-spacing: -1px;
-  line-height: 1;
+.nc2::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--ac,linear-gradient(90deg,#7B2CB9,#C044B8));
 }
-.num-lab {
-  font-size: 12px;
-  color: var(--txt2);
-  margin-top: 6px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+.nc2:hover{
+  background:#fff;transform:translateY(-5px);
+  box-shadow:0 16px 40px rgba(150,22,93,.2);border-color:rgba(150,22,93,.25);
 }
+.nc2-ico{display:none}
+.nc2-nome{font-size:14px;font-weight:800;color:#2A0E72;margin-bottom:8px}
+.nc2-pts{
+  display:inline-block;font-size:9px;font-weight:700;
+  color:var(--c3);background:var(--bg);
+  border:1px solid var(--bd);
+  padding:3px 10px;border-radius:50px;letter-spacing:.4px;margin-bottom:14px;
+}
+.nc2-est{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--c3);margin-bottom:4px}
+.nc2-val{
+  font-size:clamp(18px,2vw,26px);font-weight:900;color:#96165d;
+  line-height:1;margin-bottom:8px;
+}
+.nc2-sub{font-size:10px;font-weight:700;color:var(--vm)}
+.nc2-badge{
+  display:inline-block;font-size:9px;font-weight:700;
+  background:rgba(150,22,93,.08);color:#96165d;
+  border:1px solid rgba(150,22,93,.25);
+  padding:3px 10px;border-radius:50px;margin-top:4px;letter-spacing:.3px;
+}
+/* acento por nível */
+.nc2.ouro{--ac:linear-gradient(90deg,#F5C518,#E8A600)}
+.nc2.safira{--ac:linear-gradient(90deg,#5B8AF7,#7B2CB9)}
+.nc2.esmeralda{--ac:linear-gradient(90deg,#2DAD6E,#7B2CB9)}
+.nc2.rubi{--ac:linear-gradient(90deg,#E0289E,#7a0e4a)}
+.nc2.diamante{--ac:linear-gradient(90deg,#7B2CB9,#C044B8)}
+.nc2.duplo{--ac:linear-gradient(90deg,#C044B8,#E0289E)}
+.nc2.triplo{--ac:linear-gradient(90deg,#E0289E,#FFB8E4)}
+.nc2.red-jan{--ac:linear-gradient(90deg,#E0289E,#ff6699)}
+.nc2.black-jan{--ac:linear-gradient(90deg,#444,#7B2CB9)}
+.nc2.imperial{
+  --ac:linear-gradient(90deg,#F5C518,#e8a600,#F5C518);
+  background:#fff;
+  border-color:rgba(245,197,24,.5);
+}
+.lucros-rodape{
+  max-width:1200px;margin:44px auto 0;
+  display:flex;align-items:center;justify-content:center;gap:12px;
+  font-size:13px;color:rgba(255,255,255,.45);font-weight:500;
+}
+.lucros-rodape::before,.lucros-rodape::after{content:'';flex:1;max-width:200px;height:1px;background:rgba(255,255,255,.08)}
 
-/* ─── COMO FUNCIONA ─── */
-.como {
-  padding: 100px 24px;
-  background: #F9FAFB;
+/* ── OUTRAS FORMAS DE GANHO ── */
+.outras-ganhos{max-width:1200px;margin:60px auto 0;padding:0 0 72px}
+.og-titulo{text-align:center;margin-bottom:44px}
+.og-label{
+  display:inline-block;font-size:12px;font-weight:800;letter-spacing:2px;
+  text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:12px;
 }
-.sec-container {
-  max-width: 960px;
-  margin: 0 auto;
+.og-titulo h3{
+  font-size:clamp(22px,2.8vw,34px);font-weight:900;color:#fff;
+  margin-bottom:10px;line-height:1.15;
 }
-.sec-label {
-  display: inline-block;
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--verde);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 16px;
+.og-sub{font-size:15px;color:rgba(255,255,255,.6);max-width:600px;margin:0 auto;line-height:1.7}
+.og-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
 }
-.sec-titulo {
-  font-size: clamp(28px, 4vw, 42px);
-  font-weight: 900;
-  letter-spacing: -1.5px;
-  line-height: 1.1;
-  margin-bottom: 16px;
+.og-card{
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:18px;padding:28px 22px;
+  transition:all .3s;
 }
-.sec-titulo .verde { color: var(--verde); }
-.sec-sub {
-  font-size: 16px;
-  color: var(--txt2);
-  line-height: 1.7;
-  max-width: 520px;
-  margin-bottom: 56px;
+.og-card:hover{background:rgba(255,255,255,.12);transform:translateY(-4px);border-color:rgba(255,255,255,.25)}
+.og-ico{font-size:32px;margin-bottom:12px}
+.og-card h4{font-size:15px;font-weight:800;color:#fff;margin-bottom:8px}
+.og-card p{font-size:13px;color:rgba(255,255,255,.65);line-height:1.75}
+.og-card strong{color:#FFB8E4}
+.btn-og{
+  display:inline-flex;align-items:center;
+  background:#fff;color:#96165d;
+  font-size:15px;font-weight:800;
+  padding:16px 40px;border-radius:50px;
+  transition:all .25s;letter-spacing:.2px;
+  box-shadow:0 6px 24px rgba(0,0,0,.25);
 }
-.passos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-.passo {
-  background: #F9FAFB;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 32px 28px;
-  position: relative;
-  transition: border-color 0.2s, transform 0.2s;
-}
-.passo:hover { border-color: var(--border2); transform: translateY(-4px); }
-.passo-num {
-  font-size: 11px;
-  font-weight: 800;
-  color: var(--verde);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-}
-.passo-titulo { font-size: 17px; font-weight: 800; margin-bottom: 10px; }
-.passo-desc { font-size: 13px; color: var(--txt2); line-height: 1.6; }
+.btn-og:hover{background:#FFB8E4;transform:translateY(-2px);box-shadow:0 10px 32px rgba(0,0,0,.35)}
+@media(max-width:1024px){.og-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.og-grid{grid-template-columns:1fr}}
 
-/* ─── GANHOS ─── */
-.ganhos {
-  padding: 100px 24px;
-  background: #F9FAFB;
-  border-top: 1px solid #E5E7EB;
+/* ── LUCRO NA REVENDA ── */
+.lr-banner{
+  max-width:1200px;margin:0 auto 52px;
+  background:#fff;border-radius:20px;
+  display:grid;grid-template-columns:420px 1fr 380px;
+  align-items:stretch;gap:0;overflow:hidden;
 }
-.ganhos-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  margin-top: 48px;
+.lr-img{overflow:hidden;min-height:320px}
+.lr-img img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.lr-left{
+  padding:18px 16px;border-right:1px solid var(--bd);
+  display:flex;flex-direction:column;justify-content:center;
 }
-.ganho-card {
-  background: #F9FAFB;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 28px;
-  transition: border-color 0.2s;
+.lr-tag-pill{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;
+  color:#96165d;margin-bottom:12px;
 }
-.ganho-card:hover { border-color: var(--border2); }
-.ganho-index {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--txt3);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 12px;
+.lr-titulo{
+  font-size:13px;font-weight:700;
+  color:var(--c3);margin-bottom:10px;line-height:1.2;
 }
-.ganho-titulo { font-size: 17px; font-weight: 800; margin-bottom: 8px; }
-.ganho-desc { font-size: 13px; color: var(--txt2); line-height: 1.6; }
-.ganho-dest {
-  margin-top: 12px;
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--verde);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+.lr-num{
+  font-size:clamp(56px,6vw,80px);font-weight:900;
+  color:#7B2CB9;line-height:.85;letter-spacing:-3px;
 }
+.lr-label{
+  display:inline-block;
+  font-size:clamp(16px,1.8vw,22px);font-weight:800;
+  color:#7B2CB9;margin-top:4px;
+}
+.lr-desc{
+  font-size:12px;color:#3D2060;line-height:1.7;
+  border-top:1px solid var(--bd);padding-top:14px;margin-top:18px;
+}
+.lr-desc strong{color:#96165d;font-weight:800}
+.lr-calc{
+  padding:20px 18px;
+  display:flex;flex-direction:column;justify-content:center;
+  background:var(--bg);
+}
+.lr-calc-title{
+  text-align:center;
+  margin-bottom:12px;
+  padding-bottom:12px;
+  border-bottom:2px solid rgba(150,22,93,.15);
+}
+.lr-calc-title-emoji{font-size:22px;margin-bottom:5px;line-height:1}
+.lr-calc-title-txt{
+  font-size:clamp(14px,1.4vw,17px);font-weight:900;
+  color:#2A0E72;line-height:1.25;margin-bottom:6px;
+}
+.lr-calc-title-hint{
+  display:inline-block;
+  font-size:11px;font-weight:700;
+  color:#96165d;letter-spacing:.3px;
+}
+@keyframes pisca{
+  0%,100%{opacity:1;transform:translateY(0)}
+  50%{opacity:.7;transform:translateY(2px)}
+}
+.lr-calc-pergunta{
+  font-size:clamp(13px,1.3vw,16px);font-weight:800;
+  color:var(--v);text-align:center;line-height:1.3;
+  margin-bottom:14px;
+}
+.lr-calc-controle{
+  display:flex;align-items:center;justify-content:center;
+  gap:12px;margin-bottom:20px;
+}
+.lr-calc-btn{
+  width:52px;height:52px;border-radius:50%;
+  background:linear-gradient(135deg,var(--vm),#96165d);
+  color:#fff;font-size:26px;font-weight:700;
+  border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s;box-shadow:0 4px 14px rgba(150,22,93,.35);
+  flex-shrink:0;line-height:1;
+}
+.lr-calc-btn:hover{transform:scale(1.1);box-shadow:0 6px 20px rgba(150,22,93,.5)}
+.lr-calc-btn:active{transform:scale(.95)}
+.lr-calc-num-wrap{
+  display:flex;flex-direction:column;align-items:center;
+  background:#fff;border-radius:16px;
+  border:3px solid var(--vm);
+  padding:10px 20px;
+  box-shadow:0 0 0 4px rgba(123,44,185,.1), 0 8px 24px rgba(123,44,185,.15);
+  min-width:110px;
+}
+.lr-calc-input{
+  width:80px;border:none;outline:none;
+  font-size:48px;font-weight:900;color:#96165d;
+  font-family:inherit;text-align:center;
+  background:transparent;line-height:1;
+  -moz-appearance:textfield;
+}
+.lr-calc-input::-webkit-outer-spin-button,
+.lr-calc-input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.lr-calc-unit{
+  font-size:11px;color:var(--c3);font-weight:700;
+  text-transform:uppercase;letter-spacing:.8px;margin-top:2px;
+}
+.lr-calc-res{
+  background:#fff;border-radius:12px;
+  padding:16px 12px;text-align:center;
+  border:1px solid rgba(150,22,93,.15);
+  margin-bottom:10px;
+}
+.lr-calc-res-label{
+  font-size:10px;font-weight:600;text-transform:uppercase;
+  letter-spacing:1px;color:var(--c3);margin-bottom:6px;
+}
+.lr-calc-res-val{
+  font-size:clamp(24px,2.8vw,34px);font-weight:900;
+  color:#96165d;line-height:1;margin-bottom:6px;
+  transition:all .25s;
+}
+.lr-calc-res-ano{font-size:13px;color:var(--vm);font-weight:700}
+.lr-calc-note{font-size:10px;color:var(--c3);text-align:center;margin-top:8px;line-height:1.5}
+.lr-calc-motivacao{display:flex;align-items:flex-start;gap:8px;margin-top:14px;background:linear-gradient(135deg,rgba(123,44,185,.08),rgba(150,22,93,.08));border:1.5px solid rgba(150,22,93,.18);border-radius:12px;padding:12px 14px;}
+.lr-calc-mot-ico{font-size:18px;line-height:1;flex-shrink:0;margin-top:1px}
+.lr-calc-mot-txt{font-size:11.5px;color:#3D2060;line-height:1.6;font-weight:600}
+.lr-calc-mot-txt strong{color:#96165d;font-weight:900}
+@media(max-width:1024px){.lr-banner{grid-template-columns:260px 1fr 180px}}
+@media(max-width:768px){.lr-banner{grid-template-columns:1fr}.lr-img{display:none}.lr-left{border-right:none;border-bottom:1px solid var(--bd)}}
 
-/* ─── DEPOIMENTOS ─── */
-.depos {
-  padding: 100px 24px;
-  background: #F9FAFB;
+/* ── SIMULADOR INDICAÇÃO ── */
+.ind-sim{max-width:780px;margin:0 auto;padding:0 0 52px}
+.ind-card{
+  border-radius:24px;overflow:hidden;
+  background:linear-gradient(160deg,#1a0845 0%,#2A0E72 60%,#3b1480 100%);
+  box-shadow:0 32px 80px rgba(0,0,0,.45);
+  border:1.5px solid rgba(245,197,24,.25);
 }
-.depos-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 48px;
+.ind-top{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:32px 40px 28px;gap:24px;
+  border-bottom:1px solid rgba(255,255,255,.1);
 }
-.depo-card {
-  background: #F9FAFB;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 28px;
+.ind-top-left{flex:1}
+.ind-pill{
+  display:inline-block;font-size:11px;font-weight:800;letter-spacing:1.2px;
+  color:#F5C518;border:1.5px solid rgba(245,197,24,.4);
+  background:rgba(245,197,24,.1);
+  padding:6px 18px;border-radius:50px;margin-bottom:14px;text-transform:uppercase;
 }
-.depo-texto {
-  font-size: 14px;
-  color: var(--txt2);
-  line-height: 1.7;
-  margin-bottom: 20px;
-  font-style: italic;
+.ind-titulo{font-size:clamp(20px,2.6vw,28px);font-weight:900;color:#fff;line-height:1.2;margin-bottom:8px}
+.ind-desc{font-size:13px;color:rgba(255,255,255,.6);line-height:1.7}
+.ind-desc strong{color:#FFB8E4;font-weight:800}
+.ind-top-right{text-align:center;flex-shrink:0}
+.ind-pct{font-size:clamp(52px,7vw,80px);font-weight:900;line-height:1;
+  background:linear-gradient(135deg,#F5C518,#FFD84D);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
 }
-.depo-autor {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+.ind-pct-label{font-size:11px;font-weight:700;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+.ind-bottom{padding:28px 40px 32px;background:rgba(0,0,0,.15)}
+.ind-calc-row{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.ind-calc-left{flex:1;min-width:180px}
+.ind-calc-pergunta{font-size:13px;font-weight:800;color:#FFB8E4;text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px}
+.ind-calc-sub{font-size:11px;color:rgba(255,255,255,.45);font-weight:600;margin-bottom:14px}
+.ind-controle{display:flex;align-items:center;gap:10px}
+.ind-btn{
+  width:40px;height:40px;border-radius:50%;
+  background:rgba(245,197,24,.15);border:1.5px solid rgba(245,197,24,.4);
+  color:#F5C518;font-size:22px;font-weight:700;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .2s;flex-shrink:0;line-height:1;
 }
-.depo-avatar {
-  width: 40px; height: 40px;
-  border-radius: 50%;
-  background: #FFFFFF;
-  border: 1px solid var(--border2);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 14px; font-weight: 900; color: var(--verde);
+.ind-btn:hover{background:rgba(245,197,24,.3);transform:scale(1.1)}
+.ind-btn:active{transform:scale(.92)}
+.ind-num-wrap{
+  display:flex;flex-direction:column;align-items:center;
+  background:rgba(255,255,255,.07);border-radius:12px;
+  border:1.5px solid rgba(245,197,24,.3);
+  padding:8px 16px;min-width:96px;
 }
-.depo-nome { font-size: 14px; font-weight: 700; }
-.depo-cidade { font-size: 12px; color: var(--txt3); }
-
-/* ─── CTA FINAL ─── */
-.cta-final {
-  padding: 100px 24px;
-  background: #F9FAFB;
-  border-top: 1px solid #E5E7EB;
-  text-align: center;
+.ind-input{
+  width:64px;border:none;outline:none;
+  font-size:38px;font-weight:900;color:#F5C518;
+  font-family:inherit;text-align:center;background:transparent;line-height:1;
+  -moz-appearance:textfield;
 }
-.cta-final .sec-titulo { margin: 0 auto 16px; }
-.cta-final .sec-sub { margin: 0 auto 40px; }
-.btn-cta-final {
-  display: inline-block;
-  background: var(--verde);
-  color: #fff;
-  font-size: 16px;
-  font-weight: 800;
-  padding: 18px 48px;
-  border-radius: 10px;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  transition: background 0.2s, transform 0.15s;
+.ind-input::-webkit-outer-spin-button,.ind-input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.ind-unit{font-size:10px;color:rgba(255,255,255,.4);font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-top:2px}
+.ind-divider{width:1px;height:80px;background:rgba(255,255,255,.1);flex-shrink:0}
+.ind-calc-right{flex:1;min-width:180px}
+.ind-hint{
+  display:inline-block;font-size:10px;font-weight:700;
+  color:rgba(255,255,255,.55);margin-bottom:10px;
 }
-.btn-cta-final:hover { background: var(--verde2); transform: translateY(-2px); }
-
-/* ─── FOOTER ─── */
-footer {
-  background: #F9FAFB;
-  border-top: 1px solid var(--border);
-  padding: 32px 40px;
-  text-align: center;
-}
-.footer-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 12px;
-}
-.footer-logo img { height: 28px; }
-.footer-logo-mark {
-  width: 28px; height: 28px;
-  background: var(--verde);
-  border-radius: 6px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 11px; font-weight: 900; color: #000;
-}
-.footer-logo-nome { font-size: 13px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
-footer p {
-  font-size: 12px;
-  color: var(--txt3);
-  line-height: 1.7;
-}
-footer a { color: var(--txt2); text-decoration: none; }
-footer a:hover { color: var(--verde); }
-
-
-/* ─── LOGO DIVIDER ─── */
-.logo-div { text-align: center; padding: 36px 0; }
-.logo-div img { height: 90px; }
-
-/* ─── CLEAN OVERRIDES ─── */
-.passo {
-  background: #fff !important;
-  border: 1px solid #E5E7EB !important;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-}
-.passo:hover { border-color: var(--verde) !important; box-shadow: 0 4px 20px rgba(22,163,74,0.12) !important; }
-.passo-num { color: var(--verde) !important; }
-
-.ganho-card {
-  background: #fff !important;
-  border: 1px solid #E5E7EB !important;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-}
-.ganho-card:hover { border-color: var(--verde) !important; }
-.ganho-dest { color: var(--verde) !important; }
-
-.depo-card {
-  background: #fff !important;
-  border: 1px solid #E5E7EB !important;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
-}
-.depo-texto { color: #374151 !important; }
-.depo-nome { color: #111827 !important; }
-.depo-cidade { color: #9CA3AF !important; }
-
-.cap-card {
-  background: #fff !important;
-  border: 1px solid #E5E7EB !important;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.1) !important;
-}
-.cap-card::before { background: linear-gradient(90deg, var(--verde), #34D399) !important; }
-.cap-titulo { color: #111827 !important; }
-.cap-sub { color: #6B7280 !important; }
-.cap-form label { color: #374151 !important; }
-.cap-form input { background: #F9FAFB !important; border: 1px solid #E5E7EB !important; color: #111827 !important; }
-.cap-form input:focus { border-color: var(--verde) !important; box-shadow: 0 0 0 3px rgba(22,163,74,0.1) !important; }
-.btn-cap { background: var(--verde) !important; color: #fff !important; }
-.btn-cap:hover { background: var(--verde2) !important; }
-
-.sec-titulo { color: #111827 !important; }
-.sec-sub { color: #6B7280 !important; }
-.sec-label { color: var(--verde) !important; }
-
-.num-val { color: var(--verde) !important; }
-.num-lab { color: #6B7280 !important; }
-.num-item { border-right-color: #E5E7EB !important; }
-
-.btn-cta-final {
-  background: var(--verde) !important;
-  color: #fff !important;
-  box-shadow: 0 4px 20px rgba(22,163,74,0.3) !important;
-}
-.btn-cta-final:hover { background: var(--verde2) !important; }
-
-.cta-final { background: var(--verde-light) !important; border-top: 1px solid #D1FAE5 !important; }
-
-footer { background: #F9FAFB !important; border-top: 1px solid #E5E7EB !important; }
-footer p, footer a { color: #6B7280 !important; }
-
-.logo-div img { filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1)); }
-
-/* Seção identificação e segurança no tema claro */
-[style*="background:var(--s1)"],
-[style*="background: var(--s1)"] {
-  background: #F9FAFB !important;
-  border-top: 1px solid #E5E7EB !important;
-}
-[style*="background:var(--s2)"],
-[style*="background: var(--s2)"] {
-  background: #FFFFFF !important;
-  border: 1px solid #E5E7EB !important;
+.ind-res-label{font-size:11px;font-weight:700;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.8px;margin-bottom:4px}
+.ind-res-val{font-size:clamp(28px,4vw,44px);font-weight:900;color:#fff;line-height:1;transition:all .2s;margin-bottom:4px}
+.ind-res-ano{font-size:13px;color:rgba(245,197,24,.8);font-weight:700}
+.ind-note{font-size:10px;color:rgba(255,255,255,.3);margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.08)}
+.ind-motivacao{display:flex;align-items:flex-start;gap:8px;margin-top:14px;background:rgba(245,197,24,.08);border:1.5px solid rgba(245,197,24,.2);border-radius:12px;padding:12px 14px;}
+.ind-mot-ico{font-size:18px;line-height:1;flex-shrink:0;margin-top:1px}
+.ind-mot-txt{font-size:11.5px;color:rgba(255,255,255,.75);line-height:1.6;font-weight:600}
+.ind-mot-txt strong{color:#F5C518;font-weight:900}
+@media(max-width:700px){
+  .ind-top{flex-direction:column;padding:24px 24px 20px}
+  .ind-top-right{align-self:flex-start}
+  .ind-bottom{padding:20px 24px 26px}
+  .ind-divider{display:none}
+  .ind-calc-row{flex-direction:column;gap:20px}
 }
 
-/* ─── RESPONSIVO ─── */
-@media(max-width: 860px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 48px; }
-  .hero-titulo { font-size: clamp(30px, 7vw, 46px); }
-  .cap-card { padding: 32px 24px; }
-  .numeros-inner { grid-template-columns: repeat(2, 1fr); }
-  .num-item:nth-child(2) { border-right: none; }
-  .passos { grid-template-columns: 1fr; }
-  .ganhos-grid { grid-template-columns: 1fr; }
-  .depos-grid { grid-template-columns: 1fr; }
-  header { padding: 16px 20px; }
+@media(max-width:1024px){.nc-row.r4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){.nc-row.r4,.nc-row.r3{grid-template-columns:repeat(2,1fr)}}
+
+/* ── PRODUTOS ── */
+.prod-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
 }
-@media(max-width: 480px) {
-  .numeros-inner { grid-template-columns: repeat(2, 1fr); }
-  .hero-sub { font-size: 15px; }
-  .h-badge { display: none; }
+.prod-card{
+  border-radius:14px;overflow:hidden;
+  border:3px solid #fff;
+  box-shadow:0 3px 16px rgba(0,0,0,.1),0 0 0 1px var(--bd);
+  transition:transform .3s,box-shadow .3s;
+  background:#fff;
+  aspect-ratio:3/4;
 }
+.prod-card:hover{transform:scale(1.02);box-shadow:0 10px 30px rgba(123,44,185,.16),0 0 0 2px var(--vm)}
+.prod-card img{width:100%;height:100%;display:block;object-fit:contain;transition:transform .4s}
+.prod-card:hover img{transform:scale(1.04)}
+@media(max-width:768px){
+  .prod-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ── PRODUTOS PP ── */
+.pp-header{text-align:center;margin-bottom:44px}
+.pp-badge{display:inline-block;color:var(--vm);font-size:14px;font-weight:800;margin-bottom:12px;letter-spacing:.5px}
+.pp-title{font-size:clamp(26px,3.5vw,42px);font-weight:900;color:var(--v);line-height:1.15;margin-bottom:14px}
+.pp-sub{font-size:clamp(15px,1.6vw,18px);color:var(--c2);max-width:720px;margin:0 auto 32px;line-height:1.65}
+.pp-cats{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+.pp-cat{background:#fff;border:1px solid var(--bd);border-radius:16px;padding:18px 22px;max-width:240px;text-align:left;box-shadow:0 2px 12px rgba(42,14,114,.06)}
+.pp-cat-tag{font-size:14px;font-weight:800;color:#96165d;margin-bottom:7px}
+.pp-cat p{font-size:13px;color:var(--c3);line-height:1.5;margin:0}
+
+
+.pp-grid{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:18px;
+}
+.pp-card{
+  border-radius:14px;
+  overflow:hidden;
+  border:6px solid transparent;
+  background:linear-gradient(#fff,#fff) padding-box,
+             linear-gradient(135deg,var(--vm),var(--d)) border-box;
+  box-shadow:0 4px 18px rgba(0,0,0,.12);
+  display:inline-flex;
+  transition:transform .3s,box-shadow .3s;
+}
+.pp-card:hover{transform:scale(1.04);box-shadow:0 10px 30px rgba(192,68,184,.26)}
+.pp-card img{display:block;max-height:260px;width:auto;height:auto;transition:transform .4s}
+.pp-card:hover img{transform:scale(1.05)}
+@media(max-width:768px){
+  .pp-card{flex:0 0 calc(50% - 9px)}
+}
+@media(max-width:480px){
+  .pp-card{flex:0 0 100%}
+}
+
+/* ── ACUMULOU GANHOU ── */
+.ag-header{text-align:center;margin-bottom:52px}
+.ag-badge{
+  display:inline-block;font-size:13px;font-weight:800;letter-spacing:1px;
+  color:#F5C518;margin-bottom:14px;
+}
+.ag-titulo{
+  font-size:clamp(36px,5vw,64px);font-weight:900;
+  background:linear-gradient(135deg,#fff 20%,#F5C518 55%,#FFB8E4 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  line-height:1.05;margin-bottom:16px;letter-spacing:-1px;
+}
+.ag-sub{font-size:16px;color:rgba(255,255,255,.65);max-width:680px;margin:0 auto;line-height:1.8}
+
+/* trilha de prêmios */
+.ag-trilha{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:48px;
+}
+.ag-item{display:flex;flex-direction:column;gap:10px}
+.ag-pts{
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:900;letter-spacing:.5px;text-transform:uppercase;
+  padding:7px 14px;border-radius:50px;width:fit-content;
+}
+.ag-pts-verde{background:#1a5c2a;color:#4ade80;border:1px solid #2a8040}
+.ag-pts-azul{background:#1a3070;color:#7eb8f7;border:1px solid #2a4a9a}
+.ag-pts-roxo{background:rgba(123,44,185,.35);color:#d8aaff;border:1px solid rgba(123,44,185,.5)}
+.ag-pts-ouro{background:rgba(245,197,24,.18);color:#F5C518;border:1px solid rgba(245,197,24,.4);font-size:13px}
+.ag-pts-imperial{
+  background:linear-gradient(135deg,rgba(245,197,24,.2),rgba(232,166,0,.3));
+  color:#F5C518;border:1px solid rgba(245,197,24,.5);
+  font-size:14px;
+}
+.ag-item-card{
+  flex:1;border-radius:16px;padding:22px 18px;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.1);
+  transition:all .3s;
+}
+.ag-item-card:hover{background:rgba(255,255,255,.12);transform:translateY(-4px);border-color:rgba(255,255,255,.22);box-shadow:0 16px 40px rgba(0,0,0,.4)}
+.ag-item-card-ouro{background:rgba(245,197,24,.08);border-color:rgba(245,197,24,.2)}
+.ag-item-card-ouro:hover{background:rgba(245,197,24,.14);border-color:rgba(245,197,24,.35)}
+.ag-item-card-imperial{
+  background:linear-gradient(160deg,rgba(245,197,24,.1),rgba(123,44,185,.15));
+  border-color:rgba(245,197,24,.3);
+}
+.ag-item-card-imperial:hover{background:linear-gradient(160deg,rgba(245,197,24,.18),rgba(123,44,185,.22));border-color:rgba(245,197,24,.5)}
+.ag-item-ico{font-size:28px;margin-bottom:10px}
+.ag-item-card h4{font-size:14px;font-weight:800;color:#fff;margin-bottom:8px;line-height:1.3}
+.ag-item-card p{font-size:12px;color:rgba(255,255,255,.58);line-height:1.7;margin-bottom:12px}
+.ag-item-card strong{color:rgba(255,255,255,.85)}
+.ag-item-tag{
+  display:inline-block;font-size:9px;font-weight:700;letter-spacing:.3px;
+  color:rgba(255,255,255,.4);background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.1);
+  padding:4px 10px;border-radius:50px;
+}
+.ag-item-tag-ouro{color:rgba(245,197,24,.7);background:rgba(245,197,24,.07);border-color:rgba(245,197,24,.2)}
+.ag-item-tag-imperial{color:#F5C518;background:rgba(245,197,24,.12);border-color:rgba(245,197,24,.35);font-size:10px;font-weight:800}
+
+/* números reais */
+.ag-numeros{
+  display:flex;align-items:center;justify-content:center;
+  gap:0;background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:20px;padding:28px 20px;
+  flex-wrap:wrap;margin-top:12px;
+}
+.ag-num{text-align:center;padding:12px 28px;flex:1;min-width:160px}
+.ag-num-val{display:block;font-size:clamp(22px,2.5vw,32px);font-weight:900;
+  background:linear-gradient(135deg,#F5C518,#FFB8E4);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  line-height:1.1;margin-bottom:4px;
+}
+.ag-num-label{display:block;font-size:12px;color:rgba(255,255,255,.5);font-weight:600}
+.ag-num-sep{width:1px;height:48px;background:rgba(255,255,255,.1);flex-shrink:0}
+
+.ag-faixa-btn{
+  display:inline-flex;align-items:center;
+  background:linear-gradient(135deg,#F5C518,#E8A600);color:#1a0845;
+  font-size:15px;font-weight:900;
+  padding:17px 44px;border-radius:50px;
+  transition:all .25s;
+  box-shadow:0 6px 24px rgba(245,197,24,.4);
+  letter-spacing:.2px;
+}
+.ag-faixa-btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(245,197,24,.55)}
+
+@media(max-width:1024px){.ag-trilha{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){
+  #premios{padding:52px 16px 60px}
+  .ag-trilha{grid-template-columns:1fr 1fr}
+  .ag-num-sep{display:none}
+  .ag-numeros{gap:0}
+  .ag-num{min-width:140px;padding:10px 12px}
+}
+@media(max-width:420px){
+  .ag-trilha{grid-template-columns:1fr}
+  .ag-num{min-width:100%;border-bottom:1px solid rgba(255,255,255,.08);padding:14px 0}
+  .ag-num:last-child{border-bottom:none}
+}
+
+/* ── CERTIFICAÇÕES ── */
+.cert-label{display:inline-block;font-size:15px;font-weight:800;color:var(--vm);letter-spacing:1px;margin-bottom:14px}
+.cert-title{font-size:clamp(24px,3vw,36px);font-weight:900;color:var(--v);margin-bottom:14px}
+.cert-sub{font-size:16px;color:var(--c3);max-width:680px;margin:0 auto 44px;line-height:1.7}
+.cert-logos{display:flex;justify-content:center;align-items:center;gap:40px;flex-wrap:wrap}
+.cert-item img{max-height:150px;width:auto;object-fit:contain;transition:filter .3s,transform .3s}
+.cert-item img:hover{transform:scale(1.08)}
+
+/* ── FOOTER ── */
+footer{background:#111;padding:44px 32px 24px}
+.fw{max-width:1200px;margin:0 auto}
+.fw-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:32px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:22px}
+.fw-logo img{height:36px;filter:brightness(10);opacity:.7}
+.fw-logo p{font-size:11px;color:rgba(255,255,255,.3);margin-top:8px}
+.fw-suporte h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,.4);margin-bottom:10px}
+.fw-suporte a,.fw-suporte span{display:block;font-size:13px;color:rgba(255,255,255,.65);margin-bottom:5px;text-decoration:none;transition:color .2s}
+.fw-suporte a:hover{color:var(--dl)}
+.fw-social h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,.4);margin-bottom:12px}
+.fw-social-icons{display:flex;gap:12px}
+.fw-social-icons a{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;transition:background .2s;text-decoration:none}
+.fw-social-icons a:hover{background:var(--vm)}
+.fw-social-icons svg{width:18px;height:18px;fill:#fff}
+.fw-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+footer .fw-copy{font-size:11px;color:rgba(255,255,255,.3)}
+.flinks{display:flex;gap:18px}
+.flinks a{font-size:11px;color:rgba(255,255,255,.3);transition:color .2s;text-decoration:none}
+.flinks a:hover{color:var(--dl)}
+
+/* ── ANIMAÇÕES ── */
+[da]{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+[da].v{opacity:1;transform:translateY(0)}
+[da=e]{transform:translateX(-22px)}[da=e].v{transform:translateX(0)}
+[da=d]{transform:translateX(22px)}[da=d].v{transform:translateX(0)}
+[dd="1"]{transition-delay:.1s}[dd="2"]{transition-delay:.2s}[dd="3"]{transition-delay:.3s}
+[dd="4"]{transition-delay:.4s}[dd="5"]{transition-delay:.5s}
+
+/* ── RESPONSIVO ── */
+@media(max-width:1024px){
+  #hero{grid-template-columns:1fr;min-height:auto}
+  .h-foto{height:55vw;min-height:260px}
+  .h-painel{padding:44px 32px}
+  .niveis{grid-template-columns:1fr 1fr}
+  .bens-grid{grid-template-columns:1fr 1fr}
+  .vid-grid{grid-template-columns:1fr 1fr}
+  .formas-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto auto}
+}
+@media(max-width:768px){
+  /* nav */
+  .nw{padding:0 16px}
+  .n-links,.n-cta{display:none}
+  .n-mob{display:block}
+
+  /* seções gerais */
+  .sec{padding:60px 16px}
+  #premios{padding:48px 16px 56px !important}
+  #certificacoes{padding:44px 16px !important}
+  #produtos{padding:44px 16px 40px !important}
+  #faq{padding:60px 16px}
+  #cadastro{padding:52px 16px}
+
+  /* formulário - colapsa para 1 coluna */
+  .form-container{grid-template-columns:1fr;gap:36px}
+
+  /* acumulou ganhou - trilha de prêmios */
+  .ag-trilha{grid-template-columns:repeat(2,1fr);gap:10px}
+
+  /* seções internas com padding horizontal excessivo */
+  .sec-inner-pad{padding-left:16px !important;padding-right:16px !important}
+
+  /* formas de vender - reordena no mobile para texto > foto > texto > foto */
+  .formas-grid > :nth-child(3){order:4}
+  .formas-grid > :nth-child(4){order:3}
+
+  /* hero */
+  .h-painel{padding:36px 20px}
+  .hp-titulo{font-size:28px}
+
+  /* formas */
+  .formas-grid{grid-template-columns:1fr}
+  .forma-foto{height:220px}
+
+  /* benefícios */
+  .bens-grid{grid-template-columns:1fr 1fr}
+
+  /* 3 passos */
+  .passos-grid{grid-template-columns:1fr;gap:16px}
+  .passos-grid::before{display:none}
+
+  /* lucratividade intro */
+  .lucro-intro{padding:52px 16px 44px}
+  .lucro-caminhos{flex-direction:column;gap:12px}
+  .lc-venda,.lc-rede{border-radius:16px;margin:0}
+  .lc-vs{width:100%;height:40px;border:none;border-left:2px solid rgba(245,197,24,.2);border-right:2px solid rgba(245,197,24,.2);border-radius:0}
+  .lucro-sep{padding:0 16px}
+  /* lucratividade */
+  .lucro-banner{flex-direction:column;gap:10px}
+  .lucros-titulo{padding:0 8px}
+  .nc-row.r4,.nc-row.r3{grid-template-columns:repeat(2,1fr)}
+  .niveis{grid-template-columns:1fr 1fr}
+  .nums-w{grid-template-columns:1fr 1fr}
+  .nc{border-right:none;border-bottom:1px solid rgba(255,255,255,.1)}
+  .outras-ganhos{padding:0 0 48px}
+  .og-grid{grid-template-columns:1fr 1fr}
+
+  /* certificações */
+  .cert-logos{gap:20px}
+  .cert-item img{max-height:80px}
+
+  /* vídeos */
+  .vid-grid{grid-template-columns:1fr}
+
+  /* formulário */
+  .form-card{padding:28px 20px}
+  .form-row{grid-template-columns:1fr}
+
+  /* footer */
+  footer{padding:32px 16px 20px}
+  .fw-top{flex-direction:column;align-items:center;text-align:center;gap:24px}
+  .fw-social-icons{justify-content:center}
+  .fw-bottom{flex-direction:column;align-items:center;gap:8px}
+  .flinks{justify-content:center}
+}
+@media(max-width:480px){
+  .bens-grid{grid-template-columns:1fr}
+  .niveis{grid-template-columns:1fr 1fr}
+  .nc-row.r4,.nc-row.r3{grid-template-columns:1fr 1fr}
+  .og-grid{grid-template-columns:1fr}
+  .ag-trilha{grid-template-columns:1fr}
+  .hp-titulo{font-size:26px}
+  .h-painel{padding:28px 16px}
+  .pp-card img{max-height:120px}
+  .lr-banner{grid-template-columns:1fr !important}
+  .lr-img{display:none}
+  .lr-left{border-right:none;border-bottom:1px solid var(--bd)}
+  .cert-item img{max-height:60px}
+  .cert-logos{gap:14px}
+  .mat-cards{grid-template-columns:1fr}
+  .mat-box{padding:24px 16px}
+  .plb-destaque{flex-direction:column;gap:12px}
+  .plb-d-sep{width:80%;height:1px;margin:0}
+}
+
+/* ── MODAL MATERIAL ── */
+#mat-modal{
+  display:none;position:fixed;inset:0;z-index:9999;
+  background:rgba(10,3,30,.75);backdrop-filter:blur(6px);
+  align-items:center;justify-content:center;padding:20px;
+}
+#mat-modal.on{display:flex}
+.mat-box{
+  background:#fff;border-radius:24px;padding:40px 36px;
+  max-width:640px;width:100%;position:relative;
+  box-shadow:0 32px 80px rgba(0,0,0,.4);
+  animation:matIn .35s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes matIn{from{opacity:0;transform:scale(.88) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.mat-close{position:absolute;top:16px;right:16px;background:var(--bg);border:none;width:34px;height:34px;border-radius:50%;font-size:14px;cursor:pointer;color:var(--c3);display:flex;align-items:center;justify-content:center}
+.mat-close:hover{background:var(--bd);color:#333}
+.mat-check{font-size:40px;text-align:center;margin-bottom:12px}
+.mat-titulo{font-size:22px;font-weight:900;color:var(--v);text-align:center;margin-bottom:8px}
+.mat-sub{font-size:14px;color:var(--c2);text-align:center;line-height:1.65;margin-bottom:28px}
+.mat-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.mat-card{border:1.5px solid var(--bd);border-radius:16px;padding:20px 18px;display:flex;flex-direction:column;gap:8px;background:var(--bg)}
+.mat-card-ico{font-size:28px;text-align:center}
+.mat-card-titulo{font-size:15px;font-weight:900;color:var(--v);text-align:center}
+.mat-card-desc{font-size:12px;color:var(--c3);text-align:center;line-height:1.6;margin-bottom:4px;flex:1}
+.mat-btn{display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 14px;border-radius:50px;font-size:12px;font-weight:800;text-decoration:none;text-align:center;transition:all .2s;cursor:pointer}
+.mat-btn-wpp{background:#25D366;color:#fff}
+.mat-btn-wpp:hover{background:#1ebe5d;transform:translateY(-1px)}
+.mat-btn-dl{background:var(--bd);color:var(--v);border:1.5px solid var(--bd)}
+.mat-btn-dl:hover{background:var(--vm);color:#fff;border-color:var(--vm)}
+@media(max-width:500px){.mat-cards{grid-template-columns:1fr}.mat-box{padding:28px 20px}}
 </style>
 </head>
 <body>
 
-
-<!-- HEADER -->
-<header>
-  <a href="#" class="h-logo">
-    <img src="Logo Alvo negocio.png" alt="Alvo Negócio" style="height:70px;">
-    <span class="h-logo-nome" style="display:none;">Alvo Negócio</span>
-  </a>
-  <div style="display:flex; align-items:center; gap:12px;">
-    <span style="font-size:11px; color:var(--verde); font-weight:600; letter-spacing:1px; text-transform:uppercase;">Distribuidora Oficial</span>
-    <div style="width:1px; height:36px; background:var(--border);"></div>
-    <img src="logo jan Rosê.png" alt="Jan Rosê" style="height:52px; opacity:0.9;">
+<!-- ══ NAV ══ -->
+<nav>
+  <div class="nw">
+    <div class="n-brand">
+      <div class="n-brand-jan"><img src="logo%20jan%20Ros%C3%AA.png" alt="Jan Rosê"></div>
+    </div>
+    <ul class="n-links">
+      <li><a href="#como-vender">A oportunidade</a></li>
+      <li><a href="#lucro">Seus ganhos</a></li>
+      <li><a href="#historias">Quem já entrou</a></li>
+      <li><a href="#passos">Como funciona</a></li>
+      <li><a href="#faq">Perguntas</a></li>
+    </ul>
+    <a class="n-cta" href="#cadastro">quero entrar</a>
+    <a class="n-cta n-cta-login" href="https://janrose.digital/login" target="_blank">Já sou consultor</a>
+    <button class="n-mob" onclick="toggleNav()" aria-label="Menu"><span></span></button>
   </div>
-</header>
+</nav>
+<div class="nav-drawer" id="nd">
+  <a href="#como-vender" onclick="closeNav()">A oportunidade</a>
+  <a href="#lucro" onclick="closeNav()">Seus ganhos</a>
+  <a href="#historias" onclick="closeNav()">Quem já entrou</a>
+  <a href="#passos" onclick="closeNav()">Como funciona</a>
+  <a href="#faq" onclick="closeNav()">Perguntas</a>
+  <div style="display:flex;gap:10px;margin-top:16px">
+    <a class="n-cta btn-v" href="#cadastro" onclick="closeNav()" style="flex:1;justify-content:center;padding:14px 16px;font-size:14px">quero entrar</a>
+    <a href="https://janrose.digital/login" target="_blank" onclick="closeNav()" style="flex:1;display:flex;justify-content:center;align-items:center;padding:14px 16px;border-radius:50px;border:2px solid var(--vm);color:var(--vm);font-size:14px;font-weight:800">Já sou consultor</a>
+  </div>
+</div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-glow"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-inner">
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="h-foto">
+    <img src="n1.png" alt="Distribuidoras Jan Rosê">
+  </div>
+  <div class="h-painel">
+    <p class="hp-tag">💜 Você está no lugar certo</p>
+    <h1 class="hp-titulo">
+      Talvez seja a hora de<br>
+      <strong style="color:#F5C518">mudar alguma coisa</strong><br>
+      na sua vida
+    </h1>
+    <p class="hp-sub">
+      Muita gente chega aqui buscando uma saída — <strong style="color:var(--dl)">renda extra</strong>, <strong style="color:var(--dl)">mais liberdade</strong>, <strong style="color:var(--dl)">trabalhar para si mesmo</strong>. Se é isso que você sente, continue lendo. Pode ser o que você estava esperando.
+    </p>
+    <a class="hp-btn" href="#cadastro">quero saber mais</a>
+    <div class="hp-parceiro">
+      <span>Distribuidor Independente Oficial · Equipe Alvo Negócio</span>
+      <img src="logo%20jan%20Ros%C3%AA.png" alt="Jan Rosê">
+    </div>
+  </div>
+</section>
 
-    <!-- ESQUERDA -->
-    <div class="hero-left">
-      <div class="hero-eyebrow">Você está no lugar certo 💜</div>
-      <h1 class="hero-titulo">
-        Talvez seja a hora de<br>
-        <span class="verde">mudar alguma coisa</span><br>
-        na sua vida
-      </h1>
-      <p class="hero-sub">
-        Muita gente chega aqui buscando uma saída — renda extra, mais liberdade, trabalhar para si mesmo.<br>
-        Se é isso que você sente, continue lendo. Pode ser o que você estava esperando.
-      </p>
-      <div class="hero-provas">
-        <div class="prova-item">
-          <div class="prova-dot"></div>
-          <span>Não precisa ter experiência para começar</span>
-        </div>
-        <div class="prova-item">
-          <div class="prova-dot"></div>
-          <span>Sem estoque — comece com o que você tem</span>
-        </div>
-        <div class="prova-item">
-          <div class="prova-dot"></div>
-          <span>Suporte real desde o primeiro dia</span>
-        </div>
-        <div class="prova-item">
-          <div class="prova-dot"></div>
-          <span>Trabalhe pelo celular, no seu horário</span>
-        </div>
-        <div class="prova-item">
-          <div class="prova-dot"></div>
-          <span>Você decide seu ritmo — sem pressão</span>
-        </div>
+<!-- ══ COMO VENDER ══ -->
+<section class="sec" id="como-vender">
+  <div class="sw">
+    <h2 class="s-h" da>O seu futuro não muda sozinho.<br><span>Ele muda quando você decide começar.</span></h2>
+    <p class="s-sub" da>Trabalhe do seu jeito, no seu tempo e de onde quiser. Cada venda é uma nova oportunidade de conquistar <strong>renda</strong>, <strong>liberdade</strong> e uma vida com mais possibilidades. A Jan Rosê se encaixa na sua rotina — você é quem decide como e quando crescer.</p>
+
+    <div class="formas-grid" style="margin-top:48px">
+      <div class="forma-txt" da="e">
+        <h3>Comece por quem já está ao seu redor</h3>
+        <p>Família, amigas, colegas de trabalho — seu primeiro círculo já é o seu <strong>primeiro mercado</strong>. Com catálogo em mãos e orientação da equipe, as vendas acontecem <strong>naturalmente</strong>.</p>
+      </div>
+      <div class="forma-foto" da dd="1">
+        <img src="vendendo.png" alt="Venda presencial Jan Rosê">
+      </div>
+      <div class="forma-foto" da dd="2">
+        <img src="ppp1.png" alt="Venda digital Jan Rosê">
+      </div>
+      <div class="forma-txt" da="d">
+        <h3>Expanda pelo digital e crie <span style="color:var(--vm)">renda recorrente</span></h3>
+        <p>Com seu <strong>link exclusivo Jan Rosê</strong> você alcança clientes além do seu círculo e ainda convida outras pessoas para a equipe — construindo uma <strong>renda que cresce todo mês</strong>.</p>
       </div>
     </div>
 
-    <!-- IMAGEM CONVIDANDO -->
-    <div style="display:flex; justify-content:center; margin:20px 0 0;">
-      <img src="1234.png" alt="Junte-se à equipe" style="max-width:240px; width:100%; filter:drop-shadow(0 8px 24px rgba(0,0,0,0.12));">
+    <div class="centro" style="margin-top:44px" da>
+      <a class="btn-v" href="#cadastro">quero ser distribuidora</a>
     </div>
 
-    <!-- CARD CAPTURA -->
-    <div class="cap-card">
-      <div class="cap-titulo">Quero conhecer melhor 😊</div>
-      <div class="cap-sub">Sem compromisso. Nossa equipe entra em contato e explica tudo com calma — você decide depois.</div>
+    <!-- 4 benefícios ícone -->
+    <div class="bens-grid" style="margin-top:72px">
+      <div class="ben" da dd="1">
+        <div class="ben-ico">🌍</div>
+        <h4>Mais de 200 Produtos para Você Vender com Confiança</h4>
+        <p>A Jan Rosê é uma <strong>multinacional presente desde 1994</strong>, referência em cosméticos, perfumaria, saúde e bem-estar.</p>
+      </div>
+      <div class="ben" da dd="2">
+        <div class="ben-ico">🤝</div>
+        <h4>Suporte do início ao fim</h4>
+        <p>Receba treinamentos completos, materiais prontos para divulgação e o suporte de uma equipe comprometida com o seu crescimento. Do <strong>primeiro passo</strong> às suas <strong>maiores conquistas</strong>, estaremos ao seu lado para orientar, tirar dúvidas e ajudar você a alcançar resultados.</p>
+      </div>
+      <div class="ben" da dd="3">
+        <div class="ben-ico">💸</div>
+        <h4>Você decide quanto ganhar</h4>
+        <p><strong>Sem meta obrigatória, sem chefe.</strong> Trabalhe no seu ritmo e receba diretamente — quanto mais se dedicar, mais cresce.</p>
+      </div>
+      <div class="ben" da dd="4">
+        <div class="ben-ico">📲</div>
+        <h4>Tudo no seu celular</h4>
+        <p>Catálogo digital, link exclusivo e gestão do negócio — tudo acessível de <strong>qualquer lugar, a qualquer hora</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <div id="form-area">
-        <form class="cap-form" onsubmit="enviar(event)">
-          <label>
-            Seu nome completo
-            <input type="text" id="nome" placeholder="Ex: Maria Silva" required autocomplete="name">
-          </label>
-          <label>
-            WhatsApp com DDD
-            <input type="tel" id="whats" placeholder="(11) 99999-9999" required autocomplete="tel">
-          </label>
-          <label>
-            Como prefere começar?
-            <select id="interesse" style="background:#F9FAFB;border:1px solid #E5E7EB;border-radius:8px;padding:13px 16px;font-size:15px;color:#111827;font-family:inherit;outline:none;cursor:pointer;">
-              <option value="revendedor">Quero revender os produtos</option>
-              <option value="parceiro">Quero montar minha equipe</option>
-              <option value="ambos">Quero os dois</option>
-              <option value="conhecer">Ainda quero conhecer melhor</option>
-            </select>
-          </label>
-          <button type="submit" class="btn-cap">Quero saber mais 💜</button>
-        </form>
-        <p class="cap-privacidade">🔒 Seus dados estão seguros. Sem spam. Sem pressão.</p>
+<!-- ══ LUCRATIVIDADE ══ -->
+<section id="lucro">
+
+  <!-- INTRO: dois caminhos -->
+  <div class="lucro-intro">
+    <div class="lucro-intro-w">
+      <div class="lucro-intro-top" da>
+        <div class="lucro-intro-badge">💰 Seus ganhos Jan Rosê</div>
+        <h2 class="lucro-intro-titulo">Duas formas de ganhar.<br><span>Ambas ao mesmo tempo.</span></h2>
+        <p class="lucro-intro-sub">Você pode vender e ter lucro imediato — ou indicar pessoas e gerar renda que cresce todo mês. O mais inteligente é fazer os dois juntos.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEPARADOR FONTE 1 -->
+  <div class="lucro-sep lucro-sep-venda">
+    <div class="lucro-sep-w">
+      <span class="lucro-sep-num">01</span>
+      <span class="lucro-sep-txt">Venda Direta — <em>Lucro Imediato</em></span>
+    </div>
+  </div>
+  <!-- LUCRO NA REVENDA -->
+  <div class="sec-inner-pad" style="background:#96165d;padding:48px 32px">
+  <div class="lr-banner" da>
+    <div class="lr-img">
+      <img src="mulheres%20de%20equipe.png" alt="Equipe Jan Rosê">
+    </div>
+    <div class="lr-left">
+      <div class="lr-tag-pill">📈 grande rentabilidade</div>
+      <h3 class="lr-titulo">Lucro na Revenda</h3>
+      <div class="lr-num">100%</div>
+      <div class="lr-label">de lucro</div>
+      <p class="lr-desc">vendendo <strong>1 perfume por dia</strong>, seu lucro mensal pode chegar a <strong>R$ 5.800</strong></p>
+    </div>
+    <div class="lr-calc">
+      <div class="lr-calc-title">
+        <div class="lr-calc-title-emoji">🧮</div>
+        <div class="lr-calc-title-txt">Descubra quanto você<br>pode ganhar por mês</div>
+        <div class="lr-calc-title-hint">👇 Ajuste a quantidade e veja o resultado</div>
       </div>
 
-      <div class="cap-sucesso" id="sucesso">
-        <div class="cap-sucesso-icon">✓</div>
-        <h3>Cadastro recebido!</h3>
-        <p>Te mandaremos uma mensagem no WhatsApp em breve com todos os detalhes da oportunidade.</p>
+      <div class="lr-calc-pergunta">
+        Quantos perfumes você vende por dia?
       </div>
+
+      <div class="lr-calc-controle">
+        <button class="lr-calc-btn" onclick="ajustarQtd(-1)">−</button>
+        <div class="lr-calc-num-wrap">
+          <input type="number" id="calc-qtd" class="lr-calc-input" value="1" min="1" max="999" oninput="calcLucro()">
+          <span class="lr-calc-unit">perfumes / dia</span>
+        </div>
+        <button class="lr-calc-btn" onclick="ajustarQtd(1)">+</button>
+      </div>
+
+      <div class="lr-calc-res">
+        <div class="lr-calc-res-label">seu lucro mensal estimado</div>
+        <div class="lr-calc-res-val" id="calc-result">R$ 5.800</div>
+        <div class="lr-calc-res-ano" id="calc-ano">R$ 69.600 por ano</div>
+      </div>
+      <div class="lr-calc-note">* estimativa baseada em 100% de lucro na revenda</div>
+      <div class="lr-calc-motivacao">
+        <div class="lr-calc-mot-ico">🔥</div>
+        <div class="lr-calc-mot-txt">Isso não é só uma venda.<br>É <strong>patrimônio sendo construído todo dia</strong> — sem chefe, sem horário fixo, com um produto que as pessoas já querem comprar.</div>
+      </div>
+    </div>
+  </div>
+  </div><!-- /bg venda direta -->
+
+  <!-- SEPARADOR FONTE 2 -->
+  <div class="lucro-sep lucro-sep-rede">
+    <div class="lucro-sep-w">
+      <span class="lucro-sep-num">02</span>
+      <span class="lucro-sep-txt">Indicação e Rede — <em>Renda Recorrente</em></span>
+    </div>
+  </div>
+
+  <div class="sec-inner-pad" style="padding:56px 32px 0">
+  <!-- título -->
+  <div class="lucros-titulo" da>
+    <h2>Divisão de Lucros</h2>
+    <p><strong>45% da pontuação global bonificável</strong> é dividida entre os qualificados do mês conforme as cotas — quanto maior seu nível, maior sua cota e seus ganhos mensais.</p>
+  </div>
+
+  <!-- FASE 1 -->
+  <div class="fase-sep" da><span class="fase-sep-txt">📈 Construção do Negócio</span></div>
+  <div class="nc-row r4" da>
+    <div class="nc2 ouro">
+      <div class="nc2-ico">🥇</div>
+      <div class="nc2-nome">Ouro</div>
+      <div class="nc2-pts">2.000 pts · 50% PML</div>
+      <div class="nc2-est">estimativa de ganho</div>
+      <div class="nc2-val">R$300</div>
+      <div class="nc2-badge">+ R$200 cashback</div>
+    </div>
+    <div class="nc2 safira">
+      <div class="nc2-ico">💎</div>
+      <div class="nc2-nome">Safira</div>
+      <div class="nc2-pts">5.000 pts · 40% PML · 1 cota</div>
+      <div class="nc2-est">estimativa de ganho</div>
+      <div class="nc2-val">R$1.000</div>
+    </div>
+    <div class="nc2 esmeralda">
+      <div class="nc2-ico">💚</div>
+      <div class="nc2-nome">Esmeralda</div>
+      <div class="nc2-pts">10.000 pts · 40% PML · 2 cotas</div>
+      <div class="nc2-est">estimativa de ganho</div>
+      <div class="nc2-val">R$2.000</div>
+    </div>
+    <div class="nc2 rubi">
+      <div class="nc2-ico">❤️</div>
+      <div class="nc2-nome">Rubi</div>
+      <div class="nc2-pts">20.000 pts · 40% PML · 4 cotas</div>
+      <div class="nc2-est">estimativa de ganho</div>
+      <div class="nc2-val">R$4.000</div>
+    </div>
+  </div>
+
+  <!-- FASE 2 -->
+  <div class="fase-sep" da><span class="fase-sep-txt">⭐ Consolidação de Liderança</span></div>
+  <div class="nc-row r3" da>
+    <div class="nc2 diamante">
+      <div class="nc2-ico">💠</div>
+      <div class="nc2-nome">Diamante</div>
+      <div class="nc2-pts">40.000 pts · 40% PML · 8 cotas</div>
+      <div class="nc2-est">estimativa de ganho</div>
+      <div class="nc2-val">R$8.000</div>
+    </div>
+    <div class="nc2 duplo">
+      <div class="nc2-ico">✨</div>
+      <div class="nc2-nome">Duplo Jan</div>
+      <div class="nc2-pts">100.000 pts · 40% PML · 16 cotas</div>
+      <div class="nc2-est">estimativa de ganho</div>
+      <div class="nc2-val">R$15.000</div>
+    </div>
+    <div class="nc2 triplo">
+      <div class="nc2-ico">🌟</div>
+      <div class="nc2-nome">Triplo Jan</div>
+      <div class="nc2-pts">200.000 pts · 40% PML · 25 cotas</div>
+      <div class="nc2-est">estimativa de ganho</div>
+      <div class="nc2-val">R$25.000</div>
+    </div>
+  </div>
+
+  <!-- FASE 3 -->
+  <div class="fase-sep" da><span class="fase-sep-txt">👑 Liberdade Financeira</span></div>
+  <div class="nc-row r3" da>
+    <div class="nc2 red-jan">
+      <div class="nc2-ico">🌹</div>
+      <div class="nc2-nome">Red Jan</div>
+      <div class="nc2-pts">400.000 pts · 40% PML · 40 cotas</div>
+      <div class="nc2-est">estimativa de ganho</div>
+      <div class="nc2-val">R$40.000</div>
+    </div>
+    <div class="nc2 black-jan">
+      <div class="nc2-ico">🖤</div>
+      <div class="nc2-nome">Black Jan</div>
+      <div class="nc2-pts">700.000 pts · 40% PML · 70 cotas</div>
+      <div class="nc2-est">estimativa de ganho</div>
+      <div class="nc2-val">R$60.000</div>
+    </div>
+    <div class="nc2 imperial">
+      <div class="nc2-ico">👑</div>
+      <div class="nc2-nome">Imperial</div>
+      <div class="nc2-pts">1.000.000 pts · 40% PML · 100 cotas</div>
+      <div class="nc2-est">estimativa de ganho</div>
+      <div class="nc2-val">R$80.000+</div>
+      <div class="nc2-badge">+ de 1 milhão/ano em renda residual</div>
+    </div>
+  </div>
+
+  <div class="lucros-rodape" da>modelo de negócio acessível e inteligente</div>
+  </div><!-- /rede padding -->
+
+  <!-- SIMULADOR BÔNUS INDICAÇÃO -->
+  <div class="sec-inner-pad" style="background:#96165d;padding:52px 32px 52px">
+    <div class="ind-sim" da>
+      <div class="ind-card">
+
+        <!-- topo: info -->
+        <div class="ind-top">
+          <div class="ind-top-left">
+            <div class="ind-pill">👥 bônus de indicação</div>
+            <h3 class="ind-titulo">Indique e ganhe<br>na hora</h3>
+            <p class="ind-desc">Cada pessoa que entra com <strong>Combo Pro (R$997)</strong>,<br>você recebe <strong>R$ 199,40</strong> de bônus imediato.</p>
+          </div>
+          <div class="ind-top-right">
+            <div class="ind-pct">20%</div>
+            <div class="ind-pct-label">de bônus</div>
+          </div>
+        </div>
+
+        <!-- baixo: calculadora -->
+        <div class="ind-bottom">
+          <div class="ind-calc-row">
+
+            <div class="ind-calc-left">
+              <div class="ind-calc-pergunta">Quantas pessoas você indica?</div>
+              <div class="ind-calc-sub">por mês · ajuste com os botões</div>
+              <div class="ind-controle">
+                <button class="ind-btn" onclick="ajustarInd(-1)">−</button>
+                <div class="ind-num-wrap">
+                  <input type="number" id="ind-qtd" class="ind-input" value="1" min="1" max="9999" oninput="calcInd()">
+                  <span class="ind-unit">pessoas</span>
+                </div>
+                <button class="ind-btn" onclick="ajustarInd(1)">+</button>
+              </div>
+            </div>
+
+            <div class="ind-divider"></div>
+
+            <div class="ind-calc-right">
+              <div class="ind-hint">👇 resultado</div>
+              <div class="ind-res-label">seu bônus mensal</div>
+              <div class="ind-res-val" id="br-total">R$ 199,40</div>
+              <div class="ind-res-ano" id="br-ano">R$ 2.392,80 por ano</div>
+            </div>
+
+          </div>
+          <div class="ind-note">* Combo Pro R$997 · 20% de bônus por indicação direta</div>
+          <div class="ind-motivacao">
+            <div class="ind-mot-ico">💸</div>
+            <div class="ind-mot-txt">Cada indicação é uma <strong>renda que entra sem você vender nada</strong> — enquanto a pessoa cresce na rede, o seu bônus continua chegando todo mês.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- OUTRAS FORMAS DE GANHO -->
+  <div class="outras-ganhos" da>
+    <div class="og-titulo">
+      <p class="og-label">Mais formas de ganhar</p>
+      <h3>Cada ação gera uma nova fonte de renda</h3>
+      <p class="og-sub">Além da Divisão de Lucros, você acumula ganhos por diferentes caminhos ao mesmo tempo.</p>
+    </div>
+    <div class="og-grid">
+      <div class="og-card" da dd="1">
+        <div class="og-ico">🛒</div>
+        <h4>Lucro na Revenda</h4>
+        <p>Até <strong>100% de lucro</strong> em cada produto vendido diretamente para seus clientes. Ganho imediato, sem esperar o fechamento do mês.</p>
+      </div>
+      <div class="og-card" da dd="2">
+        <div class="og-ico">👥</div>
+        <h4>Bônus de Indicação</h4>
+        <p>Ganhe <strong>10% ou 20%</strong> sobre as compras dos distribuidores que você indicar — enquanto eles compram, você recebe.</p>
+      </div>
+      <div class="og-card" da dd="3">
+        <div class="og-ico">📊</div>
+        <h4>Participação no Mercado Livre (PML)</h4>
+        <p>A partir do nível Safira, você recebe <strong>até 40% PML</strong> sobre sua pontuação — uma bonificação mensal que vem do volume da rede.</p>
+      </div>
+      <div class="og-card" da dd="4">
+        <div class="og-ico">💳</div>
+        <h4>Cashback</h4>
+        <p>No nível Ouro você já recebe <strong>R$200 de cashback</strong> todo mês. Um benefício exclusivo para quem está em crescimento ativo.</p>
+      </div>
+      <div class="og-card" da dd="5">
+        <div class="og-ico">🔁</div>
+        <h4>Renda Residual</h4>
+        <p>Conforme sua equipe cresce, seus ganhos crescem com ela — <strong>mesmo nos meses em que você vender menos</strong>. A rede trabalha por você.</p>
+      </div>
+      <div class="og-card" da dd="6">
+        <div class="og-ico">🏆</div>
+        <h4>Divisão de Lucros Globais</h4>
+        <p><strong>45% do lucro global bonificável</strong> da Jan Rosê é dividido entre os distribuidores qualificados. Quanto maior seu nível, maior sua cota e seu cheque mensal.</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px" da>
+      <a class="btn-og" href="#cadastro">quero todas essas fontes de renda</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ACUMULOU GANHOU ══ -->
+<section id="premios" style="padding:72px 32px 80px;background:linear-gradient(160deg,#0d0030 0%,#1a0845 45%,#3a0a60 75%,#5a0a3a 100%);position:relative;overflow:hidden">
+  <div style="position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(245,197,24,.07) 0%,transparent 65%);pointer-events:none"></div>
+  <div style="position:absolute;bottom:-80px;left:-80px;width:360px;height:360px;background:radial-gradient(circle,rgba(192,68,184,.1) 0%,transparent 65%);pointer-events:none"></div>
+
+  <div style="max-width:1200px;margin:0 auto;position:relative">
+
+    <!-- cabeçalho -->
+    <div class="ag-header" da>
+      <div class="ag-badge">🏆 Programa de Reconhecimento Jan Rosê</div>
+      <h2 class="ag-titulo">Acumulou. Ganhou.</h2>
+      <p class="ag-sub">Acumule pontos e troque por viagens, produtos, dinheiro e até o carro dos seus sonhos. Quanto mais você cresce, mais a Jan Rosê reconhece e recompensa.</p>
+    </div>
+
+    <!-- trilha de prêmios -->
+    <div class="ag-trilha" da>
+
+      <!-- 20K -->
+      <div class="ag-item" da dd="1">
+        <div class="ag-pts ag-pts-verde">20K pts</div>
+        <div class="ag-item-card">
+          <div class="ag-item-ico">🛍️</div>
+          <h4>Kit Rennovit</h4>
+          <p>RennoPower, Colágeno, Vitamina K2, Imunovit, Ômega 3, Óleo Rennovit + Ozonizado — kit completo de saúde e bem-estar.</p>
+        </div>
+      </div>
+
+      <!-- 100K -->
+      <div class="ag-item" da dd="2">
+        <div class="ag-pts ag-pts-azul">100K pts</div>
+        <div class="ag-item-card">
+          <div class="ag-item-ico">🚢</div>
+          <h4>Cruzeiro pela Costa Brasileira</h4>
+          <p>Você + acompanhante a bordo. Experiência completa custeada pela Jan Rosê.</p>
+        </div>
+      </div>
+
+      <!-- 200K -->
+      <div class="ag-item" da dd="3">
+        <div class="ag-pts ag-pts-azul">200K pts</div>
+        <div class="ag-item-card">
+          <div class="ag-item-ico">🚢</div>
+          <h4>Cruzeiro Costa Brasileira</h4>
+          <p>Cruzeiro completo com acompanhante — um upgrade especial para quem dobra a pontuação.</p>
+        </div>
+      </div>
+
+      <!-- 400K -->
+      <div class="ag-item" da dd="4">
+        <div class="ag-pts ag-pts-roxo">400K pts</div>
+        <div class="ag-item-card">
+          <div class="ag-item-ico">✈️</div>
+          <h4>Cruzeiro + R$ 2.000</h4>
+          <p>Cruzeiro com acompanhante <strong>mais R$2.000 em dinheiro</strong> para gastar como quiser durante a viagem.</p>
+        </div>
+      </div>
+
+      <!-- 800K -->
+      <div class="ag-item" da dd="5">
+        <div class="ag-pts ag-pts-roxo">800K pts</div>
+        <div class="ag-item-card">
+          <div class="ag-item-ico">🌎</div>
+          <h4>Cruzeiro + R$ 5.000</h4>
+          <p>Cruzeiro com acompanhante <strong>mais R$5.000 em dinheiro</strong>. Uma experiência de liderança inesquecível.</p>
+        </div>
+      </div>
+
+      <!-- 2M -->
+      <div class="ag-item" da dd="5">
+        <div class="ag-pts ag-pts-ouro">2M pts</div>
+        <div class="ag-item-card ag-item-card-ouro">
+          <div class="ag-item-ico">💵</div>
+          <h4>Bônus Realize — R$ 60.000</h4>
+          <p><strong>Sessenta mil reais em dinheiro</strong> depositados diretamente para você. Fruto do seu crescimento de rede.</p>
+        </div>
+      </div>
+
+      <!-- 4.5M -->
+      <div class="ag-item" da dd="5">
+        <div class="ag-pts ag-pts-ouro">4,5M pts</div>
+        <div class="ag-item-card ag-item-card-ouro">
+          <div class="ag-item-ico">💰</div>
+          <h4>Bônus Realize — R$ 120.000</h4>
+          <p><strong>Cento e vinte mil reais em dinheiro.</strong> A maior premiação em cash do programa — para quem decidiu ir até o topo.</p>
+        </div>
+      </div>
+
+      <!-- IMPERIAL -->
+      <div class="ag-item ag-item-imperial" da dd="5">
+        <div class="ag-pts ag-pts-imperial">👑 Imperial</div>
+        <div class="ag-item-card ag-item-card-imperial">
+          <div class="ag-item-ico">🚗</div>
+          <h4>Carro 0km + Perfume Exclusivo</h4>
+          <p>Você escolhe o carro — a <strong>Jan Rosê paga até R$300.000</strong>. E ainda cria o <strong>seu próprio perfume exclusivo</strong> com royalties vitalícios.</p>
+          <div class="ag-item-tag ag-item-tag-imperial">Nível Imperial</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- números reais (prova social) -->
+    <div class="ag-numeros" da>
+      <div class="ag-num">
+        <span class="ag-num-val">+1.200</span>
+        <span class="ag-num-label">pessoas já viajaram</span>
+      </div>
+      <div class="ag-num-sep"></div>
+      <div class="ag-num">
+        <span class="ag-num-val">+24</span>
+        <span class="ag-num-label">carros & bônus realize entregues</span>
+      </div>
+      <div class="ag-num-sep"></div>
+      <div class="ag-num">
+        <span class="ag-num-val">+52.000</span>
+        <span class="ag-num-label">prêmios entregues</span>
+      </div>
+      <div class="ag-num-sep"></div>
+      <div class="ag-num">
+        <span class="ag-num-val">+R$40M</span>
+        <span class="ag-num-label">pagos em bonificações</span>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div style="text-align:center;margin-top:44px" da>
+      <a class="ag-faixa-btn" href="#cadastro">quero começar a acumular pontos</a>
     </div>
 
   </div>
 </section>
 
-<!-- NÚMEROS -->
-<div class="numeros">
-  <div class="numeros-inner">
-    <div class="num-item">
-      <div class="num-val">+300</div>
-      <div class="num-lab">Produtos no catálogo</div>
+<!-- ══ PRODUTOS ══ -->
+<section id="produtos" style="padding:56px 32px 48px;background:var(--bg)">
+  <div style="max-width:1200px;margin:0 auto">
+
+    <!-- cabeçalho -->
+    <div class="pp-header" da>
+      <div class="pp-badge" da>+200 produtos exclusivos</div>
+      <h2 class="pp-title">Produtos que seus clientes já precisam</h2>
+      <p class="pp-sub">Jan Rosê oferece um portfólio com mais de <strong>200 produtos exclusivos</strong> — da beleza ao bem-estar. Com soluções para homens, mulheres e toda a família, você sempre tem o produto certo para cada cliente e mais lucro a cada venda.</p>
     </div>
-    <div class="num-item">
-      <div class="num-val">100%</div>
-      <div class="num-lab">Lucro na revenda</div>
+
+    <div class="pp-grid" style="margin-bottom:40px">
+      <div class="pp-card" da dd="1"><img src="ppp4.png" alt="Produto Jan Rosê"></div>
+      <div class="pp-card" da dd="2"><img src="pp3.png" alt="Produto Jan Rosê"></div>
+      <div class="pp-card" da dd="3"><img src="pp4.png" alt="Produto Jan Rosê"></div>
+      <div class="pp-card" da dd="4"><img src="pp9.png" alt="Produto Jan Rosê"></div>
+      <div class="pp-card" da dd="5"><img src="pp2.png" alt="Produto Jan Rosê"></div>
+      <div class="pp-card" da dd="6"><img src="pp8.png" alt="Produto Jan Rosê"></div>
+      <div class="pp-card" da dd="7"><img src="ppp6.png" alt="Produto Jan Rosê"></div>
+      <div class="pp-card" da dd="8"><img src="pp6.png" alt="Produto Jan Rosê"></div>
     </div>
-    <div class="num-item">
-      <div class="num-val">5</div>
-      <div class="num-lab">Fontes de renda</div>
+    <div class="centro" da style="margin-top:8px">
+      <a class="btn-v" href="#cadastro">quero vender estes produtos</a>
     </div>
-    <div class="num-item">
-      <div class="num-val">R$7.497</div>
-      <div class="num-lab">Possível por mês*</div>
+  </div>
+</section>
+
+<!-- ══ CERTIFICAÇÕES ══ -->
+<section id="certificacoes" style="padding:56px 32px;background:#fff">
+  <div style="max-width:1000px;margin:0 auto;text-align:center">
+    <p class="cert-label" da>Nossas certificações</p>
+    <h2 class="cert-title" da>Reconhecida. Certificada. Confiável.</h2>
+    <p class="cert-sub" da>A Jan Rosê é reconhecida e certificada por entidades em temas como meio ambiente, oportunidade e crescimento, franchising, responsabilidade social, vendas diretas, entre outros…</p>
+    <div class="cert-logos" da>
+      <div class="cert-item"><img src="c1.png" alt="Certificação Jan Rosê"></div>
+      <div class="cert-item"><img src="c2.png" alt="Certificação Jan Rosê"></div>
+      <div class="cert-item"><img src="c3.png" alt="Certificação Jan Rosê"></div>
+      <div class="cert-item"><img src="c5.jpeg" alt="Certificação Jan Rosê"></div>
+      <div class="cert-item"><img src="c6.jpeg" alt="Certificação Jan Rosê"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ HISTÓRIAS ══ -->
+<section class="sec sec-bg" id="historias">
+  <div class="sw">
+    <div class="centro" da>
+      <h2 class="s-h">Histórias que<br><span>começaram como a sua</span></h2>
+      <p class="s-sub">Uma empresa certificada, produtos que o mercado já aprova — mas o que realmente importa são as pessoas que decidiram começar. Veja o que aconteceu depois que elas deram o primeiro passo.</p>
+    </div>
+    <div class="vid-grid">
+      <div class="vid-thumb" da dd="1" onclick="abrirVideo('g5HXp58RAa8')">
+        <img src="https://img.youtube.com/vi/g5HXp58RAa8/maxresdefault.jpg" alt="Vídeo Jan Rosê 1">
+        <div class="vid-play"><svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg"><path d="M66.5 7.8C65.7 4.8 63.3 2.4 60.3 1.7 55.1.1 34 0 34 0S12.9.1 7.7 1.6C4.7 2.4 2.3 4.8 1.5 7.8.1 13 0 24 0 24s.1 11 1.5 16.2c.8 3 3.2 5.4 6.2 6.1C12.9 47.9 34 48 34 48s21.1-.1 26.3-1.6c3-.8 5.4-3.2 6.2-6.1C67.9 35 68 24 68 24S67.9 13 66.5 7.8z" fill="#FF0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg></div>
+      </div>
+      <div class="vid-thumb" da dd="2" onclick="abrirVideo('kWjnWEOV4GE')">
+        <img src="https://img.youtube.com/vi/kWjnWEOV4GE/maxresdefault.jpg" alt="Vídeo Jan Rosê 2">
+        <div class="vid-play"><svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg"><path d="M66.5 7.8C65.7 4.8 63.3 2.4 60.3 1.7 55.1.1 34 0 34 0S12.9.1 7.7 1.6C4.7 2.4 2.3 4.8 1.5 7.8.1 13 0 24 0 24s.1 11 1.5 16.2c.8 3 3.2 5.4 6.2 6.1C12.9 47.9 34 48 34 48s21.1-.1 26.3-1.6c3-.8 5.4-3.2 6.2-6.1C67.9 35 68 24 68 24S67.9 13 66.5 7.8z" fill="#FF0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg></div>
+      </div>
+      <div class="vid-thumb" da dd="3" onclick="abrirVideo('kWjnWEOV4GE')">
+        <img src="https://img.youtube.com/vi/kWjnWEOV4GE/maxresdefault.jpg" alt="Vídeo Jan Rosê 3">
+        <div class="vid-play"><svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg"><path d="M66.5 7.8C65.7 4.8 63.3 2.4 60.3 1.7 55.1.1 34 0 34 0S12.9.1 7.7 1.6C4.7 2.4 2.3 4.8 1.5 7.8.1 13 0 24 0 24s.1 11 1.5 16.2c.8 3 3.2 5.4 6.2 6.1C12.9 47.9 34 48 34 48s21.1-.1 26.3-1.6c3-.8 5.4-3.2 6.2-6.1C67.9 35 68 24 68 24S67.9 13 66.5 7.8z" fill="#FF0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg></div>
+      </div>
+      <div class="vid-thumb" da dd="4" onclick="abrirVideo('K9_zsKWlAIE')">
+        <img src="https://img.youtube.com/vi/K9_zsKWlAIE/hqdefault.jpg" alt="Vídeo Jan Rosê 4">
+        <div class="vid-play"><svg viewBox="0 0 68 48" xmlns="http://www.w3.org/2000/svg"><path d="M66.5 7.8C65.7 4.8 63.3 2.4 60.3 1.7 55.1.1 34 0 34 0S12.9.1 7.7 1.6C4.7 2.4 2.3 4.8 1.5 7.8.1 13 0 24 0 24s.1 11 1.5 16.2c.8 3 3.2 5.4 6.2 6.1C12.9 47.9 34 48 34 48s21.1-.1 26.3-1.6c3-.8 5.4-3.2 6.2-6.1C67.9 35 68 24 68 24S67.9 13 66.5 7.8z" fill="#FF0000"/><path d="M27 34l18-10-18-10v20z" fill="#fff"/></svg></div>
+      </div>
+    </div>
+    <div class="centro" style="margin-top:40px" da>
+      <a class="btn-v" href="#cadastro">quero escrever a minha história</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 3 PASSOS ══ -->
+<section class="sec" id="passos">
+  <div class="sw">
+
+    <div class="centro" da>
+      <h2 class="s-h">Comece em <span>3 passos</span></h2>
+      <p class="s-sub">Sem burocracia. Em minutos você já tem tudo para vender.</p>
+    </div>
+
+    <!-- LUCRO IMEDIATO BANNER -->
+    <div class="passos-lucro-banner" da>
+      <div class="plb-img">
+        <img src="ppp3.png" alt="Produtos Jan Rosê">
+      </div>
+      <div class="plb-txt">
+        <div class="plb-label">💰 lucro imediato</div>
+        <h3 class="plb-titulo">Entrou. Comprou.<br><span>Já lucra.</span></h3>
+        <p class="plb-desc">Seus produtos chegam com <strong>até 100% de margem</strong>. Venda e dobre o investido desde o primeiro dia.</p>
+        <div class="plb-destaque">
+          <div class="plb-d-item"><span class="plb-d-num">100%</span><span class="plb-d-leg">de lucro possível por produto</span></div>
+          <div class="plb-d-sep"></div>
+          <div class="plb-d-item"><span class="plb-d-num">1º dia</span><span class="plb-d-leg">já pode vender e faturar</span></div>
+          <div class="plb-d-sep"></div>
+          <div class="plb-d-item"><span class="plb-d-num">R$997</span><span class="plb-d-leg">vira R$1.994+ nas vendas</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="passos-grid">
+      <div class="passo" da dd="1">
+        <div class="passo-num">1</div>
+        <div class="passo-ico">✍️</div>
+        <h3>Cadastre-se</h3>
+        <p>Nome e WhatsApp. Nossa equipe entra em contato em <strong>até 24h</strong>.</p>
+      </div>
+      <div class="passo" da dd="2">
+        <div class="passo-num">2</div>
+        <div class="passo-ico">🌸</div>
+        <h3>Escolha seu combo</h3>
+        <p>🛍️ <strong>Consumidor — R$197</strong>: 50% de desconto + 10% de bônus por indicação.<br><br>
+        🚀 <strong>Pro — R$997</strong>: 50% de desconto + 20% de bônus. Ideal para crescer rápido.</p>
+      </div>
+      <div class="passo" da dd="3">
+        <div class="passo-num">3</div>
+        <div class="passo-ico">💰</div>
+        <h3>Venda e lucre</h3>
+        <p>Já no <strong>primeiro dia</strong>: pelo WhatsApp, presencialmente ou com seu link digital. Suporte em cada etapa.</p>
+      </div>
+    </div>
+    <div class="centro" style="margin-top:44px" da>
+      <a class="btn-v" href="#cadastro">quero começar agora</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section id="faq">
+  <div class="faq-w">
+    <h2 class="s-h centro" da>Ainda tem dúvidas?</h2>
+    <p class="s-sub centro" da style="margin-bottom:44px">Respondemos as perguntas mais comuns. Se a sua não estiver aqui, é só mandar mensagem — nossa equipe responde rapidinho.</p>
+    <div class="faq-item on">
+      <button class="faq-q" onclick="tFaq(this)"><span class="faq-q-txt">Preciso ter experiência com vendas para começar?</span><span class="faq-arr">+</span></button>
+      <p class="faq-a"><strong>Não precisa.</strong> A maioria das distribuidoras Jan Rosê começou do zero. Você recebe <strong>treinamentos, materiais prontos e suporte direto</strong> — a experiência vem com a prática, e a equipe está aqui para acelerar esse processo.</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="tFaq(this)"><span class="faq-q-txt">Qual é o investimento para se tornar distribuidora?</span><span class="faq-arr">+</span></button>
+      <p class="faq-a">Você começa com o <strong>Combo Consumidor (R$197)</strong> — com até 50% de desconto e 10% de bônus sobre indicações — ou com o <strong>Combo Pro (R$997)</strong>, ideal para quem quer crescer mais rápido, com até 50% de desconto e 20% de bônus. Ambos incluem seus primeiros produtos, seu <strong>link exclusivo</strong> de distribuidora e acesso completo aos materiais de apoio.</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="tFaq(this)"><span class="faq-q-txt">Sou obrigada a manter estoque?</span><span class="faq-arr">+</span></button>
+      <p class="faq-a"><strong>Não há obrigação de estoque.</strong> Você pode trabalhar sob demanda — vende primeiro, pede depois — ou com <strong>catálogo digital</strong>, sem nenhum produto em casa. Flexibilidade total.</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="tFaq(this)"><span class="faq-q-txt">Como funciona o ganho por indicação?</span><span class="faq-arr">+</span></button>
+      <p class="faq-a">Quando você indica alguém que entra como distribuidora, você passa a receber <strong>bônus mensais</strong> sobre o volume da rede. É uma <strong>renda que cresce conforme sua equipe cresce</strong> — independente das suas vendas diretas.</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="tFaq(this)"><span class="faq-q-txt">Vou ter acompanhamento depois que entrar?</span><span class="faq-arr">+</span></button>
+      <p class="faq-a">Sim. Você recebe <strong>suporte real pelo WhatsApp</strong> — treinamentos, estratégias de venda e orientações práticas para crescer <strong>desde o primeiro dia</strong>.</p>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="tFaq(this)"><span class="faq-q-txt">Consigo conciliar com minha rotina atual?</span><span class="faq-arr">+</span></button>
+      <p class="faq-a">Sim. <strong>Sem horário fixo, sem meta diária obrigatória.</strong> Você decide quando e quanto trabalhar — de manhã, à noite, nos intervalos. A Jan Rosê se encaixa na sua vida, <strong>não substitui ela</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FORMULÁRIO ══ -->
+<section id="cadastro">
+  <div class="form-container">
+
+    <!-- esquerda -->
+    <div class="form-left" da="e">
+      <div class="form-left-badge">🌸 Oportunidade Jan Rosê</div>
+      <h2>Dê o primeiro passo.<br>Mude sua <span>história</span>.</h2>
+      <p>Preencha seus dados e nossa equipe entra em contato pelo WhatsApp em até 24h para apresentar tudo com clareza. Sem compromisso, sem pressão — só a oportunidade certa no momento certo.</p>
+      <div class="form-trust">
+        <div class="form-trust-item"><div class="form-trust-icon">💰</div>Comece com baixo investimento</div>
+        <div class="form-trust-item"><div class="form-trust-icon">📦</div>Mais de 200 produtos exclusivos</div>
+        <div class="form-trust-item"><div class="form-trust-icon">🤝</div>Suporte completo da nossa equipe</div>
+        <div class="form-trust-item"><div class="form-trust-icon">📱</div>Trabalhe de onde e quando quiser</div>
+      </div>
+    </div>
+
+    <!-- direita -->
+    <div class="form-card" da="d">
+      <div class="form-card-title">Fale com nossa equipe</div>
+      <div class="form-card-sub">Resposta em até 24h pelo WhatsApp</div>
+      <div class="form-row">
+        <div class="fg"><label>Seu nome</label><input class="fi" type="text" id="fn" placeholder="Como te chamam?"></div>
+        <div class="fg"><label>WhatsApp</label><input class="fi" type="tel" id="ft" placeholder="(11) 9 9999-9999"></div>
+      </div>
+      <div class="fg"><label>E-mail</label><input class="fi" type="email" id="fe" placeholder="seu@email.com"></div>
+      <div class="fg"><label>Cidade</label><input class="fi" type="text" id="fc" placeholder="Onde você está?"></div>
+      <div class="fg">
+        <label>O que mais te interessa?</label>
+        <select class="fi" id="fi">
+          <option value="renda">Quero uma renda extra</option>
+          <option value="dist">Quero ser distribuidora Jan Rosê</option>
+          <option value="equipe">Quero montar minha própria equipe</option>
+          <option value="prod">Quero conhecer os produtos primeiro</option>
+        </select>
+      </div>
+      <button class="btn-form" onclick="enviar()">✉️ Quero que a equipe entre em contato</button>
+      <div class="form-seg">🔒 Seus dados ficam só com a gente. Nunca compartilhamos.</div>
+      <div class="form-div">ou prefere falar agora?</div>
+      <button class="btn-wf" onclick="window.open('https://wa.me/5511915033743?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Alvo%20Neg%C3%B3cio%20e%20quero%20saber%20mais%20sobre%20a%20oportunidade%20Jan%20Ros%C3%AA%20%F0%9F%8C%B8','_blank')">
+        💬 Falar pelo WhatsApp agora
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ MODAL MATERIAL ══ -->
+<div id="mat-modal" onclick="fecharMaterial(event)">
+  <div class="mat-box">
+    <button class="mat-close" onclick="document.getElementById('mat-modal').classList.remove('on')">✕</button>
+    <div class="mat-check">✅</div>
+    <h3 class="mat-titulo">Cadastro recebido!</h3>
+    <p class="mat-sub">Nossa equipe entra em contato em até 24h.<br>Enquanto isso, escolha o que quer receber agora:</p>
+    <div class="mat-cards">
+
+      <!-- CATÁLOGO -->
+      <div class="mat-card">
+        <div class="mat-card-ico">📦</div>
+        <h4 class="mat-card-titulo">Catálogo de Produtos</h4>
+        <p class="mat-card-desc">Veja todos os mais de 200 produtos Jan Rosê com preços e descrições.</p>
+        <a class="mat-btn mat-btn-wpp" href="https://wa.me/5511915033743?text=Ol%C3%A1!%20Acabei%20de%20me%20cadastrar%20e%20gostaria%20de%20receber%20o%20Cat%C3%A1logo%20de%20Produtos%20Jan%20Ros%C3%AA%20%F0%9F%8C%B8" target="_blank">
+          💬 Receber pelo WhatsApp
+        </a>
+        <a class="mat-btn mat-btn-dl" href="catalogo-jan-rose.pdf.pdf" download>
+          ⬇️ Baixar PDF
+        </a>
+      </div>
+
+      <!-- PLANO DE NEGÓCIO -->
+      <div class="mat-card">
+        <div class="mat-card-ico">🚀</div>
+        <h4 class="mat-card-titulo">Plano de Negócio</h4>
+        <p class="mat-card-desc">Entenda como funciona o modelo, os ganhos e como crescer na Jan Rosê.</p>
+        <a class="mat-btn mat-btn-wpp" href="https://wa.me/5511915033743?text=Ol%C3%A1!%20Acabei%20de%20me%20cadastrar%20e%20gostaria%20de%20receber%20o%20Plano%20de%20Neg%C3%B3cio%20Jan%20Ros%C3%AA%20%F0%9F%8C%B8" target="_blank">
+          💬 Receber pelo WhatsApp
+        </a>
+        <a class="mat-btn mat-btn-dl" href="plano-de-negocio-jan-rose.pdf.pdf" download>
+          ⬇️ Baixar PDF
+        </a>
+      </div>
+
     </div>
   </div>
 </div>
 
-<div class="logo-div"><img src="Logo Alvo negocio.png" alt="Alvo Negócio"></div>
-
-<!-- IDENTIFICAÇÃO EMOCIONAL -->
-<section style="padding:60px 24px; background:var(--s1); border-top:1px solid var(--border);">
-  <div class="sec-container">
-    <span class="sec-label">Isso parece com você?</span>
-    <h2 class="sec-titulo" style="text-align:center;">Se você está aqui,<br>talvez seja porque <span class="verde">você se identifica</span></h2>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:40px;">
-      <div style="background:var(--s2); border:1px solid var(--border); border-radius:12px; padding:20px 22px; border-left:3px solid var(--verde);">
-        <div style="font-size:22px; margin-bottom:8px;">💸</div>
-        <div style="font-size:14px; font-weight:700; margin-bottom:6px;">Precisa complementar a renda</div>
-        <div style="font-size:13px; color:var(--txt2);">O salário não está dando conta e você busca uma saída real.</div>
-      </div>
-      <div style="background:var(--s2); border:1px solid var(--border); border-radius:12px; padding:20px 22px; border-left:3px solid var(--verde);">
-        <div style="font-size:22px; margin-bottom:8px;">⏰</div>
-        <div style="font-size:14px; font-weight:700; margin-bottom:6px;">Quer trabalhar no próprio horário</div>
-        <div style="font-size:13px; color:var(--txt2);">Cansado de depender de chefe, horário fixo ou de terceiros.</div>
-      </div>
-      <div style="background:var(--s2); border:1px solid var(--border); border-radius:12px; padding:20px 22px; border-left:3px solid var(--verde);">
-        <div style="font-size:22px; margin-bottom:8px;">📱</div>
-        <div style="font-size:14px; font-weight:700; margin-bottom:6px;">Quer trabalhar pelo celular</div>
-        <div style="font-size:13px; color:var(--txt2);">Sem sair de casa, sem estrutura cara, apenas com o que já tem.</div>
-      </div>
-      <div style="background:var(--s2); border:1px solid var(--border); border-radius:12px; padding:20px 22px; border-left:3px solid var(--verde);">
-        <div style="font-size:22px; margin-bottom:8px;">🌱</div>
-        <div style="font-size:14px; font-weight:700; margin-bottom:6px;">Quer começar algo do zero</div>
-        <div style="font-size:13px; color:var(--txt2);">Sem experiência, sem capital grande, mas com vontade de crescer.</div>
-      </div>
-      <div style="background:var(--s2); border:1px solid var(--border); border-radius:12px; padding:20px 22px; border-left:3px solid var(--verde);">
-        <div style="font-size:22px; margin-bottom:8px;">👨‍👩‍👧</div>
-        <div style="font-size:14px; font-weight:700; margin-bottom:6px;">Quer ajudar a família</div>
-        <div style="font-size:13px; color:var(--txt2);">Sonha em dar mais conforto e segurança para quem ama.</div>
-      </div>
-      <div style="background:var(--s2); border:1px solid var(--border); border-radius:12px; padding:20px 22px; border-left:3px solid var(--verde);">
-        <div style="font-size:22px; margin-bottom:8px;">🤔</div>
-        <div style="font-size:14px; font-weight:700; margin-bottom:6px;">Ainda tem dúvidas</div>
-        <div style="font-size:13px; color:var(--txt2);">Não sabe se vai funcionar, mas algo te trouxe até aqui.</div>
-      </div>
-    </div>
-    <p style="text-align:center; margin-top:32px; font-size:15px; color:var(--txt2);">Se você se identificou com algum desses pontos — <strong style="color:#fff;">essa oportunidade foi feita para você.</strong></p>
-  </div>
-</section>
-
-<div class="logo-div"><img src="Logo%20Alvo%20negocio.png" alt="Alvo Negócio"></div>
-
-<!-- COMO FUNCIONA -->
-<section class="como">
-  <div class="sec-container">
-    <span class="sec-label">Como funciona</span>
-    <h2 class="sec-titulo">3 passos para <span class="verde">começar a ganhar</span></h2>
-    <p class="sec-sub">Simples, rápido e sem complicação. Nossa equipe está com você desde o primeiro dia.</p>
-    <div class="passos">
-      <div class="passo">
-        <div class="passo-num">Passo 01</div>
-        <div class="passo-titulo">Cadastro gratuito</div>
-        <div class="passo-desc">Preencha o formulário acima. Nossa equipe entra em contato e apresenta a oportunidade completa sem compromisso.</div>
-      </div>
-      <div class="passo">
-        <div class="passo-num">Passo 02</div>
-        <div class="passo-titulo">Receba o kit digital</div>
-        <div class="passo-desc">Catálogo completo, tabela de preços, scripts de vendas e acesso ao treinamento de onboarding da Alvo Negócio.</div>
-      </div>
-      <div class="passo">
-        <div class="passo-num">Passo 03</div>
-        <div class="passo-titulo">Primeira venda em 7 dias</div>
-        <div class="passo-desc">Com o suporte da nossa equipe, a meta é que você realize sua primeira venda ainda na primeira semana.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FORMAS DE GANHO -->
-<section class="ganhos">
-  <div class="sec-container">
-    <span class="sec-label">Suas fontes de renda</span>
-    <h2 class="sec-titulo">5 formas de <span class="verde">ganhar dinheiro</span></h2>
-    <p class="sec-sub">Combine as fontes e escale seus ganhos no seu ritmo.</p>
-    <div class="ganhos-grid">
-      <div class="ganho-card">
-        <div class="ganho-index">Forma 01</div>
-        <div class="ganho-titulo">Lucro na Revenda</div>
-        <div class="ganho-desc">Compre pelo preço de distribuidor e venda pelo preço sugerido. A diferença é 100% sua.</div>
-        <div class="ganho-dest">Até 100% de lucro direto</div>
-      </div>
-      <div class="ganho-card">
-        <div class="ganho-index">Forma 02</div>
-        <div class="ganho-titulo">Bônus de Indicação</div>
-        <div class="ganho-desc">Indique novos distribuidores e receba bônus a cada ativação confirmada.</div>
-        <div class="ganho-dest">Ganho por cada indicação</div>
-      </div>
-      <div class="ganho-card">
-        <div class="ganho-index">Forma 03</div>
-        <div class="ganho-titulo">Comissão de Equipe</div>
-        <div class="ganho-desc">Ganhe percentual sobre as vendas de toda a sua rede, mesmo enquanto dorme.</div>
-        <div class="ganho-dest">Renda passiva recorrente</div>
-      </div>
-      <div class="ganho-card">
-        <div class="ganho-index">Forma 04</div>
-        <div class="ganho-titulo">Prêmios e Viagens</div>
-        <div class="ganho-desc">Bata metas e ganhe prêmios, produtos e viagens patrocinadas pela Jan Rosê.</div>
-        <div class="ganho-dest">Reconhecimento real</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="logo-div"><img src="Logo Alvo negocio.png" alt="Alvo Negócio"></div>
-
-<!-- SEGURANÇA / ANTI-MEDO -->
-<section style="padding:60px 24px; background:var(--s1); border-top:1px solid var(--border);">
-  <div class="sec-container">
-    <span class="sec-label">Suas dúvidas têm resposta</span>
-    <h2 class="sec-titulo" style="text-align:center;">É normal ter <span class="verde">medo e dúvidas</span><br>antes de começar algo novo</h2>
-    <p class="sec-sub" style="text-align:center; max-width:520px; margin:0 auto 40px;">A maioria das pessoas que está hoje na equipe chegou com as mesmas perguntas que você tem agora.</p>
-    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px;">
-      <div style="background:var(--s2); border:1px solid var(--border2); border-radius:14px; padding:24px;">
-        <div style="font-size:13px; font-weight:700; color:var(--verde); margin-bottom:8px;">❓ "Será que é golpe?"</div>
-        <div style="font-size:13px; color:var(--txt2); line-height:1.7;">A Jan Rosê é associada à ABEVD e ABF — certificações sérias do mercado. 30 anos de história, fábrica própria e presença em 27 países.</div>
-      </div>
-      <div style="background:var(--s2); border:1px solid var(--border2); border-radius:14px; padding:24px;">
-        <div style="font-size:13px; font-weight:700; color:var(--verde); margin-bottom:8px;">❓ "E se eu não conseguir vender?"</div>
-        <div style="font-size:13px; color:var(--txt2); line-height:1.7;">Você recebe treinamento, catálogo digital, scripts prontos e suporte da equipe. Você não começa sozinho(a).</div>
-      </div>
-      <div style="background:var(--s2); border:1px solid var(--border2); border-radius:14px; padding:24px;">
-        <div style="font-size:13px; font-weight:700; color:var(--verde); margin-bottom:8px;">❓ "Preciso investir muito?"</div>
-        <div style="font-size:13px; color:var(--txt2); line-height:1.7;">Você pode começar com pouco ou até sem estoque, usando catálogo digital. Sem risco de produto parado.</div>
-      </div>
-      <div style="background:var(--s2); border:1px solid var(--border2); border-radius:14px; padding:24px;">
-        <div style="font-size:13px; font-weight:700; color:var(--verde); margin-bottom:8px;">❓ "Vão me pressionar?"</div>
-        <div style="font-size:13px; color:var(--txt2); line-height:1.7;">Não. Você decide no seu ritmo. Nossa equipe apresenta a oportunidade — você escolhe se quer continuar ou não.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="logo-div"><img src="Logo%20Alvo%20negocio.png" alt="Alvo Negócio"></div>
-
-<!-- DEPOIMENTOS -->
-<section class="depos">
-  <div class="sec-container">
-    <span class="sec-label">Histórias reais</span>
-    <h2 class="sec-titulo">Pessoas <span class="verde">comuns</span> que deram<br>o primeiro passo</h2>
-    <p class="sec-sub">Ninguém começou sabendo tudo. Todos começaram com dúvidas — assim como você agora.</p>
-    <div class="depos-grid">
-      <div class="depo-card">
-        <p class="depo-texto">"Eu também duvidei no começo. Fiquei com medo de ser mais uma coisa que não ia funcionar. Mas resolvi tentar. Na primeira semana já tinha fechado 3 pedidos. O suporte fez toda a diferença."</p>
-        <div class="depo-autor">
-          <div class="depo-avatar" style="background:none; border:none; width:44px; height:44px; padding:0;">
-            <img src="https://randomuser.me/api/portraits/women/62.jpg" alt="Ana Paula" style="width:44px; height:44px; border-radius:50%; object-fit:cover; border:2px solid var(--verde);">
-          </div>
-          <div>
-            <div class="depo-nome">Ana Paula S.</div>
-            <div class="depo-cidade">Cabeleireira · São Paulo, SP</div>
-          </div>
-        </div>
-      </div>
-      <div class="depo-card">
-        <p class="depo-texto">"Trabalhava o dia todo e mal sobrava dinheiro. Comecei a vender pelo celular nas horas livres. Em 3 meses já pagava contas que me preocupavam. Hoje é minha principal renda extra."</p>
-        <div class="depo-autor">
-          <div class="depo-avatar" style="background:none; border:none; width:44px; height:44px; padding:0;">
-            <img src="https://randomuser.me/api/portraits/men/43.jpg" alt="Ricardo" style="width:44px; height:44px; border-radius:50%; object-fit:cover; border:2px solid var(--verde);">
-          </div>
-          <div>
-            <div class="depo-nome">Ricardo M.</div>
-            <div class="depo-cidade">Motorista · Belo Horizonte, MG</div>
-          </div>
-        </div>
-      </div>
-      <div class="depo-card">
-        <p class="depo-texto">"Nunca pensei que conseguiria vender nada. Sou tímida. Mas com o catálogo digital e as dicas da equipe, comecei a mandar mensagem pelo WhatsApp. Em um fim de semana fechei 8 vendas."</p>
-        <div class="depo-autor">
-          <div class="depo-avatar" style="background:none; border:none; width:44px; height:44px; padding:0;">
-            <img src="https://randomuser.me/api/portraits/women/83.jpg" alt="Fernanda" style="width:44px; height:44px; border-radius:50%; object-fit:cover; border:2px solid var(--verde);">
-          </div>
-          <div>
-            <div class="depo-nome">Fernanda L.</div>
-            <div class="depo-cidade">Revendedora · Curitiba, PR</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="logo-div"><img src="Logo Alvo negocio.png" alt="Alvo Negócio"></div>
-
-<!-- CTA FINAL -->
-<section class="cta-final">
-  <div class="sec-container">
-    <span class="sec-label">Quando você estiver pronto(a)</span>
-    <h2 class="sec-titulo" style="max-width:580px; margin-left:auto; margin-right:auto;">O primeiro passo é<br><span class="verde">só uma conversa</span></h2>
-    <p class="sec-sub" style="max-width:480px; margin-left:auto; margin-right:auto;">Sem pressão. Sem compromisso. Nossa equipe entra em contato, explica tudo com calma e você decide se faz sentido para você.</p>
-    <a href="#" onclick="document.querySelector('.cap-card').scrollIntoView({behavior:'smooth'}); return false;" class="btn-cta-final">Quero conhecer de perto 💜</a>
-    <p style="margin-top:16px; font-size:12px; color:var(--txt3);">É gratuito. Sem obrigação. Você decide com calma.</p>
-  </div>
-</section>
-
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo" style="display:flex; flex-direction:column; align-items:center; gap:16px;">
-    <img src="Logo Alvo negocio.png" alt="Alvo Negócio" style="height:60px;">
-    <div style="display:flex; align-items:center; gap:14px;">
-      <span style="font-size:10px; color:var(--txt3); letter-spacing:1px; text-transform:uppercase;">Distribuidora Oficial</span>
-      <img src="logo jan Rosê.png" alt="Jan Rosê" style="height:44px; opacity:0.85;">
+  <div class="fw">
+    <div class="fw-top">
+
+      <!-- logo -->
+      <div class="fw-logo">
+        <img src="logo%20jan%20Ros%C3%AA.png" alt="Jan Rosê">
+        <p>Distribuidor Independente Oficial<br>Equipe Alvo Negócio</p>
+      </div>
+
+      <!-- central de relacionamento -->
+      <div class="fw-suporte">
+        <h4>Central de Relacionamento</h4>
+        <a href="mailto:suporte.alvonegocio.com@gmail.com">✉️ suporte.alvonegocio.com@gmail.com</a>
+        <a href="https://wa.me/5511915033743" target="_blank">📱 +55 (11) 9 1503-3743</a>
+      </div>
+
+      <!-- redes sociais -->
+      <div class="fw-social">
+        <h4>Alvo Negócio / Jan Rosê</h4>
+        <div class="fw-social-icons">
+          <a href="https://www.facebook.com/sejaempreendedor.alvo" target="_blank" title="Facebook">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.886v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/alvonegocio?igsh=OGV5a281N2g5MGlm" target="_blank" title="Instagram">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+    <div class="fw-bottom">
+      <span class="fw-copy">© 2026 Alvo Negócio · Todos os direitos reservados</span>
+      <div class="flinks">
+        <a href="site%20oficial.html">Site completo</a>
+        <a href="#faq">Dúvidas</a>
+        <a href="https://wa.me/5511915033743" target="_blank">WhatsApp</a>
+      </div>
     </div>
   </div>
-  <p>Distribuidora Oficial Jan Rosê &nbsp;·&nbsp; <a href="https://equipealvonegocio-cpu.github.io/alvonegocio">Conheça o site completo</a></p>
-  <p style="margin-top:8px;">© 2026 Alvo Negócio · Todos os direitos reservados</p>
 </footer>
 
-<script>
-function enviar(e) {
-  e.preventDefault();
-  const nome     = document.getElementById('nome').value.trim();
-  const whats    = document.getElementById('whats').value.trim().replace(/\D/g,'');
-  const interesse = document.getElementById('interesse').value;
+<!-- modal vídeo -->
+<div class="vid-modal" id="vid-modal" onclick="fecharVideoFora(event)">
+  <div class="vid-modal-box">
+    <button class="vid-modal-close" onclick="fecharVideo()">✕ fechar</button>
+    <iframe id="vid-iframe" src="" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+  </div>
+</div>
 
-  const opcoes = {
-    revendedor: 'revender os produtos',
-    parceiro:   'montar minha equipe',
-    ambos:      'revender e montar equipe',
-    conhecer:   'conhecer melhor a oportunidade'
-  };
-
-  const msg = encodeURIComponent(
-    `Olá! Me chamo *${nome}* e me cadastrei no site da Alvo Negócio.\n` +
-    `Interesse: ${opcoes[interesse]}.\n` +
-    `Quero saber mais sobre como começar!`
-  );
-
-  document.getElementById('form-area').style.display = 'none';
-  document.getElementById('sucesso').style.display = 'flex';
-
-  setTimeout(() => {
-    window.open(`https://wa.me/5511915033743?text=${msg}`, '_blank');
-  }, 800);
-}
-</script>
-<!-- CHATBOT -->
 <script src="chatbot.js"></script>
+<script>
+/* sempre começa no topo */
+if('scrollRestoration' in history){history.scrollRestoration='manual'}
+window.scrollTo(0,0)
+
+/* nav mobile */
+function toggleNav(){document.getElementById('nd').classList.toggle('on')}
+function closeNav(){document.getElementById('nd').classList.remove('on')}
+document.addEventListener('click',e=>{if(!e.target.closest('nav')&&!e.target.closest('#nd'))closeNav()})
+
+/* scroll animations */
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')}),{threshold:.12})
+document.querySelectorAll('[da]').forEach(el=>obs.observe(el))
+
+/* counters */
+function animC(el){
+  const t=parseInt(el.dataset.c),s=el.dataset.s||'',p=el.dataset.p||'',dur=1800,st=Date.now()
+  const tick=()=>{const r=Math.min((Date.now()-st)/dur,1),e=r<.5?2*r*r:-1+(4-2*r)*r;el.textContent=p+Math.round(e*t)+s;if(r<1)requestAnimationFrame(tick)};tick()
+}
+const co=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting&&!x.target._d){x.target._d=true;animC(x.target)}}),{threshold:.5})
+document.querySelectorAll('[data-c]').forEach(el=>co.observe(el))
+
+/* faq */
+function tFaq(btn){
+  const it=btn.closest('.faq-item'),on=it.classList.contains('on')
+  document.querySelectorAll('.faq-item.on').forEach(i=>i.classList.remove('on'))
+  if(!on)it.classList.add('on')
+}
+
+/* form */
+function enviar(){
+  const nome=document.getElementById('fn').value.trim()
+  const tel=document.getElementById('ft').value.trim()
+  const cidade=document.getElementById('fc').value.trim()
+  const inter=document.getElementById('fi').value
+  if(!nome||!tel){alert('Por favor, preencha nome e WhatsApp 😊');return}
+  const m={renda:'Quero uma renda extra',dist:'Quero ser distribuidora',equipe:'Quero montar uma equipe',prod:'Quero conhecer os produtos'}
+  let txt=`Olá! Vim pela página da Jan Rosê 🌸\n\n*Nome:* ${nome}\n*WhatsApp:* ${tel}`
+  if(cidade)txt+=`\n*Cidade:* ${cidade}`
+  txt+=`\n*Interesse:* ${m[inter]||inter}`
+  window.open(`https://wa.me/5511915033743?text=${encodeURIComponent(txt)}`,'_blank')
+  setTimeout(()=>{
+    document.getElementById('mat-modal').classList.add('on')
+    document.body.style.overflow='hidden'
+  },800)
+}
+function fecharMaterial(e){
+  if(e.target===document.getElementById('mat-modal')){
+    document.getElementById('mat-modal').classList.remove('on')
+    document.body.style.overflow=''
+  }
+}
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    document.getElementById('mat-modal').classList.remove('on')
+    document.body.style.overflow=''
+  }
+})
+document.querySelectorAll('.fi').forEach(el=>el.addEventListener('keydown',e=>{if(e.key==='Enter')enviar()}))
+
+/* vídeos */
+function abrirVideo(id){
+  document.getElementById('vid-iframe').src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0&modestbranding=1'
+  document.getElementById('vid-modal').classList.add('on')
+  document.body.style.overflow='hidden'
+}
+function fecharVideo(){
+  document.getElementById('vid-iframe').src=''
+  document.getElementById('vid-modal').classList.remove('on')
+  document.body.style.overflow=''
+}
+function fecharVideoFora(e){if(e.target===document.getElementById('vid-modal'))fecharVideo()}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')fecharVideo()})
+
+/* simulador bônus indicação */
+function calcInd(){
+  const n = Math.max(1, parseInt(document.getElementById('ind-qtd').value)||1)
+  const bonus = n * 997 * 0.20
+  const anual = bonus * 12
+  const fmt = v => 'R$ ' + v.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})
+  const el = document.getElementById('br-total')
+  el.style.transform='scale(1.08)';el.style.transition='transform .15s'
+  setTimeout(()=>{el.style.transform='scale(1)'},150)
+  el.textContent = fmt(bonus)
+  document.getElementById('br-ano').textContent = fmt(anual)
+}
+function ajustarInd(delta){
+  const inp=document.getElementById('ind-qtd')
+  inp.value=Math.max(1,(parseInt(inp.value)||1)+delta)
+  calcInd()
+}
+
+/* calculadora de lucro */
+function calcLucro(){
+  const q = Math.max(1, parseInt(document.getElementById('calc-qtd').value) || 1)
+  const mensal = q * 5800
+  const anual = mensal * 12
+  const el = document.getElementById('calc-result')
+  el.style.transform='scale(1.08)'
+  el.style.transition='transform .15s'
+  setTimeout(()=>{el.style.transform='scale(1)'},150)
+  el.textContent = 'R$ ' + mensal.toLocaleString('pt-BR')
+  document.getElementById('calc-ano').textContent = 'R$ ' + anual.toLocaleString('pt-BR') + ' por ano'
+}
+function ajustarQtd(delta){
+  const inp = document.getElementById('calc-qtd')
+  inp.value = Math.max(1, (parseInt(inp.value)||1) + delta)
+  calcLucro()
+}
+
+/* nav ativo no scroll */
+const sections=['como-vender','lucro','historias','passos','faq','cadastro']
+window.addEventListener('scroll',()=>{
+  let cur=''
+  sections.forEach(id=>{const el=document.getElementById(id);if(el&&el.getBoundingClientRect().top<120)cur=id})
+  document.querySelectorAll('.n-links a').forEach(a=>{
+    const href=a.getAttribute('href').replace('#','')
+    a.classList.toggle('ativo',href===cur)
+  })
+})
+</script>
 </body>
 </html>
