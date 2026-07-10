@@ -915,9 +915,11 @@ select.fi{
 .pp-card:hover img{transform:scale(1.05)}
 @media(max-width:768px){
   .pp-card{flex:0 0 calc(50% - 9px)}
+  .pp-card img{width:100%;height:auto;max-height:200px;object-fit:contain}
 }
 @media(max-width:480px){
-  .pp-card{flex:0 0 100%}
+  .pp-card{flex:0 0 calc(50% - 9px)}
+  .pp-card img{width:100%;height:auto;max-height:160px;object-fit:contain}
 }
 
 /* ── ACUMULOU GANHOU ── */
@@ -1152,7 +1154,7 @@ footer .fw-copy{font-size:11px;color:rgba(255,255,255,.3)}
   .ag-trilha{grid-template-columns:1fr}
   .hp-titulo{font-size:26px}
   .h-painel{padding:28px 16px}
-  .pp-card img{max-height:120px}
+
   .lr-banner{grid-template-columns:1fr !important}
   .lr-img{display:none}
   .lr-left{border-right:none;border-bottom:1px solid var(--bd)}
