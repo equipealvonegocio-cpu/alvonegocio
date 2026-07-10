@@ -2036,7 +2036,9 @@ footer .fw-copy{font-size:11px;color:rgba(255,255,255,.3)}
 <script>
 /* sempre começa no topo */
 if('scrollRestoration' in history){history.scrollRestoration='manual'}
+if(location.hash){history.replaceState(null,'',location.pathname+location.search)}
 window.scrollTo(0,0)
+window.addEventListener('load',()=>window.scrollTo(0,0))
 
 /* nav mobile */
 function toggleNav(){document.getElementById('nd').classList.toggle('on')}
