@@ -54,11 +54,11 @@ body{
 
 /* ── BANNER CARD ── */
 .banner{
-  width:100%;border-radius:20px;overflow:hidden;
+  width:100%;border-radius:16px;overflow:hidden;
   display:flex;align-items:stretch;
-  margin-bottom:10px;
-  box-shadow:0 6px 28px rgba(150,22,93,.18);
-  min-height:160px;
+  margin-bottom:8px;
+  box-shadow:0 4px 18px rgba(150,22,93,.18);
+  min-height:110px;
   text-decoration:none;
 }
 .banner-img{
@@ -72,9 +72,9 @@ body{
 }
 .banner-txt{
   flex:1;
-  padding:14px;
+  padding:10px 12px;
   display:flex;flex-direction:column;justify-content:center;
-  gap:6px;
+  gap:4px;
 }
 
 /* cores por banner */
@@ -84,18 +84,18 @@ body{
 .banner.catalogo .banner-txt{background:linear-gradient(135deg,#050e2e,#0a2a8a)}
 .banner.login   .banner-txt{background:#551d45}
 
-.banner-titulo{font-size:14px;font-weight:900;color:#fff;line-height:1.2;text-transform:uppercase;letter-spacing:.3px}
-.banner-desc{font-size:11px;color:rgba(255,255,255,.82);line-height:1.5}
+.banner-titulo{font-size:12px;font-weight:900;color:#fff;line-height:1.2;text-transform:uppercase;letter-spacing:.3px}
+.banner-desc{font-size:10px;color:rgba(255,255,255,.82);line-height:1.4}
 .banner-cta{
   display:inline-block;
   background:#f5c518;color:#1a0845;
-  font-size:13px;font-weight:900;
-  letter-spacing:1px;text-transform:uppercase;
+  font-size:11px;font-weight:900;
+  letter-spacing:.8px;text-transform:uppercase;
   text-decoration:none;
-  padding:9px 18px;border-radius:50px;
+  padding:7px 14px;border-radius:50px;
   align-self:flex-start;margin-top:2px;
   transition:transform .2s,box-shadow .2s;
-  box-shadow:0 4px 14px rgba(0,0,0,.25);
+  box-shadow:0 3px 10px rgba(0,0,0,.22);
   white-space:nowrap;
 }
 .banner-cta:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.3)}
@@ -140,10 +140,10 @@ body{
 
 /* ── RESPONSIVO: TELA PEQUENA (até 360px) ── */
 @media(max-width:360px){
-  .banner{min-height:150px;}
-  .banner-titulo{font-size:12px;}
-  .banner-desc{font-size:10px;}
-  .banner-cta{font-size:11px;padding:7px 12px;}
+  .banner{min-height:95px;}
+  .banner-titulo{font-size:11px;}
+  .banner-desc{font-size:9.5px;}
+  .banner-cta{font-size:10px;padding:6px 10px;letter-spacing:.5px;}
   .banner-txt{padding:10px;gap:4px;}
   .banner-img{flex:0 0 44%;}
 }
