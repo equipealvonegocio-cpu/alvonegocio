@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Equipe Alvo Negócio · Jan Rosê</title>
+<meta name="description" content="Distribuidora Independente Oficial Jan Rosê — Equipe Alvo Negócio">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:#FBF5FF;
+  min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;
+  overflow-x:hidden;
+}
+
+/* ── TOPO ── */
+.topo{
+  width:100%;max-width:460px;
+  background:linear-gradient(135deg,#2A0E72 0%,#96165d 60%,#c044b8 100%);
+  padding:14px 20px 44px;
+  display:flex;flex-direction:column;align-items:center;
+  position:relative;overflow:hidden;
+}
+.topo::after{
+  content:'';position:absolute;bottom:-1px;left:0;right:0;height:32px;
+  background:#FBF5FF;
+  clip-path:ellipse(55% 100% at 50% 100%);
+}
+.topo-logo-circulo{
+  width:100px;height:100px;border-radius:50%;
+  background:rgba(255,255,255,.12);
+  border:3px solid rgba(255,255,255,.35);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:8px;
+  overflow:hidden;
+  box-shadow:0 0 30px rgba(192,68,184,.5),0 0 0 4px rgba(255,255,255,.06);
+}
+.topo-logo{width:100%;height:100%;object-fit:cover;}
+.topo-nome{font-size:17px;font-weight:900;color:#fff;letter-spacing:-.3px;margin-bottom:2px;text-align:center}
+.topo-marca{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.6);text-align:center}
+
+/* ── CONTEÚDO ── */
+.conteudo{
+  width:100%;max-width:460px;
+  padding:12px 18px 40px;
+  display:flex;flex-direction:column;align-items:center;
+}
+
+/* ── BANNER CARD ── */
+.banner{
+  width:100%;border-radius:20px;overflow:hidden;
+  display:flex;align-items:stretch;
+  margin-bottom:10px;
+  box-shadow:0 6px 28px rgba(150,22,93,.18);
+  height:190px;
+  text-decoration:none;
+}
+.banner-img{
+  flex:0 0 48%;position:relative;overflow:hidden;
+}
+.banner-img img{
+  width:100%;height:100%;object-fit:cover;object-position:center center;
+  display:block;
+}
+.banner-txt{
+  flex:1;
+  padding:14px;
+  display:flex;flex-direction:column;justify-content:center;
+  gap:6px;
+}
+
+/* cores por banner */
+.banner.rosa    .banner-txt{background:linear-gradient(135deg,#7a0050,#c044b8)}
+.banner.roxo    .banner-txt{background:#a07c5d}
+.banner.wpp     .banner-txt{background:#225911}
+.banner.catalogo .banner-txt{background:linear-gradient(135deg,#050e2e,#0a2a8a)}
+.banner.login   .banner-txt{background:#551d45}
+
+.banner-titulo{font-size:14px;font-weight:900;color:#fff;line-height:1.2;text-transform:uppercase;letter-spacing:.3px}
+.banner-desc{font-size:11px;color:rgba(255,255,255,.82);line-height:1.5}
+.banner-cta{
+  display:inline-block;
+  background:#f5c518;color:#1a0845;
+  font-size:15px;font-weight:900;
+  letter-spacing:1.5px;text-transform:uppercase;
+  text-decoration:none;
+  padding:12px 26px;border-radius:50px;
+  align-self:flex-start;margin-top:2px;
+  transition:transform .2s,box-shadow .2s;
+  box-shadow:0 4px 14px rgba(0,0,0,.25);
+}
+.banner-cta:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.banner:hover .banner-cta{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.3)}
+
+/* ── SEPARADOR LOGO ── */
+.sep-logo{
+  display:flex;flex-direction:column;align-items:center;
+  gap:6px;padding:14px 0 12px;
+  width:100%;
+}
+.sep-logo img{height:60px;width:auto;filter:drop-shadow(0 4px 20px rgba(150,22,93,.55))}
+.sep-tagline{
+  font-size:12.5px;font-weight:600;
+  color:#96165d;text-align:center;letter-spacing:.1px;
+}
+.sep-arrow{
+  font-size:18px;color:#c044b8;
+  animation:bounce .9s ease-in-out infinite alternate;
+}
+@keyframes bounce{from{transform:translateY(0)}to{transform:translateY(6px)}}
+
+/* ── RODAPÉ ── */
+.rodape{
+  width:100%;text-align:center;
+  padding:32px 20px 24px;
+  border-top:1px solid #EDD8F8;
+  margin-top:32px;
+}
+.rod-logo{height:36px;width:auto;opacity:.45;margin-bottom:10px}
+.rod-txt{font-size:10.5px;line-height:1.8;color:#c9a0d8}
+
+/* ── LOGO CANTO ── */
+.logo-rodape{
+  position:fixed;bottom:14px;right:14px;z-index:10;
+}
+.logo-rodape img{
+  height:36px;width:auto;
+  filter:drop-shadow(0 2px 8px rgba(0,0,0,.3));
+  opacity:.8;
+}
+
+/* ── RESPONSIVO: TELA PEQUENA (até 360px) ── */
+@media(max-width:360px){
+  .banner{height:170px;}
+  .banner-titulo{font-size:12px;}
+  .banner-desc{font-size:10px;}
+  .banner-cta{font-size:13px;padding:10px 16px;}
+  .banner-txt{padding:10px;gap:4px;}
+  .banner-img{flex:0 0 44%;}
+}
+
+/* ── RESPONSIVO: DESKTOP (a partir de 480px) ── */
+@media(min-width:480px){
+  body{
+    background:linear-gradient(160deg,#13002e 0%,#3a0960 60%,#13002e 100%);
+    padding:40px 20px 60px;
+    justify-content:flex-start;
+    align-items:center;
+  }
+  .topo{
+    border-radius:24px 24px 0 0;
+    box-shadow:0 -4px 40px rgba(0,0,0,.4);
+  }
+  .topo::after{background:#FBF5FF;}
+  .conteudo{
+    border-radius:0 0 24px 24px;
+    background:#FBF5FF;
+    box-shadow:0 30px 80px rgba(0,0,0,.5);
+  }
+  .logo-rodape{
+    right:calc(50% - 216px);
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPO -->
+<div class="topo">
+  <div class="topo-logo-circulo">
+    <img class="topo-logo" src="ChatGPT%20Image%2021%20de%20jul.%20de%202026%2C%2016_41_10.png" alt="Equipe Alvo Negócio" loading="eager">
+  </div>
+  <div class="topo-nome">Equipe Alvo Negócio</div>
+  <div class="topo-marca">Distribuidora Oficial Jan Rosê</div>
+</div>
+
+<div class="conteudo">
+
+  <!-- LOGO + TAGLINE -->
+  <div class="sep-logo">
+    <img src="logo%20jan%20Ros%C3%AA.png" alt="Jan Rosê" loading="eager">
+    <div class="sep-tagline">Clique onde deseja e seja redirecionada(o)!</div>
+    <div class="sep-arrow">⌄</div>
+  </div>
+
+  <!-- BANNER 1: Conheça a Oportunidade -->
+  <a class="banner rosa" href="https://equipealvonegocio-cpu.github.io/alvonegocio/pagina%C3%A7%C3%A3o.html" target="_blank" rel="noopener noreferrer">
+    <div class="banner-img" style="flex:0 0 52%">
+      <img src="n1.png" alt="Jan Rosê" loading="eager"
+           style="transform:scale(1.4);transform-origin:center center;image-rendering:auto;-webkit-backface-visibility:hidden;backface-visibility:hidden;will-change:transform;filter:contrast(1.02) saturate(1.05)">
+    </div>
+    <div class="banner-txt">
+      <div class="banner-titulo">Conheça a Oportunidade Jan Rosê</div>
+      <div class="banner-desc">Produtos premium de beleza com até 100% de lucro para você.</div>
+      <span class="banner-cta">CLIQUE AQUI</span>
+    </div>
+  </a>
+
+  <!-- BANNER 2: Seja uma Distribuidora -->
+  <a class="banner roxo" href="https://equipealvonegocio-cpu.github.io/alvonegocio/formulario.html" target="_blank" rel="noopener noreferrer">
+    <div class="banner-txt">
+      <div class="banner-titulo">Seja uma Distribuidora Jan Rosê</div>
+      <div class="banner-desc">Revenda produtos de qualidade e conquiste sua independência. Quanto mais vende, mais lucra!</div>
+      <span class="banner-cta">CLIQUE AQUI</span>
+    </div>
+    <div class="banner-img">
+      <img src="vendendo.png" alt="Distribuidora Jan Rosê" loading="lazy">
+    </div>
+  </a>
+
+  <!-- BANNER 3: WhatsApp -->
+  <a class="banner wpp" href="https://wa.me/5511915033743?text=Ol%C3%A1!%20Vi%20o%20link%20da%20bio%20e%20quero%20saber%20mais%20sobre%20a%20Jan%20Ros%C3%AA%20%F0%9F%8C%B8" target="_blank" rel="noopener noreferrer">
+    <div class="banner-txt">
+      <div class="banner-titulo">Falar pelo WhatsApp</div>
+      <div class="banner-desc">Estamos prontas para te atender. Fale agora com nossa equipe!</div>
+      <span class="banner-cta">CLIQUE AQUI</span>
+    </div>
+    <div class="banner-img">
+      <img src="ChatGPT%20Image%2021%20de%20jul.%20de%202026%2C%2020_58_06.png" alt="Falar pelo WhatsApp" loading="lazy">
+    </div>
+  </a>
+
+  <!-- BANNER 4: Catálogo de Produtos -->
+  <a class="banner catalogo" href="https://drive.google.com/uc?export=download&id=1mL-NFbD2vhAsir-xIo9FnRsivNDP4PNv" target="_blank" rel="noopener noreferrer">
+    <div class="banner-img">
+      <img src="ChatGPT%20Image%2021%20de%20jul.%20de%202026%2C%2021_01_41.png" alt="Catálogo de Produtos" loading="lazy">
+    </div>
+    <div class="banner-txt">
+      <div class="banner-titulo">Catálogo de Produtos</div>
+      <div class="banner-desc">Mais de 200 produtos premium. Baixe agora e conheça toda a linha!</div>
+      <span class="banner-cta">CLIQUE AQUI</span>
+    </div>
+  </a>
+
+  <!-- BANNER 5: Já sou cadastrada -->
+  <a class="banner login" href="https://janrose.digital/login" target="_blank" rel="noopener noreferrer">
+    <div class="banner-img">
+      <img src="ChatGPT%20Image%2021%20de%20jul.%20de%202026%2C%2020_50_15.png" alt="Já sou cadastrada" loading="lazy">
+    </div>
+    <div class="banner-txt">
+      <div class="banner-titulo">Já sou cadastrada</div>
+      <div class="banner-desc">Acesse sua área de distribuidora e acompanhe seus resultados.</div>
+      <span class="banner-cta">CLIQUE AQUI</span>
+    </div>
+  </a>
+
+  <!-- RODAPÉ -->
+  <div class="rodape">
+    <img class="rod-logo" src="logo%20jan%20Ros%C3%AA.png" alt="Jan Rosê" loading="lazy">
+    <div class="rod-txt">Distribuidora Independente Oficial<br>© 2026 Equipe Alvo Negócio</div>
+  </div>
+
+</div>
+
+<!-- LOGO CANTO -->
+<div class="logo-rodape">
+  <img src="logo%20jan%20Ros%C3%AA.png" alt="Jan Rosê" loading="lazy">
+</div>
+
+</body>
+</html>
