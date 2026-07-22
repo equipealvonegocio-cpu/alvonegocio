@@ -58,23 +58,23 @@ body{
   display:flex;align-items:stretch;
   margin-bottom:8px;
   box-shadow:0 4px 18px rgba(150,22,93,.18);
-  min-height:110px;
+  height:210px;
   text-decoration:none;
 }
 .banner-img{
-  flex:0 0 48%;overflow:hidden;
+  flex:0 0 50%;overflow:hidden;
   display:flex;align-items:center;justify-content:center;
   align-self:stretch;
 }
 .banner-img img{
-  width:100%;height:100%;object-fit:cover;object-position:center center;
+  width:100%;height:100%;object-fit:cover;object-position:center 20%;
   display:block;flex-shrink:0;
 }
 .banner-txt{
-  flex:1;
-  padding:10px 12px;
+  flex:1;min-width:0;
+  padding:10px 10px;
   display:flex;flex-direction:column;justify-content:center;
-  gap:4px;
+  gap:4px;overflow:hidden;
 }
 
 /* cores por banner */
@@ -84,19 +84,20 @@ body{
 .banner.catalogo .banner-txt{background:linear-gradient(135deg,#050e2e,#0a2a8a)}
 .banner.login   .banner-txt{background:#551d45}
 
-.banner-titulo{font-size:12px;font-weight:900;color:#fff;line-height:1.2;text-transform:uppercase;letter-spacing:.3px}
-.banner-desc{font-size:10px;color:rgba(255,255,255,.82);line-height:1.4}
+.banner-titulo{font-size:11px;font-weight:900;color:#fff;line-height:1.2;text-transform:uppercase;letter-spacing:.2px;word-break:break-word;text-shadow:0 1px 3px rgba(0,0,0,.3)}
+.banner-desc{font-size:9.5px;color:rgba(255,255,255,.9);line-height:1.4}
 .banner-cta{
-  display:inline-block;
+  display:block;
   background:#f5c518;color:#1a0845;
-  font-size:11px;font-weight:900;
-  letter-spacing:.8px;text-transform:uppercase;
+  font-size:10px;font-weight:900;
+  letter-spacing:.6px;text-transform:uppercase;
   text-decoration:none;
-  padding:7px 14px;border-radius:50px;
-  align-self:flex-start;margin-top:2px;
+  padding:5px 6px;border-radius:50px;
+  text-align:center;
+  width:100%;margin-top:4px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
   transition:transform .2s,box-shadow .2s;
   box-shadow:0 3px 10px rgba(0,0,0,.22);
-  white-space:nowrap;
 }
 .banner-cta:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.3)}
 .banner:hover .banner-cta{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.3)}
@@ -140,16 +141,21 @@ body{
 
 /* ── RESPONSIVO: TELA PEQUENA (até 360px) ── */
 @media(max-width:360px){
-  .banner{min-height:95px;}
-  .banner-titulo{font-size:11px;}
-  .banner-desc{font-size:9.5px;}
-  .banner-cta{font-size:10px;padding:6px 10px;letter-spacing:.5px;}
+  .banner{height:180px;}
+  .banner-titulo{font-size:10px;}
+  .banner-desc{font-size:9px;}
+  .banner-cta{font-size:9px;padding:4px 6px;letter-spacing:.4px;}
   .banner-txt{padding:10px;gap:4px;}
   .banner-img{flex:0 0 44%;}
 }
 
 /* ── RESPONSIVO: DESKTOP (a partir de 480px) ── */
 @media(min-width:480px){
+  .banner{height:200px;}
+  .banner-titulo{font-size:13px;}
+  .banner-desc{font-size:11px;}
+  .banner-cta{font-size:12px;padding:7px 6px;}
+
   body{
     background:linear-gradient(160deg,#13002e 0%,#3a0960 60%,#13002e 100%);
     padding:40px 20px 60px;
@@ -194,9 +200,9 @@ body{
 
   <!-- BANNER 1: Conheça a Oportunidade -->
   <a class="banner rosa" href="https://equipealvonegocio-cpu.github.io/alvonegocio/pagina%C3%A7%C3%A3o.html" target="_blank" rel="noopener noreferrer">
-    <div class="banner-img" style="flex:0 0 52%">
+    <div class="banner-img" style="flex:0 0 44%">
       <img src="n1.png" alt="Jan Rosê" loading="eager"
-           style="transform:scale(1.4);transform-origin:center center;image-rendering:auto;-webkit-backface-visibility:hidden;backface-visibility:hidden;will-change:transform;filter:contrast(1.02) saturate(1.05)">
+           style="object-position:center top;filter:contrast(1.02) saturate(1.05)">
     </div>
     <div class="banner-txt">
       <div class="banner-titulo">Lucre Revendendo Beleza</div>
@@ -219,25 +225,25 @@ body{
 
   <!-- BANNER 3: WhatsApp -->
   <a class="banner wpp" href="https://wa.me/5511915033743?text=Ol%C3%A1!%20Vi%20o%20link%20da%20bio%20e%20quero%20saber%20mais%20sobre%20a%20Jan%20Ros%C3%AA%20%F0%9F%8C%B8" target="_blank" rel="noopener noreferrer">
+    <div class="banner-img">
+      <img src="ChatGPT%20Image%2021%20de%20jul.%20de%202026%2C%2020_58_06.png" alt="Falar pelo WhatsApp" loading="lazy">
+    </div>
     <div class="banner-txt">
       <div class="banner-titulo">Fale Com a Gente Agora</div>
       <div class="banner-desc">Atendimento rápido. Tire suas dúvidas sem compromisso.</div>
       <span class="banner-cta">FALAR AGORA</span>
     </div>
-    <div class="banner-img">
-      <img src="ChatGPT%20Image%2021%20de%20jul.%20de%202026%2C%2020_58_06.png" alt="Falar pelo WhatsApp" loading="lazy">
-    </div>
   </a>
 
   <!-- BANNER 4: Catálogo de Produtos -->
   <a class="banner catalogo" href="https://drive.google.com/uc?export=download&id=1mL-NFbD2vhAsir-xIo9FnRsivNDP4PNv" target="_blank" rel="noopener noreferrer">
-    <div class="banner-img">
-      <img src="ChatGPT%20Image%2021%20de%20jul.%20de%202026%2C%2021_01_41.png" alt="Catálogo de Produtos" loading="lazy">
-    </div>
     <div class="banner-txt">
       <div class="banner-titulo">Veja Tudo Que Vendemos</div>
       <div class="banner-desc">+200 produtos de beleza. Baixe grátis e escolha os seus.</div>
       <span class="banner-cta">BAIXAR GRÁTIS</span>
+    </div>
+    <div class="banner-img">
+      <img src="ChatGPT%20Image%2021%20de%20jul.%20de%202026%2C%2021_01_41.png" alt="Catálogo de Produtos" loading="lazy">
     </div>
   </a>
 
