@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastro · Jan Rosê · Equipe Alvo Negócio</title>
+<meta name="description" content="Preencha seus dados e nossa equipe entra em contato em até 24h.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  (function(){
+    const EJS_PUBLIC_KEY  = 'q2rRb--686j3CJCXO';
+    const EJS_SERVICE_ID  = 'service_nzwge6z';
+    const EJS_TEMPLATE_ID = 'template_r7zcqqt';
+    window.EJS_CATALOGO_LINK = 'https://drive.google.com/uc?export=download&id=1mL-NFbD2vhAsir-xIo9FnRsivNDP4PNv';
+    window.EJS_CONFIG = { publicKey: EJS_PUBLIC_KEY, serviceId: EJS_SERVICE_ID, templateId: EJS_TEMPLATE_ID };
+    emailjs.init({ publicKey: EJS_PUBLIC_KEY });
+  })();
+</script>
+
+<style>
+:root{
+  --v:  #2A0E72;
+  --vm: #7B2CB9;
+  --vl: #C044B8;
+  --d:  #96165d;
+  --dl: #FFB8E4;
+  --bg: #FDF5FF;
+  --c2: #3D2060;
+  --c3: #8878AA;
+  --bd: #E8C8F8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  min-height:100vh;
+  color:#1a1a1a;
+  line-height:1.5;
+}
+
+/* ── HEADER ── */
+.header{
+  background:linear-gradient(135deg,#2A0E72,#96165d,#c044b8);
+  padding:16px 24px;
+  display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:100;
+  box-shadow:0 2px 20px rgba(0,0,0,.3);
+}
+.header-logo{height:44px;width:auto;filter:drop-shadow(0 2px 6px rgba(0,0,0,.3))}
+.header-back{
+  color:rgba(255,255,255,.85);font-size:13px;font-weight:700;
+  text-decoration:none;display:flex;align-items:center;gap:6px;
+  transition:color .2s;
+}
+.header-back:hover{color:#fff}
+
+/* ── HERO ── */
+.hero{
+  background:linear-gradient(135deg,#2A0E72 0%,#96165d 55%,#c044b8 100%);
+  padding:48px 24px 56px;
+  text-align:center;position:relative;overflow:hidden;
+}
+.hero::after{
+  content:'';position:absolute;bottom:-1px;left:0;right:0;height:40px;
+  background:var(--bg);clip-path:ellipse(55% 100% at 50% 100%);
+}
+.hero-badge{
+  display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);
+  border-radius:50px;padding:8px 20px;font-size:12px;font-weight:700;color:rgba(255,255,255,.9);
+  letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;
+}
+.hero h1{
+  font-size:clamp(26px,5vw,42px);font-weight:900;color:#fff;
+  line-height:1.15;margin-bottom:16px;
+}
+.hero h1 span{color:#FFB8E4}
+.hero-sub{font-size:16px;color:rgba(255,255,255,.8);max-width:520px;margin:0 auto;line-height:1.7}
+
+/* ── TRUST STRIP ── */
+.trust-strip{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:12px;
+  padding:28px 24px 16px;max-width:700px;margin:0 auto;
+}
+.trust-item{
+  display:flex;align-items:center;gap:8px;
+  background:#fff;border:1.5px solid var(--bd);border-radius:50px;
+  padding:10px 18px;font-size:13px;font-weight:700;color:var(--c2);
+  box-shadow:0 2px 10px rgba(123,44,185,.08);
+}
+.trust-ico{font-size:16px}
+
+/* ── FORM WRAP ── */
+.form-wrap{
+  max-width:520px;margin:0 auto;
+  padding:16px 24px 60px;
+}
+
+/* ── FORM CARD ── */
+.form-card{
+  background:#fff;border-radius:24px;
+  padding:36px 32px;
+  box-shadow:0 20px 60px rgba(42,14,114,.15);
+  border:1.5px solid var(--bd);
+}
+.form-card-title{font-size:20px;font-weight:900;color:var(--v);margin-bottom:4px}
+.form-card-sub{font-size:13px;color:var(--c3);margin-bottom:24px}
+
+.fg{margin-bottom:14px}
+.fg label{
+  display:block;font-size:11px;font-weight:700;
+  text-transform:uppercase;letter-spacing:1px;
+  color:var(--c2);margin-bottom:6px;
+}
+.fi{
+  width:100%;padding:14px 16px;
+  border:2px solid var(--bd);
+  border-radius:12px;font-size:15px;
+  color:#1a1a1a;font-family:inherit;outline:none;
+  background:#faf7ff;transition:all .22s;
+}
+.fi:focus{border-color:var(--vm);box-shadow:0 0 0 4px rgba(123,44,185,.1);background:#fff}
+.fi::placeholder{color:#bbb}
+select.fi{
+  appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237B2CB9' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;padding-right:36px;
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+.btn-form{
+  width:100%;padding:17px;margin-top:8px;
+  background:linear-gradient(135deg,#7B2CB9,#96165d);color:#fff;
+  font-size:16px;font-weight:900;
+  border:none;border-radius:50px;cursor:pointer;
+  font-family:inherit;transition:all .25s;
+  box-shadow:0 6px 24px rgba(123,44,185,.5);
+  letter-spacing:.3px;
+}
+.btn-form:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(123,44,185,.65)}
+.btn-form:active{transform:scale(.98)}
+
+.form-seg{
+  font-size:11px;color:var(--c3);
+  text-align:center;margin-top:14px;
+  display:flex;align-items:center;justify-content:center;gap:6px;
+}
+.form-div{
+  display:flex;align-items:center;gap:10px;margin:18px 0;
+  font-size:11px;color:var(--c3);font-weight:600;text-transform:uppercase;letter-spacing:.5px;
+}
+.form-div::before,.form-div::after{content:'';flex:1;height:1px;background:var(--bd)}
+
+.btn-wf{
+  width:100%;padding:15px;
+  background:#25D366;color:#fff;
+  font-size:15px;font-weight:800;
+  border:none;border-radius:50px;cursor:pointer;
+  font-family:inherit;transition:all .25s;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  box-shadow:0 4px 16px rgba(37,211,102,.35);
+  text-decoration:none;
+}
+.btn-wf:hover{background:#1ebe5c;transform:translateY(-1px);box-shadow:0 6px 22px rgba(37,211,102,.5)}
+
+/* ── MODAL ── */
+#mat-modal{
+  display:none;position:fixed;inset:0;
+  background:rgba(0,0,0,.6);backdrop-filter:blur(6px);
+  z-index:999;align-items:center;justify-content:center;padding:20px;
+}
+#mat-modal.on{display:flex}
+.mat-box{
+  background:#fff;border-radius:24px;
+  max-width:520px;width:100%;
+  padding:36px 28px;position:relative;
+  box-shadow:0 32px 80px rgba(0,0,0,.3);
+  animation:popIn .3s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes popIn{from{transform:scale(.85);opacity:0}to{transform:scale(1);opacity:1}}
+.mat-close{
+  position:absolute;top:16px;right:16px;
+  background:none;border:none;font-size:18px;cursor:pointer;
+  color:#999;width:32px;height:32px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s;
+}
+.mat-close:hover{background:#f0e8ff}
+.mat-check{font-size:48px;text-align:center;margin-bottom:12px}
+.mat-titulo{font-size:22px;font-weight:900;color:var(--v);text-align:center;margin-bottom:8px}
+.mat-sub{font-size:14px;color:var(--c3);text-align:center;line-height:1.6;margin-bottom:24px}
+.mat-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.mat-card{border:1.5px solid var(--bd);border-radius:16px;padding:20px 16px;display:flex;flex-direction:column;gap:8px;background:var(--bg)}
+.mat-card-ico{font-size:28px;text-align:center}
+.mat-card-titulo{font-size:14px;font-weight:900;color:var(--v);text-align:center}
+.mat-card-desc{font-size:12px;color:var(--c3);text-align:center;line-height:1.6;flex:1}
+.mat-btn{display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 14px;border-radius:50px;font-size:12px;font-weight:800;text-decoration:none;text-align:center;transition:all .2s}
+.mat-btn-wpp{background:#25D366;color:#fff}
+.mat-btn-wpp:hover{background:#1ebe5d;transform:translateY(-1px)}
+.mat-btn-dl{background:var(--bd);color:var(--v);border:1.5px solid var(--bd)}
+.mat-btn-dl:hover{background:var(--vm);color:#fff}
+
+/* ── FOOTER ── */
+.rodape{
+  background:linear-gradient(135deg,#2A0E72,#96165d);
+  padding:24px;text-align:center;
+}
+.rod-logo{height:38px;width:auto;opacity:.8;margin-bottom:8px}
+.rod-txt{font-size:11px;color:rgba(255,255,255,.5);line-height:1.8}
+
+@media(max-width:480px){
+  .form-card{padding:24px 18px}
+  .form-row{grid-template-columns:1fr}
+  .mat-cards{grid-template-columns:1fr}
+  .mat-box{padding:28px 16px}
+  .hero{padding:36px 20px 48px}
+  .trust-strip{gap:8px}
+  .trust-item{font-size:12px;padding:8px 14px}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <img class="header-logo" src="logo%20jan%20Ros%C3%AA.png" alt="Jan Rosê">
+  <a class="header-back" href="bio.html">← Voltar</a>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">🌸 Oportunidade Jan Rosê</div>
+  <h1>Dê o primeiro passo.<br>Mude sua <span>história</span>.</h1>
+  <p class="hero-sub">Preencha seus dados e nossa equipe entra em contato pelo WhatsApp em até 24h. Sem compromisso, sem pressão — só a oportunidade certa no momento certo.</p>
+</div>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-item"><span class="trust-ico">💰</span> Baixo investimento</div>
+  <div class="trust-item"><span class="trust-ico">📦</span> +200 produtos exclusivos</div>
+  <div class="trust-item"><span class="trust-ico">🤝</span> Suporte completo</div>
+  <div class="trust-item"><span class="trust-ico">📱</span> Trabalhe de onde quiser</div>
+</div>
+
+<!-- FORMULÁRIO -->
+<div class="form-wrap">
+  <div class="form-card">
+    <div class="form-card-title">Fale com nossa equipe</div>
+    <div class="form-card-sub">Resposta em até 24h pelo WhatsApp</div>
+
+    <div class="form-row">
+      <div class="fg"><label>Seu nome</label><input class="fi" type="text" id="fn" placeholder="Como te chamam?"></div>
+      <div class="fg"><label>WhatsApp</label><input class="fi" type="tel" id="ft" placeholder="(11) 9 9999-9999"></div>
+    </div>
+    <div class="fg"><label>E-mail</label><input class="fi" type="email" id="fe" placeholder="seu@email.com"></div>
+    <div class="fg"><label>Cidade</label><input class="fi" type="text" id="fc" placeholder="Onde você está?"></div>
+    <div class="fg">
+      <label>O que mais te interessa?</label>
+      <select class="fi" id="fi">
+        <option value="renda">Quero uma renda extra</option>
+        <option value="dist">Quero ser distribuidora Jan Rosê</option>
+        <option value="equipe">Quero montar minha própria equipe</option>
+        <option value="prod">Quero conhecer os produtos primeiro</option>
+      </select>
+    </div>
+
+    <button class="btn-form" onclick="enviar()">✉️ Quero que a equipe entre em contato</button>
+    <div class="form-seg">🔒 Seus dados ficam só com a gente. Nunca compartilhamos.</div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div id="mat-modal" onclick="fecharMaterial(event)">
+  <div class="mat-box">
+    <button class="mat-close" onclick="document.getElementById('mat-modal').classList.remove('on');document.body.style.overflow=''">✕</button>
+    <div class="mat-check">✅</div>
+    <h3 class="mat-titulo">Cadastro recebido!</h3>
+    <p class="mat-sub">Nossa equipe entra em contato em até 24h.<br>Enquanto isso, escolha o que quer receber agora:</p>
+    <div class="mat-cards">
+      <div class="mat-card">
+        <div class="mat-card-ico">📦</div>
+        <h4 class="mat-card-titulo">Catálogo de Produtos</h4>
+        <p class="mat-card-desc">Veja todos os mais de 200 produtos Jan Rosê com preços e descrições.</p>
+        <a class="mat-btn mat-btn-wpp" href="https://wa.me/5511915033743?text=Ol%C3%A1!%20Acabei%20de%20me%20cadastrar%20e%20gostaria%20de%20receber%20o%20Cat%C3%A1logo%20de%20Produtos%20Jan%20Ros%C3%AA%20%F0%9F%8C%B8" target="_blank">💬 Receber pelo WhatsApp</a>
+        <a class="mat-btn mat-btn-dl" href="catalogo-jan-rose.pdf.pdf" download>⬇️ Baixar PDF</a>
+      </div>
+      <div class="mat-card">
+        <div class="mat-card-ico">🚀</div>
+        <h4 class="mat-card-titulo">Plano de Negócio</h4>
+        <p class="mat-card-desc">Entenda como funciona o modelo, os ganhos e como crescer na Jan Rosê.</p>
+        <a class="mat-btn mat-btn-wpp" href="https://wa.me/5511915033743?text=Ol%C3%A1!%20Acabei%20de%20me%20cadastrar%20e%20gostaria%20de%20receber%20o%20Plano%20de%20Neg%C3%B3cio%20Jan%20Ros%C3%AA%20%F0%9F%8C%B8" target="_blank">💬 Receber pelo WhatsApp</a>
+        <a class="mat-btn mat-btn-dl" href="plano-de-negocio-jan-rose.pdf.pdf" download>⬇️ Baixar PDF</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RODAPÉ -->
+<div class="rodape">
+  <img class="rod-logo" src="logo%20jan%20Ros%C3%AA.png" alt="Jan Rosê">
+  <div class="rod-txt">Distribuidora Independente Oficial · Equipe Alvo Negócio<br>© 2026 Jan Rosê</div>
+</div>
+
+<script>
+function enviar(){
+  const nome  = document.getElementById('fn').value.trim()
+  const tel   = document.getElementById('ft').value.trim()
+  const email = document.getElementById('fe').value.trim()
+  const cidade= document.getElementById('fc').value.trim()
+  const inter = document.getElementById('fi').value
+  if(!nome||!tel){alert('Por favor, preencha nome e WhatsApp 😊');return}
+  const m={renda:'Quero uma renda extra',dist:'Quero ser distribuidora',equipe:'Quero montar uma equipe',prod:'Quero conhecer os produtos'}
+  let txt=`Olá! Vim pela página da Jan Rosê 🌸\n\n*Nome:* ${nome}\n*WhatsApp:* ${tel}`
+  if(cidade) txt+=`\n*Cidade:* ${cidade}`
+  txt+=`\n*Interesse:* ${m[inter]||inter}`
+  const _wa=document.createElement('a')
+  _wa.href=`https://wa.me/5511915033743?text=${encodeURIComponent(txt)}`
+  _wa.target='_blank';_wa.rel='noopener'
+  document.body.appendChild(_wa);_wa.click();document.body.removeChild(_wa)
+  if(email && window.EJS_CONFIG){
+    emailjs.send(
+      window.EJS_CONFIG.serviceId,
+      window.EJS_CONFIG.templateId,
+      { to_name:nome, to_email:email, whatsapp:tel, cidade:cidade||'não informada', interesse:m[inter]||inter, catalogo:window.EJS_CATALOGO_LINK }
+    ).catch(()=>{})
+  }
+  setTimeout(()=>{
+    document.getElementById('mat-modal').classList.add('on')
+    document.body.style.overflow='hidden'
+  },800)
+}
+function fecharMaterial(e){
+  if(e.target===document.getElementById('mat-modal')){
+    document.getElementById('mat-modal').classList.remove('on')
+    document.body.style.overflow=''
+  }
+}
+document.querySelectorAll('.fi').forEach(el=>el.addEventListener('keydown',e=>{if(e.key==='Enter')enviar()}))
+</script>
+</body>
+</html>
