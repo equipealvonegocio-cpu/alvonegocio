@@ -1930,6 +1930,16 @@ footer .fw-copy{font-size:11px;color:rgba(255,255,255,.3)}
       <div class="fg"><label>Seu nome</label><input class="fi" type="text" id="fn" placeholder="Como te chamam?"></div>
       <div class="fg"><label>E-mail</label><input class="fi" type="email" id="fe" placeholder="seu@email.com"></div>
       <div class="fg"><label>WhatsApp</label><input class="fi" type="tel" id="ft" placeholder="(11) 9 9999-9999"></div>
+      <div class="fg"><label>Cidade</label><input class="fi" type="text" id="fc" placeholder="Onde você está?"></div>
+      <div class="fg">
+        <label>O que mais te interessa?</label>
+        <select class="fi" id="fint">
+          <option value="renda">Quero uma renda extra</option>
+          <option value="dist">Quero ser distribuidora Jan Rosê</option>
+          <option value="equipe">Quero montar minha própria equipe</option>
+          <option value="prod">Quero conhecer os produtos primeiro</option>
+        </select>
+      </div>
       <button class="btn-form" onclick="enviar()">✉️ Quero que a equipe entre em contato</button>
       <div class="form-seg">🔒 Seus dados ficam só com a gente. Nunca compartilhamos.</div>
       <div class="form-div">ou prefere falar agora?</div>
@@ -2070,6 +2080,9 @@ function enviar(){
   const nome=document.getElementById('fn').value.trim()
   const tel=document.getElementById('ft').value.trim()
   const email=document.getElementById('fe').value.trim()
+  const cidade=document.getElementById('fc').value.trim()
+  const interesseMap={renda:'Quero uma renda extra',dist:'Quero ser distribuidora',equipe:'Quero montar uma equipe',prod:'Quero conhecer os produtos'}
+  const interesse=interesseMap[document.getElementById('fint').value]||''
   if(!nome||!tel){alert('Por favor, preencha nome e WhatsApp 😊');return}
   const _wa=document.createElement('a');_wa.href=WPP_GRUPO;_wa.target='_blank';_wa.rel='noopener';document.body.appendChild(_wa);_wa.click();document.body.removeChild(_wa)
 
@@ -2078,6 +2091,8 @@ function enviar(){
       nome_completo: nome,
       telefone: tel,
       email: email || null,
+      cidade: cidade || null,
+      interesse: interesse || null,
       origem: 'paginacao',
       status: 'lead'
     }).catch(()=>{})
