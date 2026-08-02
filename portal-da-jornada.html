@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portal da Jornada | Equipe Alvo Negócio</title>
+<meta name="description" content="Conheça a Jan Rosê, a equipe, como funciona, os produtos, o plano de desenvolvimento, histórias reais e tire suas dúvidas — no seu tempo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:170px}
+body{font-family:'Inter',sans-serif;background:#fff;color:var(--ink);overflow-x:hidden;line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{font-family:inherit}
+
+:root{
+  --green-deep: #062820;
+  --green-dark: #0B3D2E;
+  --green:      #146C43;
+  --green-soft: #E6F0EA;
+  --gold:       #C9A227;
+  --gold-light: #E8D9A8;
+  --gray-bg:    #F7F8F7;
+  --ink:        #12211B;
+  --ink-muted:  #5B6B62;
+  --border:     #E3E7E3;
+}
+
+[da]{opacity:0;transform:translateY(20px);transition:opacity .6s cubic-bezier(.2,.7,.3,1),transform .6s cubic-bezier(.2,.7,.3,1)}
+[da].v{opacity:1;transform:translateY(0)}
+
+header{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid var(--border)}
+.h-top{display:flex;align-items:center;justify-content:center;gap:14px;padding:14px 24px;border-bottom:1px solid var(--border)}
+.h-top img{height:26px}
+.h-sep{width:1px;height:20px;background:var(--border)}
+
+.stepper{max-width:1000px;margin:0 auto;padding:14px 24px;display:flex;justify-content:flex-start;gap:4px;overflow-x:auto}
+.step-tab{display:flex;flex-direction:column;align-items:center;gap:6px;background:none;border:none;cursor:pointer;flex:0 0 auto;min-width:64px;padding:4px;opacity:.5;transition:opacity .2s}
+.step-tab.done{opacity:.85}
+.step-tab.ativo{opacity:1}
+.step-dot{width:32px;height:32px;border-radius:50%;background:var(--gray-bg);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:12.5px;font-weight:800;color:var(--ink-muted);transition:all .25s}
+.step-tab.ativo .step-dot{background:linear-gradient(135deg,var(--green-dark),var(--green));border-color:var(--green);color:#fff}
+.step-tab.done .step-dot{background:var(--green-soft);border-color:var(--green);color:var(--green-dark)}
+.step-label{font-size:9.5px;font-weight:700;color:var(--ink-muted);text-align:center;letter-spacing:.2px;white-space:nowrap}
+.step-tab.ativo .step-label{color:var(--green-dark)}
+
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--green-dark),var(--green));color:#fff;font-size:15.5px;font-weight:700;padding:16px 34px;border-radius:12px;transition:all .25s cubic-bezier(.2,.7,.3,1);border:none;cursor:pointer;box-shadow:0 8px 24px rgba(11,61,46,.22)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(11,61,46,.3)}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--green-dark);font-size:15.5px;font-weight:700;padding:15px 32px;border-radius:12px;border:1.5px solid var(--border);transition:all .2s;cursor:pointer}
+.btn-secondary:hover{border-color:var(--green);background:var(--green-soft)}
+.btn-ghost{display:inline-flex;align-items:center;gap:6px;background:none;color:var(--ink-muted);font-size:14.5px;font-weight:700;padding:14px 20px;border:none;cursor:pointer;transition:color .2s}
+.btn-ghost:hover{color:var(--green-dark)}
+
+.stage{max-width:900px;margin:0 auto;padding:56px 24px 24px;display:none}
+.stage.ativo{display:block}
+.s-eyebrow{display:inline-block;font-size:12.5px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--green);margin-bottom:14px}
+.s-h{font-size:clamp(26px,3.6vw,38px);font-weight:900;color:var(--ink);line-height:1.22;margin-bottom:16px;letter-spacing:-.3px}
+.s-sub{font-size:16px;color:var(--ink-muted);line-height:1.8;max-width:680px}
+
+.stage-nav{max-width:900px;margin:0 auto;padding:12px 24px 64px;display:flex;justify-content:space-between;align-items:center;gap:14px}
+
+.stats-row{display:flex;flex-wrap:wrap;gap:32px;margin:36px 0}
+.stat{text-align:left}
+.stat-v{font-size:clamp(22px,2.6vw,30px);font-weight:900;color:var(--green-dark)}
+.stat-l{font-size:11.5px;color:var(--ink-muted);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+
+.info-card{background:var(--gray-bg);border:1px solid var(--border);border-radius:16px;padding:26px 26px;margin-top:18px}
+.info-card p{font-size:15px;color:var(--ink);line-height:1.85}
+.info-card p strong{color:var(--green-dark)}
+
+.creds-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.cred-pill{font-size:12.5px;font-weight:700;color:var(--green-dark);background:var(--green-soft);border:1px solid rgba(20,108,67,.15);padding:8px 16px;border-radius:50px}
+
+/* ── equipe (foto) ── */
+.equipe-photo{margin-top:28px;border-radius:18px;overflow:hidden;border:1px solid var(--border);box-shadow:0 10px 30px rgba(11,61,46,.1);max-width:520px}
+.equipe-cap{font-size:12.5px;color:var(--ink-muted);margin-top:10px}
+
+/* ── como funciona ── */
+.mini-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}
+.mini-step{background:#fff;border:1px solid var(--border);border-radius:14px;padding:22px 18px;text-align:left}
+.mini-num{width:32px;height:32px;border-radius:8px;background:var(--green-soft);color:var(--green-dark);font-weight:900;font-size:14px;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.mini-step h4{font-size:14.5px;font-weight:800;color:var(--ink);margin-bottom:6px}
+.mini-step p{font-size:12.5px;color:var(--ink-muted);line-height:1.6}
+.combo-row{display:flex;gap:16px;margin-top:32px;flex-wrap:wrap}
+.combo-mini{flex:1;min-width:180px;background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:20px}
+.combo-mini.feat{border-color:var(--gold)}
+.combo-mini-nome{font-size:12px;font-weight:700;color:var(--ink-muted);text-transform:uppercase;letter-spacing:.5px}
+.combo-mini-preco{font-size:24px;font-weight:900;color:var(--green-dark);margin:6px 0}
+.combo-mini-desc{font-size:12.5px;color:var(--ink-muted);line-height:1.6}
+
+/* ── produtos ── */
+.prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px}
+.prod-card{border-radius:14px;overflow:hidden;aspect-ratio:3/2;box-shadow:0 4px 16px rgba(0,0,0,.08)}
+.prod-card img{width:100%;height:100%;object-fit:cover}
+.prod-cta{margin-top:28px}
+
+/* ── plano de desenvolvimento ── */
+.niveis-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px}
+.nivel-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:20px 14px;text-align:center}
+.nivel-nome{font-size:12px;font-weight:700;color:var(--ink-muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.nivel-val{font-size:17px;font-weight:900;color:var(--green-dark)}
+.bonus-row{display:flex;gap:16px;margin-top:20px;flex-wrap:wrap}
+.bonus-mini{flex:1;min-width:180px;background:var(--gray-bg);border:1px solid var(--border);border-radius:14px;padding:18px 20px}
+.bonus-mini-nome{font-size:12.5px;font-weight:700;color:var(--ink-muted)}
+.bonus-mini-val{font-size:20px;font-weight:900;color:var(--gold);margin-top:4px}
+.plano-disclaimer{font-size:11.5px;color:var(--ink-muted);margin-top:24px;line-height:1.7}
+
+/* ── histórias ── */
+.dep-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+.dep-card{background:var(--gray-bg);border:1px solid var(--border);border-radius:16px;padding:26px 22px}
+.dep-quote{font-size:26px;color:var(--gold);line-height:1;font-weight:900;margin-bottom:10px}
+.dep-txt{font-size:13.5px;color:var(--ink);line-height:1.7;margin-bottom:16px}
+.dep-nome{font-size:13.5px;font-weight:800;color:var(--ink)}
+.dep-info{font-size:11.5px;color:var(--ink-muted)}
+.dep-ganho{font-size:12px;font-weight:800;color:var(--green-dark);margin-top:4px}
+
+/* ── faq ── */
+.faq-w{margin-top:32px}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{width:100%;background:none;border:none;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;cursor:pointer;font-family:inherit;text-align:left}
+.faq-q-txt{font-size:15px;font-weight:700;color:var(--ink)}
+.faq-arr{width:26px;height:26px;border-radius:50%;border:1.5px solid var(--border);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--ink-muted);transition:.25s}
+.faq-item.on .faq-arr{transform:rotate(45deg);background:var(--green);color:#fff;border-color:var(--green)}
+.faq-a{font-size:14px;color:var(--ink-muted);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .25s}
+.faq-item.on .faq-a{max-height:200px;padding-bottom:20px}
+
+/* ── ia (chat) ── */
+.chat-box{margin-top:32px;background:var(--gray-bg);border:1px solid var(--border);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:16px}
+.chat-msgs{display:flex;flex-direction:column;gap:10px;max-height:320px;overflow-y:auto;padding-right:4px}
+.chat-msg{max-width:80%;padding:12px 16px;border-radius:14px;font-size:13.5px;line-height:1.6}
+.chat-msg.bot{align-self:flex-start;background:#fff;border:1px solid var(--border);color:var(--ink);border-bottom-left-radius:4px}
+.chat-msg.user{align-self:flex-end;background:linear-gradient(135deg,var(--green-dark),var(--green));color:#fff;border-bottom-right-radius:4px}
+.chat-chips{display:flex;flex-wrap:wrap;gap:8px}
+.chat-chip{background:#fff;border:1.5px solid var(--border);color:var(--green-dark);font-size:12.5px;font-weight:700;padding:9px 16px;border-radius:50px;cursor:pointer;transition:all .2s}
+.chat-chip:hover{border-color:var(--green);background:var(--green-soft)}
+.chat-input-row{display:flex;gap:10px}
+.chat-input{flex:1;padding:13px 16px;border:1.5px solid var(--border);border-radius:12px;font-size:14px;font-family:inherit;outline:none;background:#fff}
+.chat-input:focus{border-color:var(--green)}
+.chat-send{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,var(--green-dark),var(--green));color:#fff;border:none;font-size:17px;cursor:pointer;flex-shrink:0;transition:transform .2s}
+.chat-send:hover{transform:scale(1.06)}
+.chat-disclaimer{font-size:11.5px;color:var(--ink-muted);text-align:center}
+.chat-disclaimer a{color:var(--green-dark);font-weight:700;text-decoration:underline}
+
+/* ── agendar conversa ── */
+.agenda-toggle{background:none;border:1.5px dashed var(--border);color:var(--ink-muted);font-size:13px;font-weight:700;padding:14px 18px;border-radius:14px;cursor:pointer;text-align:center;transition:all .2s}
+.agenda-toggle:hover{border-color:var(--green);color:var(--green-dark)}
+.agenda-box{margin-top:0;background:var(--gray-bg);border:1px solid var(--border);border-radius:20px;padding:32px}
+.agenda-label{font-size:13px;font-weight:800;color:var(--ink);margin-bottom:12px}
+.chip-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.chip-opt{background:#fff;border:1.5px solid var(--border);color:var(--ink);font-size:13.5px;font-weight:700;padding:12px 22px;border-radius:50px;cursor:pointer;transition:all .2s}
+.chip-opt:hover{border-color:var(--green)}
+.chip-opt.sel{border-color:var(--green);background:var(--green-soft);color:var(--green-dark)}
+.agenda-resumo{font-size:13px;color:var(--ink-muted);margin-bottom:18px;min-height:20px}
+.agenda-resumo strong{color:var(--green-dark)}
+
+/* ── decisão final ── */
+.decisao-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:36px}
+.decisao-card{border-radius:22px;padding:36px 30px;text-align:center;position:relative;overflow:hidden}
+.decisao-ico{font-size:32px;margin-bottom:14px}
+.decisao-card h3{font-size:19px;font-weight:900;margin-bottom:10px}
+.decisao-card p{font-size:13.5px;line-height:1.75;margin-bottom:24px}
+.decisao-sim{background:linear-gradient(160deg,var(--green-deep) 0%,var(--green-dark) 55%,var(--green) 100%)}
+.decisao-sim::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 75% 20%,rgba(201,162,39,.15) 0%,transparent 60%);pointer-events:none}
+.decisao-sim h3{position:relative;color:#fff}
+.decisao-sim p{position:relative;color:rgba(255,255,255,.78)}
+.decisao-nao{background:var(--gray-bg);border:1.5px solid var(--border)}
+.decisao-nao h3{color:var(--ink)}
+.decisao-nao p{color:var(--ink-muted)}
+.decisao-nao .agenda-box{text-align:left;margin-top:18px}
+.btn-final{position:relative;display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--gold),#a9820f);color:#1a1400;font-size:16px;font-weight:800;padding:17px 36px;border-radius:14px;box-shadow:0 14px 36px rgba(201,162,39,.35);transition:all .25s}
+.btn-final:hover{transform:translateY(-2px)}
+.fechamento-dm-alt{margin-top:24px;font-size:13px;color:var(--ink-muted)}
+.fechamento-dm-alt a{color:var(--green-dark);font-weight:700;text-decoration:underline}
+
+footer{background:var(--green-deep);color:rgba(255,255,255,.55);padding:36px 24px;text-align:center;font-size:12.5px;line-height:1.9}
+footer a{color:var(--gold-light)}
+
+@media(max-width:900px){
+  .mini-steps{grid-template-columns:1fr 1fr}
+  .niveis-grid{grid-template-columns:1fr 1fr}
+  .prod-grid{grid-template-columns:1fr 1fr}
+  .dep-grid{grid-template-columns:1fr}
+  .decisao-grid{grid-template-columns:1fr}
+  .step-label{display:none}
+}
+@media(max-width:560px){
+  .stage{padding:36px 20px 16px}
+  .stage-nav{padding:12px 20px 48px;flex-direction:column-reverse;align-items:stretch}
+  .stage-nav .btn-primary,.stage-nav .btn-secondary,.stage-nav .btn-ghost{justify-content:center;width:100%}
+  .mini-steps,.niveis-grid{grid-template-columns:1fr}
+  .prod-grid{grid-template-columns:1fr 1fr}
+  .combo-row,.bonus-row{flex-direction:column}
+  .stats-row{gap:20px}
+  .decisao-card{padding:28px 22px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="h-top">
+    <img src="logo%20jan%20Ros%C3%AA.png" alt="Jan Rosê">
+    <div class="h-sep"></div>
+    <img src="Logo%20Alvo%20negocio.png" alt="Alvo Negócio">
+  </div>
+  <nav class="stepper" id="stepper">
+    <button class="step-tab ativo" data-etapa="1" onclick="irPara(1)"><div class="step-dot">1</div><span class="step-label">Boas-vindas</span></button>
+    <button class="step-tab" data-etapa="2" onclick="irPara(2)"><div class="step-dot">2</div><span class="step-label">Jan Rosê</span></button>
+    <button class="step-tab" data-etapa="3" onclick="irPara(3)"><div class="step-dot">3</div><span class="step-label">Equipe</span></button>
+    <button class="step-tab" data-etapa="4" onclick="irPara(4)"><div class="step-dot">4</div><span class="step-label">Como funciona</span></button>
+    <button class="step-tab" data-etapa="5" onclick="irPara(5)"><div class="step-dot">5</div><span class="step-label">Produtos</span></button>
+    <button class="step-tab" data-etapa="6" onclick="irPara(6)"><div class="step-dot">6</div><span class="step-label">Desenvolvimento</span></button>
+    <button class="step-tab" data-etapa="7" onclick="irPara(7)"><div class="step-dot">7</div><span class="step-label">Histórias</span></button>
+    <button class="step-tab" data-etapa="8" onclick="irPara(8)"><div class="step-dot">8</div><span class="step-label">FAQ</span></button>
+    <button class="step-tab" data-etapa="9" onclick="irPara(9)"><div class="step-dot">9</div><span class="step-label">IA</span></button>
+  </nav>
+</header>
+
+<main>
+
+<!-- ══ 1 · BOAS-VINDAS ══ -->
+<section class="stage ativo" data-stage="1">
+  <p class="s-eyebrow" da>Etapa 1 de 9</p>
+  <h1 class="s-h" da>🎉 Parabéns! Seu acesso foi liberado.</h1>
+  <p class="s-sub" da>Você acaba de dar o primeiro passo para conhecer uma oportunidade de empreendedorismo, desenvolvimento e geração de renda.</p>
+  <div class="info-card" da>
+    <p>Antes de tomar qualquer decisão, queremos que você conheça <strong>nossa equipe</strong>, <strong>nossa forma de trabalhar</strong>, <strong>nossa missão</strong> e <strong>como funciona</strong> toda a oportunidade. Vamos explorar juntas, etapa por etapa — sem pressa e sem pressão.</p>
+  </div>
+</section>
+
+<!-- ══ 2 · QUEM É A JAN ROSÊ ══ -->
+<section class="stage" data-stage="2">
+  <p class="s-eyebrow" da>Etapa 2 de 9</p>
+  <h1 class="s-h" da>Quem é a Jan Rosê</h1>
+  <p class="s-sub" da>A marca por trás dos produtos que você vai representar.</p>
+  <div class="info-card" da>
+    <p>Uma multinacional com <strong>32+ anos de história</strong>, fábrica própria e presença em <strong>27 países europeus</strong> — já pagou mais de <strong>R$ 40 milhões</strong> em bonificações a distribuidores. Fórmulas com rigorosos testes de eficácia e ingredientes selecionados.</p>
+  </div>
+  <div class="stats-row" da>
+    <div class="stat"><div class="stat-v">32+ anos</div><div class="stat-l">de mercado</div></div>
+    <div class="stat"><div class="stat-v">27</div><div class="stat-l">países na Europa</div></div>
+    <div class="stat"><div class="stat-v">+200</div><div class="stat-l">produtos</div></div>
+    <div class="stat"><div class="stat-v">+R$ 40 milhões</div><div class="stat-l">pagos em bonificações</div></div>
+  </div>
+  <div class="creds-row" da>
+    <span class="cred-pill">Desde 1994</span>
+    <span class="cred-pill">Associada ABEVD + ABF</span>
+    <span class="cred-pill">Fábrica própria</span>
+  </div>
+</section>
+
+<!-- ══ 3 · QUEM É A EQUIPE ══ -->
+<section class="stage" data-stage="3">
+  <p class="s-eyebrow" da>Etapa 3 de 9</p>
+  <h1 class="s-h" da>Quem é a Equipe</h1>
+  <p class="s-sub" da>As pessoas reais por trás da Alvo Negócio.</p>
+  <div class="info-card" da>
+    <p>A <strong>Alvo Negócio</strong> é distribuidora oficial da Jan Rosê, fundada por <strong>Ismael Moraes</strong> — Psicólogo, Neuropsicólogo e Empreendedor. Nosso propósito é conectar pessoas comuns a uma oportunidade real de crescer, com o mesmo cuidado técnico que aprendemos estudando o comportamento humano.</p>
+  </div>
+  <div class="equipe-photo" da>
+    <img src="ChatGPT%20Image%2031%20de%20jul.%20de%202026%2C%2019_56_26.png" alt="Ismael Moraes — Treinamento Alvo Negócio">
+  </div>
+  <p class="equipe-cap" da>Ismael Moraes em treinamento com a equipe Alvo Negócio</p>
+  <div class="creds-row" da>
+    <span class="cred-pill">Fundador: Ismael Moraes</span>
+    <span class="cred-pill">Distribuidora Oficial Jan Rosê</span>
+    <span class="cred-pill">Programa Divas Rosê</span>
+  </div>
+</section>
+
+<!-- ══ 4 · COMO FUNCIONA ══ -->
+<section class="stage" data-stage="4">
+  <p class="s-eyebrow" da>Etapa 4 de 9</p>
+  <h1 class="s-h" da>Como Funciona</h1>
+  <p class="s-sub" da>A Jan Rosê atua no modelo de <strong>Venda Direta</strong>, regulamentado no Brasil e representado pela ABEVD. Nada de pirâmide: o lucro vem da venda real de produtos.</p>
+  <div class="mini-steps">
+    <div class="mini-step" da="e"><div class="mini-num">1</div><h4>Cadastro</h4><p>Rápido, gratuito, sem burocracia.</p></div>
+    <div class="mini-step" da><div class="mini-num">2</div><h4>Treinamento</h4><p>Catálogo, tabela de preços e scripts prontos.</p></div>
+    <div class="mini-step" da><div class="mini-num">3</div><h4>Primeira venda</h4><p>Com suporte da equipe, em até 7 dias.</p></div>
+    <div class="mini-step" da="d"><div class="mini-num">4</div><h4>Escale</h4><p>Amplie canais e acesse todas as fontes de renda.</p></div>
+  </div>
+  <div class="combo-row" da>
+    <div class="combo-mini">
+      <div class="combo-mini-nome">Consultor</div>
+      <div class="combo-mini-preco">R$ 197</div>
+      <div class="combo-mini-desc">Kit inicial com produtos para revenda imediata.</div>
+    </div>
+    <div class="combo-mini feat">
+      <div class="combo-mini-nome">Pro</div>
+      <div class="combo-mini-preco">R$ 997</div>
+      <div class="combo-mini-desc">Kit completo, com acesso a todos os bônus.</div>
+    </div>
+  </div>
+  <p class="s-sub" style="margin-top:20px;font-size:13.5px" da>Os combos são opcionais — o cadastro em si é gratuito, e você também pode começar vendendo sob encomenda.</p>
+</section>
+
+<!-- ══ 5 · PRODUTOS ══ -->
+<section class="stage" data-stage="5">
+  <p class="s-eyebrow" da>Etapa 5 de 9</p>
+  <h1 class="s-h" da>Conheça os Produtos</h1>
+  <p class="s-sub" da>Perfumaria, cuidados pessoais e bem-estar — um portfólio completo, com fórmulas testadas e alta taxa de recompra.</p>
+  <div class="prod-grid">
+    <div class="prod-card" da="e"><img src="pp1.png" alt="Produtos Jan Rosê"></div>
+    <div class="prod-card" da><img src="pp2.png" alt="Produtos Jan Rosê"></div>
+    <div class="prod-card" da><img src="pp3.png" alt="Produtos Jan Rosê"></div>
+    <div class="prod-card" da="d"><img src="pp4.png" alt="Produtos Jan Rosê"></div>
+  </div>
+  <div class="prod-cta" da><a class="btn-secondary" href="catalogo-jan-rose.pdf.pdf" download>⬇️ Baixar catálogo completo</a></div>
+</section>
+
+<!-- ══ 6 · PLANO DE DESENVOLVIMENTO ══ -->
+<section class="stage" data-stage="6">
+  <p class="s-eyebrow" da>Etapa 6 de 9</p>
+  <h1 class="s-h" da>Plano de Desenvolvimento</h1>
+  <p class="s-sub" da>Veja como é possível crescer e evoluir dentro da equipe, com metas claras em cada nível.</p>
+  <div class="info-card" da>
+    <p>A Jan Rosê distribui <strong>45% de toda a pontuação global</strong> entre os líderes qualificados. Quanto maior o seu nível, maior a sua fatia — além do bônus de adesão, pago na hora.</p>
+  </div>
+  <div class="niveis-grid" da>
+    <div class="nivel-card"><div class="nivel-nome">Ouro</div><div class="nivel-val">R$ 300+/mês</div></div>
+    <div class="nivel-card"><div class="nivel-nome">Diamante</div><div class="nivel-val">R$ 2.000+/mês</div></div>
+    <div class="nivel-card"><div class="nivel-nome">Duplo Diamante</div><div class="nivel-val">R$ 8.000+/mês</div></div>
+    <div class="nivel-card"><div class="nivel-nome">Imperial</div><div class="nivel-val">R$ 80.000+/mês</div></div>
+  </div>
+  <div class="bonus-row" da>
+    <div class="bonus-mini"><div class="bonus-mini-nome">Bônus de adesão · Consultor</div><div class="bonus-mini-val">10%</div></div>
+    <div class="bonus-mini"><div class="bonus-mini-nome">Bônus de adesão · Pro</div><div class="bonus-mini-val">20%</div></div>
+  </div>
+  <p class="plano-disclaimer" da>*Resultados apresentados são potenciais e dependem do esforço, dedicação e volume de vendas de cada distribuidor. Não há garantia de renda mínima.</p>
+</section>
+
+<!-- ══ 7 · HISTÓRIAS ══ -->
+<section class="stage" data-stage="7">
+  <p class="s-eyebrow" da>Etapa 7 de 9</p>
+  <h1 class="s-h" da>Histórias reais</h1>
+  <p class="s-sub" da>Pessoas que começaram do zero e hoje têm resultado real — sem exagero, sem promessa vazia.</p>
+  <div class="dep-grid">
+    <div class="dep-card" da="e">
+      <div class="dep-quote">"</div>
+      <div class="dep-txt">Comecei vendendo para as amigas. Hoje tenho uma equipe de 12 pessoas e trabalho de casa.</div>
+      <div class="dep-nome">Juliana Costa</div>
+      <div class="dep-info">Campinas, SP</div>
+      <div class="dep-ganho">+ R$ 3.200 / mês</div>
+    </div>
+    <div class="dep-card" da>
+      <div class="dep-quote">"</div>
+      <div class="dep-txt">O perfume Tríade foi meu primeiro produto. Em 3 meses já era minha maior fonte de renda.</div>
+      <div class="dep-nome">Roberto Silva</div>
+      <div class="dep-info">Salvador, BA</div>
+      <div class="dep-ganho">+ R$ 4.800 / mês</div>
+    </div>
+    <div class="dep-card" da="d">
+      <div class="dep-quote">"</div>
+      <div class="dep-txt">O suporte da equipe faz toda a diferença. Nunca me senti sozinha pra fechar uma venda.</div>
+      <div class="dep-nome">Fernanda T.</div>
+      <div class="dep-info">Revendedora, MG</div>
+      <div class="dep-ganho">+ R$ 2.600 / mês</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 8 · FAQ ══ -->
+<section class="stage" data-stage="8">
+  <p class="s-eyebrow" da>Etapa 8 de 9</p>
+  <h1 class="s-h" da>Perguntas Frequentes</h1>
+  <p class="s-sub" da>As dúvidas mais comuns de quem chegou até aqui.</p>
+  <div class="faq-w" da>
+    <div class="faq-item">
+      <button class="faq-q" onclick="tFaq(this)"><span class="faq-q-txt">É pirâmide financeira ou golpe?</span><span class="faq-arr">+</span></button>
+      <div class="faq-a">Não. A Jan Rosê opera pelo modelo de venda direta, associado à ABEVD. O lucro vem da venda e do consumo real de produtos — não existe ganho por simplesmente recrutar pessoas.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="tFaq(this)"><span class="faq-q-txt">Preciso investir muito para começar?</span><span class="faq-arr">+</span></button>
+      <div class="faq-a">Não. O cadastro é gratuito. Você pode começar vendendo sob encomenda ou com um combo de baixo investimento (a partir de R$ 197), crescendo no seu ritmo.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="tFaq(this)"><span class="faq-q-txt">Preciso ter experiência em vendas?</span><span class="faq-arr">+</span></button>
+      <div class="faq-a">Não é necessário. Muitas distribuidoras começaram do zero. Você recebe catálogo, material de apoio, treinamento pela Unijan e acompanhamento da equipe.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="tFaq(this)"><span class="faq-q-txt">Sou obrigada a comprar estoque?</span><span class="faq-arr">+</span></button>
+      <div class="faq-a">Não. Você pode trabalhar sob encomenda, vendendo primeiro e comprando depois, ou montar um estoque próprio se quiser agilizar as entregas.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="tFaq(this)"><span class="faq-q-txt">Como eu recebo meu dinheiro?</span><span class="faq-arr">+</span></button>
+      <div class="faq-a">O lucro das vendas fica com você na hora. Já os ganhos com a sua equipe são pagos mensalmente, direto na sua conta.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 9 · IA ══ -->
+<section class="stage" data-stage="9">
+  <p class="s-eyebrow" da>Etapa 9 de 9</p>
+  <h1 class="s-h" da>Converse com nossa IA Especialista</h1>
+  <p class="s-sub" da>Tire qualquer dúvida na hora. Escolha uma pergunta rápida ou digite a sua.</p>
+  <div class="chat-box" da>
+    <div class="chat-msgs" id="chat-msgs">
+      <div class="chat-msg bot">Oi! 👋 Sou a assistente virtual da Alvo Negócio. Posso te ajudar a entender qualquer parte da oportunidade Jan Rosê. O que você quer saber?</div>
+    </div>
+    <div class="chat-chips">
+      <button class="chat-chip" onclick="perguntarIA('piramide')">É pirâmide financeira?</button>
+      <button class="chat-chip" onclick="perguntarIA('investir')">Preciso investir muito?</button>
+      <button class="chat-chip" onclick="perguntarIA('experiencia')">Preciso ter experiência?</button>
+      <button class="chat-chip" onclick="perguntarIA('receber')">Como recebo o dinheiro?</button>
+      <button class="chat-chip" onclick="perguntarIA('produtos')">Quais produtos vocês vendem?</button>
+      <button class="chat-chip" onclick="perguntarIA('equipe')">Como funciona formar equipe?</button>
+    </div>
+    <div class="chat-input-row">
+      <input class="chat-input" id="chat-input" type="text" placeholder="Digite sua pergunta..." onkeydown="if(event.key==='Enter')enviarPerguntaLivre()">
+      <button class="chat-send" onclick="enviarPerguntaLivre()" aria-label="Enviar">➤</button>
+    </div>
+    <p class="chat-disclaimer">🤖 Assistente automático, com respostas pré-programadas. Para algo mais específico, <a href="https://wa.me/5511915033743" target="_blank" rel="noopener">fale com um consultor humano</a>.</p>
+  </div>
+</section>
+
+<!-- ══ 10 · VOCÊ ESTÁ PRONTO? (DECISÃO) ══ -->
+<section class="stage" data-stage="10">
+  <p class="s-eyebrow" da>Última etapa</p>
+  <h1 class="s-h" da>Você está pronta?</h1>
+  <p class="s-sub" da>Você já conhece a Jan Rosê, a equipe, como funciona, os produtos, o plano de desenvolvimento, histórias reais e tirou suas dúvidas com a nossa IA. Agora é com você.</p>
+
+  <div class="decisao-grid" da>
+    <div class="decisao-card decisao-sim">
+      <div class="decisao-ico">✅</div>
+      <h3>Sim, quero começar agora</h3>
+      <p>Faça seu cadastro completo. Leva poucos minutos, e nossa equipe entra em contato pra te apresentar os próximos passos.</p>
+      <a class="btn-final" href="cadastro-completo.html">Fazer meu cadastro →</a>
+    </div>
+    <div class="decisao-card decisao-nao">
+      <div class="decisao-ico">💬</div>
+      <h3>Ainda tenho dúvidas</h3>
+      <p>Sem problema. Fale com um consultor humano antes de decidir — sem compromisso.</p>
+      <button class="agenda-toggle" id="agenda-toggle" onclick="toggleAgenda()">📅 Agendar uma conversa</button>
+      <div class="agenda-box" id="agenda-box" style="display:none">
+        <div class="agenda-label">Quando você prefere?</div>
+        <div class="chip-row" id="agenda-dias">
+          <button class="chip-opt" onclick="escolherAgenda('dias', 'Hoje', this)">Hoje</button>
+          <button class="chip-opt" onclick="escolherAgenda('dias', 'Amanhã', this)">Amanhã</button>
+          <button class="chip-opt" onclick="escolherAgenda('dias', 'Essa semana', this)">Essa semana</button>
+        </div>
+        <div class="agenda-label">Qual horário?</div>
+        <div class="chip-row" id="agenda-periodo">
+          <button class="chip-opt" onclick="escolherAgenda('periodo', 'Manhã', this)">🌅 Manhã</button>
+          <button class="chip-opt" onclick="escolherAgenda('periodo', 'Tarde', this)">☀️ Tarde</button>
+          <button class="chip-opt" onclick="escolherAgenda('periodo', 'Noite', this)">🌙 Noite</button>
+        </div>
+        <p class="agenda-resumo" id="agenda-resumo">Escolha um dia e um período pra continuar.</p>
+        <a class="btn-primary" id="agenda-btn" href="#" target="_blank" rel="noopener" onclick="return false" style="opacity:.5;pointer-events:none">📅 Confirmar agendamento no WhatsApp</a>
+      </div>
+    </div>
+  </div>
+  <p class="fechamento-dm-alt" da>Depois da conversa com o consultor, é só voltar aqui e <a href="cadastro-completo.html">fazer seu cadastro</a>.</p>
+</section>
+
+</main>
+
+<div class="stage-nav">
+  <button class="btn-ghost" id="btn-voltar" onclick="anterior()">← Voltar</button>
+  <button class="btn-primary" id="btn-continuar" onclick="proximo()">Continuar →</button>
+</div>
+
+<footer>
+  Distribuidora Independente Oficial · Equipe Alvo Negócio · © 2026<br>
+  <a href="landing-page-distribuidora.html">Ver site completo</a> · <a href="https://wa.me/5511915033743" target="_blank" rel="noopener">Falar no WhatsApp</a>
+</footer>
+
+<script>
+const NOMES = {1:'Boas-vindas',2:'Jan Rosê',3:'Equipe',4:'Como funciona',5:'Produtos',6:'Desenvolvimento',7:'Histórias',8:'FAQ',9:'IA'}
+const TOTAL_ETAPAS = 10
+const TOTAL_NUMERADAS = 9
+let etapaAtual = 1
+
+function irPara(n){
+  etapaAtual = n
+  document.querySelectorAll('.stage').forEach(s => s.classList.toggle('ativo', +s.dataset.stage === n))
+  document.querySelectorAll('.step-tab').forEach(t => {
+    const num = +t.dataset.etapa
+    t.classList.toggle('ativo', num === n)
+    t.classList.toggle('done', num < n)
+  })
+  document.getElementById('btn-voltar').style.visibility = n === 1 ? 'hidden' : 'visible'
+  const continuar = document.getElementById('btn-continuar')
+  continuar.style.display = n === TOTAL_ETAPAS ? 'none' : 'inline-flex'
+  continuar.textContent = n < TOTAL_NUMERADAS ? `Continuar: ${NOMES[n+1]} →` : 'Você está pronta? →'
+  window.scrollTo({top:0, behavior:'smooth'})
+}
+function proximo(){ if(etapaAtual < TOTAL_ETAPAS) irPara(etapaAtual + 1) }
+function anterior(){ if(etapaAtual > 1) irPara(etapaAtual - 1) }
+
+function tFaq(btn){
+  const it = btn.closest('.faq-item'), on = it.classList.contains('on')
+  document.querySelectorAll('.faq-item.on').forEach(i => i.classList.remove('on'))
+  if(!on) it.classList.add('on')
+}
+
+/* ── assistente (respostas pré-programadas, sem IA real conectada) ── */
+const KB_IA = [
+  { chaves:['piramide','pirâmide','golpe'], resposta:'Não! A Jan Rosê opera pelo modelo de venda direta, associado à ABEVD. O lucro vem da venda e do consumo real de produtos — não existe ganho por simplesmente recrutar pessoas.' },
+  { chaves:['investir','investimento','quanto custa','preço','valor','caro'], resposta:'O cadastro é totalmente gratuito. Depois disso, você pode vender sob encomenda ou escolher um combo a partir de R$ 197 — no seu ritmo.' },
+  { chaves:['experiencia','experiência','nunca vendi','sei vender'], resposta:'Não é necessária nenhuma experiência prévia. Você recebe catálogo, treinamento pela Unijan e acompanhamento da equipe desde o primeiro dia.' },
+  { chaves:['estoque','comprar produto'], resposta:'Não é obrigatório. Você pode vender sob encomenda, sem precisar montar estoque — ou montar um estoque próprio se quiser agilizar as entregas.' },
+  { chaves:['receber','dinheiro','pagamento','pago','ganho'], resposta:'O lucro das vendas fica com você na hora. Os ganhos com a sua equipe (divisão de lucros) são pagos mensalmente, direto na sua conta.' },
+  { chaves:['produto','produtos','catalogo','catálogo','perfume'], resposta:'A Jan Rosê tem mais de 200 produtos: perfumaria, cosméticos, cuidados pessoais e bem-estar. Dá uma olhada na etapa "Produtos" aqui no portal!' },
+  { chaves:['equipe','lideranca','liderança','lider','líder'], resposta:'Além de vender, você pode formar sua própria equipe e ganhar com a divisão de lucros — até 45% da pontuação global é distribuída entre os líderes qualificados.' },
+  { chaves:['tempo','horas','disponibilidade'], resposta:'Você decide quantas horas dedica. Não existe carga horária obrigatória — muitas distribuidoras começam com poucas horas por semana.' },
+  { chaves:['treinamento','aprender','ensinar','unijan'], resposta:'Você tem acesso à Unijan, a universidade oficial da Jan Rosê, com treinamentos de vendas, empreendedorismo e liderança.' },
+  { chaves:['cadastro','cadastrar','como comeco','como começo'], resposta:'É rápido e gratuito! Na etapa "Cadastro", logo mais, tem um botão pra você fazer seu cadastro completo.' },
+]
+function respostaIA(pergunta){
+  const p = pergunta.toLowerCase()
+  const achou = KB_IA.find(item => item.chaves.some(k => p.includes(k)))
+  return achou ? achou.resposta : 'Essa eu não tenho certeza 🤔 mas nossa equipe humana com certeza sabe! Que tal falar direto com um consultor no WhatsApp? (link ali embaixo 👇)'
+}
+function adicionarMsgChat(texto, autor){
+  const box = document.getElementById('chat-msgs')
+  const div = document.createElement('div')
+  div.className = 'chat-msg ' + autor
+  div.textContent = texto
+  box.appendChild(div)
+  box.scrollTop = box.scrollHeight
+}
+const LABEL_CHIPS = {piramide:'É pirâmide financeira?',investir:'Preciso investir muito?',experiencia:'Preciso ter experiência?',receber:'Como recebo o dinheiro?',produtos:'Quais produtos vocês vendem?',equipe:'Como funciona formar equipe?'}
+function perguntarIA(topico){
+  adicionarMsgChat(LABEL_CHIPS[topico], 'user')
+  setTimeout(() => adicionarMsgChat(respostaIA(topico), 'bot'), 400)
+}
+function enviarPerguntaLivre(){
+  const input = document.getElementById('chat-input')
+  const texto = input.value.trim()
+  if(!texto) return
+  adicionarMsgChat(texto, 'user')
+  input.value = ''
+  setTimeout(() => adicionarMsgChat(respostaIA(texto), 'bot'), 500)
+}
+
+/* ── agendar conversa (opcional, só se necessário) ── */
+function toggleAgenda(){
+  const box = document.getElementById('agenda-box')
+  const aberta = box.style.display !== 'none'
+  box.style.display = aberta ? 'none' : 'block'
+  document.getElementById('agenda-toggle').textContent = aberta
+    ? '📅 Ainda com dúvidas? Prefiro agendar uma conversa (opcional)'
+    : '📅 Fechar agendamento'
+}
+const agenda = { dias: null, periodo: null }
+function escolherAgenda(grupo, valor, btn){
+  agenda[grupo] = valor
+  btn.parentElement.querySelectorAll('.chip-opt').forEach(b => b.classList.remove('sel'))
+  btn.classList.add('sel')
+  atualizarAgenda()
+}
+function atualizarAgenda(){
+  const resumo = document.getElementById('agenda-resumo')
+  const btn = document.getElementById('agenda-btn')
+  if(agenda.dias && agenda.periodo){
+    resumo.innerHTML = `Combinado: <strong>${agenda.dias}</strong>, período da <strong>${agenda.periodo.toLowerCase()}</strong>.`
+    const txt = `Olá! Percorri o Portal da Jornada e gostaria de agendar uma conversa. Prefiro: ${agenda.dias}, período da ${agenda.periodo.toLowerCase()} 🌸`
+    btn.href = `https://wa.me/5511915033743?text=${encodeURIComponent(txt)}`
+    btn.style.opacity = '1'
+    btn.style.pointerEvents = 'auto'
+    btn.removeAttribute('onclick')
+  }else{
+    resumo.textContent = 'Escolha um dia e um período pra continuar.'
+  }
+}
+
+const obs = new IntersectionObserver(entries => entries.forEach(x => { if(x.isIntersecting) x.target.classList.add('v') }), {threshold:.1})
+document.querySelectorAll('[da]').forEach(el => obs.observe(el))
+
+irPara(1)
+</script>
+</body>
+</html>

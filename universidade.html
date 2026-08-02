@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unijan · Universidade Jan Rosê | Equipe Alvo Negócio</title>
+<meta name="description" content="Sua trilha de treinamento como Distribuidora Jan Rosê: primeiros passos, como vender, atendimento, como formar equipe e plano de desenvolvimento.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --v:  #2A0E72;
+  --vm: #7B2CB9;
+  --vl: #C044B8;
+  --d:  #96165d;
+  --dl: #FFB8E4;
+  --bg: #FDF5FF;
+  --c2: #3D2060;
+  --c3: #8878AA;
+  --bd: #E8C8F8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);min-height:100vh;color:#1a1a1a;line-height:1.6}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit}
+
+/* ── HEADER ── */
+.header{background:linear-gradient(135deg,#2A0E72,#96165d,#c044b8);padding:16px 24px;display:flex;align-items:center;justify-content:center}
+.header-logo{height:40px;width:auto;filter:drop-shadow(0 2px 6px rgba(0,0,0,.3))}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,#2A0E72 0%,#96165d 55%,#c044b8 100%);padding:56px 24px 64px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:40px;background:var(--bg);clip-path:ellipse(55% 100% at 50% 100%)}
+.hero-badge{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:50px;padding:8px 20px;font-size:12px;font-weight:700;color:rgba(255,255,255,.9);letter-spacing:1px;text-transform:uppercase;margin-bottom:20px}
+.hero h1{font-size:clamp(26px,4.5vw,40px);font-weight:900;color:#fff;line-height:1.2;margin-bottom:16px}
+.hero h1 span{color:#FFB8E4}
+.hero-sub{font-size:15.5px;color:rgba(255,255,255,.82);max-width:560px;margin:0 auto;line-height:1.75}
+
+/* ── PROGRESSO ── */
+.wrap{max-width:680px;margin:0 auto;padding:8px 24px 60px}
+.sec-titulo{font-size:13px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--vm);margin:40px 0 18px}
+.sec-titulo:first-child{margin-top:0}
+
+/* ── MÓDULOS (accordion) ── */
+.mod-item{background:#fff;border-radius:18px;margin-bottom:14px;box-shadow:0 4px 18px rgba(123,44,185,.08);border:1px solid var(--bd);overflow:hidden}
+.mod-head{width:100%;background:none;border:none;display:flex;gap:16px;align-items:center;padding:20px 22px;cursor:pointer;text-align:left}
+.mod-num{width:38px;height:38px;border-radius:12px;background:var(--bg);border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:900;color:var(--vm);flex-shrink:0}
+.mod-head-txt{flex:1;min-width:0}
+.mod-head-txt h3{font-size:15.5px;font-weight:800;color:var(--v)}
+.mod-head-txt p{font-size:12.5px;color:var(--c3);margin-top:2px}
+.mod-arr{width:26px;height:26px;border-radius:50%;border:1.5px solid var(--bd);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--vm);transition:.25s}
+.mod-item.on .mod-arr{transform:rotate(45deg);background:var(--vm);color:#fff;border-color:var(--vm)}
+.mod-body{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.mod-item.on .mod-body{max-height:600px}
+.mod-body-in{padding:0 22px 22px 76px}
+.mod-body-in li{font-size:13.5px;color:var(--c2);line-height:1.7;margin-bottom:8px;list-style:none;padding-left:18px;position:relative}
+.mod-body-in li::before{content:'●';position:absolute;left:0;color:var(--vl);font-size:9px;top:7px}
+
+.suporte-card{background:linear-gradient(135deg,#1a0845 0%,#2A0E72 40%,#7B2CB9 80%,#96165d 100%);border-radius:20px;padding:32px 28px;text-align:center;margin-top:44px;color:#fff}
+.suporte-card h3{font-size:18px;font-weight:900;margin-bottom:10px}
+.suporte-card p{font-size:13.5px;color:rgba(255,255,255,.8);line-height:1.75;margin-bottom:22px}
+.suporte-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--vm);font-size:14.5px;font-weight:800;padding:14px 30px;border-radius:50px;transition:all .2s}
+.suporte-btn:hover{transform:translateY(-2px)}
+
+.cta-final{margin-top:36px;text-align:center}
+.btn-final{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#7B2CB9,#96165d);color:#fff;font-size:15.5px;font-weight:800;padding:16px 34px;border-radius:50px;transition:all .2s;box-shadow:0 10px 28px rgba(123,44,185,.3)}
+.btn-final:hover{transform:translateY(-2px)}
+.cta-final-sub{font-size:12.5px;color:var(--c3);margin-top:14px}
+
+/* ── RODAPÉ ── */
+.rodape{background:linear-gradient(135deg,#2A0E72,#96165d);padding:26px;text-align:center}
+.rod-logo{height:36px;width:auto;opacity:.85;margin-bottom:8px}
+.rod-txt{font-size:11px;color:rgba(255,255,255,.55);line-height:1.8}
+
+@media(max-width:480px){
+  .mod-body-in{padding-left:22px}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <img class="header-logo" src="logo%20jan%20Ros%C3%AA.png" alt="Jan Rosê">
+</header>
+
+<div class="hero">
+  <div class="hero-badge">🎓 Unijan · Universidade Jan Rosê</div>
+  <h1>Sua trilha de <span>treinamento</span></h1>
+  <p class="hero-sub">5 módulos práticos pra você começar com segurança. Leia no seu ritmo — e quando quiser aprofundar, é só chamar a equipe no grupo.</p>
+</div>
+
+<div class="wrap">
+
+  <p class="sec-titulo">Módulos</p>
+
+  <div class="mod-item">
+    <button class="mod-head" onclick="tMod(this)">
+      <div class="mod-num">1</div>
+      <div class="mod-head-txt"><h3>Primeiros passos</h3><p>O básico pra começar sem travar</p></div>
+      <div class="mod-arr">+</div>
+    </button>
+    <div class="mod-body"><ul class="mod-body-in">
+      <li>Entre no grupo oficial do WhatsApp e se apresente pra equipe.</li>
+      <li>Baixe o catálogo e o plano de negócio — dá uma folheada antes de vender.</li>
+      <li>Entenda o modelo: venda direta, sem pirâmide, lucro vem da venda real.</li>
+      <li>Decida como começar: sob encomenda ou com um combo inicial (Consultor R$ 197 ou Pro R$ 997).</li>
+    </ul></div>
+  </div>
+
+  <div class="mod-item">
+    <button class="mod-head" onclick="tMod(this)">
+      <div class="mod-num">2</div>
+      <div class="mod-head-txt"><h3>Como vender</h3><p>Do primeiro contato ao pedido fechado</p></div>
+      <div class="mod-arr">+</div>
+    </button>
+    <div class="mod-body"><ul class="mod-body-in">
+      <li>Comece pelo círculo próximo: família, amigos, colegas de trabalho.</li>
+      <li>Use o catálogo digital — mande fotos e vídeos curtos dos produtos, não só o PDF inteiro.</li>
+      <li>Pergunte antes de oferecer: entenda o que a pessoa precisa (pele, ocasião, perfume favorito).</li>
+      <li>Feche o pedido com clareza: forma de pagamento, prazo de entrega e forma de retirada.</li>
+    </ul></div>
+  </div>
+
+  <div class="mod-item">
+    <button class="mod-head" onclick="tMod(this)">
+      <div class="mod-num">3</div>
+      <div class="mod-head-txt"><h3>Atendimento e fidelização</h3><p>Transformar cliente em cliente recorrente</p></div>
+      <div class="mod-arr">+</div>
+    </button>
+    <div class="mod-body"><ul class="mod-body-in">
+      <li>Confirme se o cliente gostou do produto alguns dias depois da entrega.</li>
+      <li>Anote datas importantes (aniversário, troca de estação) pra oferecer no momento certo.</li>
+      <li>Peça indicações só depois que o cliente já teve uma boa experiência de compra.</li>
+      <li>Trate reclamações rápido — resolver bem um problema fideliza mais do que uma venda perfeita.</li>
+    </ul></div>
+  </div>
+
+  <div class="mod-item">
+    <button class="mod-head" onclick="tMod(this)">
+      <div class="mod-num">4</div>
+      <div class="mod-head-txt"><h3>Como formar sua equipe</h3><p>Crescendo além das suas próprias vendas</p></div>
+      <div class="mod-arr">+</div>
+    </button>
+    <div class="mod-body"><ul class="mod-body-in">
+      <li>Convide pessoas que você já viu se interessando pelos produtos ou pela oportunidade.</li>
+      <li>Seja honesta: mostre o que é real — trabalho, consistência, sem promessa de dinheiro fácil.</li>
+      <li>Acompanhe de perto as primeiras vendas de quem você convidou.</li>
+      <li>Compartilhe o que funcionou com você — sua equipe cresce mais rápido copiando o que já deu certo.</li>
+    </ul></div>
+  </div>
+
+  <div class="mod-item">
+    <button class="mod-head" onclick="tMod(this)">
+      <div class="mod-num">5</div>
+      <div class="mod-head-txt"><h3>Plano de desenvolvimento</h3><p>Como evoluir de nível dentro da equipe</p></div>
+      <div class="mod-arr">+</div>
+    </button>
+    <div class="mod-body"><ul class="mod-body-in">
+      <li>Os níveis (Ouro, Diamante, Duplo Diamante, Imperial) refletem volume de vendas e tamanho da equipe.</li>
+      <li>45% da pontuação global da Jan Rosê é distribuída entre líderes qualificados a cada nível.</li>
+      <li>Resultados dependem do esforço e da dedicação de cada uma — não existe garantia de renda mínima.</li>
+      <li>Fale com sua líder direta pra entender exatamente onde você está e o que falta pro próximo nível.</li>
+    </ul></div>
+  </div>
+
+  <div class="suporte-card">
+    <h3>Quer aprofundar em algum módulo?</h3>
+    <p>O treinamento ao vivo e o acompanhamento individual acontecem no grupo — chama a equipe quando quiser.</p>
+    <a class="suporte-btn" href="https://wa.me/5511915033743?text=Ol%C3%A1!%20Estou%20na%20Unijan%20e%20gostaria%20de%20aprofundar%20em%20um%20dos%20m%C3%B3dulos%20de%20treinamento%20%F0%9F%8C%B8" target="_blank" rel="noopener">💬 Falar com a equipe</a>
+  </div>
+
+  <div class="cta-final">
+    <a class="btn-final" href="area-do-parceiro.html">Ir para minha Área do Parceiro →</a>
+    <p class="cta-final-sub">Lá você encontra todos os seus recursos reunidos em um só lugar.</p>
+  </div>
+
+</div>
+
+<div class="rodape">
+  <img class="rod-logo" src="logo%20jan%20Ros%C3%AA.png" alt="Jan Rosê">
+  <div class="rod-txt">Distribuidora Independente Oficial · Equipe Alvo Negócio<br>© 2026 Jan Rosê</div>
+</div>
+
+<script>
+function tMod(btn){
+  const it = btn.closest('.mod-item'), on = it.classList.contains('on')
+  it.classList.toggle('on', !on)
+}
+</script>
+</body>
+</html>

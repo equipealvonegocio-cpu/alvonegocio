@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Área do Parceiro | Equipe Alvo Negócio</title>
+<meta name="description" content="Todos os seus recursos como Distribuidora Jan Rosê reunidos em um só lugar: grupo, catálogo, plano de negócio, universidade e suporte.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --v:  #2A0E72;
+  --vm: #7B2CB9;
+  --vl: #C044B8;
+  --d:  #96165d;
+  --dl: #FFB8E4;
+  --bg: #FDF5FF;
+  --c2: #3D2060;
+  --c3: #8878AA;
+  --bd: #E8C8F8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);min-height:100vh;color:#1a1a1a;line-height:1.6}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+
+/* ── HEADER ── */
+.header{background:linear-gradient(135deg,#2A0E72,#96165d,#c044b8);padding:16px 24px;display:flex;align-items:center;justify-content:center;gap:14px}
+.header-logo{height:36px;width:auto;filter:drop-shadow(0 2px 6px rgba(0,0,0,.3))}
+.header-sep{width:1px;height:20px;background:rgba(255,255,255,.3)}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,#2A0E72 0%,#96165d 55%,#c044b8 100%);padding:52px 24px 60px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;bottom:-1px;left:0;right:0;height:40px;background:var(--bg);clip-path:ellipse(55% 100% at 50% 100%)}
+.hero-badge{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:50px;padding:8px 20px;font-size:12px;font-weight:700;color:rgba(255,255,255,.9);letter-spacing:1px;text-transform:uppercase;margin-bottom:20px}
+.hero h1{font-size:clamp(26px,4.5vw,40px);font-weight:900;color:#fff;line-height:1.2;margin-bottom:16px}
+.hero h1 span{color:#FFB8E4}
+.hero-sub{font-size:15.5px;color:rgba(255,255,255,.82);max-width:560px;margin:0 auto;line-height:1.75}
+
+/* ── GRID DE RECURSOS ── */
+.wrap{max-width:900px;margin:0 auto;padding:8px 24px 60px}
+.sec-titulo{font-size:13px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--vm);margin:40px 0 18px}
+.sec-titulo:first-child{margin-top:0}
+
+.res-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.res-card{background:#fff;border-radius:18px;padding:26px 24px;box-shadow:0 4px 18px rgba(123,44,185,.08);border:1px solid var(--bd);display:flex;flex-direction:column;gap:12px}
+.res-ico{width:48px;height:48px;border-radius:14px;background:var(--bg);border:1px solid var(--bd);display:flex;align-items:center;justify-content:center;font-size:22px}
+.res-card h3{font-size:15.5px;font-weight:800;color:var(--v)}
+.res-card p{font-size:13px;color:var(--c2);line-height:1.6;flex:1}
+.res-btn{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:800;color:#fff;background:linear-gradient(135deg,#7B2CB9,#96165d);padding:11px 20px;border-radius:50px;transition:all .2s;align-self:flex-start}
+.res-btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(123,44,185,.35)}
+.res-btn.wpp{background:#25D366}
+.res-btn.out{background:#fff;color:var(--vm);border:1.5px solid var(--bd)}
+.res-btn.out:hover{background:var(--bg)}
+
+.suporte-card{background:linear-gradient(135deg,#1a0845 0%,#2A0E72 40%,#7B2CB9 80%,#96165d 100%);border-radius:20px;padding:32px 28px;text-align:center;margin-top:44px;color:#fff}
+.suporte-card h3{font-size:18px;font-weight:900;margin-bottom:10px}
+.suporte-card p{font-size:13.5px;color:rgba(255,255,255,.8);line-height:1.75;margin-bottom:22px}
+.suporte-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--vm);font-size:14.5px;font-weight:800;padding:14px 30px;border-radius:50px;transition:all .2s}
+.suporte-btn:hover{transform:translateY(-2px)}
+
+/* ── RODAPÉ ── */
+.rodape{background:linear-gradient(135deg,#2A0E72,#96165d);padding:26px;text-align:center}
+.rod-logo{height:36px;width:auto;opacity:.85;margin-bottom:8px}
+.rod-txt{font-size:11px;color:rgba(255,255,255,.55);line-height:1.8}
+
+@media(max-width:600px){
+  .res-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <img class="header-logo" src="logo%20jan%20Ros%C3%AA.png" alt="Jan Rosê">
+  <div class="header-sep"></div>
+  <img class="header-logo" src="Logo%20Alvo%20negocio.png" alt="Alvo Negócio">
+</header>
+
+<div class="hero">
+  <div class="hero-badge">🏠 Sua base de operações</div>
+  <h1>Bem-vinda à sua <span>Área do Parceiro</span></h1>
+  <p class="hero-sub">Todos os recursos que você precisa pra trabalhar, reunidos em um só lugar. Volte aqui sempre que precisar.</p>
+</div>
+
+<div class="wrap">
+
+  <p class="sec-titulo">Seus recursos</p>
+
+  <div class="res-grid">
+
+    <div class="res-card">
+      <div class="res-ico">👥</div>
+      <h3>Grupo oficial no WhatsApp</h3>
+      <p>Novidades, avisos da equipe e contato com as outras distribuidoras.</p>
+      <a class="res-btn wpp" href="https://chat.whatsapp.com/E6qgflNZtBcLffbNYBttXE?s=sh&p=a&ilr=0" target="_blank" rel="noopener">💬 Entrar no grupo</a>
+    </div>
+
+    <div class="res-card">
+      <div class="res-ico">📦</div>
+      <h3>Catálogo de produtos</h3>
+      <p>Mais de 200 produtos Jan Rosê, com preços e descrições completas.</p>
+      <a class="res-btn out" href="catalogo-jan-rose.pdf.pdf" download>⬇️ Baixar catálogo (PDF)</a>
+    </div>
+
+    <div class="res-card">
+      <div class="res-ico">📋</div>
+      <h3>Plano de negócio</h3>
+      <p>O modelo completo: como funciona, os ganhos e como crescer.</p>
+      <a class="res-btn out" href="plano-de-negocio-jan-rose.pdf.pdf" download>⬇️ Baixar plano (PDF)</a>
+    </div>
+
+    <div class="res-card">
+      <div class="res-ico">🎓</div>
+      <h3>Unijan — Universidade</h3>
+      <p>Sua trilha de treinamento: primeiros passos, vendas, atendimento e liderança.</p>
+      <a class="res-btn out" href="universidade.html">Acessar treinamentos</a>
+    </div>
+
+    <div class="res-card">
+      <div class="res-ico">🧭</div>
+      <h3>Portal da Jornada</h3>
+      <p>Reveja a empresa, os produtos, o plano de desenvolvimento e as dúvidas mais comuns.</p>
+      <a class="res-btn out" href="portal-da-jornada.html">Rever o portal</a>
+    </div>
+
+    <div class="res-card">
+      <div class="res-ico">📱</div>
+      <h3>Falar com sua consultora</h3>
+      <p>Dúvidas do dia a dia, pedidos ou apoio pra fechar uma venda.</p>
+      <a class="res-btn wpp" href="https://wa.me/5511915033743" target="_blank" rel="noopener">💬 Abrir conversa</a>
+    </div>
+
+  </div>
+
+  <div class="suporte-card">
+    <h3>Precisa de ajuda agora?</h3>
+    <p>Não espera até amanhã se tiver alguma dúvida — fala com a gente direto pelo WhatsApp.</p>
+    <a class="suporte-btn" href="https://wa.me/5511915033743" target="_blank" rel="noopener">💬 Falar com a equipe</a>
+  </div>
+
+</div>
+
+<div class="rodape">
+  <img class="rod-logo" src="logo%20jan%20Ros%C3%AA.png" alt="Jan Rosê">
+  <div class="rod-txt">Distribuidora Independente Oficial · Equipe Alvo Negócio<br>© 2026 Jan Rosê</div>
+</div>
+
+</body>
+</html>

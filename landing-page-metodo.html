@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>O Método Alvo Negócio | Distribuidora Jan Rosê</title>
+<meta name="description" content="O método que já ajudou centenas de pessoas a construir uma renda extra real vendendo Jan Rosê. Produto premium, modelo ético e regulamentado, suporte de verdade.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+
+<!-- Supabase (mesma tabela "leads" do cadastro-completo.html) -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script>
+  const SUPABASE_URL      = 'COLE_AQUI_A_PROJECT_URL';
+  const SUPABASE_ANON_KEY = 'COLE_AQUI_A_ANON_KEY';
+  window.sb = (SUPABASE_URL.startsWith('http'))
+    ? supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+    : null;
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:#1a1a1a;overflow-x:hidden;line-height:1.6;font-size:16px}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+
+:root{
+  --bgd:  #050403;
+  --bgd2: #120e08;
+  --gold: #E3B341;
+  --gold2:#B8860B;
+  --v:    #1C1C22;
+  --vm:   #8A6914;
+  --d:    #B8860B;
+  --dl:   #F0D28A;
+  --bg:   #F7F4EE;
+  --c2:   #2B2620;
+  --c3:   #8C8579;
+  --bd:   #E6E0D4;
+}
+.serif{font-family:'Playfair Display',serif}
+[da]{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+[da].v{opacity:1;transform:translateY(0)}
+
+/* ── HEADER ── */
+header{position:sticky;top:0;z-index:200;background:var(--bgd);border-bottom:1px solid rgba(227,179,65,.15)}
+.hw{max-width:1200px;margin:0 auto;padding:0 24px;height:66px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.h-brand{display:flex;align-items:center;gap:12px}
+.h-brand img{height:32px}
+.h-sep{width:1px;height:24px;background:rgba(255,255,255,.15)}
+.h-brand-alvo img{height:26px;filter:brightness(0) invert(1);opacity:.8}
+.h-cta{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1a0f00;font-size:13.5px;font-weight:800;padding:11px 22px;border-radius:50px;white-space:nowrap;transition:all .25s}
+.h-cta:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(227,179,65,.4)}
+
+/* ── HERO ── */
+#hero{background:radial-gradient(ellipse at 20% 0%,#221c14 0%,var(--bgd) 55%);padding:64px 24px 0;position:relative;overflow:hidden}
+.hero-w{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;padding-bottom:56px}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:800;letter-spacing:.5px;color:var(--gold);background:rgba(227,179,65,.1);border:1px solid rgba(227,179,65,.3);padding:8px 18px;border-radius:50px;margin-bottom:22px}
+.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(32px,4.3vw,54px);font-weight:800;color:#fff;line-height:1.15;margin-bottom:20px}
+.hero-h1 em{font-style:normal;background:linear-gradient(135deg,var(--gold),#fff5da);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:16.5px;color:rgba(255,255,255,.72);line-height:1.85;margin-bottom:32px;max-width:520px}
+.hero-sub strong{color:var(--dl)}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:20px}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1a0f00;font-size:16px;font-weight:900;padding:18px 38px;border-radius:50px;transition:all .25s;letter-spacing:.2px;box-shadow:0 10px 30px rgba(227,179,65,.25)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 38px rgba(227,179,65,.4)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:#fff;font-size:14.5px;font-weight:700;padding:17px 30px;border-radius:50px;border:1.5px solid rgba(255,255,255,.25);transition:all .25s}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+.hero-trust{font-size:12.5px;color:rgba(255,255,255,.45);font-weight:600;letter-spacing:.3px}
+.hero-img-wrap{position:relative;border-radius:20px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid rgba(227,179,65,.2)}
+.hero-img-wrap img{width:100%;display:block}
+.hero-fade{position:absolute;bottom:-1px;left:0;right:0;height:56px;background:linear-gradient(180deg,transparent,#fff)}
+
+.hero-form-card{background:var(--bgd);border:1px solid rgba(227,179,65,.2);border-radius:18px;padding:26px 24px;margin-top:18px;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.hf-title{font-size:14px;font-weight:800;color:var(--gold);margin-bottom:16px;text-align:center;letter-spacing:.2px}
+.hf-fg{margin-bottom:12px}
+.hf-fi{width:100%;padding:14px 16px;border:1.5px solid var(--bd);border-radius:12px;font-size:16px;color:#1a1a1a;font-family:inherit;outline:none;background:#faf8f2;transition:all .22s}
+.hf-fi::placeholder{color:#a89f8f}
+.hf-fi:focus{border-color:var(--gold2);background:#fff;box-shadow:0 0 0 4px rgba(227,179,65,.15)}
+.hf-erro{display:none;background:#fff0f0;border:1.5px solid #ffc3c3;color:#a1204f;font-size:12.5px;font-weight:600;padding:10px 14px;border-radius:10px;margin-bottom:12px;text-align:center}
+.hf-erro.on{display:block}
+.hf-seg{font-size:11px;color:var(--c3);text-align:center;margin-top:12px}
+.hf-sucesso{display:none;text-align:center}
+.hf-sucesso.on{display:block}
+.hf-sucesso .suc-ico{font-size:36px;margin-bottom:8px}
+.hf-sucesso p{font-size:13.5px;color:rgba(255,255,255,.8);line-height:1.6}
+.hf-sucesso .hf-dm{font-size:12px;color:var(--c3);margin-top:12px}
+.hf-sucesso .hf-dm a{color:var(--gold2);font-weight:700;text-decoration:underline}
+@media(max-width:900px){.hero-w{grid-template-columns:1fr;padding-bottom:0}.hero-img-wrap{margin-top:8px}}
+
+/* ── SEÇÕES ── */
+.sec{padding:84px 24px}
+.sec-dark{background:var(--bgd);color:#fff}
+.sec-bg{background:var(--bg)}
+.sw{max-width:1160px;margin:0 auto}
+.centro{text-align:center}
+.s-tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--vm);margin-bottom:14px}
+.sec-dark .s-tag{color:var(--gold)}
+.s-h{font-family:'Playfair Display',serif;font-size:clamp(28px,3.6vw,44px);font-weight:800;color:#1a1a1a;line-height:1.2;margin-bottom:16px}
+.sec-dark .s-h{color:#fff}
+.s-h em{font-style:normal;color:var(--vm)}
+.sec-dark .s-h em{color:var(--gold)}
+.s-sub{font-size:16px;color:var(--c2);line-height:1.8;max-width:680px}
+.sec-dark .s-sub{color:rgba(255,255,255,.65)}
+.centro .s-sub{margin:0 auto}
+
+/* ── DOR ── */
+.dor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:48px;max-width:820px;margin-left:auto;margin-right:auto}
+.dor-item{display:flex;gap:14px;align-items:flex-start;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:20px 22px}
+.dor-ico{font-size:20px;flex-shrink:0;color:var(--gold)}
+.dor-item p{font-size:14.5px;color:rgba(255,255,255,.78);line-height:1.7;font-weight:500}
+.dor-fecho{text-align:center;font-size:16px;color:var(--gold);font-weight:700;margin-top:40px;max-width:640px;margin-left:auto;margin-right:auto;line-height:1.7}
+@media(max-width:700px){.dor-grid{grid-template-columns:1fr}}
+
+/* ── AUTORIDADE ── */
+.aut-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:52px;align-items:center;margin-top:12px}
+.aut-photo{border-radius:20px;overflow:hidden;box-shadow:0 20px 50px rgba(169,128,62,.18);border:1px solid var(--bd)}
+.aut-quote{font-family:'Playfair Display',serif;font-size:clamp(20px,2.2vw,26px);font-style:italic;color:var(--v);line-height:1.5;margin-bottom:20px;border-left:4px solid var(--vm);padding-left:20px}
+.aut-txt p{font-size:15px;color:var(--c2);line-height:1.85;margin-bottom:16px}
+.aut-creds{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.aut-cred{font-size:12px;font-weight:700;color:var(--vm);background:var(--bg);border:1px solid var(--bd);padding:7px 16px;border-radius:50px}
+@media(max-width:860px){.aut-grid{grid-template-columns:1fr}}
+
+/* ── PILARES ── */
+.pilar-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:48px}
+.pilar{background:#fff;border:1.5px solid var(--bd);border-radius:18px;padding:30px 24px;position:relative;overflow:hidden}
+.pilar-num{position:absolute;top:-14px;right:6px;font-family:'Playfair Display',serif;font-size:72px;font-weight:800;color:var(--bg);z-index:0;line-height:1}
+.pilar-ico{font-size:30px;margin-bottom:16px;position:relative;z-index:1}
+.pilar h4{font-size:16px;font-weight:800;color:var(--v);margin-bottom:10px;position:relative;z-index:1}
+.pilar p{font-size:13.5px;color:var(--c2);line-height:1.75;position:relative;z-index:1}
+@media(max-width:900px){.pilar-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.pilar-grid{grid-template-columns:1fr}}
+
+/* ── PROVA SOCIAL ── */
+.stats-row{display:flex;justify-content:center;gap:52px;flex-wrap:wrap;margin:48px 0 56px}
+.stat{text-align:center}
+.stat-v{font-family:'Playfair Display',serif;font-size:clamp(28px,3.4vw,38px);font-weight:800;color:var(--gold)}
+.stat-l{font-size:11.5px;color:rgba(255,255,255,.5);font-weight:700;text-transform:uppercase;letter-spacing:.6px;margin-top:6px}
+.dep-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.dep-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:28px 24px}
+.dep-quote{font-family:'Playfair Display',serif;font-size:32px;color:var(--gold);line-height:1;margin-bottom:8px}
+.dep-txt{font-size:14px;color:rgba(255,255,255,.8);line-height:1.75;margin-bottom:18px;min-height:80px}
+.dep-nome{font-size:14px;font-weight:800;color:#fff}
+.dep-info{font-size:12px;color:rgba(255,255,255,.45);margin-bottom:4px}
+.dep-ganho{font-size:12.5px;font-weight:800;color:var(--gold)}
+@media(max-width:860px){.dep-grid{grid-template-columns:1fr}.stats-row{gap:32px}}
+
+/* ── PACOTE ── */
+.pacote-card{max-width:720px;margin:48px auto 0;background:#fff;border:2px solid var(--bd);border-radius:24px;padding:40px 40px;box-shadow:0 20px 60px rgba(169,128,62,.14)}
+.pacote-item{display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid var(--bg)}
+.pacote-item:last-child{border-bottom:none}
+.pacote-check{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--gold2),var(--gold));display:flex;align-items:center;justify-content:center;color:#1a0f00;font-size:13px;flex-shrink:0;margin-top:1px}
+.pacote-item p{font-size:14.5px;color:var(--c2);font-weight:600;line-height:1.6}
+.pacote-item strong{color:var(--v);font-weight:800}
+
+/* ── SEM RISCO ── */
+.risco-box{max-width:760px;margin:44px auto 0;background:linear-gradient(135deg,rgba(169,128,62,.08),rgba(28,28,34,.04));border:1.5px solid var(--bd);border-radius:20px;padding:36px 40px;text-align:center}
+.risco-ico{font-size:36px;margin-bottom:14px}
+.risco-box p{font-size:15px;color:var(--c2);line-height:1.85}
+.risco-box strong{color:#96165d}
+
+/* ── FAQ ── */
+.faq-w{max-width:780px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--bd)}
+.faq-q{width:100%;background:none;border:none;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;cursor:pointer;font-family:inherit;text-align:left}
+.faq-q-txt{font-size:15.5px;font-weight:700;color:#1a1a1a}
+.faq-arr{width:26px;height:26px;border-radius:50%;border:1.5px solid var(--bd);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:15px;color:var(--c3);transition:.25s}
+.faq-item.on .faq-arr{transform:rotate(45deg);background:linear-gradient(135deg,var(--gold2),var(--gold));color:#1a0f00;border-color:var(--gold)}
+.faq-a{font-size:14.5px;color:var(--c2);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .25s}
+.faq-item.on .faq-a{max-height:220px;padding-bottom:18px}
+
+/* ── CTA FINAL ── */
+#cta-final{background:radial-gradient(ellipse at 50% 20%,#221c14 0%,var(--bgd) 70%);padding:88px 24px;text-align:center;position:relative;overflow:hidden}
+.cta-final-w{max-width:680px;margin:0 auto;position:relative}
+.cta-final-tag{color:var(--gold);font-size:13px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:18px}
+.cta-final-h{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);font-weight:800;color:#fff;line-height:1.25;margin-bottom:20px}
+.cta-final-h em{font-style:normal;color:var(--gold)}
+.cta-final-sub{font-size:15.5px;color:rgba(255,255,255,.65);line-height:1.8;margin-bottom:34px;max-width:520px;margin-left:auto;margin-right:auto}
+.cta-final-img{width:480px;max-width:100%;margin:0 auto;display:block}
+.cta-final-linha{width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin-top:0;margin-bottom:28px}
+
+/* ── FORM SIMPLES (nome / e-mail / whatsapp) ── */
+.cta-form{max-width:420px;margin:0 auto;text-align:left}
+.cta-fg{margin-bottom:14px}
+.cta-fi{width:100%;padding:16px 18px;border:1.5px solid rgba(255,255,255,.18);border-radius:12px;font-size:16px;color:#fff;font-family:inherit;outline:none;background:rgba(255,255,255,.06);transition:all .22s}
+.cta-fi::placeholder{color:rgba(255,255,255,.4)}
+.cta-fi:focus{border-color:var(--gold);background:rgba(255,255,255,.1);box-shadow:0 0 0 4px rgba(227,179,65,.12)}
+.btn-gold-full{width:100%;display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#1a0f00;font-size:16px;font-weight:900;padding:18px;border-radius:50px;border:none;cursor:pointer;font-family:inherit;transition:all .25s;box-shadow:0 10px 30px rgba(227,179,65,.25);margin-top:4px}
+.btn-gold-full:hover{transform:translateY(-2px);box-shadow:0 14px 38px rgba(227,179,65,.4)}
+.btn-gold-full:disabled{opacity:.6;cursor:wait;transform:none}
+.cta-seg{font-size:11.5px;color:rgba(255,255,255,.4);text-align:center;margin-top:14px}
+.cta-erro{display:none;background:rgba(255,90,140,.12);border:1.5px solid rgba(255,90,140,.35);color:#ffb8d0;font-size:13px;font-weight:600;padding:12px 16px;border-radius:12px;margin-bottom:14px;text-align:center}
+.cta-erro.on{display:block}
+.cta-sucesso{display:none;text-align:center}
+.cta-sucesso.on{display:block}
+.cta-sucesso .suc-ico{font-size:44px;margin-bottom:10px}
+.cta-sucesso p{font-size:15px;color:rgba(255,255,255,.75);line-height:1.7}
+.cta-sucesso .cta-dm{font-size:12.5px;color:rgba(255,255,255,.5);margin-top:14px}
+.cta-sucesso .cta-dm a{color:var(--gold);font-weight:700;text-decoration:underline}
+
+/* ── FOOTER ── */
+footer{background:var(--bgd);color:rgba(255,255,255,.55);padding:44px 24px 24px}
+.fw{max-width:1160px;margin:0 auto;text-align:center}
+.fw img{height:28px;margin:0 auto 14px;opacity:.8}
+.fw p{font-size:12px;line-height:1.8}
+.fw a{color:var(--gold)}
+
+@media(max-width:768px){.pacote-card{padding:30px 24px}.risco-box{padding:28px 24px}}
+@media(max-width:560px){
+  .sec{padding:56px 20px}
+  #hero{padding:44px 16px 0}
+  #cta-final{padding:56px 20px}
+  .hw{padding:0 16px}
+  .h-cta{padding:9px 16px;font-size:12.5px}
+  .h-brand-alvo,.h-sep{display:none}
+  .hero-ctas{flex-direction:column;align-items:stretch}
+  .btn-gold,.btn-ghost{justify-content:center}
+  .stats-row{gap:24px 32px}
+  .aut-creds{justify-content:center}
+}
+@media(max-width:380px){
+  .h-cta{padding:8px 13px;font-size:11.5px}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header>
+  <div class="hw">
+    <div class="h-brand">
+      <img src="logo%20jan%20Ros%C3%AA.png" alt="Jan Rosê">
+      <div class="h-sep"></div>
+      <div class="h-brand-alvo"><img src="Logo%20Alvo%20negocio.png" alt="Alvo Negócio"></div>
+    </div>
+    <a class="h-cta" href="#cta-final">Quero começar</a>
+  </div>
+</header>
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="hero-w">
+    <div>
+      <p class="hero-tag" da>✦ Método Alvo Negócio</p>
+      <h1 class="hero-h1" da>Construa uma <em>renda extra real</em><br>vendendo Jan Rosê</h1>
+      <p class="hero-sub" da>Um caminho estruturado, ético e com suporte de verdade — pensado para quem quer sair do zero sem depender de sorte, "dom para vendas" ou promessas vazias. <strong>Você aprende o método, recebe o suporte, e constrói no seu ritmo.</strong></p>
+      <div class="hero-ctas" da>
+        <a class="btn-gold" href="#cta-final">Quero começar agora →</a>
+        <a class="btn-ghost" href="#autoridade">Conhecer o método</a>
+      </div>
+      <p class="hero-trust" da>32+ anos de mercado · Associada ABEVD · +200 produtos exclusivos</p>
+    </div>
+    <div da="d">
+      <div class="hero-img-wrap">
+        <img src="mulheres%20de%20equipe.png" alt="Resultados reais de distribuidoras Jan Rosê">
+        <div class="hero-fade"></div>
+      </div>
+
+      <div class="hero-form-card">
+        <div class="hf-title">🌟 Comece agora — leva 30 segundos</div>
+        <div class="hf-erro" id="hero-erro"></div>
+        <div id="hero-form-campos">
+          <div class="hf-fg"><input class="hf-fi" type="text" id="hero-nome" placeholder="Seu nome completo"></div>
+          <div class="hf-fg"><input class="hf-fi" type="email" id="hero-email" placeholder="Seu e-mail"></div>
+          <div class="hf-fg"><input class="hf-fi" type="tel" id="hero-whats" placeholder="WhatsApp com DDD"></div>
+          <button class="btn-gold-full" id="hero-btn" onclick="enviarForm('hero')">Quero começar agora →</button>
+          <p class="hf-seg">🔒 Seus dados ficam só com a nossa equipe.</p>
+        </div>
+        <div class="hf-sucesso" id="hero-sucesso">
+          <div class="suc-ico">🎉</div>
+          <p><strong>Parabéns!</strong> Recebemos seu cadastro. Em até 24 horas um consultor entrará em contato para explicar como funciona e ajudar você a escolher a melhor forma de começar.</p>
+          <p class="hf-dm">Já abrimos o grupo do WhatsApp pra você. Prefere falar direto? <a href="https://wa.me/5511915033743" target="_blank" rel="noopener">Clique aqui</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DOR ══ -->
+<section class="sec sec-dark">
+  <div class="sw centro">
+    <p class="s-tag" da>Isso é pra você?</p>
+    <h2 class="s-h" da>Você está <em>cansada</em> de...</h2>
+    <div class="dor-grid">
+      <div class="dor-item" da="e"><span class="dor-ico">●</span><p>Trabalhar o mês inteiro e o dinheiro nunca ser suficiente?</p></div>
+      <div class="dor-item" da><span class="dor-ico">●</span><p>Ver outras pessoas conquistando mais liberdade e sentir que ficou pra trás?</p></div>
+      <div class="dor-item" da><span class="dor-ico">●</span><p>Não ter tempo pra família porque o trabalho toma tudo?</p></div>
+      <div class="dor-item" da="d"><span class="dor-ico">●</span><p>Já ter tentado outras coisas e não ter dado certo, e não saber mais em quem confiar?</p></div>
+    </div>
+    <p class="dor-fecho" da>Se você se identificou com pelo menos um desses pontos, continue lendo — o que vem a seguir foi pensado exatamente para isso.</p>
+  </div>
+</section>
+
+<!-- ══ AUTORIDADE ══ -->
+<section class="sec" id="autoridade">
+  <div class="sw">
+    <div class="centro">
+      <p class="s-tag" da>Quem está por trás disso</p>
+      <h2 class="s-h" da>Não é teoria. <em>É experiência real.</em></h2>
+    </div>
+    <div class="aut-grid">
+      <div class="aut-photo" da="e"><img src="ChatGPT%20Image%2031%20de%20jul.%20de%202026%2C%2019_56_26.png" alt="Ismael Moraes — treinamento Alvo Negócio"></div>
+      <div class="aut-txt" da="d">
+        <p class="aut-quote">"Motivar pessoas e ajudá-las a vencer o medo de começar não é sorte — é ciência, é método, e é isso que eu faço."</p>
+        <p><strong>Ismael Moraes</strong> é Psicólogo, Neuropsicólogo e Empreendedor — e fundou a Alvo Negócio com um propósito claro: dar a pessoas comuns acesso a uma oportunidade real de crescer, com o mesmo cuidado técnico que aprendeu estudando o comportamento humano.</p>
+        <p>Hoje a Alvo Negócio é distribuidora oficial da Jan Rosê, multinacional com mais de 32 anos de mercado, e já ajudou centenas de pessoas a dar o primeiro passo rumo à própria renda — com treinamento pela Unijan, suporte constante e um modelo de negócio transparente do início ao fim.</p>
+        <div class="aut-creds">
+          <span class="aut-cred">Psicólogo & Neuropsicólogo</span>
+          <span class="aut-cred">Fundador da Alvo Negócio</span>
+          <span class="aut-cred">Distribuidora Oficial Jan Rosê</span>
+          <span class="aut-cred">Associada ABEVD</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ OS 4 PILARES ══ -->
+<section class="sec sec-bg">
+  <div class="sw centro">
+    <p class="s-tag" da>O método</p>
+    <h2 class="s-h" da>Os 4 pilares que sustentam <em>esse negócio</em></h2>
+    <p class="s-sub" da>Nada aqui é improvisado. Cada parte do método existe para reduzir o risco e aumentar suas chances reais de resultado.</p>
+    <div class="pilar-grid">
+      <div class="pilar" da="e"><div class="pilar-num">01</div><div class="pilar-ico">🌸</div><h4>Produto que já vende sozinho</h4><p>+200 produtos premium com alta taxa de recompra — fórmulas testadas, fábrica própria, 32+ anos de mercado.</p></div>
+      <div class="pilar" da><div class="pilar-num">02</div><div class="pilar-ico">⚖️</div><h4>Modelo ético e regulamentado</h4><p>Venda direta associada à ABEVD. Regras claras, nada de promessa de ganho fácil ou pirâmide financeira.</p></div>
+      <div class="pilar" da><div class="pilar-num">03</div><div class="pilar-ico">💸</div><h4>Baixo investimento pra começar</h4><p>Cadastro grátis. Você decide o tamanho do seu início — de vendas sob encomenda a um combo completo.</p></div>
+      <div class="pilar" da="d"><div class="pilar-num">04</div><div class="pilar-ico">🎓</div><h4>Suporte e treinamento reais</h4><p>Treinamento pela Unijan, acompanhamento da equipe Alvo Negócio e comunidade Divas Rosê.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROVA SOCIAL ══ -->
+<section class="sec sec-dark">
+  <div class="sw centro">
+    <p class="s-tag" da>Prova social</p>
+    <h2 class="s-h" da>Pessoas reais, <em>resultados reais</em></h2>
+    <div class="stats-row" da>
+      <div class="stat"><div class="stat-v">32+ anos</div><div class="stat-l">de mercado</div></div>
+      <div class="stat"><div class="stat-v">27 países</div><div class="stat-l">na Europa</div></div>
+      <div class="stat"><div class="stat-v">+R$ 40 milhões</div><div class="stat-l">pagos em bonificações</div></div>
+    </div>
+    <div class="dep-grid">
+      <div class="dep-card" da="e">
+        <div class="dep-quote">"</div>
+        <div class="dep-txt">Comecei vendendo para as amigas. Hoje tenho uma equipe de 12 pessoas e trabalho de casa.</div>
+        <div class="dep-nome">Juliana Costa</div>
+        <div class="dep-info">Campinas, SP</div>
+        <div class="dep-ganho">+ R$ 3.200 / mês</div>
+      </div>
+      <div class="dep-card" da>
+        <div class="dep-quote">"</div>
+        <div class="dep-txt">O perfume Tríade foi meu primeiro produto. Em 3 meses já era minha maior fonte de renda.</div>
+        <div class="dep-nome">Roberto Silva</div>
+        <div class="dep-info">Salvador, BA</div>
+        <div class="dep-ganho">+ R$ 4.800 / mês</div>
+      </div>
+      <div class="dep-card" da="d">
+        <div class="dep-quote">"</div>
+        <div class="dep-txt">O suporte da equipe faz toda a diferença. Nunca me senti sozinha pra fechar uma venda.</div>
+        <div class="dep-nome">Fernanda T.</div>
+        <div class="dep-info">Revendedora, MG</div>
+        <div class="dep-ganho">+ R$ 2.600 / mês</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ O QUE VOCÊ RECEBE ══ -->
+<section class="sec">
+  <div class="sw centro">
+    <p class="s-tag" da>A oferta</p>
+    <h2 class="s-h" da>O que você recebe <em>ao se cadastrar</em></h2>
+    <div class="pacote-card" da>
+      <div class="pacote-item"><div class="pacote-check">✓</div><p><strong>Catálogo completo</strong> com mais de 200 produtos Jan Rosê</p></div>
+      <div class="pacote-item"><div class="pacote-check">✓</div><p><strong>Treinamento oficial</strong> pela Unijan — universidade da Jan Rosê</p></div>
+      <div class="pacote-item"><div class="pacote-check">✓</div><p><strong>Acompanhamento próximo</strong> da equipe Alvo Negócio, do primeiro dia à primeira venda</p></div>
+      <div class="pacote-item"><div class="pacote-check">✓</div><p><strong>Acesso ao programa Divas Rosê</strong>, com apoio ao empreendedorismo feminino</p></div>
+      <div class="pacote-item"><div class="pacote-check">✓</div><p><strong>Material de vendas pronto</strong> — scripts, tabela de preços e catálogo digital</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SEM RISCO ══ -->
+<section class="sec sec-bg">
+  <div class="sw centro">
+    <p class="s-tag" da>Sem risco pra você</p>
+    <h2 class="s-h" da>Cadastro grátis. <em>Sem letra miúda.</em></h2>
+    <div class="risco-box" da>
+      <div class="risco-ico">🤝</div>
+      <p>Você pode se cadastrar, conhecer tudo com calma pelo WhatsApp e decidir se quer continuar — <strong>sem multa, sem contrato de fidelidade, sem cobrança escondida</strong>. Se não for pra você agora, tudo bem: não vai te custar nada ter dado o primeiro passo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="sec">
+  <div class="sw centro" style="margin-bottom:8px">
+    <p class="s-tag" da>Dúvidas</p>
+    <h2 class="s-h" da>Perguntas frequentes</h2>
+  </div>
+  <div class="faq-w">
+    <div class="faq-item">
+      <button class="faq-q" onclick="tFaq(this)"><span class="faq-q-txt">É pirâmide financeira ou golpe?</span><span class="faq-arr">+</span></button>
+      <div class="faq-a">Não. A Jan Rosê opera pelo modelo de venda direta, associado à ABEVD. O lucro vem da venda e do consumo real de produtos — não existe ganho por simplesmente recrutar pessoas.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="tFaq(this)"><span class="faq-q-txt">Preciso ter experiência em vendas?</span><span class="faq-arr">+</span></button>
+      <div class="faq-a">Não. O método foi desenhado justamente para quem está começando do zero — com treinamento pela Unijan e acompanhamento próximo da equipe.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="tFaq(this)"><span class="faq-q-txt">Quanto preciso investir?</span><span class="faq-arr">+</span></button>
+      <div class="faq-a">O cadastro é gratuito. Depois disso, você escolhe: pode vender sob encomenda ou montar um combo inicial a partir de R$ 197 — no seu ritmo.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="tFaq(this)"><span class="faq-q-txt">Em quanto tempo alguém entra em contato?</span><span class="faq-arr">+</span></button>
+      <div class="faq-a">Em até 24h após o cadastro, alguém da equipe Alvo Negócio fala com você pelo WhatsApp para apresentar os próximos passos.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA FINAL ══ -->
+<section id="cta-final">
+  <div class="cta-final-w">
+    <img class="cta-final-img" src="ChatGPT%20Image%201%20de%20ago.%20de%202026%2C%2023_20_17.png" alt="">
+    <div class="cta-final-linha"></div>
+    <p class="cta-final-tag" da>Sua vez</p>
+    <h2 class="cta-final-h" da>Sua nova fase começa com <em>uma decisão simples</em></h2>
+    <p class="cta-final-sub" da>Preencha seus dados. Leva 30 segundos, e nossa equipe te procura em até 24h para te mostrar tudo com calma.</p>
+
+    <div class="cta-form" da>
+      <div class="cta-erro" id="cta-erro"></div>
+
+      <div id="cta-form-campos">
+        <div class="cta-fg"><input class="cta-fi" type="text" id="cta-nome" placeholder="Seu nome completo"></div>
+        <div class="cta-fg"><input class="cta-fi" type="email" id="cta-email" placeholder="Seu e-mail"></div>
+        <div class="cta-fg"><input class="cta-fi" type="tel" id="cta-whats" placeholder="WhatsApp com DDD"></div>
+        <button class="btn-gold-full" id="cta-btn" onclick="enviarForm('cta')">Quero começar agora →</button>
+        <p class="cta-seg">🔒 Seus dados ficam só com a nossa equipe. Nunca compartilhamos.</p>
+      </div>
+
+      <div class="cta-sucesso" id="cta-sucesso">
+        <div class="suc-ico">🎉</div>
+        <p><strong>Parabéns!</strong> Recebemos seu cadastro. Em até 24 horas um consultor entrará em contato para explicar como funciona e ajudar você a escolher a melhor forma de começar.</p>
+        <p class="cta-dm">Já abrimos o grupo do WhatsApp pra você. Prefere falar direto? <a href="https://wa.me/5511915033743" target="_blank" rel="noopener">Clique aqui</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="fw">
+    <img src="logo%20jan%20Ros%C3%AA.png" alt="Jan Rosê" style="filter:brightness(0) invert(1);opacity:.7">
+    <p>Distribuidora Independente Oficial · Equipe Alvo Negócio<br>© 2026 Alvo Negócio · <a href="pagina%C3%A7%C3%A3o.html">Ver site completo</a> · <a href="https://wa.me/5511915033743" target="_blank">WhatsApp</a></p>
+  </div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')}),{threshold:.12})
+document.querySelectorAll('[da]').forEach(el=>obs.observe(el))
+
+function tFaq(btn){
+  const it=btn.closest('.faq-item'),on=it.classList.contains('on')
+  document.querySelectorAll('.faq-item.on').forEach(i=>i.classList.remove('on'))
+  if(!on)it.classList.add('on')
+}
+
+/* formulário simples: nome, e-mail, whatsapp — usado no hero e no CTA final */
+const WPP_GRUPO = 'https://chat.whatsapp.com/E6qgflNZtBcLffbNYBttXE?s=sh&p=a&ilr=0'
+function mostrarErroForm(prefixo, msg){
+  const el = document.getElementById(prefixo + '-erro')
+  el.textContent = msg
+  el.classList.add('on')
+}
+async function enviarForm(prefixo){
+  document.getElementById(prefixo + '-erro').classList.remove('on')
+
+  const nome  = document.getElementById(prefixo + '-nome').value.trim()
+  const email = document.getElementById(prefixo + '-email').value.trim()
+  const whats = document.getElementById(prefixo + '-whats').value.trim()
+
+  if(!nome || !email || !whats){
+    mostrarErroForm(prefixo, 'Preencha nome, e-mail e WhatsApp pra continuar 😊')
+    return
+  }
+
+  const btn = document.getElementById(prefixo + '-btn')
+  btn.disabled = true
+  btn.textContent = 'Enviando...'
+
+  if(window.sb){
+    await window.sb.from('leads').insert({
+      nome_completo: nome,
+      email: email,
+      telefone: whats,
+      origem: 'landing-metodo-' + prefixo,
+      status: 'lead'
+    }).catch(()=>{})
+  }
+
+  const _wa = document.createElement('a')
+  _wa.href = WPP_GRUPO
+  _wa.target = '_blank'; _wa.rel = 'noopener'
+  document.body.appendChild(_wa); _wa.click(); document.body.removeChild(_wa)
+
+  btn.disabled = false
+  btn.textContent = 'Quero começar agora →'
+
+  document.getElementById(prefixo + '-form-campos').style.display = 'none'
+  document.getElementById(prefixo + '-sucesso').classList.add('on')
+}
+</script>
+</body>
+</html>

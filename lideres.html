@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Construa uma Equipe e Multiplique Resultados | Jan Rosê</title>
+<meta name="description" content="Não se contente em vender sozinha. Aprenda a formar e liderar uma equipe com a Jan Rosê e multiplique seus resultados.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a1a;overflow-x:hidden;line-height:1.6;font-size:16px}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+
+:root{
+  --v:  #1E0B3D;
+  --vm: #4C2185;
+  --d:  #C9A227;
+  --dl: #E4D6F5;
+  --bg: #F8F5FC;
+  --c2: #2E1A4D;
+  --c3: #8B7CA6;
+  --bd: #E0D3F0;
+}
+[da]{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+[da].v{opacity:1;transform:translateY(0)}
+
+header{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid var(--bd)}
+.hw{max-width:1100px;margin:0 auto;padding:0 24px;height:66px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.hw img{height:32px}
+.h-wpp{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;font-size:13.5px;font-weight:800;padding:10px 20px;border-radius:50px;white-space:nowrap;box-shadow:0 4px 14px rgba(37,211,102,.35)}
+
+.hero{padding:56px 24px;background:linear-gradient(180deg,#f6f1fb 0%,#fff 100%);text-align:center}
+.hero-w{max-width:720px;margin:0 auto}
+.hero-tag{display:inline-block;font-size:13px;font-weight:800;letter-spacing:1px;color:var(--vm);background:#fff;border:1px solid var(--bd);padding:8px 20px;border-radius:50px;margin-bottom:20px}
+.hero h1{font-size:clamp(28px,4.2vw,46px);font-weight:900;color:var(--v);line-height:1.18;margin-bottom:18px}
+.hero h1 span{background:linear-gradient(135deg,var(--vm),var(--d));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:16.5px;color:var(--c2);line-height:1.8;margin-bottom:32px;max-width:560px;margin-left:auto;margin-right:auto}
+.hero p strong{color:var(--vm)}
+.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+.btn-v{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,#4C2185,#C9A227);color:#fff;font-size:16px;font-weight:900;padding:18px 38px;border-radius:50px;transition:all .25s;box-shadow:0 10px 30px rgba(76,33,133,.3)}
+.btn-v:hover{transform:translateY(-2px);box-shadow:0 14px 38px rgba(76,33,133,.45)}
+.btn-out{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--vm);font-size:15px;font-weight:800;padding:16px 32px;border-radius:50px;border:2px solid var(--vm)}
+.btn-out:hover{background:var(--vm);color:#fff}
+.hero-trust{font-size:12.5px;color:var(--c3);font-weight:600}
+
+.sec{padding:64px 24px}
+.sec-bg{background:var(--bg)}
+.sw{max-width:1080px;margin:0 auto}
+.centro{text-align:center}
+.s-tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--vm);margin-bottom:10px}
+.s-h{font-size:clamp(24px,3vw,36px);font-weight:900;color:#1a1a1a;line-height:1.2;margin-bottom:14px}
+.s-h span{color:var(--vm)}
+.s-sub{font-size:15.5px;color:var(--c2);line-height:1.75;max-width:640px;margin:0 auto}
+
+.dor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px;max-width:760px;margin-left:auto;margin-right:auto}
+.dor-item{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--bd);border-radius:14px;padding:18px 20px;text-align:left}
+.dor-ico{font-size:18px;flex-shrink:0}
+.dor-item p{font-size:14px;color:var(--c2);line-height:1.65;font-weight:500}
+
+.ben-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:40px}
+.ben{background:#fff;border:1px solid var(--bd);border-radius:16px;padding:26px 20px;text-align:left}
+.ben-ico{width:44px;height:44px;border-radius:12px;background:rgba(76,33,133,.1);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px}
+.ben h4{font-size:15px;font-weight:800;color:var(--v);margin-bottom:6px}
+.ben p{font-size:13px;color:var(--c2);line-height:1.65}
+
+.niveis-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:36px}
+.nivel-card{background:#fff;border:1px solid var(--bd);border-radius:14px;padding:18px 20px;text-align:center;min-width:120px}
+.nivel-nome{font-size:12px;font-weight:700;color:var(--c3);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.nivel-val{font-size:17px;font-weight:900;color:var(--vm)}
+
+.stats-row{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin:36px 0}
+.stat{text-align:center}
+.stat-v{font-size:clamp(22px,2.6vw,28px);font-weight:900;background:linear-gradient(135deg,var(--vm),var(--d));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-l{font-size:11px;color:var(--c3);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+
+.dep-card{max-width:560px;margin:0 auto;background:#fff;border:1px solid var(--bd);border-radius:18px;padding:30px 28px;text-align:left}
+.dep-quote{font-size:30px;color:var(--dl);line-height:1;font-weight:900;margin-bottom:8px}
+.dep-txt{font-size:14.5px;color:var(--c2);line-height:1.75;margin-bottom:16px}
+.dep-nome{font-size:14px;font-weight:800;color:var(--v)}
+.dep-info{font-size:12px;color:var(--c3)}
+.dep-ganho{font-size:12.5px;font-weight:800;color:var(--vm);margin-top:4px}
+
+#cta-final{padding:72px 24px;text-align:center;background:linear-gradient(135deg,#0D0518 0%,#1E0B3D 40%,#4C2185 80%,#6B35AD 100%)}
+.cta-final-w{max-width:600px;margin:0 auto}
+.cta-final-tag{color:#DFC078;font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px}
+.cta-final-h{font-size:clamp(24px,3.4vw,36px);font-weight:900;color:#fff;line-height:1.25;margin-bottom:18px}
+.cta-final-h span{color:#DFC078}
+.cta-final-sub{font-size:15px;color:rgba(255,255,255,.75);line-height:1.8;margin-bottom:30px}
+.btn-white{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--vm);font-size:16px;font-weight:900;padding:18px 38px;border-radius:50px;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:all .25s}
+.btn-white:hover{transform:translateY(-2px)}
+.cta-final-dm{display:block;margin-top:16px;font-size:13px;color:rgba(255,255,255,.6)}
+.cta-final-dm a{color:#DFC078;font-weight:700;text-decoration:underline}
+
+footer{background:#0D0518;color:rgba(255,255,255,.55);padding:32px 24px;text-align:center;font-size:12.5px}
+footer a{color:#DFC078}
+
+@media(max-width:860px){.ben-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.dor-grid{grid-template-columns:1fr}}
+@media(max-width:560px){
+  .ben-grid{grid-template-columns:1fr}
+  .hero-ctas{flex-direction:column;align-items:stretch}
+  .stats-row{gap:24px}
+  .sec{padding:48px 20px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hw">
+    <img src="logo%20jan%20Ros%C3%AA.png" alt="Jan Rosê">
+    <a class="h-wpp" href="https://wa.me/5511915033743?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20liderar%20uma%20equipe%20na%20Jan%20Ros%C3%AA%20%F0%9F%8C%B8" target="_blank" rel="noopener">💬 Falar agora</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-w">
+    <p class="hero-tag" da>👑 Para quem nasceu pra liderar</p>
+    <h1 da>Construa uma equipe e <span>multiplique seus resultados</span></h1>
+    <p da>Você não precisa se contentar em vender sozinha. Com o modelo certo de liderança, cada pessoa que você forma se torna uma <strong>nova fonte de renda</strong> — e você ainda ajuda outras pessoas a mudarem de vida.</p>
+    <div class="hero-ctas" da>
+      <a class="btn-v" href="quiz.html?origem=lideres">Descobrir meu perfil →</a>
+      <a class="btn-out" href="https://wa.me/5511915033743?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20liderar%20uma%20equipe%20na%20Jan%20Ros%C3%AA%20%F0%9F%8C%B8" target="_blank" rel="noopener">💬 WhatsApp</a>
+    </div>
+    <p class="hero-trust" da>32+ anos de mercado · Associada ABEVD · Cadastro grátis</p>
+  </div>
+</section>
+
+<section class="sec sec-bg">
+  <div class="sw centro">
+    <p class="s-tag" da>Isso é pra você?</p>
+    <h2 class="s-h" da>Você se identifica com <span>alguma dessas situações?</span></h2>
+    <div class="dor-grid">
+      <div class="dor-item" da="e"><span class="dor-ico">🗣️</span><p>Já lidera de forma informal (grupo de amigas, comunidade) e sente que podia ser mais?</p></div>
+      <div class="dor-item" da><span class="dor-ico">📊</span><p>Quer que seu esforço gere resultado além do que você faz sozinha?</p></div>
+      <div class="dor-item" da><span class="dor-ico">🌱</span><p>Gosta de ensinar, motivar e ver outras pessoas crescerem?</p></div>
+      <div class="dor-item" da="d"><span class="dor-ico">🔝</span><p>Sente que já bateu no teto de quanto pode ganhar sozinha vendendo?</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="sw centro">
+    <p class="s-tag" da>Por que a Jan Rosê</p>
+    <h2 class="s-h" da>Um modelo pensado pra <span>quem quer liderar</span></h2>
+    <p class="s-sub" da>Liderança aqui não é improviso — é um caminho estruturado, com treinamento e ganhos reais por formar novas líderes.</p>
+    <div class="ben-grid">
+      <div class="ben" da="e"><div class="ben-ico">💰</div><h4>Divisão de lucros</h4><p>45% de toda a pontuação global distribuída entre os líderes qualificados.</p></div>
+      <div class="ben" da><div class="ben-ico">🎁</div><h4>Bônus de adesão</h4><p>Até 20% sobre o combo de cada pessoa que você trouxer pra equipe.</p></div>
+      <div class="ben" da><div class="ben-ico">🎓</div><h4>Treinamento em liderança</h4><p>Pela Unijan, com conteúdo real de gestão de equipe e vendas.</p></div>
+      <div class="ben" da="d"><div class="ben-ico">🌸</div><h4>Comunidade Divas Rosê</h4><p>Apoio especial ao empreendedorismo feminino e à liderança.</p></div>
+    </div>
+    <div class="niveis-row" da>
+      <div class="nivel-card"><div class="nivel-nome">Ouro</div><div class="nivel-val">R$ 300+/mês</div></div>
+      <div class="nivel-card"><div class="nivel-nome">Diamante</div><div class="nivel-val">R$ 2.000+/mês</div></div>
+      <div class="nivel-card"><div class="nivel-nome">Duplo Diamante</div><div class="nivel-val">R$ 8.000+/mês</div></div>
+      <div class="nivel-card"><div class="nivel-nome">Imperial</div><div class="nivel-val">R$ 80.000+/mês</div></div>
+    </div>
+    <div class="stats-row" da>
+      <div class="stat"><div class="stat-v">+R$ 40 milhões</div><div class="stat-l">pagos em bonificações</div></div>
+      <div class="stat"><div class="stat-v">27</div><div class="stat-l">países</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-bg">
+  <div class="sw centro">
+    <p class="s-tag" da>Quem já lidera</p>
+    <h2 class="s-h" da>De vendedora individual a <span>líder de uma rede</span></h2>
+    <div class="dep-card" da>
+      <div class="dep-quote">"</div>
+      <div class="dep-txt">Trabalhava de CLT, hoje sou meu próprio chefe. A rede da Alvo Negócio foi o que mudou tudo.</div>
+      <div class="dep-nome">Diego Mendes</div>
+      <div class="dep-info">Porto Alegre, RS</div>
+      <div class="dep-ganho">+ R$ 5.500 / mês</div>
+    </div>
+  </div>
+</section>
+
+<section id="cta-final">
+  <div class="cta-final-w">
+    <p class="cta-final-tag" da>Sua vez</p>
+    <h2 class="cta-final-h" da>Descubra em <span>2 minutos</span> seu potencial de liderança</h2>
+    <p class="cta-final-sub" da>Responda algumas perguntas rápidas e veja como começar a construir sua equipe na Jan Rosê.</p>
+    <a class="btn-white" href="quiz.html?origem=lideres" da>Descobrir meu perfil →</a>
+    <span class="cta-final-dm">Prefere falar direto? <a href="https://wa.me/5511915033743" target="_blank" rel="noopener">Fale no WhatsApp</a></span>
+  </div>
+</section>
+
+<footer>
+  Distribuidora Independente Oficial · Equipe Alvo Negócio · © 2026 · <a href="landing-page-distribuidora.html">Ver site completo</a>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')}),{threshold:.12})
+document.querySelectorAll('[da]').forEach(el=>obs.observe(el))
+</script>
+</body>
+</html>
