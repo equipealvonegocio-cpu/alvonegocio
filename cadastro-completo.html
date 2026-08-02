@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastro de Interessados · Equipe Alvo Negócio</title>
+<meta name="description" content="Preencha seus dados para começar sua jornada com a equipe Alvo Negócio.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script>
+  /* ── CONFIG SUPABASE ──
+     1. No painel do seu projeto em supabase.com → Project Settings → API
+     2. Copie "Project URL" e a chave "anon public"
+     3. Cole os dois valores abaixo (NUNCA cole a chave "service_role" aqui) */
+  const SUPABASE_URL      = 'COLE_AQUI_A_PROJECT_URL';
+  const SUPABASE_ANON_KEY = 'COLE_AQUI_A_ANON_KEY';
+  window.sb = (SUPABASE_URL.startsWith('http'))
+    ? supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
+    : null;
+</script>
+
+<style>
+:root{
+  --v:  #2A0E72;
+  --vm: #7B2CB9;
+  --vl: #C044B8;
+  --d:  #96165d;
+  --dl: #FFB8E4;
+  --bg: #FDF5FF;
+  --c2: #3D2060;
+  --c3: #8878AA;
+  --bd: #E8C8F8;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);min-height:100vh;color:#1a1a1a;line-height:1.5}
+
+/* ── HEADER ── */
+.header{
+  background:linear-gradient(135deg,#2A0E72,#96165d,#c044b8);
+  padding:16px 24px;display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.3);
+}
+.header-logo{height:44px;width:auto;filter:drop-shadow(0 2px 6px rgba(0,0,0,.3))}
+.header-back{color:rgba(255,255,255,.85);font-size:13px;font-weight:700;text-decoration:none;display:flex;align-items:center;gap:6px;transition:color .2s}
+.header-back:hover{color:#fff}
+
+/* ── PROGRESSO ── */
+.progress-wrap{max-width:560px;margin:24px auto 0;padding:0 20px}
+.progress-bar{height:6px;background:var(--bd);border-radius:10px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--vm),var(--d));transition:width .4s ease;width:10%}
+.progress-label{text-align:center;font-size:12px;color:var(--c3);font-weight:700;margin:10px 0 4px}
+
+/* ── WIZARD ── */
+.wizard-wrap{max-width:560px;margin:0 auto;padding:20px 20px 60px}
+.step-card{background:#fff;border-radius:24px;padding:40px 32px;box-shadow:0 20px 60px rgba(42,14,114,.15);border:1.5px solid var(--bd);display:none}
+.step-card.active{display:block;animation:stepIn .35s ease}
+@keyframes stepIn{from{opacity:0;transform:translateX(14px)}to{opacity:1;transform:translateX(0)}}
+
+.step-emoji{font-size:36px;margin-bottom:12px;text-align:center;line-height:1}
+.step-titulo{font-size:21px;font-weight:900;color:var(--v);text-align:center;margin-bottom:6px;line-height:1.3}
+.step-pergunta{font-size:14.5px;color:var(--c3);text-align:center;margin-bottom:26px;line-height:1.6}
+
+.fg{margin-bottom:14px}
+.fg label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--c2);margin-bottom:6px}
+.fi{width:100%;padding:15px 16px;border:2px solid var(--bd);border-radius:12px;font-size:16px;color:#1a1a1a;font-family:inherit;outline:none;background:#faf7ff;transition:all .22s}
+.fi:focus{border-color:var(--vm);box-shadow:0 0 0 4px rgba(123,44,185,.1);background:#fff}
+.fi::placeholder{color:#bbb}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+/* botões de escolha (gênero / interesse) */
+.choice-grid{display:flex;flex-direction:column;gap:10px;margin-bottom:6px}
+.choice-btn{width:100%;text-align:left;padding:16px 18px;border:2px solid var(--bd);border-radius:14px;background:#faf7ff;font-family:inherit;font-size:15px;font-weight:700;color:var(--c2);cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:12px}
+.choice-btn:hover{border-color:var(--vl)}
+.choice-btn.sel{border-color:var(--vm);background:linear-gradient(135deg,rgba(123,44,185,.1),rgba(150,22,93,.08));color:var(--v)}
+.choice-ico{font-size:20px;flex-shrink:0}
+
+/* frase motivacional */
+.motivacao{display:flex;align-items:flex-start;gap:10px;background:linear-gradient(135deg,rgba(123,44,185,.06),rgba(150,22,93,.06));border:1.5px solid var(--bd);border-radius:14px;padding:14px 16px;margin-top:16px}
+.motivacao-ico{font-size:19px;flex-shrink:0;line-height:1.3}
+.motivacao-txt{font-size:13.5px;color:var(--c2);line-height:1.6;font-weight:600}
+
+/* navegação */
+.step-nav{display:flex;gap:12px;align-items:center;margin-top:24px}
+.btn-voltar{background:none;border:none;color:var(--c3);font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;padding:14px 6px;flex-shrink:0}
+.btn-voltar:hover{color:var(--vm)}
+.btn-continuar{flex:1;padding:17px;background:linear-gradient(135deg,#7B2CB9,#96165d);color:#fff;font-size:16px;font-weight:900;border:none;border-radius:50px;cursor:pointer;font-family:inherit;transition:all .25s;box-shadow:0 6px 24px rgba(123,44,185,.5)}
+.btn-continuar:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(123,44,185,.65)}
+.btn-continuar:disabled{opacity:.6;cursor:wait;transform:none}
+.form-seg{font-size:11px;color:var(--c3);text-align:center;margin-top:16px;display:flex;align-items:center;justify-content:center;gap:6px}
+.form-erro{display:none;background:#fff0f4;border:1.5px solid #ffb8d0;color:#a1204f;font-size:13px;font-weight:600;padding:12px 16px;border-radius:12px;margin-bottom:16px;text-align:center}
+.form-erro.on{display:block}
+
+/* revisão */
+.rev-lista{display:flex;flex-direction:column;gap:10px;margin-bottom:6px}
+.rev-item{display:flex;justify-content:space-between;gap:12px;padding:12px 14px;background:var(--bg);border-radius:12px;font-size:13.5px}
+.rev-item span:first-child{color:var(--c3);font-weight:600}
+.rev-item span:last-child{color:var(--v);font-weight:800;text-align:right}
+
+/* sucesso */
+.step-sucesso{text-align:center}
+.suc-check{font-size:56px;margin-bottom:14px}
+
+/* ── FOOTER ── */
+.rodape{background:linear-gradient(135deg,#2A0E72,#96165d);padding:24px;text-align:center}
+.rod-logo{height:38px;width:auto;opacity:.8;margin-bottom:8px}
+.rod-txt{font-size:11px;color:rgba(255,255,255,.5);line-height:1.8}
+
+@media(max-width:560px){
+  .step-card{padding:28px 22px}
+  .form-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <img class="header-logo" src="logo%20jan%20Ros%C3%AA.png" alt="Jan Rosê">
+  <a class="header-back" href="landing-page-distribuidora.html">← Voltar</a>
+</header>
+
+<div class="progress-wrap">
+  <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+  <div class="progress-label" id="progress-label">Passo 1 de 10</div>
+</div>
+
+<div class="wizard-wrap">
+
+  <div class="form-erro" id="form-erro"></div>
+
+  <!-- 1. NOME -->
+  <div class="step-card active" data-step="nome">
+    <div class="step-emoji">🌸</div>
+    <div class="step-titulo">Vamos te conhecer melhor</div>
+    <div class="step-pergunta">Pra começar, qual é o seu nome completo?</div>
+    <div class="fg"><input class="fi" type="text" id="f-nome" placeholder="Seu nome completo" autofocus></div>
+    <div class="motivacao"><span class="motivacao-ico">💜</span><span class="motivacao-txt" id="mot-nome">Prazer em te conhecer! A partir de agora vamos caminhar juntos nessa jornada.</span></div>
+    <div class="step-nav"><button class="btn-continuar" onclick="proximo('nome')">Continuar</button></div>
+  </div>
+
+  <!-- 2. NASCIMENTO -->
+  <div class="step-card" data-step="nasc">
+    <div class="step-emoji">🎂</div>
+    <div class="step-titulo" id="tit-nasc">Quase lá!</div>
+    <div class="step-pergunta">Quando você nasceu?</div>
+    <div class="fg"><input class="fi" type="date" id="f-nasc"></div>
+    <div class="motivacao"><span class="motivacao-ico">✨</span><span class="motivacao-txt">Você está indo muito bem até aqui. Só mais alguns passos!</span></div>
+    <div class="step-nav">
+      <button class="btn-voltar" onclick="voltar('nasc')">‹ Voltar</button>
+      <button class="btn-continuar" onclick="proximo('nasc')">Continuar</button>
+    </div>
+  </div>
+
+  <!-- 3. GÊNERO -->
+  <div class="step-card" data-step="genero">
+    <div class="step-emoji">🙋</div>
+    <div class="step-titulo">Como você se identifica?</div>
+    <div class="step-pergunta">Isso nos ajuda a te atender melhor</div>
+    <div class="choice-grid">
+      <button class="choice-btn" onclick="escolher('genero','feminino',this)"><span class="choice-ico">👩</span> Feminino</button>
+      <button class="choice-btn" onclick="escolher('genero','masculino',this)"><span class="choice-ico">👨</span> Masculino</button>
+      <button class="choice-btn" onclick="escolher('genero','nao_informar',this)"><span class="choice-ico">🤍</span> Prefiro não informar</button>
+    </div>
+    <div class="motivacao"><span class="motivacao-ico">🎉</span><span class="motivacao-txt">Perfeito! Metade do caminho já ficou pra trás.</span></div>
+    <div class="step-nav">
+      <button class="btn-voltar" onclick="voltar('genero')">‹ Voltar</button>
+      <button class="btn-continuar" onclick="proximo('genero')">Continuar</button>
+    </div>
+  </div>
+
+  <!-- 4. CPF -->
+  <div class="step-card" data-step="cpf">
+    <div class="step-emoji">🔒</div>
+    <div class="step-titulo" id="tit-cpf">Para sua segurança</div>
+    <div class="step-pergunta">Qual é o seu CPF?</div>
+    <div class="fg"><input class="fi" type="text" id="f-cpf" placeholder="000.000.000-00" inputmode="numeric" maxlength="14"></div>
+    <div class="motivacao"><span class="motivacao-ico">🔐</span><span class="motivacao-txt">Seus dados ficam protegidos e são usados só para o seu cadastro oficial.</span></div>
+    <div class="step-nav">
+      <button class="btn-voltar" onclick="voltar('cpf')">‹ Voltar</button>
+      <button class="btn-continuar" onclick="proximo('cpf')">Continuar</button>
+    </div>
+  </div>
+
+  <!-- 5. RG -->
+  <div class="step-card" data-step="rg">
+    <div class="step-emoji">🪪</div>
+    <div class="step-titulo">Já estamos quase lá</div>
+    <div class="step-pergunta">E o seu RG? (se não tiver em mãos, pode pular)</div>
+    <div class="fg"><input class="fi" type="text" id="f-rg" placeholder="00.000.000-0"></div>
+    <div class="motivacao"><span class="motivacao-ico">👏</span><span class="motivacao-txt">Isso mesmo, continue! Cada passo te aproxima do seu novo negócio.</span></div>
+    <div class="step-nav">
+      <button class="btn-voltar" onclick="voltar('rg')">‹ Voltar</button>
+      <button class="btn-continuar" onclick="proximo('rg')">Continuar</button>
+    </div>
+  </div>
+
+  <!-- 6. WHATSAPP -->
+  <div class="step-card" data-step="tel">
+    <div class="step-emoji">📱</div>
+    <div class="step-titulo">Como falamos com você?</div>
+    <div class="step-pergunta">Qual é o seu WhatsApp?</div>
+    <div class="fg"><input class="fi" type="tel" id="f-tel" placeholder="(11) 9 9999-9999"></div>
+    <div class="motivacao"><span class="motivacao-ico">💬</span><span class="motivacao-txt">É por aqui que nossa equipe vai falar com você em até 24h.</span></div>
+    <div class="step-nav">
+      <button class="btn-voltar" onclick="voltar('tel')">‹ Voltar</button>
+      <button class="btn-continuar" onclick="proximo('tel')">Continuar</button>
+    </div>
+  </div>
+
+  <!-- 7. EMAIL -->
+  <div class="step-card" data-step="email">
+    <div class="step-emoji">✉️</div>
+    <div class="step-titulo">Mais um pouquinho</div>
+    <div class="step-pergunta">Qual é o seu melhor e-mail?</div>
+    <div class="fg"><input class="fi" type="email" id="f-email" placeholder="seu@email.com"></div>
+    <div class="motivacao"><span class="motivacao-ico">📩</span><span class="motivacao-txt">Vamos te enviar novidades e materiais exclusivos por aqui.</span></div>
+    <div class="step-nav">
+      <button class="btn-voltar" onclick="voltar('email')">‹ Voltar</button>
+      <button class="btn-continuar" onclick="proximo('email')">Continuar</button>
+    </div>
+  </div>
+
+  <!-- 8. ENDEREÇO -->
+  <div class="step-card" data-step="endereco">
+    <div class="step-emoji">📍</div>
+    <div class="step-titulo">Falta pouquinho!</div>
+    <div class="step-pergunta">Onde você mora?</div>
+    <div class="fg"><input class="fi" type="text" id="f-cep" placeholder="CEP: 00000-000" inputmode="numeric" maxlength="9"></div>
+    <div class="fg"><input class="fi" type="text" id="f-endereco" placeholder="Rua, número, bairro"></div>
+    <div class="form-row">
+      <div class="fg"><input class="fi" type="text" id="f-cidade" placeholder="Cidade"></div>
+      <div class="fg">
+        <select class="fi" id="f-estado">
+          <option value="">Estado</option>
+          <option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option>
+          <option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option>
+          <option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option>
+          <option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+          <option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option>
+          <option>SE</option><option>TO</option>
+        </select>
+      </div>
+    </div>
+    <div class="motivacao"><span class="motivacao-ico">🚀</span><span class="motivacao-txt">Estamos quase no fim — você está mandando muito bem!</span></div>
+    <div class="step-nav">
+      <button class="btn-voltar" onclick="voltar('endereco')">‹ Voltar</button>
+      <button class="btn-continuar" onclick="proximo('endereco')">Continuar</button>
+    </div>
+  </div>
+
+  <!-- 9. INTERESSE -->
+  <div class="step-card" data-step="interesse">
+    <div class="step-emoji">💜</div>
+    <div class="step-titulo">Última pergunta!</div>
+    <div class="step-pergunta">O que mais te motivou a chegar até aqui?</div>
+    <div class="choice-grid">
+      <button class="choice-btn" onclick="escolher('interesse','renda',this)"><span class="choice-ico">💰</span> Quero uma renda extra</button>
+      <button class="choice-btn" onclick="escolher('interesse','dist',this)"><span class="choice-ico">🌸</span> Quero ser distribuidora Jan Rosê</button>
+      <button class="choice-btn" onclick="escolher('interesse','equipe',this)"><span class="choice-ico">🤝</span> Quero montar minha própria equipe</button>
+      <button class="choice-btn" onclick="escolher('interesse','prod',this)"><span class="choice-ico">📦</span> Quero conhecer os produtos primeiro</button>
+    </div>
+    <div class="motivacao"><span class="motivacao-ico">🎉</span><span class="motivacao-txt">Estamos muito felizes em te receber. Só falta confirmar!</span></div>
+    <div class="step-nav">
+      <button class="btn-voltar" onclick="voltar('interesse')">‹ Voltar</button>
+      <button class="btn-continuar" onclick="proximo('interesse')">Continuar</button>
+    </div>
+  </div>
+
+  <!-- 10. REVISÃO -->
+  <div class="step-card" data-step="revisao">
+    <div class="step-emoji">✅</div>
+    <div class="step-titulo" id="tit-revisao">Tudo pronto!</div>
+    <div class="step-pergunta">Confira seus dados antes de enviar</div>
+    <div class="rev-lista" id="rev-lista"></div>
+    <div class="motivacao"><span class="motivacao-ico">🎁</span><span class="motivacao-txt">Parabéns por chegar até aqui! Esse é o primeiro passo da sua nova jornada.</span></div>
+    <div class="step-nav">
+      <button class="btn-voltar" onclick="voltar('revisao')">‹ Voltar</button>
+      <button class="btn-continuar" id="btn-enviar" onclick="enviar()">✉️ Enviar meu cadastro</button>
+    </div>
+    <div class="form-seg">🔒 Seus dados ficam só com a nossa equipe. Nunca compartilhamos.</div>
+  </div>
+
+  <!-- 11. SUCESSO -->
+  <div class="step-card step-sucesso" data-step="sucesso">
+    <div class="suc-check">🎉</div>
+    <div class="step-titulo">Cadastro recebido!</div>
+    <div class="step-pergunta">Recebemos seus dados. Em breve alguém da nossa equipe vai entrar em contato pelo WhatsApp para te apresentar os próximos passos.</div>
+    <a class="btn-continuar" href="onboarding.html" style="display:flex;align-items:center;justify-content:center;margin-top:24px;text-decoration:none">Ver meus primeiros passos →</a>
+  </div>
+
+</div>
+
+<div class="rodape">
+  <img class="rod-logo" src="logo%20jan%20Ros%C3%AA.png" alt="Jan Rosê">
+  <div class="rod-txt">Distribuidora Independente Oficial · Equipe Alvo Negócio<br>© 2026 Jan Rosê</div>
+</div>
+
+<script>
+/* ordem das etapas — a última ('sucesso') só é exibida após o envio */
+const ORDEM = ['nome','nasc','genero','cpf','rg','tel','email','endereco','interesse','revisao','sucesso']
+const OBRIGATORIOS = ['nome','tel']  // as únicas etapas que bloqueiam o "Continuar" se vazias
+let idx = 0
+
+function el(step){ return document.querySelector(`.step-card[data-step="${step}"]`) }
+
+function irPara(i){
+  idx = i
+  document.querySelectorAll('.step-card').forEach(c => c.classList.remove('active'))
+  el(ORDEM[idx]).classList.add('active')
+  const total = ORDEM.length - 1 // "sucesso" não conta no progresso
+  const atual = Math.min(idx + 1, total)
+  document.getElementById('progress-fill').style.width = (atual / total * 100) + '%'
+  document.getElementById('progress-label').textContent = ORDEM[idx] === 'sucesso' ? 'Concluído!' : `Passo ${atual} de ${total}`
+  limparErro()
+  window.scrollTo({top:0, behavior:'smooth'})
+}
+
+function valorEtapa(step){
+  const map = { nome:'f-nome', nasc:'f-nasc', cpf:'f-cpf', rg:'f-rg', tel:'f-tel', email:'f-email' }
+  if(map[step]) return document.getElementById(map[step]).value.trim()
+  if(step === 'genero') return document.getElementById('f-genero-val') ? document.getElementById('f-genero-val').value : ''
+  if(step === 'interesse') return document.getElementById('f-interesse-val') ? document.getElementById('f-interesse-val').value : ''
+  if(step === 'endereco') return document.getElementById('f-cep').value.trim()
+  return ''
+}
+
+function proximo(step){
+  if(OBRIGATORIOS.includes(step) && !valorEtapa(step)){
+    mostrarErro(step === 'nome' ? 'Por favor, digite seu nome 😊' : 'Por favor, digite seu WhatsApp 😊')
+    return
+  }
+  if(step === 'revisao'){ return } // revisão avança pelo botão de enviar, não por aqui
+  const i = ORDEM.indexOf(step)
+  if(i === ORDEM.indexOf('interesse')) montarRevisao()
+  irPara(i + 1)
+}
+function voltar(step){
+  const i = ORDEM.indexOf(step)
+  irPara(Math.max(0, i - 1))
+}
+
+function escolher(campo, valor, btn){
+  let hidden = document.getElementById('f-' + campo + '-val')
+  if(!hidden){
+    hidden = document.createElement('input')
+    hidden.type = 'hidden'
+    hidden.id = 'f-' + campo + '-val'
+    btn.closest('.step-card').appendChild(hidden)
+  }
+  hidden.value = valor
+  btn.parentElement.querySelectorAll('.choice-btn').forEach(b => b.classList.remove('sel'))
+  btn.classList.add('sel')
+}
+
+function mostrarErro(msg){
+  const el = document.getElementById('form-erro')
+  el.textContent = msg
+  el.classList.add('on')
+}
+function limparErro(){
+  document.getElementById('form-erro').classList.remove('on')
+}
+
+/* saudações personalizadas com o nome, quando disponível */
+function atualizarSaudacoes(){
+  const nome = document.getElementById('f-nome').value.trim().split(' ')[0]
+  if(!nome) return
+  document.getElementById('tit-nasc').textContent = `Quase lá, ${nome}!`
+  document.getElementById('tit-cpf').textContent = `Para sua segurança, ${nome}`
+  document.getElementById('tit-revisao').textContent = `Tudo pronto, ${nome}!`
+}
+document.getElementById('f-nome').addEventListener('input', atualizarSaudacoes)
+
+/* máscara simples de CPF */
+document.getElementById('f-cpf').addEventListener('input', function(){
+  let v = this.value.replace(/\D/g,'').slice(0,11)
+  v = v.replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d{1,2})$/,'$1-$2')
+  this.value = v
+})
+
+/* autocompleta endereço a partir do CEP (ViaCEP — serviço público, sem chave) */
+document.getElementById('f-cep').addEventListener('blur', async function(){
+  let v = this.value.replace(/\D/g,'').slice(0,8)
+  this.value = v.length > 5 ? v.replace(/(\d{5})(\d)/,'$1-$2') : v
+  if(v.length !== 8) return
+  try{
+    const r = await fetch(`https://viacep.com.br/ws/${v}/json/`)
+    const d = await r.json()
+    if(!d.erro){
+      document.getElementById('f-endereco').value = [d.logradouro, d.bairro].filter(Boolean).join(', ')
+      document.getElementById('f-cidade').value = d.localidade || ''
+      document.getElementById('f-estado').value = d.uf || ''
+    }
+  }catch(e){ /* silencioso — se falhar, a pessoa preenche manualmente */ }
+})
+
+function montarRevisao(){
+  const m = {renda:'Quero uma renda extra',dist:'Quero ser distribuidora',equipe:'Quero montar uma equipe',prod:'Quero conhecer os produtos'}
+  const interesseVal = document.getElementById('f-interesse-val') ? document.getElementById('f-interesse-val').value : ''
+  const itens = [
+    ['Nome', document.getElementById('f-nome').value.trim()],
+    ['WhatsApp', document.getElementById('f-tel').value.trim()],
+    ['E-mail', document.getElementById('f-email').value.trim() || '—'],
+    ['Cidade', document.getElementById('f-cidade').value.trim() || '—'],
+    ['Interesse', m[interesseVal] || '—'],
+  ]
+  document.getElementById('rev-lista').innerHTML = itens.map(([k,v]) =>
+    `<div class="rev-item"><span>${k}</span><span>${v}</span></div>`
+  ).join('')
+}
+
+async function enviar(){
+  limparErro()
+
+  const nome    = document.getElementById('f-nome').value.trim()
+  const cpf     = document.getElementById('f-cpf').value.trim()
+  const rg      = document.getElementById('f-rg').value.trim()
+  const nasc    = document.getElementById('f-nasc').value
+  const genero  = document.getElementById('f-genero-val') ? document.getElementById('f-genero-val').value : ''
+  const tel     = document.getElementById('f-tel').value.trim()
+  const email   = document.getElementById('f-email').value.trim()
+  const cep     = document.getElementById('f-cep').value.trim()
+  const endereco= document.getElementById('f-endereco').value.trim()
+  const cidade  = document.getElementById('f-cidade').value.trim()
+  const estado  = document.getElementById('f-estado').value
+  const interesse = document.getElementById('f-interesse-val') ? document.getElementById('f-interesse-val').value : ''
+
+  if(!nome || !tel){
+    mostrarErro('Por favor, preencha pelo menos nome e WhatsApp 😊')
+    return
+  }
+  if(!window.sb){
+    mostrarErro('O sistema de cadastro ainda está sendo configurado. Tente novamente mais tarde ou fale com a gente pelo WhatsApp.')
+    return
+  }
+
+  const btn = document.getElementById('btn-enviar')
+  btn.disabled = true
+  btn.textContent = 'Enviando...'
+
+  const { error } = await window.sb.from('leads').insert({
+    nome_completo:   nome,
+    cpf:             cpf || null,
+    rg:              rg || null,
+    data_nascimento: nasc || null,
+    genero:          genero || null,
+    telefone:        tel,
+    email:           email || null,
+    endereco:        endereco || null,
+    cep:             cep || null,
+    cidade:          cidade || null,
+    estado:          estado || null,
+    interesse:       interesse || null,
+    origem:          'cadastro-completo' + (document.referrer ? ' via ' + document.referrer : ''),
+    status:          'parceiro'
+  })
+
+  btn.disabled = false
+  btn.textContent = '✉️ Enviar meu cadastro'
+
+  if(error){
+    mostrarErro('Não conseguimos enviar seu cadastro agora. Tente novamente em instantes.')
+    return
+  }
+
+  irPara(ORDEM.indexOf('sucesso'))
+}
+</script>
+</body>
+</html>
