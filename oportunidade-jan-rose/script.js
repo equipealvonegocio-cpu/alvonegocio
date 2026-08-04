@@ -179,7 +179,7 @@ document.getElementById('form-comecar').addEventListener('submit', async (e) => 
   document.getElementById('modal-sucesso').classList.add('on');
   document.getElementById('form-comecar').reset();
   btn.disabled = false;
-  btn.textContent = 'Quero fazer parte →';
+  btn.textContent = 'Quero dar o próximo passo →';
 });
 
 document.getElementById('modal-close').addEventListener('click', () => {
