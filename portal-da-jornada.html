@@ -18,16 +18,16 @@ ul{list-style:none}
 button{font-family:inherit}
 
 :root{
-  --green-deep: #062820;
-  --green-dark: #0B3D2E;
-  --green:      #146C43;
-  --green-soft: #E6F0EA;
-  --gold:       #C9A227;
-  --gold-light: #E8D9A8;
-  --gray-bg:    #F7F8F7;
-  --ink:        #12211B;
-  --ink-muted:  #5B6B62;
-  --border:     #E3E7E3;
+  --green-deep: #1a0845;
+  --green-dark: #2A0E72;
+  --green:      #7B2CB9;
+  --green-soft: #F3E7FA;
+  --gold:       #F5C518;
+  --gold-light: #FFB8E4;
+  --gray-bg:    #FDF5FF;
+  --ink:        #1a1a1a;
+  --ink-muted:  #8878AA;
+  --border:     #E8C8F8;
 }
 
 [da]{opacity:0;transform:translateY(20px);transition:opacity .6s cubic-bezier(.2,.7,.3,1),transform .6s cubic-bezier(.2,.7,.3,1)}
@@ -48,8 +48,8 @@ header{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid
 .step-label{font-size:9.5px;font-weight:700;color:var(--ink-muted);text-align:center;letter-spacing:.2px;white-space:nowrap}
 .step-tab.ativo .step-label{color:var(--green-dark)}
 
-.btn-primary{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--green-dark),var(--green));color:#fff;font-size:15.5px;font-weight:700;padding:16px 34px;border-radius:12px;transition:all .25s cubic-bezier(.2,.7,.3,1);border:none;cursor:pointer;box-shadow:0 8px 24px rgba(11,61,46,.22)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(11,61,46,.3)}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--green-dark),var(--green));color:#fff;font-size:15.5px;font-weight:700;padding:16px 34px;border-radius:12px;transition:all .25s cubic-bezier(.2,.7,.3,1);border:none;cursor:pointer;box-shadow:0 8px 24px rgba(42,14,114,.22)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(42,14,114,.3)}
 .btn-secondary{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--green-dark);font-size:15.5px;font-weight:700;padding:15px 32px;border-radius:12px;border:1.5px solid var(--border);transition:all .2s;cursor:pointer}
 .btn-secondary:hover{border-color:var(--green);background:var(--green-soft)}
 .btn-ghost{display:inline-flex;align-items:center;gap:6px;background:none;color:var(--ink-muted);font-size:14.5px;font-weight:700;padding:14px 20px;border:none;cursor:pointer;transition:color .2s}
@@ -73,10 +73,10 @@ header{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid
 .info-card p strong{color:var(--green-dark)}
 
 .creds-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-.cred-pill{font-size:12.5px;font-weight:700;color:var(--green-dark);background:var(--green-soft);border:1px solid rgba(20,108,67,.15);padding:8px 16px;border-radius:50px}
+.cred-pill{font-size:12.5px;font-weight:700;color:var(--green-dark);background:var(--green-soft);border:1px solid rgba(123,44,185,.15);padding:8px 16px;border-radius:50px}
 
 /* ── equipe (foto) ── */
-.equipe-photo{margin-top:28px;border-radius:18px;overflow:hidden;border:1px solid var(--border);box-shadow:0 10px 30px rgba(11,61,46,.1);max-width:520px}
+.equipe-photo{margin-top:28px;border-radius:18px;overflow:hidden;border:1px solid var(--border);box-shadow:0 10px 30px rgba(42,14,114,.1);max-width:520px}
 .equipe-cap{font-size:12.5px;color:var(--ink-muted);margin-top:10px}
 
 /* ── como funciona ── */
@@ -99,10 +99,12 @@ header{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid
 .prod-cta{margin-top:28px}
 
 /* ── plano de desenvolvimento ── */
-.niveis-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:32px}
-.nivel-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:20px 14px;text-align:center}
-.nivel-nome{font-size:12px;font-weight:700;color:var(--ink-muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
-.nivel-val{font-size:17px;font-weight:900;color:var(--green-dark)}
+.niveis-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:32px}
+.nivel-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:18px 10px;text-align:center}
+.nivel-card.nivel-topo{border-color:var(--gold);background:var(--green-soft)}
+.nivel-nome{font-size:11.5px;font-weight:700;color:var(--ink-muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.nivel-val{font-size:16px;font-weight:900;color:var(--green-dark)}
+.nivel-sub{font-size:10.5px;color:var(--ink-muted);margin-top:4px}
 .bonus-row{display:flex;gap:16px;margin-top:20px;flex-wrap:wrap}
 .bonus-mini{flex:1;min-width:180px;background:var(--gray-bg);border:1px solid var(--border);border-radius:14px;padding:18px 20px}
 .bonus-mini-nome{font-size:12.5px;font-weight:700;color:var(--ink-muted)}
@@ -164,14 +166,14 @@ header{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid
 .decisao-card h3{font-size:19px;font-weight:900;margin-bottom:10px}
 .decisao-card p{font-size:13.5px;line-height:1.75;margin-bottom:24px}
 .decisao-sim{background:linear-gradient(160deg,var(--green-deep) 0%,var(--green-dark) 55%,var(--green) 100%)}
-.decisao-sim::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 75% 20%,rgba(201,162,39,.15) 0%,transparent 60%);pointer-events:none}
+.decisao-sim::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 75% 20%,rgba(245,197,24,.15) 0%,transparent 60%);pointer-events:none}
 .decisao-sim h3{position:relative;color:#fff}
 .decisao-sim p{position:relative;color:rgba(255,255,255,.78)}
 .decisao-nao{background:var(--gray-bg);border:1.5px solid var(--border)}
 .decisao-nao h3{color:var(--ink)}
 .decisao-nao p{color:var(--ink-muted)}
 .decisao-nao .agenda-box{text-align:left;margin-top:18px}
-.btn-final{position:relative;display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--gold),#a9820f);color:#1a1400;font-size:16px;font-weight:800;padding:17px 36px;border-radius:14px;box-shadow:0 14px 36px rgba(201,162,39,.35);transition:all .25s}
+.btn-final{position:relative;display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--gold),#E8A600);color:#1a1400;font-size:16px;font-weight:800;padding:17px 36px;border-radius:14px;box-shadow:0 14px 36px rgba(245,197,24,.35);transition:all .25s}
 .btn-final:hover{transform:translateY(-2px)}
 .fechamento-dm-alt{margin-top:24px;font-size:13px;color:var(--ink-muted)}
 .fechamento-dm-alt a{color:var(--green-dark);font-weight:700;text-decoration:underline}
@@ -191,7 +193,8 @@ footer a{color:var(--gold-light)}
   .stage{padding:36px 20px 16px}
   .stage-nav{padding:12px 20px 48px;flex-direction:column-reverse;align-items:stretch}
   .stage-nav .btn-primary,.stage-nav .btn-secondary,.stage-nav .btn-ghost{justify-content:center;width:100%}
-  .mini-steps,.niveis-grid{grid-template-columns:1fr}
+  .mini-steps{grid-template-columns:1fr}
+  .niveis-grid{grid-template-columns:1fr 1fr}
   .prod-grid{grid-template-columns:1fr 1fr}
   .combo-row,.bonus-row{flex-direction:column}
   .stats-row{gap:20px}
@@ -265,6 +268,7 @@ footer a{color:var(--gold-light)}
     <img src="ChatGPT%20Image%2031%20de%20jul.%20de%202026%2C%2019_56_26.png" alt="Ismael Moraes — Treinamento Alvo Negócio">
   </div>
   <p class="equipe-cap" da>Ismael Moraes em treinamento com a equipe Alvo Negócio</p>
+  <p class="s-sub" style="margin-top:20px;font-size:13.5px" da>Se você entrar pra equipe, não fica por sua conta: você tem uma líder de referência pra tirar dúvidas, te acompanhar nas primeiras vendas e comemorar cada conquista junto com você.</p>
   <div class="creds-row" da>
     <span class="cred-pill">Fundador: Ismael Moraes</span>
     <span class="cred-pill">Distribuidora Oficial Jan Rosê</span>
@@ -277,6 +281,9 @@ footer a{color:var(--gold-light)}
   <p class="s-eyebrow" da>Etapa 4 de 9</p>
   <h1 class="s-h" da>Como Funciona</h1>
   <p class="s-sub" da>A Jan Rosê atua no modelo de <strong>Venda Direta</strong>, regulamentado no Brasil e representado pela ABEVD. Nada de pirâmide: o lucro vem da venda real de produtos.</p>
+  <div class="info-card" da>
+    <p><strong>Como o dinheiro chega até você:</strong> você compra pelo preço de distribuidora e revende pelo preço de tabela — a diferença fica com você, na hora. Se além de vender você também formar uma equipe, recebe todo mês uma bonificação sobre o resultado do time.</p>
+  </div>
   <div class="mini-steps">
     <div class="mini-step" da="e"><div class="mini-num">1</div><h4>Cadastro</h4><p>Rápido, gratuito, sem burocracia.</p></div>
     <div class="mini-step" da><div class="mini-num">2</div><h4>Treinamento</h4><p>Catálogo, tabela de preços e scripts prontos.</p></div>
@@ -303,6 +310,9 @@ footer a{color:var(--gold-light)}
   <p class="s-eyebrow" da>Etapa 5 de 9</p>
   <h1 class="s-h" da>Conheça os Produtos</h1>
   <p class="s-sub" da>Perfumaria, cuidados pessoais e bem-estar — um portfólio completo, com fórmulas testadas e alta taxa de recompra.</p>
+  <div class="info-card" da>
+    <p>Todos os produtos passam por <strong>testes rigorosos de eficácia</strong> antes de chegar até você, com ingredientes selecionados e a mesma qualidade europeia que sustenta os 32+ anos da marca. A alta taxa de recompra não é acaso — é cliente satisfeita voltando.</p>
+  </div>
   <div class="prod-grid">
     <div class="prod-card" da="e"><img src="pp1.png" alt="Produtos Jan Rosê"></div>
     <div class="prod-card" da><img src="pp2.png" alt="Produtos Jan Rosê"></div>
@@ -318,13 +328,23 @@ footer a{color:var(--gold-light)}
   <h1 class="s-h" da>Plano de Desenvolvimento</h1>
   <p class="s-sub" da>Veja como é possível crescer e evoluir dentro da equipe, com metas claras em cada nível.</p>
   <div class="info-card" da>
-    <p>A Jan Rosê distribui <strong>45% de toda a pontuação global</strong> entre os líderes qualificados. Quanto maior o seu nível, maior a sua fatia — além do bônus de adesão, pago na hora.</p>
+    <p>A Jan Rosê distribui <strong>45% de toda a pontuação global bonificável</strong> entre os qualificados do mês, conforme as cotas de cada nível. Quanto maior o seu nível, maior a sua fatia.</p>
   </div>
   <div class="niveis-grid" da>
-    <div class="nivel-card"><div class="nivel-nome">Ouro</div><div class="nivel-val">R$ 300+/mês</div></div>
-    <div class="nivel-card"><div class="nivel-nome">Diamante</div><div class="nivel-val">R$ 2.000+/mês</div></div>
-    <div class="nivel-card"><div class="nivel-nome">Duplo Diamante</div><div class="nivel-val">R$ 8.000+/mês</div></div>
-    <div class="nivel-card"><div class="nivel-nome">Imperial</div><div class="nivel-val">R$ 80.000+/mês</div></div>
+    <div class="nivel-card"><div class="nivel-nome">Ouro</div><div class="nivel-val">R$ 300</div><div class="nivel-sub">1 cota · 2.000 pts</div></div>
+    <div class="nivel-card"><div class="nivel-nome">Safira</div><div class="nivel-val">R$ 1.000</div><div class="nivel-sub">1 cota · 5.000 pts</div></div>
+    <div class="nivel-card"><div class="nivel-nome">Esmeralda</div><div class="nivel-val">R$ 2.000</div><div class="nivel-sub">2 cotas · 10.000 pts</div></div>
+    <div class="nivel-card"><div class="nivel-nome">Rubi</div><div class="nivel-val">R$ 4.000</div><div class="nivel-sub">4 cotas · 20.000 pts</div></div>
+    <div class="nivel-card"><div class="nivel-nome">Diamante</div><div class="nivel-val">R$ 8.000</div><div class="nivel-sub">8 cotas · 40.000 pts</div></div>
+    <div class="nivel-card"><div class="nivel-nome">Duplo Jan</div><div class="nivel-val">R$ 15.000</div><div class="nivel-sub">16 cotas · 100.000 pts</div></div>
+    <div class="nivel-card"><div class="nivel-nome">Triplo Jan</div><div class="nivel-val">R$ 25.000</div><div class="nivel-sub">25 cotas · 200.000 pts</div></div>
+    <div class="nivel-card"><div class="nivel-nome">Red Jan</div><div class="nivel-val">R$ 40.000</div><div class="nivel-sub">40 cotas · 400.000 pts</div></div>
+    <div class="nivel-card"><div class="nivel-nome">Black Jan</div><div class="nivel-val">R$ 60.000</div><div class="nivel-sub">70 cotas · 700.000 pts</div></div>
+    <div class="nivel-card nivel-topo"><div class="nivel-nome">Imperial</div><div class="nivel-val">R$ 80.000+</div><div class="nivel-sub">100 cotas · 1.000.000+ pts</div></div>
+  </div>
+  <p class="s-sub" style="margin-top:16px;font-size:12.5px" da>Estimativas de ganho com base em 40% do PML (Ouro considera 50% do PML) — os valores exatos variam mês a mês, conforme a pontuação global bonificável.</p>
+  <div class="info-card" da>
+    <p>🏆 <strong>Reconhecimento:</strong> além do dinheiro, você acumula pontos que podem ser trocados por viagens e prêmios — é a realização de sonhos que a Jan Rosê chama de "acumulou, ganhou".</p>
   </div>
   <div class="bonus-row" da>
     <div class="bonus-mini"><div class="bonus-mini-nome">Bônus de adesão · Consultor</div><div class="bonus-mini-val">10%</div></div>
@@ -432,8 +452,8 @@ footer a{color:var(--gold-light)}
     </div>
     <div class="decisao-card decisao-nao">
       <div class="decisao-ico">💬</div>
-      <h3>Ainda tenho dúvidas</h3>
-      <p>Sem problema. Fale com um consultor humano antes de decidir — sem compromisso.</p>
+      <h3>Quero conversar com uma líder</h3>
+      <p>Sem problema. Fale direto com uma líder da nossa equipe antes de decidir — sem compromisso, sem pressão.</p>
       <button class="agenda-toggle" id="agenda-toggle" onclick="toggleAgenda()">📅 Agendar uma conversa</button>
       <div class="agenda-box" id="agenda-box" style="display:none">
         <div class="agenda-label">Quando você prefere?</div>

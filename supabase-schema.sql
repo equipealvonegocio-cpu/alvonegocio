@@ -35,6 +35,7 @@ create table leads (
   -- controle
   origem             text,                            -- ex: instagram_ads, tiktok, organico, quiz
   interesse          text,                            -- renda / distribuidora / equipe / produtos
+  profissao          text,                            -- ocupação atual informada no formulário (mini portal)
   status             text not null default 'lead'
                        check (status in (
                          'visitante',                  -- viu uma página, ainda não deixou dado nenhum (não gera linha aqui)
@@ -57,6 +58,7 @@ create table leads (
 -- se a tabela "leads" já existia antes do quiz (rode isso também, é seguro repetir):
 alter table leads add column if not exists perfil_quiz text;
 alter table leads add column if not exists respostas_quiz jsonb;
+alter table leads add column if not exists profissao text;
 
 -- se a tabela "leads" já existia antes do ciclo de vida novo (rode isso também):
 alter table leads alter column status set default 'lead';
