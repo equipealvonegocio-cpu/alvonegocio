@@ -3,202 +3,462 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aumente o Faturamento da Sua Loja | Jan Rosê</title>
-<meta name="description" content="Perfumaria, salão, farmácia ou qualquer loja: adicione os produtos Jan Rosê e aumente seu ticket médio sem abrir outro CNPJ.">
+<title>Descubra a oportunidade Jan Rosê para comerciantes — Equipe Alvo Negócio</title>
+<meta name="description" content="Você já tem um comércio com movimento todos os dias. Conheça com calma como diversificar sua renda com uma linha nova: quem é a Jan Rosê, como funciona, os produtos, os ganhos reais e o suporte que você tem.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
+:root{
+  --emerald:       #7B2CB9;
+  --emerald-deep:  #2A0E72;
+  --emerald-light: #F3E7FA;
+  --white:         #FFFFFF;
+  --offwhite:      #F8F7FA;
+  --gold:          #F5C518;
+  --gold-light:    #FFE9A6;
+  --ink:           #1F2937;
+  --ink-muted:     #6B7280;
+  --border:        #E7E3EE;
+}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:70px}
-body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a1a;overflow-x:hidden;line-height:1.6;font-size:16px}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--ink);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{font-family:inherit}
 
-:root{
-  --v:  #2A0E72;
-  --vm: #7B2CB9;
-  --vl: #C044B8;
-  --d:  #E0289E;
-  --dl: #FFB8E4;
-  --bg: #FDF5FF;
-  --c2: #3D2060;
-  --c3: #8878AA;
-  --bd: #E8C8F8;
-}
-[da]{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+[da]{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
 [da].v{opacity:1;transform:translateY(0)}
 
-header{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid var(--bd)}
-.hw{max-width:1100px;margin:0 auto;padding:0 24px;height:66px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.hw img{height:32px}
-.h-wpp{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;font-size:13.5px;font-weight:800;padding:10px 20px;border-radius:50px;white-space:nowrap;box-shadow:0 4px 14px rgba(37,211,102,.35)}
+.sw{max-width:1040px;margin:0 auto;padding:0 24px}
+.sw-narrow{max-width:680px;margin:0 auto;padding:0 24px}
+.center{text-align:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--emerald);margin-bottom:16px}
+.eyebrow-num{width:22px;height:22px;border-radius:50%;background:var(--emerald-light);color:var(--emerald);display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:800}
+.eyebrow-onlight{color:var(--gold-light)}
+.eyebrow-onlight .eyebrow-num{background:rgba(255,255,255,.15);color:var(--gold-light)}
+.sec-lede{font-size:16.5px;color:var(--ink-muted);line-height:1.85;max-width:60ch;margin:0 auto}
 
-.hero{padding:56px 24px;background:linear-gradient(180deg,#f4e9ff 0%,#fff 100%);text-align:center}
-.hero-w{max-width:720px;margin:0 auto}
-.hero-tag{display:inline-block;font-size:13px;font-weight:800;letter-spacing:1px;color:var(--vm);background:#fff;border:1px solid var(--bd);padding:8px 20px;border-radius:50px;margin-bottom:20px}
-.hero h1{font-size:clamp(28px,4.2vw,46px);font-weight:900;color:var(--v);line-height:1.18;margin-bottom:18px}
-.hero h1 span{background:linear-gradient(135deg,var(--vm),var(--d));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero p{font-size:16.5px;color:var(--c2);line-height:1.8;margin-bottom:32px;max-width:560px;margin-left:auto;margin-right:auto}
-.hero p strong{color:var(--vm)}
-.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
-.btn-v{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--vm),var(--d));color:#fff;font-size:16px;font-weight:900;padding:18px 38px;border-radius:50px;transition:all .25s;box-shadow:0 10px 30px rgba(123,44,185,.3)}
-.btn-v:hover{transform:translateY(-2px);box-shadow:0 14px 38px rgba(123,44,185,.45)}
-.btn-out{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--vm);font-size:15px;font-weight:800;padding:16px 32px;border-radius:50px;border:2px solid var(--vm)}
-.btn-out:hover{background:var(--vm);color:#fff}
-.hero-trust{font-size:12.5px;color:var(--c3);font-weight:600}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;border-radius:12px;transition:all .25s cubic-bezier(.2,.7,.3,1);white-space:nowrap;border:none;cursor:pointer;font-family:inherit}
+.btn-primary{background:var(--gold);color:var(--emerald-deep);box-shadow:0 10px 26px rgba(245,197,24,.35)}
+.btn-primary:hover{background:#E8B800;transform:translateY(-2px);box-shadow:0 14px 34px rgba(245,197,24,.48)}
+.btn-wpp{background:linear-gradient(135deg,#25D366,#1ebe5c);color:#fff;box-shadow:0 10px 26px rgba(37,211,102,.3)}
+.btn-wpp:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(37,211,102,.42)}
+.btn-lg{font-size:15.5px;padding:16px 30px}
+.btn-xl{font-size:17px;padding:19px 40px;border-radius:14px}
 
-.sec{padding:64px 24px}
-.sec-bg{background:var(--bg)}
-.sw{max-width:1080px;margin:0 auto}
-.centro{text-align:center}
-.s-tag{display:inline-block;font-size:12px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--vm);margin-bottom:10px}
-.s-h{font-size:clamp(24px,3vw,36px);font-weight:900;color:#1a1a1a;line-height:1.2;margin-bottom:14px}
-.s-h span{color:var(--vm)}
-.s-sub{font-size:15.5px;color:var(--c2);line-height:1.75;max-width:640px;margin:0 auto}
+/* ── HERO ── */
+.hero{position:relative;padding:64px 24px 72px;background:linear-gradient(180deg,var(--offwhite) 0%,#fff 100%);text-align:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background-image:url('../ChatGPT Image 5 de ago. de 2026, 11_16_30.png');background-size:cover;background-position:center 70%;opacity:.75}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(248,247,250,.05) 0%,rgba(248,247,250,.2) 93%,var(--offwhite) 99.5%)}
+.hero-content{position:relative;z-index:1}
+.hero h1{font-size:clamp(28px,4.6vw,46px);font-weight:900;color:var(--emerald-deep);line-height:1.22;max-width:20ch;margin:0 auto 22px;letter-spacing:-.01em}
+.hero-sub{font-size:17px;color:var(--ink-muted);line-height:1.85;max-width:58ch;margin:0 auto 36px}
+.hero-cue{margin-top:44px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-muted);animation:bob 1.8s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
 
-.dor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px;max-width:760px;margin-left:auto;margin-right:auto}
-.dor-item{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--bd);border-radius:14px;padding:18px 20px;text-align:left}
-.dor-ico{font-size:18px;flex-shrink:0}
-.dor-item p{font-size:14px;color:var(--c2);line-height:1.65;font-weight:500}
+/* ── SEÇÕES ── */
+.sec{padding:76px 24px}
+.sec-empresa{position:relative;overflow:hidden}
+.sec-empresa-bg{position:absolute;inset:0;background-image:url('../ChatGPT Image 5 de ago. de 2026, 13_35_05.png');background-size:cover;background-position:center;opacity:.2}
+.sec-empresa-textbox{background:rgba(255,255,255,.85);border-radius:20px;padding:28px 24px;backdrop-filter:blur(2px)}
+.sec-empresa-content{position:relative;z-index:1}
+.sec-tint{background:var(--offwhite)}
+.sec-perfil{background:linear-gradient(180deg,var(--emerald-light) 0%,var(--offwhite) 100%)}
+.sec-dark{background:linear-gradient(160deg,var(--emerald-deep) 0%,var(--emerald) 100%)}
+.sec h2{font-size:clamp(25px,3.2vw,34px);font-weight:900;color:var(--emerald-deep);line-height:1.28;margin-bottom:12px;letter-spacing:-.01em}
+.sec h3.s-sub{font-size:15.5px;font-weight:700;color:var(--emerald);margin-bottom:16px}
+.onlight{color:#fff !important}
+.onlight-muted{color:rgba(255,255,255,.8) !important}
 
-.ben-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:40px}
-.ben{background:#fff;border:1px solid var(--bd);border-radius:16px;padding:26px 20px;text-align:left}
-.ben-ico{width:44px;height:44px;border-radius:12px;background:rgba(123,44,185,.1);display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:12px}
-.ben h4{font-size:15px;font-weight:800;color:var(--v);margin-bottom:6px}
-.ben p{font-size:13px;color:var(--c2);line-height:1.65}
+.stats-row{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:40px 0 28px;max-width:560px;margin-left:auto;margin-right:auto}
+.stat{text-align:center;background:#fff;border:1px solid var(--border);border-radius:18px;padding:26px 16px;box-shadow:0 4px 16px rgba(122,44,185,.06);transition:transform .25s,box-shadow .25s}
+.stat:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(122,44,185,.1)}
+.stat-v{font-size:clamp(22px,2.8vw,30px);font-weight:900;color:var(--emerald)}
+.stat-l{font-size:11.5px;color:var(--ink-muted);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-top:6px}
+.creds-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.cred-pill{font-size:12.5px;font-weight:700;color:var(--emerald-deep);background:var(--emerald-light);border:1px solid rgba(122,44,185,.15);padding:8px 16px;border-radius:50px}
+.logos-row{display:flex;flex-wrap:wrap;gap:32px;justify-content:center;align-items:center;margin-top:32px}
+.brand-logo{height:60px;width:auto}
+@media(min-width:640px){.stats-row{grid-template-columns:repeat(4,1fr)}}
 
-.tipos-loja{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:32px}
-.tipo-pill{font-size:13px;font-weight:700;color:var(--vm);background:#fff;border:1px solid var(--bd);padding:8px 18px;border-radius:50px}
+.fit-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:36px}
+.fit-card{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:18px 20px;font-weight:600;font-size:14.5px;transition:transform .2s,box-shadow .2s}
+.fit-card:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(122,44,185,.08)}
+.fit-ico{font-size:20px;flex-shrink:0}
 
-.stats-row{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin:36px 0}
-.stat{text-align:center}
-.stat-v{font-size:clamp(22px,2.6vw,28px);font-weight:900;background:linear-gradient(135deg,var(--vm),var(--d));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.stat-l{font-size:11px;color:var(--c3);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-top:4px}
+.cards-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:36px}
+.card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px 24px;text-align:left;box-shadow:0 4px 18px rgba(122,44,185,.05);transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(122,44,185,.1)}
+.card-ico{width:48px;height:48px;border-radius:14px;background:var(--emerald-light);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:14px}
+.card h3{font-size:16px;font-weight:800;color:var(--emerald-deep);margin-bottom:8px}
+.card p{font-size:13.5px;color:var(--ink-muted);line-height:1.65}
+.card-gold .card-ico{background:var(--gold-light)}
 
-.dep-card{max-width:560px;margin:0 auto;background:#fff;border:1px solid var(--bd);border-radius:18px;padding:30px 28px;text-align:left}
-.dep-quote{font-size:30px;color:var(--dl);line-height:1;font-weight:900;margin-bottom:8px}
-.dep-txt{font-size:14.5px;color:var(--c2);line-height:1.75;margin-bottom:16px}
-.dep-nome{font-size:14px;font-weight:800;color:var(--v)}
-.dep-info{font-size:12px;color:var(--c3)}
-.dep-ganho{font-size:12.5px;font-weight:800;color:var(--vm);margin-top:4px}
+.prod-grid{display:grid;grid-template-columns:1fr;gap:20px;margin-top:36px}
+.prod-card{background:#fff;border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:0 4px 18px rgba(122,44,185,.06);transition:transform .25s,box-shadow .25s;text-align:center}
+.prod-card:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(122,44,185,.12)}
+.prod-img{aspect-ratio:1/1;overflow:hidden;background:var(--offwhite)}
+.prod-img img{width:100%;height:100%;object-fit:cover}
+.prod-card h3{font-size:15px;font-weight:800;color:var(--emerald-deep);margin:16px 16px 6px}
+.prod-card p{font-size:13px;color:var(--ink-muted);padding:0 16px 20px;line-height:1.6}
+.prod-note{text-align:center;font-size:13px;color:var(--ink-muted);margin-top:24px}
+@media(min-width:640px){.prod-grid{grid-template-columns:repeat(3,1fr)}}
 
-#cta-final{padding:72px 24px;text-align:center;background:linear-gradient(135deg,#170a3d 0%,var(--v) 40%,var(--vm) 80%,var(--vl) 100%)}
-.cta-final-w{max-width:600px;margin:0 auto}
-.cta-final-tag{color:var(--dl);font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px}
-.cta-final-h{font-size:clamp(24px,3.4vw,36px);font-weight:900;color:#fff;line-height:1.25;margin-bottom:18px}
-.cta-final-h span{color:var(--dl)}
-.cta-final-sub{font-size:15px;color:rgba(255,255,255,.75);line-height:1.8;margin-bottom:30px}
-.btn-white{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--vm);font-size:16px;font-weight:900;padding:18px 38px;border-radius:50px;box-shadow:0 10px 30px rgba(0,0,0,.25);transition:all .25s}
-.btn-white:hover{transform:translateY(-2px)}
-.cta-final-dm{display:block;margin-top:16px;font-size:13px;color:rgba(255,255,255,.6)}
-.cta-final-dm a{color:var(--dl);font-weight:700;text-decoration:underline}
+/* ── analogia (uber/ifood) ── */
+.analog-row{display:grid;grid-template-columns:1fr;gap:14px;margin:36px auto 32px;max-width:640px}
+.analog-item{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--border);border-radius:14px;padding:16px 20px;font-size:14px;color:var(--ink-muted)}
+.analog-item b{color:var(--emerald-deep)}
+.analog-ico{font-size:22px;flex-shrink:0}
+.analog-logo{height:22px;width:auto;flex-shrink:0}
 
-footer{background:#170a3d;color:rgba(255,255,255,.55);padding:32px 24px;text-align:center;font-size:12.5px}
-footer a{color:var(--dl)}
+/* ── ganhos (accordion-like blocks) ── */
+.ganho-block{background:#fff;border:1px solid var(--border);border-radius:20px;padding:28px 26px;margin-bottom:18px}
+.ganho-block h4{font-size:17px;font-weight:800;color:var(--emerald-deep);margin-bottom:6px}
+.ganho-tag{display:inline-block;font-size:11px;font-weight:800;color:var(--emerald);background:var(--emerald-light);padding:4px 12px;border-radius:50px;margin-bottom:10px}
+.ganho-block p{font-size:14px;color:var(--ink-muted);line-height:1.75}
+.ganho-exemplo{margin-top:14px;background:var(--emerald-light);border-left:3px solid var(--emerald);border-radius:8px;padding:14px 16px;font-size:13.5px;color:var(--emerald-deep);font-weight:600}
+.ganho-sub{margin-top:12px;display:flex;flex-wrap:wrap;gap:10px}
+.ganho-sub span{font-size:12.5px;font-weight:700;color:#8A6D00;background:#FBF3DC;border:1px solid var(--gold-light);padding:6px 14px;border-radius:50px}
+.disclaimer{font-size:11.5px;color:var(--ink-muted);text-align:center;margin-top:8px;line-height:1.7}
 
-@media(max-width:860px){.ben-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:700px){.dor-grid{grid-template-columns:1fr}}
-@media(max-width:560px){
-  .ben-grid{grid-template-columns:1fr}
-  .hero-ctas{flex-direction:column;align-items:stretch}
-  .stats-row{gap:24px}
-  .sec{padding:48px 20px}
+.ganho-valor-legenda{font-size:12.5px;color:var(--ink-muted);font-style:italic;margin-top:6px}
+.ganho-compact-grid{display:grid;grid-template-columns:1fr;gap:16px}
+.ganho-compact-img{width:100%;aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:#150a2e}
+@media(min-width:640px){
+  .ganho-compact-grid{grid-template-columns:340px 1fr;gap:20px;align-items:start}
+  .ganho-compact-img{aspect-ratio:3/4}
+}
+.ganho-compact-img img{width:100%;height:100%;object-fit:cover;object-position:center 8%}
+.ganho-compact-txt h4{font-size:14.5px;margin-bottom:4px}
+.ganho-compact-txt p{font-size:12px;line-height:1.55}
+.ganho-compact-txt .ganho-tag{font-size:10px;padding:3px 10px}
+
+/* ── calculadora de lucro ── */
+.lr-calc-pergunta{font-size:13px;font-weight:800;color:var(--emerald-deep);margin:14px 0 10px}
+.lr-calc-controle{display:flex;align-items:center;gap:12px}
+.lr-calc-btn{width:36px;height:36px;border-radius:50%;border:none;background:var(--emerald);color:#fff;font-size:19px;font-weight:700;cursor:pointer;flex-shrink:0;transition:transform .15s}
+.lr-calc-btn:hover{transform:scale(1.08)}
+.lr-calc-btn:active{transform:scale(.94)}
+.lr-calc-num-wrap{flex:1;display:flex;flex-direction:column;align-items:center;background:var(--offwhite);border:1px solid var(--border);border-radius:10px;padding:4px 8px}
+.lr-calc-input{width:64px;text-align:center;font-size:18px;font-weight:900;color:var(--emerald-deep);border:none;background:transparent}
+.lr-calc-input::-webkit-outer-spin-button,.lr-calc-input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.lr-calc-unit{font-size:9px;color:var(--ink-muted);font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.lr-calc-res{margin-top:10px;text-align:center;background:var(--emerald-light);border-radius:12px;padding:8px}
+.lr-calc-res-label{font-size:9.5px;color:var(--ink-muted);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.lr-calc-res-val{font-size:clamp(22px,3.4vw,28px);font-weight:900;color:var(--emerald-deep);display:inline-block;transition:transform .15s}
+.lr-calc-res-ano{font-size:11px;color:var(--emerald);font-weight:700;margin-top:1px}
+
+.kit-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:36px;max-width:600px;margin-left:auto;margin-right:auto}
+.kit-card{background:#fff;border:1.5px solid var(--border);border-radius:20px;padding:30px 26px;text-align:center;position:relative}
+.kit-feat{border-color:var(--gold);background:linear-gradient(160deg,#fff 0%,#FBF3DC 220%)}
+.kit-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--gold);color:#2b2205;font-size:10.5px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:5px 14px;border-radius:50px}
+.kit-badge-purple{background:var(--emerald);color:#fff}
+.kit-img-crop{width:100%;aspect-ratio:16/11;overflow:hidden;border-radius:14px;margin-bottom:16px;position:relative;background:#f2eefc}
+.kit-img-crop img{position:absolute;top:0;height:100%;width:200%;object-fit:cover}
+.kit-img-plain{background:#fff}
+.kit-img-plain img{position:static;width:100%;height:100%;object-fit:contain;padding:10px}
+.kit-nome{font-size:13px;font-weight:700;color:var(--ink-muted);text-transform:uppercase;letter-spacing:.05em}
+.kit-preco{font-size:32px;font-weight:900;color:var(--emerald);margin:8px 0}
+.kit-card p{font-size:13px;color:var(--ink-muted)}
+.kit-free{text-align:center;margin-top:24px;font-size:14px;color:var(--emerald-deep);font-weight:700;background:var(--emerald-light);border-radius:50px;padding:12px 22px;width:fit-content;margin-left:auto;margin-right:auto;max-width:100%}
+
+/* ── FAQ ── */
+.faq-w{max-width:680px;margin:36px auto 0}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;cursor:pointer;list-style:none}
+.faq-q::-webkit-details-marker{display:none}
+.faq-q-txt{font-size:15px;font-weight:700;color:var(--emerald-deep)}
+.faq-arr{width:26px;height:26px;border-radius:50%;border:1.5px solid var(--border);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--ink-muted);transition:.25s}
+.faq-item[open] .faq-arr{transform:rotate(45deg);background:var(--emerald);color:#fff;border-color:var(--emerald)}
+.faq-a p{font-size:14px;color:var(--ink-muted);line-height:1.8;padding-bottom:20px;animation:faqIn .25s ease}
+@keyframes faqIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── CTA FINAL ── */
+.cta-final{padding:80px 24px;text-align:center}
+.cta-final h2{color:var(--emerald-deep);font-size:clamp(26px,4vw,38px);font-weight:900;margin-bottom:16px}
+.cta-final-sub{color:var(--ink-muted);font-size:16.5px;max-width:54ch;margin:0 auto 20px;line-height:1.85}
+.cta-final-note{font-size:13px;color:var(--ink-muted);max-width:50ch;margin:0 auto 36px;line-height:1.7;font-style:italic}
+
+/* ── RODAPÉ ── */
+footer{background:var(--emerald-deep);padding:36px 24px;text-align:center}
+footer img{height:32px;margin:0 auto 12px;opacity:.85;filter:brightness(0) invert(1)}
+.rod-txt{font-size:11.5px;color:rgba(255,255,255,.55);line-height:1.8}
+.rod-txt a{color:var(--gold-light);font-weight:700}
+
+@media(min-width:640px){
+  .fit-grid{grid-template-columns:repeat(2,1fr)}
+  .cards-grid{grid-template-columns:repeat(3,1fr)}
+  .kit-grid{grid-template-columns:1fr 1fr}
 }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="hw">
-    <img src="logo%20jan%20Ros%C3%AA.png" alt="Jan Rosê">
-    <a class="h-wpp" href="https://wa.me/5511915033743?text=Ol%C3%A1!%20Tenho%20uma%20loja%20e%20quero%20saber%20mais%20sobre%20a%20Jan%20Ros%C3%AA%20%F0%9F%8C%B8" target="_blank" rel="noopener">💬 Falar agora</a>
-  </div>
-</header>
-
+<!-- ══ 1 · A ENTRADA ══ -->
 <section class="hero">
-  <div class="hero-w">
-    <p class="hero-tag" da>🏪 Para quem já tem um estabelecimento</p>
-    <h1 da>Aumente o faturamento da sua loja <span>sem abrir outro CNPJ</span></h1>
-    <p da>Perfumaria, salão, barbearia, farmácia, loja de roupas — não importa o que você já vende. Adicionar os produtos Jan Rosê ao seu ponto de venda é a forma mais rápida de <strong>aumentar seu ticket médio</strong>, usando a estrutura que você já tem.</p>
-    <div class="hero-ctas" da>
-      <a class="btn-v" href="quiz.html?origem=comerciantes">Descobrir meu perfil →</a>
-      <a class="btn-out" href="https://wa.me/5511915033743?text=Ol%C3%A1!%20Tenho%20uma%20loja%20e%20quero%20saber%20mais%20sobre%20a%20Jan%20Ros%C3%AA%20%F0%9F%8C%B8" target="_blank" rel="noopener">💬 WhatsApp</a>
-    </div>
-    <p class="hero-trust" da>32+ anos de mercado · Associada ABEVD · Cadastro grátis</p>
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+  <p class="eyebrow center" style="justify-content:center" da><span class="eyebrow-num">1</span>O que é esta oportunidade</p>
+  <h1 da>Você já tem um comércio com movimento todos os dias. Que tal diversificar sua renda com uma linha nova?</h1>
+  <p class="hero-sub" da>Alguém da nossa equipe entrou em contato porque viu em você o perfil de quem já sabe atender e vender no dia a dia do próprio negócio. As próximas seções mostram exatamente como a Jan Rosê pode somar ao que você já vende — no seu tempo, sem pressa e sem compromisso.</p>
+  <a class="btn btn-primary btn-lg" href="#perfil" da>Quero conhecer a oportunidade →</a>
+  <p class="hero-cue" da>role para baixo para entender</p>
   </div>
 </section>
 
-<section class="sec sec-bg">
-  <div class="sw centro">
-    <p class="s-tag" da>Isso é pra você?</p>
-    <h2 class="s-h" da>Você se identifica com <span>alguma dessas situações?</span></h2>
-    <div class="dor-grid">
-      <div class="dor-item" da="e"><span class="dor-ico">📉</span><p>Seu ticket médio está estagnado há um tempo?</p></div>
-      <div class="dor-item" da><span class="dor-ico">🔁</span><p>O cliente compra uma vez e não volta tão cedo?</p></div>
-      <div class="dor-item" da><span class="dor-ico">🏬</span><p>Sente que sua loja poderia vender mais, com a estrutura que já tem?</p></div>
-      <div class="dor-item" da="d"><span class="dor-ico">📦</span><p>Quer diversificar o que vende sem depender de um fornecedor só?</p></div>
-    </div>
-    <div class="tipos-loja" da>
-      <span class="tipo-pill">Perfumaria</span>
-      <span class="tipo-pill">Salão de beleza</span>
-      <span class="tipo-pill">Barbearia</span>
-      <span class="tipo-pill">Farmácia</span>
-      <span class="tipo-pill">Loja de roupas</span>
-      <span class="tipo-pill">Mercado</span>
-    </div>
+<!-- ══ 2 · O PERFIL IDEAL ══ -->
+<section class="sec sec-tint" id="perfil">
+  <div class="sw-narrow center">
+    <p class="eyebrow center" style="justify-content:center" da><span class="eyebrow-num">2</span>O perfil ideal</p>
+    <h2 da>Isto é para você?</h2>
+    <p class="sec-lede" da>Você já tem clientes passando pelo seu comércio. Esta oportunidade faz sentido se você tem:</p>
+  </div>
+  <div class="sw fit-grid">
+    <div class="fit-card" da><span class="fit-ico">🏪</span>Mercadinho</div>
+    <div class="fit-card" da><span class="fit-ico">🛒</span>Loja de variedades</div>
+    <div class="fit-card" da><span class="fit-ico">📓</span>Papelaria</div>
+    <div class="fit-card" da><span class="fit-ico">🏬</span>Conveniência</div>
+    <div class="fit-card" da><span class="fit-ico">🎁</span>Bazar ou loja de presentes</div>
+    <div class="fit-card" da><span class="fit-ico">👗</span>Moda feminina</div>
   </div>
 </section>
 
+<!-- ══ 3 · QUEM É A JAN ROSÊ ══ -->
+<section class="sec sec-empresa">
+  <div class="sec-empresa-bg"></div>
+  <div class="sec-empresa-content">
+  <div class="sw-narrow center sec-empresa-textbox">
+    <p class="eyebrow center" style="justify-content:center" da><span class="eyebrow-num">3</span>Quem é a Jan Rosê</p>
+    <h2 da>Uma marca sólida que já provou sua força</h2>
+    <h3 class="s-sub center" da>Mais de três décadas de atuação e crescimento sustentável</h3>
+    <p class="sec-lede" da>A Jan Rosê é uma multinacional brasileira com mais de 32 anos de história e forte presença internacional, exportando para 27 países europeus. Somos associados à ABEVD (Associação Brasileira de Empresas de Vendas Diretas), o que garante total segurança, ética e legalidade ao seu negócio.</p>
+  </div>
+  <div class="stats-row" da>
+    <div class="stat"><div class="stat-v">32+</div><div class="stat-l">Anos de mercado</div></div>
+    <div class="stat"><div class="stat-v">R$40Mi+</div><div class="stat-l">Pagos em bonificações</div></div>
+    <div class="stat"><div class="stat-v">52.000+</div><div class="stat-l">Prêmios e kits entregues</div></div>
+    <div class="stat"><div class="stat-v">1.200+</div><div class="stat-l">Pessoas que já viajaram pela marca</div></div>
+  </div>
+  <div class="creds-row" da>
+    <span class="cred-pill">32+ anos de mercado</span>
+    <span class="cred-pill">Associada ABEVD</span>
+    <span class="cred-pill">Exportação para 27 países</span>
+  </div>
+  <div class="logos-row" da>
+    <img src="../c6.jpeg" alt="Selo ABEVD - Associação Brasileira de Empresas de Vendas Diretas" class="brand-logo">
+    <img src="../c5.jpeg" alt="Selo ABF - Associação Brasileira de Franchising" class="brand-logo">
+  </div>
+  </div>
+</section>
+
+<!-- ══ 4 · COMO FUNCIONA ══ -->
+<section class="sec sec-tint">
+  <div class="sw-narrow center">
+    <p class="eyebrow center" style="justify-content:center" da><span class="eyebrow-num">4</span>Como funciona</p>
+    <h2 da>O modelo da economia conectada</h2>
+    <h3 class="s-sub center" da>Um formato limpo, ético e baseado em circulação real de mercadorias</h3>
+  </div>
+  <div class="analog-row">
+    <div class="analog-item" da><img src="../images%20uber.png" alt="Uber" class="analog-logo"> não possui carros.</div>
+    <div class="analog-item" da><img src="../38c47ba42bb5330c0578ad63eb95b259.jpg" alt="iFood" class="analog-logo"> não possui restaurantes.</div>
+    <div class="analog-item" da><img src="../png-clipart-airbnb-computer-icons-accommodation-airbnb-logo-text-trademark-thumbnail.png" alt="Airbnb" class="analog-logo"> não tem imóveis.</div>
+  </div>
+  <div class="sw-narrow center">
+    <p class="sec-lede" da>O que eles fazem é conectar quem precisa com quem oferece. A Jan Rosê funciona do mesmo jeito: ela conecta pessoas aos produtos certos, de alta qualidade.</p>
+    <p class="sec-lede" da style="margin-top:14px"><b style="color:var(--emerald-deep)">O lucro vem da venda real de produtos do catálogo</b> — nunca de taxas de recrutamento. Sem esquemas e sem pirâmide.</p>
+  </div>
+</section>
+
+<!-- ══ 5 · LINHA DE PRODUTOS ══ -->
 <section class="sec">
-  <div class="sw centro">
-    <p class="s-tag" da>Por que a Jan Rosê</p>
-    <h2 class="s-h" da>Um produto a mais, <span>sem custo fixo extra</span></h2>
-    <p class="s-sub" da>Você não precisa abrir outra loja pra vender mais — só usar melhor a que já tem.</p>
-    <div class="ben-grid">
-      <div class="ben" da="e"><div class="ben-ico">🌸</div><h4>Alta recompra</h4><p>Perfumaria e cosméticos trazem o cliente de volta com frequência.</p></div>
-      <div class="ben" da><div class="ben-ico">🧾</div><h4>Aumenta o ticket médio</h4><p>Um item a mais na venda, sem custo fixo ou espaço extra.</p></div>
-      <div class="ben" da><div class="ben-ico">🏗️</div><h4>Usa o que você já tem</h4><p>Sem alugar espaço novo, sem contratar ninguém pra começar.</p></div>
-      <div class="ben" da="d"><div class="ben-ico">🌟</div><h4>Pode virar Centro de Apoio</h4><p>Cresça de revendedora a ponto de apoio regional da marca.</p></div>
+  <div class="sw-narrow center">
+    <p class="eyebrow center" style="justify-content:center" da><span class="eyebrow-num">5</span>Linha de produtos</p>
+    <h2 da>Produtos de alta performance</h2>
+    <h3 class="s-sub center" da>Uma linha completa com mais de 100 dos melhores produtos do Brasil</h3>
+    <p class="sec-lede" da>Você trabalhará com um catálogo completo e diversificado, com fórmulas de eficácia comprovada que cobrem os setores de maior consumo diário do mercado:</p>
+  </div>
+  <div class="sw">
+    <div class="prod-grid">
+      <div class="prod-card" da>
+        <div class="prod-img"><img src="../pp12.png" alt="Linha Facial Care Jan Rosê - cosméticos e cuidados diários"></div>
+        <h3>Cosméticos e Cuidados Diários</h3>
+        <p>Linha Facial Care completa para rotina de beleza e cuidados com a pele.</p>
+      </div>
+      <div class="prod-card" da>
+        <div class="prod-img"><img src="../pp10.png" alt="Linha Rennovit Renno Sec - chás Jan Rosê"></div>
+        <h3>Perfumaria Fina</h3>
+        <p>Fragrâncias de alta concentração, como a linha Tríade.</p>
+      </div>
+      <div class="prod-card" da>
+        <div class="prod-img"><img src="../ppp6.png" alt="Linha Rennovit - óleos ozonizados e suplementos Jan Rosê"></div>
+        <h3>Saúde e Bem-estar</h3>
+        <p>Linha Rennovit: óleos ozonizados, suplementos, Ômega 3 e Colágeno.</p>
+      </div>
     </div>
-    <div class="stats-row" da>
-      <div class="stat"><div class="stat-v">32+ anos</div><div class="stat-l">de mercado</div></div>
-      <div class="stat"><div class="stat-v">+200</div><div class="stat-l">produtos</div></div>
-      <div class="stat"><div class="stat-v">R$0</div><div class="stat-l">taxa de cadastro</div></div>
+    <p class="prod-note" da>+ linha Oral Care e muito mais no catálogo completo, com mais de 100 produtos.</p>
+  </div>
+</section>
+
+<!-- ══ 6 · FORMAS DE GANHOS ══ -->
+<section class="sec sec-tint">
+  <div class="sw-narrow center">
+    <p class="eyebrow center" style="justify-content:center" da><span class="eyebrow-num">6</span>Formas de ganhos</p>
+    <h2 da>Como você ganha dinheiro?</h2>
+    <h3 class="s-sub center" da>Três caminhos complementares para você escolher</h3>
+  </div>
+  <div class="sw-narrow">
+    <div class="ganho-block" da>
+      <div class="ganho-compact-grid">
+        <div class="ganho-compact-img"><img src="../ChatGPT Image 5 de ago. de 2026, 21_06_37.png" alt="Perfume Tríade Jan Rosê"></div>
+        <div class="ganho-compact-txt">
+          <span class="ganho-tag">100% de margem</span>
+          <h4>Lucro na Revenda</h4>
+          <p>Compre direto da fábrica com desconto e venda pelo preço de tabela. Todo o lucro vai para o seu bolso na hora.</p>
+          <div class="lr-calc-pergunta">🧮 Quantos perfumes você vende por dia?</div>
+          <div class="lr-calc-controle">
+            <button class="lr-calc-btn" type="button" onclick="ajustarQtd(-1)">−</button>
+            <div class="lr-calc-num-wrap">
+              <input type="number" id="calc-qtd" class="lr-calc-input" value="1" min="1" max="999" oninput="calcLucro()">
+              <span class="lr-calc-unit">perfumes / dia</span>
+            </div>
+            <button class="lr-calc-btn" type="button" onclick="ajustarQtd(1)">+</button>
+          </div>
+          <div class="lr-calc-res">
+            <div class="lr-calc-res-label">seu lucro mensal estimado</div>
+            <div class="lr-calc-res-val" id="calc-result">R$ 5.800</div>
+            <div class="lr-calc-res-ano" id="calc-ano">R$ 69.600 por ano</div>
+          </div>
+          <p class="ganho-valor-legenda">* estimativa baseada em 100% de lucro na revenda, vendendo perfume Tríade.</p>
+        </div>
+      </div>
+    </div>
+    <div class="ganho-block" da>
+      <span class="ganho-tag">Até 20% de comissão</span>
+      <h4>Bônus de Adesão</h4>
+      <p>Receba uma comissão paga instantaneamente sobre a pontuação do primeiro pedido de novos indicados diretos que entrarem para empreender com você.</p>
+      <div class="ganho-sub">
+        <span>Combo Consultor → 10% das indicações</span>
+        <span>Combo Pro/Premium → 20% das indicações</span>
+      </div>
+    </div>
+    <div class="ganho-block" da>
+      <span class="ganho-tag">Renda contínua</span>
+      <h4>Ganhos de Rede e Expansão</h4>
+      <p><b style="color:var(--emerald-deep)">Bônus Recompra:</b> ganhe 4% de comissão sobre a pontuação de todas as recompras da sua equipe até o 5º nível, sem necessidade de qualificação.</p>
+      <p style="margin-top:8px"><b style="color:var(--emerald-deep)">Indicação de PAD:</b> indique um Ponto de Apoio e Distribuição para a sua cidade e receba 5% de comissão sobre todas as compras recorrentes dele.</p>
+    </div>
+    <p class="disclaimer" da>⚠️ Resultados dependem do esforço e dedicação de cada pessoa. Não há garantia de renda mínima.</p>
+  </div>
+</section>
+
+<!-- ══ 7 · O INVESTIMENTO ══ -->
+<section class="sec">
+  <div class="sw-narrow center">
+    <p class="eyebrow center" style="justify-content:center" da><span class="eyebrow-num">7</span>O investimento</p>
+    <h2 da>Quanto preciso investir para começar?</h2>
+    <h3 class="s-sub center" da>Você decide o tamanho do seu primeiro passo</h3>
+    <p class="sec-lede" da>O cadastro de acesso na plataforma é gratuito. Você pode inclusive começar consumindo com até 50% de desconto ou vendendo sob encomenda. Para acelerar seus ganhos e ter produtos para pronta-entrega, escolha um dos combos opcionais:</p>
+  </div>
+  <div class="kit-grid">
+    <div class="card kit-card" da>
+      <span class="kit-badge">Acessível</span>
+      <div class="kit-img-crop kit-img-plain"><img src="../ChatGPT Image 5 de ago. de 2026, 22_03_29.png" alt="Combo Consultor Jan Rosê - R$ 197"></div>
+      <div class="kit-nome">📦 Combo Consultor</div>
+      <div class="kit-preco">R$ 197</div>
+      <p>Kit inicial acessível, com livre escolha de produtos e 10% de bônus de indicação.</p>
+    </div>
+    <div class="card kit-card kit-feat" da>
+      <span class="kit-badge kit-badge-purple">Mais completo</span>
+      <div class="kit-img-crop kit-img-plain"><img src="../ChatGPT Image 5 de ago. de 2026, 22_03_42.png" alt="Combo Pro Jan Rosê - R$ 997"></div>
+      <div class="kit-nome">🚀 Combo Pro</div>
+      <div class="kit-preco">R$ 997</div>
+      <p>O kit mais completo: livre escolha de produtos, até 50% de desconto e 20% de bônus de indicação.</p>
+    </div>
+  </div>
+  <p class="kit-free" da>💚 Cadastro gratuito · consumo com até 50% de desconto · venda sob encomenda sem investir nada.</p>
+</section>
+
+<!-- ══ 8 · ESTRUTURA DE SUPORTE ══ -->
+<section class="sec sec-dark">
+  <div class="sw-narrow center">
+    <p class="eyebrow eyebrow-onlight center" style="justify-content:center" da><span class="eyebrow-num">8</span>Estrutura de suporte</p>
+    <h2 class="onlight" da>Você não caminha sozinho</h2>
+    <p class="sec-lede onlight-muted" da>Toda a engrenagem trabalha para o seu sucesso.</p>
+  </div>
+  <div class="sw">
+    <div class="cards-grid">
+      <div class="card" da><div class="card-ico">🎓</div><h3>Universidade Unijan</h3><p>Treinamentos oficiais ao vivo toda segunda-feira às 21h no YouTube, para você aprender no seu ritmo.</p></div>
+      <div class="card" da><div class="card-ico">💬</div><h3>Grupo de Apoio</h3><p>Comunicação direta com líderes e equipe para tirar dúvidas e receber materiais de divulgação diários.</p></div>
+      <div class="card" da><div class="card-ico">📱</div><h3>Painel Virtual Próprio</h3><p>Gerencie seus pedidos, comissões e clientes com clareza em um sistema moderno.</p></div>
     </div>
   </div>
 </section>
 
-<section class="sec sec-bg">
-  <div class="sw centro">
-    <p class="s-tag" da>Quem já fez isso</p>
-    <h2 class="s-h" da>Funcionou pra quem já tinha <span>um negócio de outro ramo</span></h2>
-    <div class="dep-card" da>
-      <div class="dep-quote">"</div>
-      <div class="dep-txt">Coloquei os produtos na minha barbearia e os clientes começaram a perguntar e comprar. Entrou dinheiro sem eu precisar fazer quase nada.</div>
-      <div class="dep-nome">Carlos M.</div>
-      <div class="dep-info">Barbeiro, RJ</div>
-    </div>
+<!-- ══ 9 · QUEBRA DE OBJEÇÕES (FAQ) ══ -->
+<section class="sec sec-tint">
+  <div class="sw-narrow center">
+    <p class="eyebrow center" style="justify-content:center" da><span class="eyebrow-num">9</span>Quebra de objeções</p>
+    <h2 da>Perguntas frequentes</h2>
+  </div>
+  <div class="faq-w" da>
+    <details class="faq-item">
+      <summary class="faq-q"><span class="faq-q-txt">Preciso de muito espaço ou capital de giro pra começar?</span><span class="faq-arr" aria-hidden="true">+</span></summary>
+      <div class="faq-a"><p>Não. Você decide quanto investir e quanto espaço de prateleira dedicar. Muitos comerciantes começam pequeno, testando a aceitação dos produtos com os próprios clientes.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q"><span class="faq-q-txt">Preciso manter estoque ou comprar todo mês?</span><span class="faq-arr" aria-hidden="true">+</span></summary>
+      <div class="faq-a"><p>Não. Você compra apenas o que vender ou o que desejar para consumo próprio. Não há obrigatoriedade de pedidos mensais fixos.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q"><span class="faq-q-txt">Isso é uma pirâmide financeira?</span><span class="faq-arr" aria-hidden="true">+</span></summary>
+      <div class="faq-a"><p>Absolutamente não. Pirâmides são crimes baseados em taxas de entrada. A Jan Rosê é uma empresa de 32 anos onde os ganhos vêm unicamente da circulação e venda de produtos reais, regulamentados pela ABEVD.</p></div>
+    </details>
+    <details class="faq-item">
+      <summary class="faq-q"><span class="faq-q-txt">E se eu conversar e decidir que não é para mim?</span><span class="faq-arr" aria-hidden="true">+</span></summary>
+      <div class="faq-a"><p>Está tudo bem. O processo é livre de pressões. Se decidir não continuar, você não terá nenhuma penalidade ou custo.</p></div>
+    </details>
   </div>
 </section>
 
-<section id="cta-final">
-  <div class="cta-final-w">
-    <p class="cta-final-tag" da>Sua vez</p>
-    <h2 class="cta-final-h" da>Descubra em <span>2 minutos</span> como encaixar na sua loja</h2>
-    <p class="cta-final-sub" da>Responda algumas perguntas rápidas e veja o melhor caminho pra somar a Jan Rosê ao que você já vende.</p>
-    <a class="btn-white" href="quiz.html?origem=comerciantes" da>Descobrir meu perfil →</a>
-    <span class="cta-final-dm">Prefere falar direto? <a href="https://wa.me/5511915033743" target="_blank" rel="noopener">Fale no WhatsApp</a></span>
+<!-- ══ 10 · O FECHAMENTO ══ -->
+<section class="cta-final">
+  <div class="sw-narrow">
+    <p class="eyebrow center" style="justify-content:center" da><span class="eyebrow-num">10</span>O fechamento</p>
+    <h2 da>Você já conhece o essencial.</h2>
+    <p class="cta-final-sub" da>Agora é hora de tirar suas dúvidas e tomar sua decisão. Você já sabe quem somos, como funciona e o quanto é seguro. O próximo passo não exige nenhum compromisso financeiro: é apenas uma conversa amigável com o especialista da nossa equipe que te convidou.</p>
+    <a class="btn btn-wpp btn-xl" href="https://wa.me/5511915033743?text=Ol%C3%A1!%20Tenho%20um%20com%C3%A9rcio%20e%20acabei%20de%20conhecer%20a%20oportunidade%20Jan%20Ros%C3%AA.%20Quero%20conversar%20com%20quem%20me%20convidou%20%F0%9F%8C%B8" target="_blank" rel="noopener" da>💬 Quero conversar com quem me convidou</a>
   </div>
 </section>
 
 <footer>
-  Distribuidora Independente Oficial · Equipe Alvo Negócio · © 2026 · <a href="landing-page-distribuidora.html">Ver site completo</a>
+  <img src="../logo%20jan%20Ros%C3%AA.png" alt="Jan Rosê">
+  <div class="rod-txt">Distribuidor Independente Oficial · Equipe Alvo Negócio · © 2026<br><a href="../landing-page-distribuidora.html">Ver site completo</a> · <a href="https://wa.me/5511915033743" target="_blank" rel="noopener">Falar no WhatsApp</a></div>
 </footer>
 
 <script>
-const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')}),{threshold:.12})
-document.querySelectorAll('[da]').forEach(el=>obs.observe(el))
+const obs = new IntersectionObserver(entries => entries.forEach(x => { if(x.isIntersecting) x.target.classList.add('v') }), {threshold:.12})
+document.querySelectorAll('[da]').forEach(el => obs.observe(el))
+
+function calcLucro(){
+  const q = Math.max(1, parseInt(document.getElementById('calc-qtd').value) || 1)
+  const mensal = q * 5800
+  const anual = mensal * 12
+  const el = document.getElementById('calc-result')
+  el.style.transform = 'scale(1.08)'
+  el.style.transition = 'transform .15s'
+  setTimeout(() => { el.style.transform = 'scale(1)' }, 150)
+  el.textContent = 'R$ ' + mensal.toLocaleString('pt-BR')
+  document.getElementById('calc-ano').textContent = 'R$ ' + anual.toLocaleString('pt-BR') + ' por ano'
+}
+function ajustarQtd(delta){
+  const inp = document.getElementById('calc-qtd')
+  inp.value = Math.max(1, (parseInt(inp.value) || 1) + delta)
+  calcLucro()
+}
 </script>
 </body>
 </html>
