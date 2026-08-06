@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Descubra seu perfil ideal na Jan Rosê | Quiz</title>
-<meta name="description" content="Será que você tem o perfil pra isso? Responda algumas perguntas rápidas e descubra se existe um caminho na Jan Rosê que combina com você.">
+<title>Descubra qual oportunidade combina com você | Jan Rosê</title>
+<meta name="description" content="Diagnóstico de Perfil Empreendedor: em apenas 3 minutos, descubra qual caminho pode fazer mais sentido para você dentro da Jan Rosê.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -60,6 +60,9 @@ header img{height:30px;margin:0 auto}
 .q-card h2{font-size:clamp(19px,2.4vw,24px);font-weight:900;color:var(--v);line-height:1.35;margin-bottom:24px}
 .q-card > p{font-size:14.5px;color:var(--c2);line-height:1.75;margin-bottom:26px}
 
+.intro-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:-8px 0 28px}
+.intro-badge{font-size:11.5px;font-weight:700;color:var(--vm);background:#faf0ff;border:1px solid var(--bd);padding:7px 14px;border-radius:50px}
+
 .choice-grid{display:flex;flex-direction:column;gap:12px;text-align:left}
 .choice-btn{width:100%;padding:16px 20px;border:1.5px solid var(--bd);border-radius:14px;background:#faf7ff;color:var(--c2);font-family:inherit;font-size:14.5px;font-weight:600;cursor:pointer;transition:all .2s}
 .choice-btn:hover{border-color:var(--vm);background:#f8f0ff}
@@ -68,41 +71,28 @@ header img{height:30px;margin:0 auto}
 .btn-gold-full{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:linear-gradient(135deg,#7B2CB9,#E0289E);color:#fff;font-size:16px;font-weight:900;padding:17px;border-radius:50px;border:none;cursor:pointer;font-family:inherit;transition:all .25s;box-shadow:0 10px 30px rgba(123,44,185,.3);margin-top:6px}
 .btn-gold-full:hover{transform:translateY(-2px);box-shadow:0 14px 38px rgba(123,44,185,.45)}
 .btn-gold-full:disabled{opacity:.6;cursor:wait;transform:none}
-.btn-out-full{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:transparent;color:var(--vm);font-size:14.5px;font-weight:800;padding:15px;border-radius:50px;border:1.5px solid var(--vm);transition:all .2s;margin-top:10px}
+.btn-out-full{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:transparent;color:var(--vm);font-size:14.5px;font-weight:800;padding:15px;border-radius:50px;border:1.5px solid var(--vm);transition:all .2s}
 .btn-out-full:hover{background:var(--vm);color:#fff}
-
-/* gate de interesse */
-.gate-stats{display:flex;justify-content:center;flex-wrap:wrap;gap:28px;margin:22px 0 28px}
-.gate-stat{text-align:center}
-.gate-stat-val{font-size:26px;font-weight:900;background:linear-gradient(135deg,var(--vm),var(--d));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.gate-stat-lbl{font-size:10px;color:var(--c3);font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
-
-/* captura */
-.q-fg{margin-bottom:14px;text-align:left}
-.q-fg label{display:block;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;color:var(--c2);margin-bottom:6px}
-.q-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.q-fi{width:100%;padding:15px 16px;border:1.5px solid var(--bd);border-radius:12px;font-size:16px;color:#1a1a1a;font-family:inherit;outline:none;background:#faf7ff;transition:all .22s}
-.q-fi::placeholder{color:#bbb}
-.q-fi:focus{border-color:var(--vm);background:#fff;box-shadow:0 0 0 4px rgba(123,44,185,.1)}
-select.q-fi{appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237B2CB9' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
-select.q-fi option{background:#fff;color:#1a1a1a}
-.q-erro{display:none;background:#fff0f4;border:1.5px solid #ffb8d0;color:#a1204f;font-size:12.5px;font-weight:600;padding:10px 14px;border-radius:10px;margin-bottom:14px;text-align:center}
-.q-erro.on{display:block}
 
 /* resultado */
 .resultado-ico{font-size:48px;margin-bottom:10px}
-.resultado-perfil{font-size:clamp(24px,3.6vw,32px);font-weight:900;background:linear-gradient(135deg,var(--vm),var(--d));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2;margin-bottom:6px}
-.resultado-percent{font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--c3);margin-bottom:20px}
+.resultado-sub{font-size:14px;color:var(--c2);margin-bottom:14px}
+.resultado-perfil{font-size:clamp(22px,3.4vw,28px);font-weight:900;background:linear-gradient(135deg,var(--vm),var(--d));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.2;margin-bottom:6px}
+.resultado-percent{font-size:13px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--c3);margin-bottom:24px}
 .resultado-percent strong{color:#E0289E}
-.resultado-msg{font-size:14.5px;color:var(--c2);line-height:1.8;margin-bottom:26px;text-align:left}
-.resultado-msg strong{color:#E0289E}
-.resultado-dm{font-size:12.5px;color:var(--c3);margin-top:16px}
-.resultado-dm a{color:var(--vm);font-weight:700;text-decoration:underline}
+.resultado-box{background:#faf7ff;border:1.5px solid var(--bd);border-radius:14px;padding:18px 20px;margin-bottom:14px;text-align:left}
+.resultado-box-destaque{background:linear-gradient(135deg,rgba(123,44,185,.08),rgba(224,40,158,.08));border-color:var(--vm)}
+.resultado-box-title{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:var(--vm);margin-bottom:8px}
+.resultado-box p{font-size:13.5px;color:var(--c2);line-height:1.7}
+.resultado-lista{list-style:none;display:flex;flex-direction:column;gap:6px}
+.resultado-lista li{font-size:13.5px;color:var(--c2);line-height:1.6;padding-left:20px;position:relative}
+.resultado-lista li::before{content:'✓';position:absolute;left:0;color:var(--vm);font-weight:800}
+.resultado-links{display:flex;flex-direction:column;gap:10px;margin:20px 0}
+.resultado-link{display:block;padding:13px 16px;border:1.5px solid var(--bd);border-radius:12px;color:var(--c2);font-size:13.5px;font-weight:700;text-align:center;transition:all .2s}
+.resultado-link:hover{border-color:var(--vm);background:#f8f0ff}
 
 @media(max-width:560px){
   .q-card{padding:30px 22px}
-  .q-row{grid-template-columns:1fr}
-  .gate-stats{gap:16px}
   .quiz-wrap{padding:16px 16px 50px}
 }
 @media(max-width:380px){
@@ -124,277 +114,204 @@ select.q-fi option{background:#fff;color:#1a1a1a}
 
 <div class="quiz-wrap">
 
-  <!-- INTRO -->
+  <!-- ETAPA 1 · BOAS-VINDAS -->
   <div class="q-card active" data-step="intro">
-    <h1>Será que você tem o perfil pra isso?</h1>
-    <p>Em poucos minutos, você descobre se existe um caminho dentro da Jan Rosê que combina de verdade com quem você é e com o momento que está vivendo agora.</p>
-    <button class="btn-gold-full" onclick="avancar()">Quero descobrir →</button>
+    <h1>Descubra qual oportunidade combina com você</h1>
+    <p>Cada pessoa possui objetivos diferentes. Algumas procuram uma renda extra. Outras desejam empreender. Algumas querem vender produtos. Outras sonham em construir um grande negócio.<br><br>Por isso criamos este Diagnóstico de Perfil Empreendedor. Em apenas 3 minutos, você descobrirá qual caminho pode fazer mais sentido para você dentro da Jan Rosê.</p>
+    <div class="intro-badges">
+      <span class="intro-badge">⏱️ Menos de 3 minutos</span>
+      <span class="intro-badge">🤝 Sem compromisso</span>
+      <span class="intro-badge">🎯 Resultado personalizado</span>
+    </div>
+    <button class="btn-gold-full" onclick="avancar()">🚀 Quero descobrir meu perfil</button>
   </div>
 
-  <!-- ═══ ETAPA 1 · QUEBRA DE GELO ═══ -->
-  <div class="q-card" data-step="p1">
-    <div class="q-tag">Vamos começar</div>
-    <h2>Qual destas opções descreve melhor o que você procura hoje?</h2>
+  <!-- ETAPA 2 -->
+  <div class="q-card" data-step="q1">
+    <div class="q-tag">Vamos começar!</div>
+    <h2>Qual é o seu principal objetivo neste momento?</h2>
     <div class="choice-grid">
-      <button class="choice-btn" onclick="responder('p1','renda_extra',this)">Ganhar uma renda extra</button>
-      <button class="choice-btn" onclick="responder('p1','profissao',this)">Ter uma nova profissão</button>
-      <button class="choice-btn" onclick="responder('p1','empreender',this)">Empreender</button>
-      <button class="choice-btn" onclick="responder('p1','negocio',this)">Abrir meu próprio negócio</button>
-      <button class="choice-btn" onclick="responder('p1','loja',this)">Aumentar a renda da minha loja</button>
-      <button class="choice-btn" onclick="responder('p1','equipe',this)">Construir uma equipe de vendas</button>
-      <button class="choice-btn" onclick="responder('p1','conhecendo',this)">Ainda estou conhecendo as oportunidades</button>
+      <button class="choice-btn" onclick="responder('q1','renda_extra',this)">💰 Gerar uma renda extra</button>
+      <button class="choice-btn" onclick="responder('q1','negocio_proprio',this)">🚀 Construir meu próprio negócio</button>
+      <button class="choice-btn" onclick="responder('q1','revenda',this)">🛍 Trabalhar com revenda de produtos</button>
+      <button class="choice-btn" onclick="responder('q1','loja',this)">🏪 Aumentar o faturamento da minha loja</button>
+      <button class="choice-btn" onclick="responder('q1','equipe',this)">👥 Construir uma equipe e desenvolver pessoas</button>
+      <button class="choice-btn" onclick="responder('q1','conhecendo',this)">🌱 Ainda estou conhecendo oportunidades</button>
     </div>
   </div>
 
-  <!-- ═══ ETAPA 2 · MOMENTO ATUAL ═══ -->
-  <div class="q-card" data-step="p2">
-    <div class="q-tag">Seu momento atual</div>
-    <h2>Hoje você trabalha em qual situação?</h2>
+  <!-- ETAPA 3 -->
+  <div class="q-card" data-step="q2">
+    <h2>Qual destas situações descreve melhor sua realidade hoje?</h2>
     <div class="choice-grid">
-      <button class="choice-btn" onclick="responder('p2','empregado',this)">Empregado(a)</button>
-      <button class="choice-btn" onclick="responder('p2','autonomo',this)">Autônomo(a)</button>
-      <button class="choice-btn" onclick="responder('p2','empresario',this)">Empresário(a)</button>
-      <button class="choice-btn" onclick="responder('p2','vendedor',this)">Vendedor(a)</button>
-      <button class="choice-btn" onclick="responder('p2','desempregado',this)">Desempregado(a)</button>
-      <button class="choice-btn" onclick="responder('p2','aposentado',this)">Aposentado(a)</button>
-      <button class="choice-btn" onclick="responder('p2','estudante',this)">Estudante</button>
+      <button class="choice-btn" onclick="responder('q2','carteira_assinada',this)">Trabalho com carteira assinada</button>
+      <button class="choice-btn" onclick="responder('q2','autonomo',this)">Sou autônomo</button>
+      <button class="choice-btn" onclick="responder('q2','proprio_negocio',this)">Tenho meu próprio negócio</button>
+      <button class="choice-btn" onclick="responder('q2','ja_vendo',this)">Já vendo produtos</button>
+      <button class="choice-btn" onclick="responder('q2','desempregado',this)">Estou desempregado</button>
+      <button class="choice-btn" onclick="responder('q2','aposentado',this)">Sou aposentado</button>
+      <button class="choice-btn" onclick="responder('q2','outro',this)">Outro</button>
     </div>
   </div>
 
-  <!-- ═══ ETAPA 3 · OBJETIVOS ═══ -->
-  <div class="q-card" data-step="p4">
-    <div class="q-tag">Seus objetivos</div>
-    <h2>Se pudesse escolher, qual resultado gostaria de alcançar nos próximos 12 meses?</h2>
+  <!-- ETAPA 4 -->
+  <div class="q-card" data-step="q3">
+    <h2>Você já possui experiência em vendas?</h2>
     <div class="choice-grid">
-      <button class="choice-btn" onclick="responder('p4','complementar',this)">Complementar minha renda</button>
-      <button class="choice-btn" onclick="responder('p4','r1_3k',this)">Ganhar entre R$ 1.000 e R$ 3.000/mês</button>
-      <button class="choice-btn" onclick="responder('p4','r3_10k',this)">Ganhar entre R$ 3.000 e R$ 10.000/mês</button>
-      <button class="choice-btn" onclick="responder('p4','negocio_longo',this)">Construir um negócio de longo prazo</button>
-      <button class="choice-btn" onclick="responder('p4','equipe_vendas',this)">Criar uma equipe de vendas</button>
-      <button class="choice-btn" onclick="responder('p4','centro_apoio',this)">Abrir um Centro de Apoio</button>
+      <button class="choice-btn" onclick="responder('q3','nunca',this)">Nunca trabalhei com vendas</button>
+      <button class="choice-btn" onclick="responder('q3','ocasional',this)">Vendo ocasionalmente</button>
+      <button class="choice-btn" onclick="responder('q3','ja_vendo',this)">Já vendo produtos</button>
+      <button class="choice-btn" onclick="responder('q3','todos_dias',this)">Trabalho com vendas todos os dias</button>
+      <button class="choice-btn" onclick="responder('q3','atendimento',this)">Tenho experiência em atendimento ao cliente</button>
     </div>
   </div>
 
-  <!-- ═══ ETAPA 5 · DISPONIBILIDADE ═══ -->
-  <div class="q-card" data-step="p8">
-    <div class="q-tag">Sua disponibilidade</div>
-    <h2>Quantas horas por semana você consegue dedicar a um novo projeto?</h2>
+  <!-- ETAPA 5 -->
+  <div class="q-card" data-step="q4">
+    <h2>Quanto tempo você poderia dedicar por semana ao seu desenvolvimento?</h2>
     <div class="choice-grid">
-      <button class="choice-btn" onclick="responder('p8','menos5',this,1)">Menos de 5 horas</button>
-      <button class="choice-btn" onclick="responder('p8','5a10',this,2)">Entre 5 e 10 horas</button>
-      <button class="choice-btn" onclick="responder('p8','10a20',this,3)">Entre 10 e 20 horas</button>
-      <button class="choice-btn" onclick="responder('p8','mais20',this,4)">Mais de 20 horas</button>
-      <button class="choice-btn" onclick="responder('p8','integral',this,5)">Tempo integral</button>
+      <button class="choice-btn" onclick="responder('q4','ate5',this)">Até 5 horas</button>
+      <button class="choice-btn" onclick="responder('q4','5a10',this)">Entre 5 e 10 horas</button>
+      <button class="choice-btn" onclick="responder('q4','10a20',this)">Entre 10 e 20 horas</button>
+      <button class="choice-btn" onclick="responder('q4','mais20',this)">Mais de 20 horas</button>
+      <button class="choice-btn" onclick="responder('q4','nao_sei',this)">Ainda não sei</button>
     </div>
   </div>
 
-  <!-- ═══ ETAPA 7 · PERFIL DE LIDERANÇA ═══ -->
-  <div class="q-card" data-step="p10">
-    <div class="q-tag">Vendas ou liderança?</div>
-    <h2>Você gostaria apenas de vender ou também formar uma equipe?</h2>
+  <!-- ETAPA 6 -->
+  <div class="q-card" data-step="q5">
+    <h2>O que mais motiva você?</h2>
     <div class="choice-grid">
-      <button class="choice-btn" onclick="responder('p10','apenas_vender',this)">Quero apenas vender</button>
-      <button class="choice-btn" onclick="responder('p10','talvez_futuro',this)">Talvez no futuro</button>
-      <button class="choice-btn" onclick="responder('p10','aprender_lideranca',this)">Quero aprender liderança</button>
-      <button class="choice-btn" onclick="responder('p10','montar_equipe',this)">Quero montar uma grande equipe</button>
+      <button class="choice-btn" onclick="responder('q5','renda',this)">Melhorar minha renda</button>
+      <button class="choice-btn" onclick="responder('q5','liberdade_financeira',this)">Ter liberdade financeira</button>
+      <button class="choice-btn" onclick="responder('q5','crescer_profissional',this)">Crescer profissionalmente</button>
+      <button class="choice-btn" onclick="responder('q5','proprio_negocio',this)">Ter meu próprio negócio</button>
+      <button class="choice-btn" onclick="responder('q5','patrimonio',this)">Construir patrimônio</button>
+      <button class="choice-btn" onclick="responder('q5','desenvolver_pessoas',this)">Desenvolver pessoas</button>
     </div>
   </div>
 
-  <!-- ═══ GATE DE INTERESSE ═══ -->
-  <div class="q-card" data-step="gate">
-    <div class="q-emoji">✨</div>
-    <h2>Pelo que você já respondeu, dá pra perceber: existe sim um caminho que pode combinar com você.</h2>
-    <div class="gate-stats">
-      <div class="gate-stat"><div class="gate-stat-val">32+</div><div class="gate-stat-lbl">anos de mercado</div></div>
-      <div class="gate-stat"><div class="gate-stat-val">200+</div><div class="gate-stat-lbl">produtos</div></div>
-      <div class="gate-stat"><div class="gate-stat-val">27</div><div class="gate-stat-lbl">países</div></div>
-    </div>
-    <p>Faltam só mais algumas perguntas rápidas pra descobrirmos exatamente qual é esse caminho, e como podemos te ajudar a chegar lá.</p>
-    <button class="btn-gold-full" onclick="avancar()">Quero descobrir meu perfil →</button>
-  </div>
-
-  <!-- ═══ ETAPA 8 · COMERCIANTE (condicional) ═══ -->
-  <div class="q-card" data-step="p11">
-    <div class="q-tag">Seu estabelecimento</div>
-    <h2>Você possui qual tipo de estabelecimento?</h2>
+  <!-- ETAPA 7 -->
+  <div class="q-card" data-step="q6">
+    <h2>Você gosta da área de beleza e bem-estar?</h2>
     <div class="choice-grid">
-      <button class="choice-btn" onclick="responder('p11','perfumaria',this)">Perfumaria</button>
-      <button class="choice-btn" onclick="responder('p11','salao',this)">Salão de beleza</button>
-      <button class="choice-btn" onclick="responder('p11','barbearia',this)">Barbearia</button>
-      <button class="choice-btn" onclick="responder('p11','farmacia',this)">Farmácia</button>
-      <button class="choice-btn" onclick="responder('p11','loja_roupas',this)">Loja de roupas</button>
-      <button class="choice-btn" onclick="responder('p11','mercado',this)">Mercado</button>
-      <button class="choice-btn" onclick="responder('p11','outro',this)">Outro</button>
+      <button class="choice-btn" onclick="responder('q6','sim_bastante',this)">Sim, bastante</button>
+      <button class="choice-btn" onclick="responder('q6','tenho_interesse',this)">Tenho interesse</button>
+      <button class="choice-btn" onclick="responder('q6','conheco_pouco',this)">Conheço pouco</button>
+      <button class="choice-btn" onclick="responder('q6','nunca',this)">Nunca trabalhei nessa área</button>
     </div>
   </div>
 
-  <div class="q-card" data-step="p12">
-    <div class="q-tag">Centro de apoio</div>
-    <h2>Gostaria de vender produtos Jan Rosê ou também ser um Centro de Apoio para revendedores?</h2>
+  <!-- ETAPA 8 -->
+  <div class="q-card" data-step="q7">
+    <h2>Qual destas opções mais chama sua atenção?</h2>
     <div class="choice-grid">
-      <button class="choice-btn" onclick="responder('p12','apenas_vender',this)">Apenas vender produtos</button>
-      <button class="choice-btn" onclick="responder('p12','centro_apoio',this)">Quero ser Centro de Apoio</button>
-      <button class="choice-btn" onclick="responder('p12','ambas',this)">Quero conhecer as duas opções</button>
+      <button class="choice-btn" onclick="responder('q7','cosmeticos',this)">Cosméticos</button>
+      <button class="choice-btn" onclick="responder('q7','perfumaria',this)">Perfumaria</button>
+      <button class="choice-btn" onclick="responder('q7','bem_estar',this)">Bem-estar</button>
+      <button class="choice-btn" onclick="responder('q7','familia',this)">Produtos para toda família</button>
+      <button class="choice-btn" onclick="responder('q7','negocio',this)">Oportunidade de negócio</button>
+      <button class="choice-btn" onclick="responder('q7','equipe',this)">Desenvolvimento de equipe</button>
     </div>
   </div>
 
-  <!-- ═══ ETAPA 2b · FONTE DE RENDA ═══ -->
-  <div class="q-card" data-step="p3">
-    <div class="q-tag">Sua renda hoje</div>
-    <h2>Qual sua principal fonte de renda atualmente?</h2>
+  <!-- ETAPA 9 -->
+  <div class="q-card" data-step="q8">
+    <h2>Como você prefere trabalhar?</h2>
     <div class="choice-grid">
-      <button class="choice-btn" onclick="responder('p3','salario',this)">Salário</button>
-      <button class="choice-btn" onclick="responder('p3','autonomo',this)">Trabalho autônomo</button>
-      <button class="choice-btn" onclick="responder('p3','empresa',this)">Empresa própria</button>
-      <button class="choice-btn" onclick="responder('p3','aposentadoria',this)">Aposentadoria</button>
-      <button class="choice-btn" onclick="responder('p3','sem_renda_fixa',this)">Não tenho renda fixa</button>
+      <button class="choice-btn" onclick="responder('q8','vendendo',this)">Vendendo produtos</button>
+      <button class="choice-btn" onclick="responder('q8','indicando',this)">Indicando pessoas</button>
+      <button class="choice-btn" onclick="responder('q8','equipe',this)">Construindo uma equipe</button>
+      <button class="choice-btn" onclick="responder('q8','comerciante',this)">Atuando como comerciante</button>
+      <button class="choice-btn" onclick="responder('q8','nao_sei',this)">Ainda não sei</button>
     </div>
   </div>
 
-  <!-- ═══ ETAPA 3b · MOTIVAÇÃO DO OBJETIVO ═══ -->
-  <div class="q-card" data-step="p5">
-    <div class="q-tag">Sua motivação</div>
-    <h2>Por que esse objetivo é importante para você?</h2>
+  <!-- ETAPA 10 -->
+  <div class="q-card" data-step="q9">
+    <h2>O que você considera mais importante em uma oportunidade?</h2>
     <div class="choice-grid">
-      <button class="choice-btn" onclick="responder('p5','dividas',this)">Pagar dívidas</button>
-      <button class="choice-btn" onclick="responder('p5','qualidade_vida',this)">Melhorar minha qualidade de vida</button>
-      <button class="choice-btn" onclick="responder('p5','liberdade_financeira',this)">Ter mais liberdade financeira</button>
-      <button class="choice-btn" onclick="responder('p5','autonomia',this)">Trabalhar com mais autonomia</button>
-      <button class="choice-btn" onclick="responder('p5','faturamento_empresa',this)">Aumentar o faturamento da minha empresa</button>
-      <button class="choice-btn" onclick="responder('p5','patrimonio',this)">Construir patrimônio</button>
+      <button class="choice-btn" onclick="responder('q9','empresa_solida',this)">Empresa sólida</button>
+      <button class="choice-btn" onclick="responder('q9','produtos',this)">Bons produtos</button>
+      <button class="choice-btn" onclick="responder('q9','treinamento',this)">Treinamento</button>
+      <button class="choice-btn" onclick="responder('q9','suporte',this)">Suporte</button>
+      <button class="choice-btn" onclick="responder('q9','flexibilidade',this)">Flexibilidade</button>
+      <button class="choice-btn" onclick="responder('q9','crescimento',this)">Crescimento</button>
     </div>
   </div>
 
-  <!-- ═══ ETAPA 4 · PERFIL EMPREENDEDOR ═══ -->
-  <div class="q-card" data-step="p6">
-    <div class="q-tag">Experiência em vendas</div>
-    <h2>Você já trabalhou com vendas?</h2>
-    <div class="choice-grid">
-      <button class="choice-btn" onclick="responder('p6','nunca',this,1)">Nunca</button>
-      <button class="choice-btn" onclick="responder('p6','pouco',this,2)">Pouco</button>
-      <button class="choice-btn" onclick="responder('p6','algumas_vezes',this,3)">Sim, já vendi algumas vezes</button>
-      <button class="choice-btn" onclick="responder('p6','atualmente',this,4)">Trabalho com vendas atualmente</button>
-      <button class="choice-btn" onclick="responder('p6','bastante_experiencia',this,5)">Tenho bastante experiência</button>
-    </div>
-  </div>
-
-  <div class="q-card" data-step="p7">
-    <div class="q-tag">Experiência empreendedora</div>
-    <h2>Você já empreendeu alguma vez?</h2>
-    <div class="choice-grid">
-      <button class="choice-btn" onclick="responder('p7','nunca',this,1)">Nunca</button>
-      <button class="choice-btn" onclick="responder('p7','tentou',this,2)">Já tentei</button>
-      <button class="choice-btn" onclick="responder('p7','pequeno_negocio',this,3)">Tenho um pequeno negócio</button>
-      <button class="choice-btn" onclick="responder('p7','tem_empresa',this,4)">Tenho empresa</button>
-      <button class="choice-btn" onclick="responder('p7','varias_vezes',this,5)">Já empreendi várias vezes</button>
-    </div>
-  </div>
-
-  <!-- ═══ ETAPA 6 · PERFIL COMERCIAL ═══ -->
-  <div class="q-card" data-step="p9">
-    <div class="q-tag">Onde você venderia melhor</div>
-    <h2>Como você acredita que poderia vender melhor?</h2>
-    <div class="choice-grid">
-      <button class="choice-btn" onclick="responder('p9','redes_sociais',this)">Redes sociais</button>
-      <button class="choice-btn" onclick="responder('p9','whatsapp',this)">WhatsApp</button>
-      <button class="choice-btn" onclick="responder('p9','amigos_familiares',this)">Amigos e familiares</button>
-      <button class="choice-btn" onclick="responder('p9','loja_fisica',this)">Loja física</button>
-      <button class="choice-btn" onclick="responder('p9','indicacoes',this)">Indicações</button>
-      <button class="choice-btn" onclick="responder('p9','nao_sei',this)">Ainda não sei</button>
-    </div>
-  </div>
-
-  <!-- ═══ ETAPA 9 · CONHECIMENTO ═══ -->
-  <div class="q-card" data-step="p13">
-    <div class="q-tag">Sobre a Jan Rosê</div>
+  <!-- ETAPA 11 -->
+  <div class="q-card" data-step="q10">
     <h2>Você já conhecia a Jan Rosê?</h2>
     <div class="choice-grid">
-      <button class="choice-btn" onclick="responder('p13','nunca_ouvi',this)">Nunca ouvi falar</button>
-      <button class="choice-btn" onclick="responder('p13','ja_ouvi',this)">Já ouvi falar</button>
-      <button class="choice-btn" onclick="responder('p13','conheco_produtos',this)">Conheço alguns produtos</button>
-      <button class="choice-btn" onclick="responder('p13','ja_cliente',this)">Já fui cliente</button>
-      <button class="choice-btn" onclick="responder('p13','ja_consultora',this)">Já fui consultor(a)</button>
+      <button class="choice-btn" onclick="responder('q10','sim',this)">Sim</button>
+      <button class="choice-btn" onclick="responder('q10','ouviu_falar',this)">Já tinha ouvido falar</button>
+      <button class="choice-btn" onclick="responder('q10','nao_conhecia',this)">Não conhecia</button>
     </div>
   </div>
 
-  <!-- ═══ ETAPA 10 · DIFICULDADES ═══ -->
-  <div class="q-card" data-step="p14">
-    <div class="q-tag">Seu maior desafio</div>
-    <h2>Qual é hoje o maior desafio para aumentar sua renda?</h2>
+  <!-- ETAPA 12 -->
+  <div class="q-card" data-step="q11">
+    <div class="q-tag">Depois do que conheceu até agora...</div>
+    <h2>Como você avalia seu interesse?</h2>
     <div class="choice-grid">
-      <button class="choice-btn" onclick="responder('p14','falta_oportunidade',this)">Falta de oportunidade</button>
-      <button class="choice-btn" onclick="responder('p14','falta_dinheiro',this)">Falta de dinheiro para investir</button>
-      <button class="choice-btn" onclick="responder('p14','falta_conhecimento',this)">Falta de conhecimento</button>
-      <button class="choice-btn" onclick="responder('p14','falta_tempo',this)">Falta de tempo</button>
-      <button class="choice-btn" onclick="responder('p14','medo',this)">Medo de começar</button>
-      <button class="choice-btn" onclick="responder('p14','nao_sei_onde',this)">Não sei por onde começar</button>
+      <button class="choice-btn" onclick="responder('q11','muito_interessado',this)">⭐ Muito interessado</button>
+      <button class="choice-btn" onclick="responder('q11','interessado',this)">⭐ Interessado</button>
+      <button class="choice-btn" onclick="responder('q11','conhecer_melhor',this)">⭐ Quero conhecer melhor</button>
+      <button class="choice-btn" onclick="responder('q11','duvidas',this)">⭐ Ainda tenho dúvidas</button>
+      <button class="choice-btn" onclick="responder('q11','nao_decidiu',this)">⭐ Ainda não decidi</button>
     </div>
   </div>
 
-  <!-- ═══ ETAPA 12 · INVESTIMENTO ═══ -->
-  <div class="q-card" data-step="p16">
-    <div class="q-tag">Investimento inicial</div>
-    <h2>Se encontrar uma oportunidade séria, qual investimento inicial você estaria disposto(a) a fazer?</h2>
+  <!-- ETAPA 13 -->
+  <div class="q-card" data-step="q12">
+    <h2>Gostaria de receber uma orientação personalizada?</h2>
+    <p>Nosso especialista poderá mostrar qual caminho faz mais sentido para você.</p>
     <div class="choice-grid">
-      <button class="choice-btn" onclick="responder('p16','sem_investimento',this)">Quero começar sem investimento</button>
-      <button class="choice-btn" onclick="responder('p16','ate200',this)">Até R$ 200</button>
-      <button class="choice-btn" onclick="responder('p16','200a500',this)">Entre R$ 200 e R$ 500</button>
-      <button class="choice-btn" onclick="responder('p16','500a1000',this)">Entre R$ 500 e R$ 1.000</button>
-      <button class="choice-btn" onclick="responder('p16','acima1000',this)">Acima de R$ 1.000</button>
-      <button class="choice-btn" onclick="responder('p16','depende_retorno',this)">Depende do retorno</button>
+      <button class="choice-btn" onclick="responder('q12','sim',this)">Sim</button>
+      <button class="choice-btn" onclick="responder('q12','talvez',this)">Talvez</button>
+      <button class="choice-btn" onclick="responder('q12','ainda_nao',this)">Ainda não</button>
     </div>
   </div>
 
-  <!-- ═══ ETAPA 13 · COMPROMETIMENTO ═══ -->
-  <div class="q-card" data-step="p17">
-    <div class="q-tag">Seu comprometimento</div>
-    <h2>Se receber treinamento e acompanhamento, qual seu nível de comprometimento?</h2>
-    <div class="choice-grid">
-      <button class="choice-btn" onclick="responder('p17','conhecer',this,1)">Quero apenas conhecer</button>
-      <button class="choice-btn" onclick="responder('p17','testar',this,2)">Quero testar</button>
-      <button class="choice-btn" onclick="responder('p17','renda_extra',this,3)">Quero gerar renda extra</button>
-      <button class="choice-btn" onclick="responder('p17','negocio',this,4)">Quero construir um negócio</button>
-      <button class="choice-btn" onclick="responder('p17','lider',this,5)">Quero me tornar líder</button>
-    </div>
-  </div>
-
-  <!-- ═══ ETAPA 14 · DADOS ═══ -->
-  <div class="q-card" data-step="captura">
+  <!-- ETAPA 14 · PRONTO -->
+  <div class="q-card" data-step="pronto">
     <div class="q-emoji">🎉</div>
-    <h2>Prontinho! Só faltam seus dados pra liberar o resultado</h2>
-    <div class="q-erro" id="q-erro"></div>
-    <div class="q-fg"><label>Nome</label><input class="q-fi" type="text" id="q-nome" placeholder="Seu nome completo"></div>
-    <div class="q-row">
-      <div class="q-fg"><label>WhatsApp</label><input class="q-fi" type="tel" id="q-whats" placeholder="Com DDD"></div>
-      <div class="q-fg"><label>E-mail</label><input class="q-fi" type="email" id="q-email" placeholder="seu@email.com"></div>
-    </div>
-    <div class="q-row">
-      <div class="q-fg"><label>Cidade</label><input class="q-fi" type="text" id="q-cidade" placeholder="Sua cidade"></div>
-      <div class="q-fg">
-        <label>Estado</label>
-        <select class="q-fi" id="q-estado">
-          <option value="">Selecione</option>
-          <option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option>
-          <option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option>
-          <option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option>
-          <option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
-          <option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option>
-          <option>SE</option><option>TO</option>
-        </select>
-      </div>
-    </div>
-    <div class="q-fg"><label>Instagram (opcional)</label><input class="q-fi" type="text" id="q-insta" placeholder="@seuusuario"></div>
-    <button class="btn-gold-full" id="q-btn" onclick="verResultado()">Ver meu resultado →</button>
+    <h2>Prontinho! Seu diagnóstico está pronto.</h2>
+    <p>Vamos revelar qual caminho combina mais com você dentro da Jan Rosê.</p>
+    <button class="btn-gold-full" onclick="verResultado()">Ver meu resultado →</button>
   </div>
 
-  <!-- ═══ ETAPA 15 · RESULTADO INTELIGENTE ═══ -->
+  <!-- ETAPA 15 · RESULTADO -->
   <div class="q-card" data-step="resultado">
     <div class="resultado-ico" id="quiz-ico">🌟</div>
+    <h2>Parabéns! O seu diagnóstico está pronto.</h2>
+    <p class="resultado-sub">Com base nas suas respostas, identificamos que seu perfil tem potencial para atuar como:</p>
     <div class="resultado-perfil" id="quiz-perfil">Seu perfil</div>
     <div class="resultado-percent">Compatibilidade: <strong id="quiz-percent">0%</strong></div>
-    <div class="resultado-msg" id="quiz-msg"></div>
-    <a class="btn-gold-full" href="boas-vindas.html">Continuar minha jornada →</a>
-    <p class="resultado-dm">Prefere falar direto com um consultor? <a id="quiz-cta-consultor" href="https://wa.me/5511915033743" target="_blank" rel="noopener">Fale no WhatsApp</a></p>
+
+    <div class="resultado-box">
+      <div class="resultado-box-title">Pontos fortes</div>
+      <ul class="resultado-lista" id="quiz-pontos"></ul>
+    </div>
+    <div class="resultado-box">
+      <div class="resultado-box-title">Oportunidades</div>
+      <p id="quiz-oportunidades"></p>
+    </div>
+    <div class="resultado-box resultado-box-destaque">
+      <div class="resultado-box-title">Próximo passo recomendado</div>
+      <p id="quiz-proximo-passo">Agende uma conversa de 20 minutos com um especialista da Equipe Alvo Negócio. Nessa conversa, você vai receber uma orientação personalizada sobre como começar da forma mais adequada ao seu perfil.</p>
+    </div>
+
+    <div class="resultado-links">
+      <a class="resultado-link" href="paginação.html">📚 Conhecer mais sobre a empresa</a>
+      <a class="resultado-link" href="paginação.html#produtos">📦 Conhecer os produtos</a>
+      <a class="resultado-link" href="universidade.html">🎓 Conhecer a Universidade</a>
+    </div>
+
+    <p class="resultado-sub" style="margin-top:22px;margin-bottom:12px">Depois de ver o seu resultado, me conta:</p>
+    <a class="btn-gold-full" id="quiz-cta-interesse" href="https://wa.me/5511915033743" target="_blank" rel="noopener">🟢 Tenho interesse</a>
+    <a class="btn-out-full" id="quiz-cta-sem-interesse" href="https://wa.me/5511915033743" target="_blank" rel="noopener" style="margin-top:10px">🔴 Não tenho interesse</a>
   </div>
 
 </div>
@@ -403,208 +320,181 @@ select.q-fi option{background:#fff;color:#1a1a1a}
 const respostas = {}
 const origemLanding = new URLSearchParams(window.location.search).get('origem')
 let idx = 0
-let hasLoja = false
 
-/* ordem-base; p11/p12 só entram se hasLoja=true */
-const ORDEM = ['intro','p1','p2','p4','p8','p10','gate','p11','p12','p3','p5','p6','p7','p9','p13','p14','p16','p17','captura','resultado']
+const ORDEM = ['intro','q1','q2','q3','q4','q5','q6','q7','q8','q9','q10','q11','q12','pronto','resultado']
 
 function el(step){ return document.querySelector(`.q-card[data-step="${step}"]`) }
 
-function deveSerPulado(step){
-  return (step === 'p11' || step === 'p12') && !hasLoja
-}
-
 function totalAtivos(){
-  return ORDEM.filter(s => !deveSerPulado(s) && s !== 'intro' && s !== 'resultado').length
+  return ORDEM.filter(s => s !== 'intro' && s !== 'resultado').length
 }
 
 function mostrarPasso(){
   document.querySelectorAll('.q-card').forEach(c => c.classList.remove('active'))
   el(ORDEM[idx]).classList.add('active')
 
-  const passosAndados = ORDEM.slice(0, idx).filter(s => !deveSerPulado(s) && s !== 'intro').length
+  const passosAndados = ORDEM.slice(0, idx).filter(s => s !== 'intro').length
   document.getElementById('progress-fill').style.width = Math.min(100, Math.round(passosAndados / totalAtivos() * 100)) + '%'
 
   const step = ORDEM[idx]
   document.getElementById('progress-label').textContent =
     step === 'intro' ? 'Descubra seu perfil' :
-    step === 'gate' ? 'Você está indo bem!' :
     step === 'captura' ? 'Quase lá!' :
     step === 'resultado' ? 'Resultado pronto' :
-    idx <= ORDEM.indexOf('gate') ? 'Vamos te conhecer melhor' : 'Só mais um pouco'
+    'Vamos te conhecer melhor'
 
   window.scrollTo({top:0, behavior:'smooth'})
 }
 
 function avancar(){
   idx++
-  while(idx < ORDEM.length && deveSerPulado(ORDEM[idx])) idx++
   mostrarPasso()
 }
 
-function responder(qid, valor, btn, pontos){
+function responder(qid, valor, btn){
   respostas[qid] = valor
-  if(pontos) respostas['_pts_' + qid] = pontos
-  if(qid === 'p1') hasLoja = (valor === 'loja')
-
   btn.parentElement.querySelectorAll('.choice-btn').forEach(b => b.classList.remove('sel'))
   btn.classList.add('sel')
   setTimeout(avancar, 350)
 }
 
-function mostrarErroQuiz(msg){
-  const e = document.getElementById('q-erro')
-  e.textContent = msg
-  e.classList.add('on')
-}
-
 /* ── lógica de perfil ── */
 function calcularPerfil(){
   const r = respostas
-  const querCentroApoio = r.p12 === 'centro_apoio' || r.p4 === 'centro_apoio'
+  const score = {comerciante:0, lider:0, renda_extra:0, consultor:0, empreendedor:0}
 
-  if(querCentroApoio) return 'centro_apoio'
-  if(hasLoja) return 'parceiro_comercial'
+  if(r.q1==='loja') score.comerciante += 3
+  if(r.q2==='proprio_negocio' || r.q2==='ja_vendo') score.comerciante += 2
+  if(r.q8==='comerciante') score.comerciante += 2
 
-  const sinaisLideranca = [
-    r.p10 === 'montar_equipe' || r.p10 === 'aprender_lideranca',
-    r.p17 === 'lider' || r.p17 === 'negocio',
-    r.p1 === 'equipe',
-    r.p4 === 'equipe_vendas' || r.p4 === 'negocio_longo'
-  ].filter(Boolean).length
+  if(r.q1==='equipe') score.lider += 3
+  if(r.q5==='desenvolver_pessoas') score.lider += 2
+  if(r.q7==='equipe') score.lider += 2
+  if(r.q8==='equipe') score.lider += 2
 
-  return sinaisLideranca >= 2 ? 'lider' : 'consultor'
+  if(r.q1==='renda_extra') score.renda_extra += 2
+  if(r.q4==='ate5' || r.q4==='5a10') score.renda_extra += 2
+  if(r.q5==='renda') score.renda_extra += 1
+
+  if(r.q1==='revenda') score.consultor += 2
+  if(r.q8==='vendendo') score.consultor += 2
+  if(r.q3==='ja_vendo' || r.q3==='todos_dias') score.consultor += 2
+
+  if(r.q1==='negocio_proprio') score.empreendedor += 3
+  if(r.q5==='proprio_negocio' || r.q5==='patrimonio') score.empreendedor += 1
+  if(r.q5==='liberdade_financeira' || r.q5==='crescer_profissional') score.empreendedor += 1
+
+  let best = 'consultor', bestScore = -1
+  for(const k in score){ if(score[k] > bestScore){ bestScore = score[k]; best = k } }
+  return best
 }
 
 function calcularPercentual(){
-  const pontos = ['p8','p6','p7','p17'].map(q => respostas['_pts_' + q] || 1).reduce((a,b) => a+b, 0)
-  const min = 4, max = 20
-  return Math.round(75 + (pontos - min) / (max - min) * 24)
+  const interesseMap = {muito_interessado:5, interessado:4, conhecer_melhor:3, duvidas:2, nao_decidiu:1}
+  const tempoMap = {mais20:5, '10a20':4, '5a10':3, ate5:2, nao_sei:2}
+  const orientMap = {sim:5, talvez:3, ainda_nao:1}
+  const pts = (interesseMap[respostas.q11] || 3) + (tempoMap[respostas.q4] || 3) + (orientMap[respostas.q12] || 3)
+  const min = 3, max = 15
+  return Math.round(72 + (pts - min) / (max - min) * 26)
 }
 
 /* tradução das respostas pra texto legível (usado no resumo enviado ao WhatsApp) */
 const LABELS = {
-  p1:  {renda_extra:'Ganhar uma renda extra', profissao:'Ter uma nova profissão', empreender:'Empreender', negocio:'Abrir o próprio negócio', loja:'Aumentar a renda da loja que já tem', equipe:'Construir uma equipe de vendas', conhecendo:'Ainda está conhecendo as oportunidades'},
-  p2:  {empregado:'Empregado(a)', autonomo:'Autônomo(a)', empresario:'Empresário(a)', vendedor:'Vendedor(a)', desempregado:'Desempregado(a)', aposentado:'Aposentado(a)', estudante:'Estudante'},
-  p3:  {salario:'Salário', autonomo:'Trabalho autônomo', empresa:'Empresa própria', aposentadoria:'Aposentadoria', sem_renda_fixa:'Não tem renda fixa'},
-  p4:  {complementar:'Complementar a renda', r1_3k:'Ganhar R$1.000 a R$3.000/mês', r3_10k:'Ganhar R$3.000 a R$10.000/mês', negocio_longo:'Construir um negócio de longo prazo', equipe_vendas:'Criar uma equipe de vendas', centro_apoio:'Abrir um Centro de Apoio'},
-  p5:  {dividas:'Pagar dívidas', qualidade_vida:'Melhorar a qualidade de vida', liberdade_financeira:'Ter mais liberdade financeira', autonomia:'Trabalhar com mais autonomia', faturamento_empresa:'Aumentar o faturamento da empresa', patrimonio:'Construir patrimônio'},
-  p6:  {nunca:'Nunca vendeu', pouco:'Vendeu pouco', algumas_vezes:'Já vendeu algumas vezes', atualmente:'Trabalha com vendas atualmente', bastante_experiencia:'Tem bastante experiência em vendas'},
-  p7:  {nunca:'Nunca empreendeu', tentou:'Já tentou empreender', pequeno_negocio:'Tem um pequeno negócio', tem_empresa:'Tem empresa', varias_vezes:'Já empreendeu várias vezes'},
-  p8:  {menos5:'Menos de 5h/semana', '5a10':'5 a 10h/semana', '10a20':'10 a 20h/semana', mais20:'Mais de 20h/semana', integral:'Tempo integral'},
-  p9:  {redes_sociais:'Redes sociais', whatsapp:'WhatsApp', amigos_familiares:'Amigos e familiares', loja_fisica:'Loja física', indicacoes:'Indicações', nao_sei:'Ainda não sabe'},
-  p10: {apenas_vender:'Quer só vender', talvez_futuro:'Talvez lidere no futuro', aprender_lideranca:'Quer aprender liderança', montar_equipe:'Quer montar uma grande equipe'},
-  p11: {perfumaria:'Perfumaria', salao:'Salão de beleza', barbearia:'Barbearia', farmacia:'Farmácia', loja_roupas:'Loja de roupas', mercado:'Mercado', outro:'Outro tipo de loja'},
-  p12: {apenas_vender:'Só quer vender produtos', centro_apoio:'Quer ser Centro de Apoio', ambas:'Quer conhecer as duas opções'},
-  p13: {nunca_ouvi:'Nunca ouviu falar da Jan Rosê', ja_ouvi:'Já ouviu falar', conheco_produtos:'Conhece alguns produtos', ja_cliente:'Já foi cliente', ja_consultora:'Já foi consultora'},
-  p14: {falta_oportunidade:'Falta de oportunidade', falta_dinheiro:'Falta de dinheiro pra investir', falta_conhecimento:'Falta de conhecimento', falta_tempo:'Falta de tempo', medo:'Medo de começar', nao_sei_onde:'Não sabe por onde começar'},
-  p16: {sem_investimento:'Quer começar sem investir', ate200:'Até R$200', '200a500':'R$200 a R$500', '500a1000':'R$500 a R$1.000', acima1000:'Acima de R$1.000', depende_retorno:'Depende do retorno'},
-  p17: {conhecer:'Só quer conhecer', testar:'Quer testar', renda_extra:'Quer gerar renda extra', negocio:'Quer construir um negócio', lider:'Quer se tornar líder'}
+  q1:  {renda_extra:'Gerar uma renda extra', negocio_proprio:'Construir o próprio negócio', revenda:'Trabalhar com revenda de produtos', loja:'Aumentar o faturamento da loja', equipe:'Construir uma equipe e desenvolver pessoas', conhecendo:'Ainda está conhecendo oportunidades'},
+  q2:  {carteira_assinada:'Carteira assinada', autonomo:'Autônomo(a)', proprio_negocio:'Tem próprio negócio', ja_vendo:'Já vende produtos', desempregado:'Desempregado(a)', aposentado:'Aposentado(a)', outro:'Outra situação'},
+  q3:  {nunca:'Nunca trabalhou com vendas', ocasional:'Vende ocasionalmente', ja_vendo:'Já vende produtos', todos_dias:'Trabalha com vendas todos os dias', atendimento:'Tem experiência em atendimento'},
+  q4:  {ate5:'Até 5h/semana', '5a10':'5 a 10h/semana', '10a20':'10 a 20h/semana', mais20:'Mais de 20h/semana', nao_sei:'Ainda não sabe'},
+  q5:  {renda:'Melhorar a renda', liberdade_financeira:'Ter liberdade financeira', crescer_profissional:'Crescer profissionalmente', proprio_negocio:'Ter o próprio negócio', patrimonio:'Construir patrimônio', desenvolver_pessoas:'Desenvolver pessoas'},
+  q6:  {sim_bastante:'Gosta bastante de beleza e bem-estar', tenho_interesse:'Tem interesse', conheco_pouco:'Conhece pouco', nunca:'Nunca trabalhou na área'},
+  q7:  {cosmeticos:'Cosméticos', perfumaria:'Perfumaria', bem_estar:'Bem-estar', familia:'Produtos para toda família', negocio:'Oportunidade de negócio', equipe:'Desenvolvimento de equipe'},
+  q8:  {vendendo:'Vendendo produtos', indicando:'Indicando pessoas', equipe:'Construindo uma equipe', comerciante:'Atuando como comerciante', nao_sei:'Ainda não sabe'},
+  q9:  {empresa_solida:'Empresa sólida', produtos:'Bons produtos', treinamento:'Treinamento', suporte:'Suporte', flexibilidade:'Flexibilidade', crescimento:'Crescimento'},
+  q10: {sim:'Já conhecia a Jan Rosê', ouviu_falar:'Já tinha ouvido falar', nao_conhecia:'Não conhecia'},
+  q11: {muito_interessado:'Muito interessado', interessado:'Interessado', conhecer_melhor:'Quer conhecer melhor', duvidas:'Ainda tem dúvidas', nao_decidiu:'Ainda não decidiu'},
+  q12: {sim:'Quer orientação personalizada', talvez:'Talvez queira orientação', ainda_nao:'Ainda não quer orientação'}
 }
 function traduzir(qid){ return (LABELS[qid] && LABELS[qid][respostas[qid]]) || respostas[qid] || '—' }
 
 function montarResumoRespostas(){
-  let linhas = [
-    `🎯 Objetivo: ${traduzir('p1')}`,
-    `💼 Situação atual: ${traduzir('p2')}`,
-    `📈 Meta 12 meses: ${traduzir('p4')}`,
-    `⏰ Disponibilidade: ${traduzir('p8')}`,
-    `👑 Vender ou liderar: ${traduzir('p10')}`,
-  ]
-  if(hasLoja){
-    linhas.push(`🏪 Tipo de loja: ${traduzir('p11')}`)
-    linhas.push(`🤝 Interesse em Centro de Apoio: ${traduzir('p12')}`)
-  }
-  linhas.push(`🛍️ Experiência em vendas: ${traduzir('p6')}`)
-  linhas.push(`🚀 Já empreendeu: ${traduzir('p7')}`)
-  linhas.push(`🌸 Conhecia a Jan Rosê: ${traduzir('p13')}`)
-  linhas.push(`🧗 Maior desafio: ${traduzir('p14')}`)
-  linhas.push(`💵 Investimento disposto: ${traduzir('p16')}`)
-  linhas.push(`🔥 Comprometimento: ${traduzir('p17')}`)
-  return linhas.join('\n')
+  return [
+    `🎯 Objetivo: ${traduzir('q1')}`,
+    `💼 Situação atual: ${traduzir('q2')}`,
+    `🛍️ Experiência em vendas: ${traduzir('q3')}`,
+    `⏰ Disponibilidade: ${traduzir('q4')}`,
+    `🔥 Motivação: ${traduzir('q5')}`,
+    `💄 Beleza e bem-estar: ${traduzir('q6')}`,
+    `✨ Área de interesse: ${traduzir('q7')}`,
+    `👑 Como prefere trabalhar: ${traduzir('q8')}`,
+    `🏆 Mais importante pra ela: ${traduzir('q9')}`,
+    `🌸 Conhecia a Jan Rosê: ${traduzir('q10')}`,
+    `⭐ Nível de interesse: ${traduzir('q11')}`,
+    `🙋 Quer orientação: ${traduzir('q12')}`
+  ].join('\n')
 }
 
 const PERFIS = {
+  empreendedor: {
+    ico: '🚀',
+    titulo: 'Empreendedor em Desenvolvimento',
+    pontos: ['Você demonstra interesse em construir algo próprio.', 'Busca crescimento de forma estruturada.', 'Está aberto a aprender e desenvolver novas habilidades.'],
+    oportunidades: 'Com esse perfil, você pode começar como consultor, evoluir para líder e, no futuro, desenvolver sua própria equipe — sempre de acordo com seus objetivos e sua dedicação.'
+  },
   consultor: {
     ico: '💼',
-    titulo: 'Consultor Empreendedor',
-    texto: (nome) => `<strong>${nome}</strong>, seu perfil combina com quem quer construir uma renda vendendo produtos Jan Rosê no seu próprio ritmo. Você tem tudo pra começar com o kit certo, aprender aos poucos e crescer conforme se sentir confiante — sem precisar se comprometer com uma equipe agora.`
+    titulo: 'Consultor(a) de Vendas',
+    pontos: ['Você já tem afinidade com vendas.', 'Sabe se relacionar bem com clientes.', 'Consegue começar a gerar resultado rapidamente.'],
+    oportunidades: 'Esse perfil combina com quem quer vender produtos Jan Rosê no próprio ritmo, com o kit certo e o suporte da equipe, sem precisar se comprometer com uma equipe agora.'
+  },
+  comerciante: {
+    ico: '🏪',
+    titulo: 'Parceiro(a) Comercial',
+    pontos: ['Você já tem um negócio ou ponto de venda rodando.', 'Já sabe atender e vender no dia a dia.', 'Pode somar uma linha nova sem começar do zero.'],
+    oportunidades: 'Adicionar os produtos Jan Rosê ao que você já vende pode aumentar seu faturamento aproveitando a estrutura que você já tem.'
   },
   lider: {
     ico: '👑',
     titulo: 'Líder em Desenvolvimento',
-    texto: (nome) => `<strong>${nome}</strong>, suas respostas mostram que você não quer só vender — quer construir algo maior. Esse é exatamente o perfil de quem forma equipes de sucesso na Jan Rosê. Com o treinamento certo, você pode multiplicar seus resultados liderando outras pessoas.`
+    pontos: ['Você pensa além da venda individual.', 'Tem interesse em desenvolver outras pessoas.', 'Busca construir algo que cresça com o tempo.'],
+    oportunidades: 'Esse é o perfil de quem forma equipes de sucesso na Jan Rosê — com o treinamento certo, você pode multiplicar resultados liderando outras pessoas.'
   },
-  parceiro_comercial: {
-    ico: '🏪',
-    titulo: 'Parceiro Comercial',
-    texto: (nome) => `<strong>${nome}</strong>, você já tem um estabelecimento — e isso é uma vantagem enorme. Adicionar os produtos Jan Rosê ao que você já vende pode aumentar seu faturamento sem precisar começar do zero. Vamos te mostrar como outros comerciantes estão fazendo isso.`
-  },
-  centro_apoio: {
-    ico: '🌟',
-    titulo: 'Centro de Apoio Potencial',
-    texto: (nome) => `<strong>${nome}</strong>, seu perfil é raro: você tem o potencial de ser referência regional, apoiando outras revendedoras além de vender. Ser um Centro de Apoio é um dos caminhos mais estratégicos dentro da Jan Rosê. Nossa equipe vai te explicar exatamente como funciona.`
+  renda_extra: {
+    ico: '💰',
+    titulo: 'Renda Extra',
+    pontos: ['Você busca resultado sem abrir mão da sua rotina atual.', 'Prefere começar com um tempo de dedicação menor.', 'Quer testar antes de se aprofundar.'],
+    oportunidades: 'Esse perfil combina com quem quer somar uma renda extra ao que já faz hoje, no seu tempo livre, sem pressa pra decidir o quanto vai crescer.'
   }
 }
 
-async function verResultado(){
-  document.getElementById('q-erro').classList.remove('on')
-
-  const nome    = document.getElementById('q-nome').value.trim()
-  const whats   = document.getElementById('q-whats').value.trim()
-  const email   = document.getElementById('q-email').value.trim()
-  const cidade  = document.getElementById('q-cidade').value.trim()
-  const estado  = document.getElementById('q-estado').value
-  const insta   = document.getElementById('q-insta').value.trim()
-
-  if(!nome || !whats){
-    mostrarErroQuiz('Preencha nome e WhatsApp pra ver seu resultado 😊')
-    return
-  }
-
-  const btn = document.getElementById('q-btn')
-  btn.disabled = true
-  btn.textContent = 'Calculando seu perfil...'
-
+function verResultado(){
   const perfilKey = calcularPerfil()
   const perfil = PERFIS[perfilKey]
   const percent = calcularPercentual()
 
-  const respostasLimpo = {}
-  Object.keys(respostas).filter(k => !k.startsWith('_pts_')).forEach(k => respostasLimpo[k] = respostas[k])
-  if(insta) respostasLimpo.instagram = insta
-
   if(window.sb){
     window.sb.from('leads').insert({
-      nome_completo: nome,
-      telefone: whats,
-      email: email || null,
-      cidade: cidade || null,
-      estado: estado || null,
       origem: 'quiz' + (origemLanding ? ('_via_' + origemLanding) : ''),
       interesse: perfil.titulo,
       perfil_quiz: `${perfil.titulo} (${percent}%)`,
-      respostas_quiz: respostasLimpo,
+      respostas_quiz: respostas,
       status: 'lead_qualificado'
     }).catch(()=>{})
   }
 
   document.getElementById('quiz-ico').textContent = perfil.ico
-  document.getElementById('quiz-perfil').textContent = 'Seu perfil é: ' + perfil.titulo
+  document.getElementById('quiz-perfil').textContent = perfil.titulo
   document.getElementById('quiz-percent').textContent = percent + '%'
-  document.getElementById('quiz-msg').innerHTML = perfil.texto(nome.split(' ')[0])
+  document.getElementById('quiz-pontos').innerHTML = perfil.pontos.map(p => `<li>${p}</li>`).join('')
+  document.getElementById('quiz-oportunidades').textContent = perfil.oportunidades
 
-  const wppTxt = `Olá! Fiz o quiz de perfil da Jan Rosê 🌸\n\n*Nome:* ${nome}\n*WhatsApp:* ${whats}\n*Cidade:* ${cidade || '—'}${estado ? '/'+estado : ''}\n*Perfil calculado:* ${perfil.titulo} (${percent}%)\n\n${montarResumoRespostas()}`
-  document.getElementById('quiz-cta-consultor').href = `https://wa.me/5511915033743?text=${encodeURIComponent(wppTxt)}`
-
-  btn.disabled = false
-  btn.textContent = 'Ver meu resultado →'
+  const resumo = `*Perfil calculado:* ${perfil.titulo} (${percent}%)\n\n${montarResumoRespostas()}`
+  const wppInteresse = `Olá! Fiz o Diagnóstico de Perfil da Jan Rosê 🌸\n\n${resumo}\n\nTenho interesse em saber mais! 🟢`
+  const wppSemInteresse = `Olá! Fiz o Diagnóstico de Perfil da Jan Rosê 🌸\n\n${resumo}\n\nPor enquanto não tenho interesse, mas queria avisar. Obrigado(a) pelo contato! 🙏`
+  document.getElementById('quiz-cta-interesse').href = `https://wa.me/5511915033743?text=${encodeURIComponent(wppInteresse)}`
+  document.getElementById('quiz-cta-sem-interesse').href = `https://wa.me/5511915033743?text=${encodeURIComponent(wppSemInteresse)}`
 
   idx = ORDEM.indexOf('resultado')
   mostrarPasso()
 }
-
-document.querySelectorAll('.q-fi').forEach(elx => elx.addEventListener('keydown', e => { if(e.key === 'Enter') verResultado() }))
 </script>
 </body>
 </html>
