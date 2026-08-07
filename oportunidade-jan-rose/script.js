@@ -5,11 +5,11 @@
    ══════════════════════════════════════════════════════════════ */
 
 const WPP_GRUPO = 'https://chat.whatsapp.com/E6qgflNZtBcLffbNYBttXE?s=sh&p=a&ilr=0';
-const TELAS_VALIDAS = ['home', 'sobre', 'ganhar', 'faq', 'comecar'];
+const TELAS_VALIDAS = ['bem-vindo', 'por-que', 'jan-rose', 'como-funciona', 'produtos', 'faq', 'comecar'];
 
 /* ── ROTEADOR DE TELAS ── */
 function irParaTela(id, { updateHash = true } = {}) {
-  if (!TELAS_VALIDAS.includes(id)) id = 'home';
+  if (!TELAS_VALIDAS.includes(id)) id = 'bem-vindo';
 
   document.querySelectorAll('.tela').forEach((tela) => {
     tela.classList.toggle('active', tela.dataset.tela === id);
@@ -26,6 +26,21 @@ function irParaTela(id, { updateHash = true } = {}) {
   window.scrollTo({ top: 0, behavior: 'auto' });
   fecharMenuMobile();
   reobservarReveals();
+  atualizarProgresso(id);
+}
+
+/* ── barra de progresso da jornada ── */
+function atualizarProgresso(id) {
+  const fill = document.getElementById('progresso-fill');
+  const label = document.getElementById('progresso-label');
+  if (!fill || !label) return;
+  const idx = TELAS_VALIDAS.indexOf(id);
+  const pct = Math.round(((idx + 1) / TELAS_VALIDAS.length) * 100);
+  fill.style.width = pct + '%';
+  label.textContent =
+    pct >= 100
+      ? 'Você já conhece a oportunidade. Vamos conversar? 🎉'
+      : `Você está conhecendo a oportunidade — ${pct}%`;
 }
 
 document.querySelectorAll('[data-nav]').forEach((el) => {
@@ -33,12 +48,12 @@ document.querySelectorAll('[data-nav]').forEach((el) => {
 });
 
 window.addEventListener('popstate', () => {
-  const id = location.hash.replace('#', '') || 'home';
+  const id = location.hash.replace('#', '') || 'bem-vindo';
   irParaTela(id, { updateHash: false });
 });
 
-/* tela inicial, respeitando link direto (#faq, #sobre, etc.) */
-irParaTela(location.hash.replace('#', '') || 'home', { updateHash: false });
+/* tela inicial, respeitando link direto (#faq, #jan-rose, etc.) */
+irParaTela(location.hash.replace('#', '') || 'bem-vindo', { updateHash: false });
 
 /* ── MENU MOBILE ── */
 const navBurger = document.getElementById('nav-burger');

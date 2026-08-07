@@ -53,114 +53,90 @@
 <!-- ══════════ HEADER / NAV ══════════ -->
 <header class="header">
   <div class="header-inner">
-    <a class="header-brand" href="#home" data-nav="home">
+    <a class="header-brand" href="#bem-vindo" data-nav="bem-vindo">
       <img src="../logo%20jan%20Ros%C3%AA.png" alt="Jan Rosê" width="108" height="29">
     </a>
     <nav class="nav" aria-label="Navegação principal">
-      <button class="nav-link" data-nav="home" aria-current="page">Home</button>
-      <button class="nav-link" data-nav="sobre">Sobre a Jan Rosê</button>
-      <button class="nav-link" data-nav="ganhar">Como Ganhar Dinheiro</button>
-      <button class="nav-link" data-nav="faq">Perguntas Frequentes</button>
+      <button class="nav-link" data-nav="bem-vindo" aria-current="page">Início</button>
+      <button class="nav-link" data-nav="por-que">Por que</button>
+      <button class="nav-link" data-nav="jan-rose">Jan Rosê</button>
+      <button class="nav-link" data-nav="como-funciona">Como funciona</button>
+      <button class="nav-link" data-nav="produtos">Produtos</button>
+      <button class="nav-link" data-nav="faq">FAQ</button>
     </nav>
-    <button class="btn btn-primary btn-sm" data-nav="comecar">Quero Começar</button>
+    <button class="btn btn-primary btn-sm" data-nav="comecar">Vamos conversar?</button>
     <button class="nav-burger" id="nav-burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-mobile">
       <span></span><span></span><span></span>
     </button>
   </div>
   <nav class="nav-mobile" id="nav-mobile" aria-label="Navegação mobile">
-    <button class="nav-link" data-nav="home">Home</button>
-    <button class="nav-link" data-nav="sobre">Sobre a Jan Rosê</button>
-    <button class="nav-link" data-nav="ganhar">Como Ganhar Dinheiro</button>
+    <button class="nav-link" data-nav="bem-vindo">Início</button>
+    <button class="nav-link" data-nav="por-que">Por que essa oportunidade existe</button>
+    <button class="nav-link" data-nav="jan-rose">Conheça a Jan Rosê</button>
+    <button class="nav-link" data-nav="como-funciona">Como funciona o negócio</button>
+    <button class="nav-link" data-nav="produtos">Produtos</button>
     <button class="nav-link" data-nav="faq">Perguntas Frequentes</button>
-    <button class="nav-link nav-link-cta" data-nav="comecar">Quero Começar</button>
+    <button class="nav-link nav-link-cta" data-nav="comecar">Vamos conversar?</button>
   </nav>
 </header>
+
+<!-- ══════════ BARRA DE PROGRESSO ══════════ -->
+<div class="progresso-wrap">
+  <div class="progresso-bar"><div class="progresso-fill" id="progresso-fill" style="width:14%"></div></div>
+  <p class="progresso-label" id="progresso-label">Você está conhecendo a oportunidade — 14%</p>
+</div>
 
 <main id="tela-conteudo">
 
 <!-- ═══════════════════════════════════════════════════════════════
-     TELA 1 · HOME
+     TELA 1 · BEM-VINDO
      ═══════════════════════════════════════════════════════════════ -->
-<section class="tela active" id="home" data-tela="home" aria-labelledby="hero-h1">
-
-  <!-- HERO -->
+<section class="tela active" id="bem-vindo" data-tela="bem-vindo" aria-labelledby="hero-h1">
   <div class="hero">
     <div class="hero-bg" data-parallax></div>
     <div class="hero-inner">
       <p class="eyebrow eyebrow-onlight" data-reveal>Distribuição Independente</p>
       <h1 id="hero-h1" data-reveal>Construa uma nova fonte de renda com uma marca consolidada no mercado de <span class="hl">beleza e bem-estar</span>.</h1>
-      <p class="hero-sub" data-reveal="d">Trabalhe no seu ritmo, tenha acesso a produtos de alta qualidade, treinamento e uma equipe pronta para apoiar seu crescimento.</p>
+      <p class="hero-sub" data-reveal="d">Trabalhe no seu ritmo, tenha acesso a produtos de qualidade, treinamento e um plano de crescimento.</p>
       <div class="hero-ctas" data-reveal="d">
-        <a class="btn btn-primary btn-lg" href="#para-quem">Quero conhecer a oportunidade →</a>
+        <button class="btn btn-primary btn-lg" data-nav="por-que">Quero conhecer a oportunidade →</button>
         <a class="btn btn-glass btn-lg" href="https://wa.me/5511915033743?text=Ol%C3%A1!%20Vi%20a%20oportunidade%20Jan%20Ros%C3%AA%20e%20quero%20saber%20mais%20%F0%9F%8C%B8" target="_blank" rel="noopener">Falar com um especialista</a>
       </div>
       <div class="hero-stats" data-reveal="d">
-        <div class="stat"><span class="stat-num" data-count="32">0</span><span class="stat-suf">+</span><span class="stat-lbl">anos de história</span></div>
-        <div class="stat"><span class="stat-num" data-count="200">0</span><span class="stat-suf">+</span><span class="stat-lbl">produtos</span></div>
-        <div class="stat"><span class="stat-num" data-count="27">0</span><span class="stat-lbl">países na Europa</span></div>
+        <div class="stat"><div class="stat-num-row"><span class="stat-pre">+</span><span class="stat-num" data-count="200">200</span></div><span class="stat-lbl">produtos</span></div>
+        <div class="stat"><div class="stat-num-row"><span class="stat-num" data-count="32">32</span></div><span class="stat-lbl">anos de história*</span></div>
+        <div class="stat stat-badge"><span class="stat-check">✓</span><span class="stat-lbl">Treinamento completo</span></div>
+        <div class="stat stat-badge"><span class="stat-check">✓</span><span class="stat-lbl">Suporte especializado</span></div>
       </div>
+      <p class="hero-stats-disclaimer" data-reveal="d">*Conforme dados oficiais da empresa.</p>
     </div>
     <div class="hero-scroll-cue" aria-hidden="true">rolar ↓</div>
   </div>
+</section>
 
-  <!-- BLOCO 2 · PARA QUEM É -->
-  <div class="tela-screen" id="para-quem">
+<!-- ═══════════════════════════════════════════════════════════════
+     TELA 2 · POR QUE ESSA OPORTUNIDADE EXISTE
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="tela" id="por-que" data-tela="por-que" aria-labelledby="por-que-h1">
+  <div class="tela-hero-mini">
+    <p class="eyebrow eyebrow-onlight" data-reveal>Por que essa oportunidade existe</p>
+    <h1 id="por-que-h1" class="onlight" data-reveal>Conecte isso com o que você busca hoje.</h1>
+  </div>
+
+  <div class="tela-screen">
     <div class="sw sw-narrow center">
-      <p class="eyebrow" data-reveal>Antes de continuar</p>
-      <h2 data-reveal>Esta oportunidade é para você que...</h2>
+      <h2 data-reveal>Esta oportunidade pode ser para você que...</h2>
     </div>
     <div class="sw fit-grid">
       <div class="fit-card" data-reveal><span class="fit-check">✓</span>Procura renda extra</div>
-      <div class="fit-card" data-reveal><span class="fit-check">✓</span>Já vende produtos</div>
-      <div class="fit-card" data-reveal><span class="fit-check">✓</span>Quer empreender</div>
+      <div class="fit-card" data-reveal><span class="fit-check">✓</span>Já trabalha com vendas</div>
       <div class="fit-card" data-reveal><span class="fit-check">✓</span>Possui uma loja</div>
-      <div class="fit-card" data-reveal><span class="fit-check">✓</span>É profissional da beleza</div>
-      <div class="fit-card" data-reveal><span class="fit-check">✓</span>Deseja construir um patrimônio</div>
+      <div class="fit-card" data-reveal><span class="fit-check">✓</span>Quer empreender</div>
+      <div class="fit-card" data-reveal><span class="fit-check">✓</span>Trabalha na área da beleza</div>
+      <div class="fit-card" data-reveal><span class="fit-check">✓</span>Deseja construir um negócio</div>
     </div>
   </div>
 
-  <!-- BLOCO 3 · 3 MANEIRAS DE CRESCER -->
-  <div class="tela-screen tela-screen-tint">
-    <div class="sw sw-narrow center">
-      <p class="eyebrow" data-reveal>Como você ganha dinheiro</p>
-      <h2 data-reveal>3 maneiras de crescer com a Jan Rosê</h2>
-    </div>
-    <div class="cards-grid">
-      <div class="glass-card" data-reveal><div class="card-ico">🛍</div><h3>Revenda</h3><p>Venda produtos e obtenha lucro.</p></div>
-      <div class="glass-card" data-reveal><div class="card-ico">🤝</div><h3>Indicação</h3><p>Convide novas pessoas para conhecerem a oportunidade.</p></div>
-      <div class="glass-card" data-reveal><div class="card-ico">🚀</div><h3>Desenvolvimento</h3><p>Construa sua equipe e cresça conforme o plano de negócios.</p></div>
-    </div>
-  </div>
-
-  <!-- BLOCO 4 · CREDIBILIDADE -->
-  <div class="tela-screen">
-    <div class="sw sw-narrow center">
-      <p class="eyebrow" data-reveal>Números que sustentam a oportunidade</p>
-      <h2 data-reveal>Uma marca que já provou sua força</h2>
-    </div>
-    <div class="cards-grid">
-      <div class="glass-card" data-reveal><div class="card-ico">🏛️</div><h3>32+ anos</h3><p>De história consolidando a marca no mercado de beleza e bem-estar.</p></div>
-      <div class="glass-card" data-reveal><div class="card-ico">📦</div><h3>200+ produtos</h3><p>Um catálogo amplo de perfumaria, cosméticos e bem-estar.</p></div>
-      <div class="glass-card" data-reveal><div class="card-ico">🌍</div><h3>27 países</h3><p>Presença europeia, com fábrica própria.</p></div>
-    </div>
-  </div>
-
-  <!-- BLOCO 5 · COMO FUNCIONA -->
-  <div class="tela-screen tela-screen-tint">
-    <div class="sw sw-narrow center">
-      <p class="eyebrow" data-reveal>Sua jornada, passo a passo</p>
-      <h2 data-reveal>Como funciona</h2>
-    </div>
-    <div class="timeline" data-reveal>
-      <div class="tl-step"><div class="tl-num">1</div><div class="tl-txt"><h4>Conheça</h4><p>Explore a empresa, os produtos e a oportunidade, no seu tempo.</p></div></div>
-      <div class="tl-step"><div class="tl-num">2</div><div class="tl-txt"><h4>Escolha como deseja atuar</h4><p>Revenda, indicação ou desenvolvimento de equipe.</p></div></div>
-      <div class="tl-step"><div class="tl-num">3</div><div class="tl-txt"><h4>Receba treinamento</h4><p>Acesso à Unijan e apoio da equipe desde o início.</p></div></div>
-      <div class="tl-step"><div class="tl-num">4</div><div class="tl-txt"><h4>Comece suas vendas</h4><p>Com o catálogo e o suporte necessários pra dar o primeiro passo.</p></div></div>
-      <div class="tl-step"><div class="tl-num">5</div><div class="tl-txt"><h4>Desenvolva seu negócio</h4><p>No seu ritmo, conforme os seus próprios objetivos.</p></div></div>
-    </div>
-  </div>
-
-  <!-- BLOCO 6 · PROBLEMA → SOLUÇÃO -->
   <div class="tela-screen tela-screen-dark">
     <div class="sw sw-narrow center">
       <p class="eyebrow eyebrow-onlight" data-reveal>Um retrato comum</p>
@@ -170,25 +146,34 @@
     </div>
   </div>
 
-  <!-- BLOCO 7 · SOLUÇÃO -->
   <div class="tela-screen">
     <div class="sw sw-narrow center">
       <p class="eyebrow" data-reveal>A Jan Rosê</p>
       <h2 data-reveal>Uma empresa consolidada, pra você construir algo seu.</h2>
       <p class="sec-lede" data-reveal>Marca reconhecida, produtos premium e um mercado em crescimento — a estrutura para você empreender já existe. Falta só você decidir entrar.</p>
-      <button class="btn btn-primary btn-lg" data-reveal="d" data-nav="sobre">Quero conhecer a oportunidade →</button>
+      <button class="btn btn-primary btn-lg" data-reveal="d" data-nav="jan-rose">Continuar: Conheça a Jan Rosê →</button>
     </div>
   </div>
-
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════
-     TELA 2 · SOBRE A JAN ROSÊ
+     TELA 3 · CONHEÇA A JAN ROSÊ
      ═══════════════════════════════════════════════════════════════ -->
-<section class="tela" id="sobre" data-tela="sobre" aria-labelledby="sobre-h1">
+<section class="tela" id="jan-rose" data-tela="jan-rose" aria-labelledby="jan-rose-h1">
   <div class="tela-hero-mini">
-    <p class="eyebrow eyebrow-onlight" data-reveal>Sobre a Jan Rosê</p>
-    <h1 id="sobre-h1" class="onlight" data-reveal>Uma marca que já provou sua força.</h1>
+    <p class="eyebrow eyebrow-onlight" data-reveal>Conheça a Jan Rosê</p>
+    <h1 id="jan-rose-h1" class="onlight" data-reveal>Uma marca que já provou sua força.</h1>
+  </div>
+
+  <div class="tela-screen">
+    <div class="sw sw-narrow center">
+      <p class="eyebrow" data-reveal>Números que sustentam a oportunidade</p>
+    </div>
+    <div class="cards-grid">
+      <div class="glass-card" data-reveal><div class="card-ico">🏛️</div><h3>32+ anos</h3><p>De história consolidando a marca no mercado de beleza e bem-estar.</p></div>
+      <div class="glass-card" data-reveal><div class="card-ico">📦</div><h3>200+ produtos</h3><p>Um catálogo amplo de perfumaria, cosméticos e bem-estar.</p></div>
+      <div class="glass-card" data-reveal><div class="card-ico">🌍</div><h3>27 países</h3><p>Presença europeia, com fábrica própria.</p></div>
+    </div>
   </div>
 
   <div class="tela-screen tela-screen-tint">
@@ -207,20 +192,6 @@
 
   <div class="tela-screen">
     <div class="sw">
-      <h2 data-reveal>Categorias de produtos</h2>
-      <p class="sec-lede" data-reveal>Um pouco do que você vai poder oferecer.</p>
-      <div class="cat-grid">
-        <div class="cat-item" data-reveal><div class="cat-ico">🌸</div><span>Perfumaria</span></div>
-        <div class="cat-item" data-reveal><div class="cat-ico">💄</div><span>Cosméticos</span></div>
-        <div class="cat-item" data-reveal><div class="cat-ico">🧘</div><span>Bem-estar</span></div>
-        <div class="cat-item" data-reveal><div class="cat-ico">🧴</div><span>Cuidados pessoais</span></div>
-      </div>
-      <div class="cat-cta" data-reveal><a class="btn btn-outline" href="../catalogo-jan-rose.pdf.pdf" download>⬇️ Ver catálogo completo (PDF)</a></div>
-    </div>
-  </div>
-
-  <div class="tela-screen">
-    <div class="sw">
       <h2 data-reveal>Quem já faz parte</h2>
       <p class="sec-lede" data-reveal>Espaço reservado pros primeiros depoimentos reais de distribuidoras e distribuidores.</p>
       <div class="dep-grid">
@@ -228,34 +199,49 @@
         <div class="dep-card" data-reveal><div class="dep-avatar" aria-hidden="true">👤</div><p class="dep-quote">[Depoimento em breve]</p><p class="dep-nome">Nome do Distribuidor</p></div>
         <div class="dep-card" data-reveal><div class="dep-avatar" aria-hidden="true">👤</div><p class="dep-quote">[Depoimento em breve]</p><p class="dep-nome">Nome da Distribuidora</p></div>
       </div>
+      <div class="center" style="margin-top:36px" data-reveal>
+        <button class="btn btn-primary btn-lg" data-nav="como-funciona">Continuar: Como Funciona →</button>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════
-     TELA 3 · COMO GANHAR DINHEIRO
+     TELA 4 · COMO FUNCIONA O NEGÓCIO
      ═══════════════════════════════════════════════════════════════ -->
-<section class="tela" id="ganhar" data-tela="ganhar" aria-labelledby="ganhar-h1">
+<section class="tela" id="como-funciona" data-tela="como-funciona" aria-labelledby="como-funciona-h1">
   <div class="tela-hero-mini">
-    <p class="eyebrow eyebrow-onlight" data-reveal>Como Ganhar Dinheiro</p>
-    <h1 id="ganhar-h1" class="onlight" data-reveal>Um modelo simples, sem pirâmide.</h1>
+    <p class="eyebrow eyebrow-onlight" data-reveal>Como funciona o negócio</p>
+    <h1 id="como-funciona-h1" class="onlight" data-reveal>Um modelo simples, sem pirâmide.</h1>
   </div>
 
   <div class="tela-screen">
     <div class="sw sw-narrow center">
       <p class="sec-lede" data-reveal>A Jan Rosê opera no modelo de Venda Direta, regulamentado no Brasil e representado pela ABEVD. O lucro vem da venda real de produtos — nunca de recrutamento.</p>
     </div>
+    <div class="cards-grid">
+      <div class="glass-card" data-reveal><div class="card-ico">🛍</div><h3>Revenda</h3><p>Venda produtos e obtenha lucro.</p></div>
+      <div class="glass-card" data-reveal><div class="card-ico">🤝</div><h3>Indicação</h3><p>Convide novas pessoas para conhecerem a oportunidade.</p></div>
+      <div class="glass-card" data-reveal><div class="card-ico">🚀</div><h3>Desenvolvimento</h3><p>Construa sua equipe e cresça conforme o plano de negócios.</p></div>
+    </div>
+  </div>
+
+  <div class="tela-screen tela-screen-tint">
+    <div class="sw sw-narrow center">
+      <p class="eyebrow" data-reveal>Sua jornada, passo a passo</p>
+      <h2 data-reveal>Como você pode crescer com a Jan Rosê</h2>
+    </div>
     <div class="timeline" data-reveal>
-      <div class="tl-step"><div class="tl-num">1</div><div class="tl-txt"><h4>Comprar</h4><p>Você adquire os produtos com preço de distribuidora.</p></div></div>
-      <div class="tl-step"><div class="tl-num">2</div><div class="tl-txt"><h4>Consumir ou vender</h4><p>Use pra você ou revenda com margem de lucro.</p></div></div>
-      <div class="tl-step"><div class="tl-num">3</div><div class="tl-txt"><h4>Indicar</h4><p>Apresente a oportunidade pra quem tem o mesmo interesse.</p></div></div>
-      <div class="tl-step"><div class="tl-num">4</div><div class="tl-txt"><h4>Construir equipe</h4><p>Se quiser ir além, forme e desenvolva seu próprio time.</p></div></div>
-      <div class="tl-step"><div class="tl-num">5</div><div class="tl-txt"><h4>Receber bonificações</h4><p>Conforme o plano de desenvolvimento oficial da marca.</p></div></div>
+      <div class="tl-step"><div class="tl-num">1</div><div class="tl-txt"><h4>Conheça</h4><p>Explore a empresa, os produtos e a oportunidade, no seu tempo.</p></div></div>
+      <div class="tl-step"><div class="tl-num">2</div><div class="tl-txt"><h4>Escolha como deseja atuar</h4><p>Revenda, indicação ou desenvolvimento de equipe.</p></div></div>
+      <div class="tl-step"><div class="tl-num">3</div><div class="tl-txt"><h4>Receba treinamento</h4><p>Acesso à Unijan e apoio da equipe desde o início.</p></div></div>
+      <div class="tl-step"><div class="tl-num">4</div><div class="tl-txt"><h4>Comece suas vendas</h4><p>Com o catálogo e o suporte necessários pra dar o primeiro passo.</p></div></div>
+      <div class="tl-step"><div class="tl-num">5</div><div class="tl-txt"><h4>Desenvolva seu negócio</h4><p>No seu ritmo, conforme os seus próprios objetivos.</p></div></div>
     </div>
     <p class="disclaimer" data-reveal>Resultados dependem do esforço, dedicação e volume de vendas de cada pessoa. Não há garantia de renda.</p>
   </div>
 
-  <div class="tela-screen tela-screen-tint">
+  <div class="tela-screen">
     <div class="sw sw-narrow center">
       <h2 data-reveal>Quanto custa começar?</h2>
       <p class="sec-lede" data-reveal>Mais acessível do que a maioria imagina.</p>
@@ -276,7 +262,7 @@
     <p class="sec-lede center" style="margin-top:20px" data-reveal>Os combos são opcionais — o cadastro em si é gratuito, e você também pode começar vendendo sob encomenda.</p>
   </div>
 
-  <div class="tela-screen">
+  <div class="tela-screen tela-screen-tint">
     <div class="sw">
       <h2 data-reveal>O suporte que você tem</h2>
       <div class="cards-grid cards-grid-compact">
@@ -290,12 +276,54 @@
         <div class="glass-card" data-reveal><div class="card-ico">📚</div><h3>Conteúdo</h3></div>
         <div class="glass-card" data-reveal><div class="card-ico">🏫</div><h3>Unijan</h3></div>
       </div>
+      <div class="center" style="margin-top:36px" data-reveal>
+        <button class="btn btn-primary btn-lg" data-nav="produtos">Continuar: Produtos →</button>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════
-     TELA 4 · FAQ
+     TELA 5 · PRODUTOS
+     ═══════════════════════════════════════════════════════════════ -->
+<section class="tela" id="produtos" data-tela="produtos" aria-labelledby="produtos-h1">
+  <div class="tela-hero-mini">
+    <p class="eyebrow eyebrow-onlight" data-reveal>Produtos</p>
+    <h1 id="produtos-h1" class="onlight" data-reveal>Um catálogo completo pra toda a família.</h1>
+  </div>
+
+  <div class="tela-screen">
+    <div class="sw">
+      <h2 data-reveal>Categorias de produtos</h2>
+      <p class="sec-lede" data-reveal>Um pouco do que você vai poder oferecer.</p>
+      <div class="cat-grid" data-reveal>
+        <details class="cat-item">
+          <summary class="cat-summary"><span class="cat-ico">🌸</span><span class="cat-nome">Perfumaria</span><span class="cat-arr" aria-hidden="true">+</span></summary>
+          <p class="cat-desc">Fragrâncias para todos os estilos, com boa fixação e qualidade testada.</p>
+        </details>
+        <details class="cat-item">
+          <summary class="cat-summary"><span class="cat-ico">💄</span><span class="cat-nome">Cosméticos</span><span class="cat-arr" aria-hidden="true">+</span></summary>
+          <p class="cat-desc">Produtos para os cuidados do dia a dia, com fórmulas testadas e ingredientes selecionados.</p>
+        </details>
+        <details class="cat-item">
+          <summary class="cat-summary"><span class="cat-ico">🧘</span><span class="cat-nome">Bem-estar</span><span class="cat-arr" aria-hidden="true">+</span></summary>
+          <p class="cat-desc">Itens pensados pra rotina de autocuidado e qualidade de vida.</p>
+        </details>
+        <details class="cat-item">
+          <summary class="cat-summary"><span class="cat-ico">🧴</span><span class="cat-nome">Cuidados pessoais</span><span class="cat-arr" aria-hidden="true">+</span></summary>
+          <p class="cat-desc">Itens de higiene e cuidado pra toda a família.</p>
+        </details>
+      </div>
+      <div class="cat-cta" data-reveal><a class="btn btn-outline" href="../catalogo-jan-rose.pdf.pdf" download>⬇️ Ver catálogo completo (PDF)</a></div>
+      <div class="center" style="margin-top:36px" data-reveal>
+        <button class="btn btn-primary btn-lg" data-nav="faq">Continuar: Perguntas Frequentes →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     TELA 6 · FAQ
      ═══════════════════════════════════════════════════════════════ -->
 <section class="tela" id="faq" data-tela="faq" aria-labelledby="faq-h1">
   <div class="tela-hero-mini">
@@ -334,7 +362,7 @@
 </section>
 
 <!-- ═══════════════════════════════════════════════════════════════
-     TELA 5 · QUERO COMEÇAR
+     TELA 7 · VAMOS CONVERSAR?
      ═══════════════════════════════════════════════════════════════ -->
 <section class="tela" id="comecar" data-tela="comecar" aria-labelledby="comecar-h1">
   <div class="tela-hero-mini tela-hero-final">
@@ -345,17 +373,16 @@
 
   <div class="tela-screen tela-screen-tint">
     <div class="sw sw-narrow center">
-      <h2 data-reveal>O que acontece depois que você entra?</h2>
+      <h2 data-reveal>O que acontece quando você decide começar?</h2>
       <p class="sec-lede" data-reveal>Ninguém fica sozinho — cada etapa tem apoio da equipe.</p>
     </div>
     <div class="timeline" data-reveal>
-      <div class="tl-step"><div class="tl-num">1</div><div class="tl-txt"><h4>Você entra</h4><p>Faz seu cadastro, gratuito e rápido.</p></div></div>
-      <div class="tl-step"><div class="tl-num">2</div><div class="tl-txt"><h4>Recebe treinamento</h4><p>Acesso à Unijan e orientação da equipe.</p></div></div>
-      <div class="tl-step"><div class="tl-num">3</div><div class="tl-txt"><h4>Conhece os produtos</h4><p>Catálogo completo, preços e diferenciais.</p></div></div>
-      <div class="tl-step"><div class="tl-num">4</div><div class="tl-txt"><h4>Aprende a vender</h4><p>Scripts prontos e apoio pra sua primeira venda.</p></div></div>
-      <div class="tl-step"><div class="tl-num">5</div><div class="tl-txt"><h4>Recebe suporte</h4><p>Grupo oficial e acompanhamento contínuo.</p></div></div>
-      <div class="tl-step"><div class="tl-num">6</div><div class="tl-txt"><h4>Começa suas primeiras vendas</h4><p>No seu ritmo, com a estrutura já pronta.</p></div></div>
-      <div class="tl-step"><div class="tl-num">7</div><div class="tl-txt"><h4>Pode crescer conforme seus objetivos</h4><p>Revenda, equipe ou Centro de Apoio — você decide até onde ir.</p></div></div>
+      <div class="tl-step"><div class="tl-num">1</div><div class="tl-txt"><h4>Cadastro</h4><p>Rápido e gratuito.</p></div></div>
+      <div class="tl-step"><div class="tl-num">2</div><div class="tl-txt"><h4>Treinamento</h4><p>Acesso à Unijan e orientação da equipe.</p></div></div>
+      <div class="tl-step"><div class="tl-num">3</div><div class="tl-txt"><h4>Conheça os produtos</h4><p>Catálogo completo, preços e diferenciais.</p></div></div>
+      <div class="tl-step"><div class="tl-num">4</div><div class="tl-txt"><h4>Primeiras vendas</h4><p>No seu ritmo, com a estrutura já pronta.</p></div></div>
+      <div class="tl-step"><div class="tl-num">5</div><div class="tl-txt"><h4>Acompanhamento</h4><p>Grupo oficial e suporte contínuo da equipe.</p></div></div>
+      <div class="tl-step"><div class="tl-num">6</div><div class="tl-txt"><h4>Crescimento</h4><p>Revenda, indicação ou desenvolvimento — você decide até onde ir.</p></div></div>
     </div>
   </div>
 
