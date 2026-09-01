@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Assista antes de entrar | Grupo VIP Alvo Negócio</title>
+<meta name="description" content="Assista ao vídeo e entre no Grupo VIP da Alvo Negócio no WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a1a;line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+
+:root{
+  --v:  #2A0E72;
+  --vm: #7B2CB9;
+  --d:  #E0289E;
+  --bg: #FDF5FF;
+  --c2: #3D2060;
+  --c3: #8878AA;
+  --bd: #E8C8F8;
+}
+
+header{padding:20px 24px;text-align:center;border-bottom:1px solid var(--bd)}
+header img{height:32px;margin:0 auto}
+
+.wrap{max-width:560px;margin:0 auto;padding:36px 20px 60px;text-align:center}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--vm);margin-bottom:14px}
+h1{font-size:clamp(24px,4vw,32px);font-weight:900;color:var(--v);line-height:1.28;margin-bottom:14px}
+.sub{font-size:15px;color:var(--c2);line-height:1.75;max-width:440px;margin:0 auto 32px}
+
+.video-frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:18px;overflow:hidden;background:var(--bg);border:1px solid var(--bd);margin-bottom:32px}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;gap:10px}
+.video-placeholder-ico{font-size:38px}
+.video-placeholder p{font-size:13.5px;color:var(--c3);line-height:1.7;max-width:320px}
+.video-dur{font-size:11.5px;font-weight:800;letter-spacing:.5px;color:var(--vm);background:#faf0ff;border:1px solid var(--bd);padding:5px 12px;border-radius:50px;display:inline-block}
+
+.btn-vip{display:inline-flex;align-items:center;justify-content:center;gap:10px;width:100%;background:#25D366;color:#fff;font-size:17px;font-weight:800;padding:19px;border-radius:50px;box-shadow:0 12px 30px rgba(37,211,102,.35);transition:transform .2s}
+.btn-vip:hover{transform:translateY(-2px)}
+.cta-sub{font-size:12.5px;color:var(--c3);margin-top:14px}
+
+footer{padding:26px;text-align:center;font-size:11.5px;color:var(--c3)}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="logo%20jan%20Ros%C3%AA.png" alt="Jan Rosê">
+</header>
+
+<div class="wrap">
+  <p class="eyebrow">Antes de entrar no grupo</p>
+  <h1>Assista este vídeo rápido</h1>
+  <p class="sub">Em poucos minutos você entende como o Grupo VIP funciona e como aproveitar melhor tudo o que vai receber lá dentro.</p>
+
+  <div class="video-frame" id="video-frame">
+    <div class="video-placeholder" id="video-placeholder">
+      <div class="video-placeholder-ico">🎬</div>
+      <span class="video-dur">⏱️ 7 minutos</span>
+      <p>O vídeo está sendo preparado. Assim que estiver no ar, ele aparece aqui automaticamente.</p>
+    </div>
+    <iframe id="video-iframe" style="display:none" src="" title="Vídeo — Grupo VIP Alvo Negócio" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+
+  <a class="btn-vip" href="https://chat.whatsapp.com/E6qgflNZtBcLffbNYBttXE?s=sh&p=a&ilr=0" target="_blank" rel="noopener">👥 Entrar no Grupo VIP</a>
+  <p class="cta-sub">Gratuito · Sem compromisso · Saia quando quiser</p>
+</div>
+
+<footer>Distribuidora Independente Oficial · Equipe Alvo Negócio · © 2026</footer>
+
+<script>
+/* Pra publicar o vídeo: troque VIDEO_ID pelo ID do YouTube (o trecho depois de "v=" no link do vídeo) */
+const VIDEO_ID = 'COLE_AQUI_O_ID_DO_YOUTUBE'
+if(VIDEO_ID && VIDEO_ID !== 'COLE_AQUI_O_ID_DO_YOUTUBE'){
+  document.getElementById('video-placeholder').style.display = 'none'
+  const iframe = document.getElementById('video-iframe')
+  iframe.src = `https://www.youtube.com/embed/${VIDEO_ID}`
+  iframe.style.display = 'block'
+}
+</script>
+</body>
+</html>
