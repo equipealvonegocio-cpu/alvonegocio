@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://www.youtube.com/iframe_api"></script>
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
   (function(){
@@ -83,6 +84,12 @@ header{
 .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
 .video-frame::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.12));pointer-events:none;z-index:1}
 .video-label{position:absolute;left:14px;top:14px;z-index:2;background:rgba(26,8,69,.52);backdrop-filter:blur(4px);color:#fff;font-size:10.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.18)}
+.video-gate{margin-top:14px;padding:12px 16px;border-radius:12px;background:#faf3ff;color:var(--c3);font-size:13px;font-weight:700}
+.video-gate-ready{display:none;margin-top:14px;padding:14px 18px;border-radius:14px;background:#f4fff8;color:#176b3a;font-size:14px;font-weight:800}
+.video-gate-ready a{display:inline-flex;margin-left:8px;padding:9px 16px;border-radius:999px;background:#25D366;color:#fff}
+.video-unlocked .video-gate{display:none}
+.video-unlocked .video-gate-ready{display:block}
+.video-locked main > section:not(.hero),.video-locked .hero-sub,.video-locked .hero-ctas,.video-locked .hero-trust,.video-locked .hero-skip{display:none}
 @media(max-width:600px){.video-box{padding:8px}.video-label{left:12px;top:12px;font-size:9.5px;padding:5px 8px}}
 .hero-banner{max-width:1200px;margin:0 auto 28px;border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(123,44,185,.18)}
 .hero-txt{max-width:820px;margin:0 auto;text-align:center}
@@ -381,7 +388,7 @@ footer{background:#1a0845;color:rgba(255,255,255,.7);padding:52px 24px 26px}
 }
 </style>
 </head>
-<body>
+<body class="video-locked">
 
 <!-- ══ HEADER ══ -->
 <header>
@@ -413,7 +420,8 @@ footer{background:#1a0845;color:rgba(255,255,255,.7);padding:52px 24px 26px}
       <div class="video-box">
         <div class="video-frame" aria-label="Vídeo da Alvo Negócio">
           <iframe
-            src="https://www.youtube.com/embed/L0whIerYVbU?rel=0&autoplay=1&mute=0&playsinline=1"
+            id="youtube-gate-video"
+            src="https://www.youtube.com/embed/L0whIerYVbU?rel=0&autoplay=1&mute=0&playsinline=1&enablejsapi=1"
             title="Vídeo da Alvo Negócio"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
@@ -421,6 +429,8 @@ footer{background:#1a0845;color:rgba(255,255,255,.7);padding:52px 24px 26px}
           </iframe>
           <div class="video-label">Assista antes de se cadastrar</div>
         </div>
+        <div class="video-gate">Assista ao vídeo completo para liberar o conteúdo da página.</div>
+        <div class="video-gate-ready">Conteúdo liberado! <a href="https://wa.me/5511915033743?text=Ol%C3%A1!%20Assisti%20ao%20v%C3%ADdeo%20e%20quero%20saber%20mais." target="_blank" rel="noopener">Entrar no WhatsApp →</a></div>
       </div>
     </div>
     <div class="hero-ctas" da>
@@ -847,6 +857,17 @@ window.scrollTo(0,0)
 /* animações de entrada */
 const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')}),{threshold:.12})
 document.querySelectorAll('[da]').forEach(el=>obs.observe(el))
+
+/* libera o conteúdo somente quando o vídeo do YouTube termina */
+let gatePlayer
+function onYouTubeIframeAPIReady(){
+  gatePlayer=new YT.Player('youtube-gate-video',{events:{onStateChange:event=>{
+    if(event.data===YT.PlayerState.ENDED){
+      document.body.classList.remove('video-locked')
+      document.body.classList.add('video-unlocked')
+    }
+  }}})
+}
 
 /* faq */
 function tFaq(btn){
