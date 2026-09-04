@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Descubra uma nova oportunidade | Alvo Negócio</title>
 <meta name="description" content="Assista ao vídeo completo e descubra como começar uma nova oportunidade com a Alvo Negócio.">
-<script src="https://www.youtube.com/iframe_api"></script>
 <style>
 :root{--purple:#2a0e72;--pink:#e0289e;--text:#241735;--muted:#756985;--light:#fff8ff;--green:#25d366}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -18,7 +17,7 @@ h1{max-width:760px;margin:auto;color:var(--purple);font-size:clamp(28px,5vw,50px
 .intro{max-width:650px;margin:16px auto 26px;text-align:center;color:var(--muted);font-size:16px;line-height:1.7}
 .video-card{max-width:820px;margin:0 auto;background:#fff;padding:10px;border:1px solid #ecd7f5;border-radius:22px;box-shadow:0 18px 55px rgba(42,14,114,.16)}
 .video-frame{position:relative;aspect-ratio:16/9;overflow:hidden;border-radius:15px;background:var(--purple)}
-.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-frame iframe,.video-frame video{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
 .video-status{padding:14px 8px 4px;text-align:center;color:var(--muted);font-size:13px;font-weight:700}
 .content{display:none;max-width:820px;margin:34px auto 0;animation:show .6s ease}
 .content.visible{display:block}
@@ -48,12 +47,10 @@ h1{max-width:760px;margin:auto;color:var(--purple);font-size:clamp(28px,5vw,50px
 
   <div class="video-card">
     <div class="video-frame">
-      <iframe id="instagram-video"
-        src="https://www.youtube.com/embed/L0whIerYVbU?rel=0&autoplay=1&mute=0&playsinline=1&enablejsapi=1"
-        title="Apresentação da oportunidade Alvo Negócio"
-        allow="autoplay; encrypted-media; picture-in-picture"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen></iframe>
+      <video id="instagram-video" autoplay muted playsinline controls preload="auto">
+        <source src="WhatsApp%20Video%202021-01-21%20at%2012.12.48.mp4" type="video/mp4">
+        Seu navegador não suporta a reprodução de vídeo.
+      </video>
     </div>
     <p class="video-status" id="video-status">Assista ao vídeo completo para continuar.</p>
   </div>
@@ -75,16 +72,11 @@ h1{max-width:760px;margin:auto;color:var(--purple);font-size:clamp(28px,5vw,50px
   <p class="notice">O conteúdo é apresentado com transparência. Resultados variam conforme dedicação, estratégia e condições de cada pessoa.</p>
 </main>
 <script>
-let player
-function onYouTubeIframeAPIReady(){
-  player=new YT.Player('instagram-video',{events:{onStateChange:function(event){
-    if(event.data===YT.PlayerState.ENDED){
-      document.getElementById('content').classList.add('visible')
-      document.getElementById('content').setAttribute('aria-hidden','false')
-      document.getElementById('video-status').textContent='Vídeo concluído. O conteúdo foi liberado.'
-    }
-  }}})
-}
+document.getElementById('instagram-video').addEventListener('ended',function(){
+  document.getElementById('content').classList.add('visible')
+  document.getElementById('content').setAttribute('aria-hidden','false')
+  document.getElementById('video-status').textContent='Vídeo concluído. O conteúdo foi liberado.'
+})
 </script>
 </body>
 </html>
